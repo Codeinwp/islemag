@@ -151,8 +151,10 @@ function islemag_scripts() {
 	wp_enqueue_style( 'islemag-font4', '//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800');
 	
 	wp_enqueue_style( 'islemag-font5', '//fonts.googleapis.com/css?family=Shadows+Into+Light');
-		
+	
 	wp_enqueue_style( 'islemag-fontawesome', get_stylesheet_directory_uri().'/css/font-awesome.min.css',array(), '1.0.0');
+		
+	wp_enqueue_script( 'islemag-script-all', get_template_directory_uri() . '/js/script.all.js', array('jquery'), '1.0.0', true );
 
 	wp_enqueue_script( 'islemag-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
 
