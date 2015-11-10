@@ -117,7 +117,7 @@
                         <div class="row">
                             <div class="col-md-3 navbar-brand">
                                 <?php
-
+                                    global $wp_customize;
                                     $islemag_logo = get_theme_mod('islemag_logo', get_template_directory_uri().'/images/logo-nav.png');
 
 
@@ -215,25 +215,26 @@
                 </div><!-- /.container-fluid -->
 
 
-            <nav id="site-navigation" class="main-navigation" role="navigation">
-                <?php
+                <nav id="site-navigation" class="main-navigation" role="navigation">
+                    <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'islemag' ); ?></button>
+                    <?php
 
-                    $defaults = array(
-                        'theme_location'  => 'primary',
-                        'container'       => 'div',
-                        'container_class' => 'collapse navbar-collapse collapse-row',
-                        'container_id'    => 'main-navbar-container',
-                        'menu_class'      => 'nav navbar-nav navbar-nav-colored navbar-nav-border',
-                        'echo'            => true,
-                        'fallback_cb'     => 'wp_page_menu',
-                        'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
-                        'depth'           => 0,
-                    );
+                        $defaults = array(
+                            'theme_location'  => 'primary',
+                            'container'       => 'div',
+                            'container_class' => 'collapse navbar-collapse collapse-row',
+                            'container_id'    => 'main-navbar-container',
+                            'menu_class'      => 'nav navbar-nav navbar-nav-colored navbar-nav-border',
+                            'echo'            => true,
+                            'fallback_cb'     => 'wp_page_menu',
+                            'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+                            'depth'           => 0,
+                        );
 
-                    wp_nav_menu( $defaults );
+                        wp_nav_menu( $defaults );
 
-                ?>
-            </nav><!-- #site-navigation -->
+                    ?>
+                </nav><!-- #site-navigation -->
 
         </header><!-- End #header -->
 
