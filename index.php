@@ -41,7 +41,21 @@ get_header(); ?>
                     
                 </div><!-- End .magazine-top-carousel -->
             </div><!-- End .magazine-top-container -->
+    
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9">
+                <?php get_template_part('template-parts/content','template1'); ?>
+                <?php get_template_part('template-parts/content','template2'); ?>
+                <?php get_template_part('template-parts/content','template1'); ?>
+                <?php get_template_part('template-parts/content','template3'); ?>
+                <?php get_template_part('template-parts/content','template4'); ?>
+            </div>
+            
+            <?php get_sidebar(); ?>
+        </div>
+
+    </div>
 
 
-<?php get_sidebar(); ?>
 <?php get_footer(); ?>
