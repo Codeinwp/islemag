@@ -2,8 +2,13 @@
     <h2 class="title-border title-bg-line pink mb30"><span>Travel &amp; Nature</span></h2>
 
     <div class="owl-carousel mbigger-posts smaller-nav no-radius">
+        
+        
+        
+        
         <div class="entry-wrapperv2">
             <div class="row">
+       
                 <div class="col-sm-6">
                     <article class="entry entry-overlay entry-block purple">
                         <a href="#" class="category-block" title="Category Travel">Travel</a>

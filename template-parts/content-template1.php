@@ -1,9 +1,16 @@
 <div class="post-section">
-    <h2 class="title-border title-bg-line red mb30"><span>Popular Posts</span></h2>
+    <h2 class="title-border title-bg-line red mb30"><span><?php echo $title; ?></span></h2>
     <div class="owl-carousel mpopular-posts smaller-nav no-radius">
 
             <?php 
-            $popularpost = new WP_Query( array( 'posts_per_page' => 4, 'meta_key' => 'wpb_post_views_count', 'orderby' => 'meta_value_num', 'order' => 'DESC'  ) );
+            $popularpost = new WP_Query( 
+                    array( 
+                            'posts_per_page' => 4, 
+                            'meta_key' => ($cat == "Popular Posts" ? 'wpb_post_views_count' : '' ) , 
+                            'orderby' => ($cat == "Popular Posts" ? 'meta_value_num' : '' ) , 
+                            'order' => 'ASC', 
+                            'category_name' => ($cat != "popular" && $cat != "all" ? $cat : '' )));
+        
             while ( $popularpost->have_posts() ) : $popularpost->the_post();
                 $colors = array("red", "orange", "blue", "green", "purple", "pink", "yellow");
                 $choosed_color = array_rand($colors, 1);

@@ -45,10 +45,29 @@ get_header(); ?>
     <div class="container">
         <div class="row">
             <div class="col-md-9">
-                <?php get_template_part('template-parts/content','template1'); ?>
-                <?php get_template_part('template-parts/content','template2'); ?>
-                <?php get_template_part('template-parts/content','template1'); ?>
-                <?php get_template_part('template-parts/content','template3'); ?>
+                <?php 
+                    $title = get_theme_mod('islemag_section1_title','Section 1');
+                    $cat = get_theme_mod('islemag_section1_category','all');
+                    include(locate_template('template-parts/content-template1.php')); ?>
+                
+                
+                <?php 
+                    $title = get_theme_mod('islemag_section2_title','Section 2');
+                    $cat = get_theme_mod('islemag_section1_category','all');
+                    include(locate_template('template-parts/content-template2.php')); ?>
+                
+                
+                <?php 
+                    $title = get_theme_mod('islemag_section3_title','Section 3');
+                    $cat = get_theme_mod('islemag_section3_category','all');
+                    include(locate_template('template-parts/content-template1.php')); ?>
+                
+                
+                <?php 
+                    $title = get_theme_mod('islemag_section4_title','Section 4');
+                    $cat = get_theme_mod('islemag_section4_category','all');
+                    include(locate_template('template-parts/content-template3.php'));
+                ?>
                 <?php get_template_part('template-parts/content','template4'); ?>
             </div>
             

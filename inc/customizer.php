@@ -17,6 +17,7 @@ function islemag_customize_register( $wp_customize ) {
 	
 	
 	require_once ( 'class/islemag-general-control.php');
+	require_once ( 'class/islemag-category-selector.php');
 	
 	
 	
@@ -68,14 +69,180 @@ function islemag_customize_register( $wp_customize ) {
 	));
 	
 	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'islemag_logo', array(
-	      	'label'    => esc_html__( 'Logo', 'parallax-one' ),
+	      	'label'    => esc_html__( 'Logo', 'islemag' ),
 	      	'section'  => 'islemag_appearance_general',
 			'priority'    => 1,
 	)));
 	
+	/*** SECTIONS ***/
+	$wp_customize->add_panel( 'sections_panel', array(
+		'priority' => 40,
+		'capability' => 'edit_theme_options',
+		'title' => esc_html__( 'Sections', 'islemag' )
+	) );
+	
+	
+	//Section1
+	$wp_customize->add_section( 'islemag_section1' , array(
+		'title'       => esc_html__( 'Section 1', 'islemag' ),
+      	'priority'    => 1,
+		'panel' 	  => 'sections_panel'
+	));
+	
+	$wp_customize->add_setting( 'islemag_section1_title', array(
+		'default' => esc_html__('Popular Posts','islemag'),
+		'sanitize_callback' => 'islemag_sanitize_text',
+		//'transport' => 'postMessage'
+	));
+	
+	$wp_customize->add_control( 'islemag_section1_title', array(
+		'label'    => esc_html__( 'Title', 'islemag' ),
+		'section'  => 'islemag_section1',
+		//'active_callback' => 'parallax_one_show_on_front',
+		'priority'    => 1
+	));
+	
+	$wp_customize->add_setting( 'islemag_section1_category', array(
+	//	'sanitize_callback' => 'esc_url',
+	));
+	
+	$wp_customize->add_control( new IseleMagCategorySelector( $wp_customize, 'islemag_section1_category', array(
+	      	'label'    => esc_html__( 'Category', 'islemag' ),
+	      	'section'  => 'islemag_section1',
+			'priority'    => 2,
+	)));
+	
+	
+	//Section2
+	$wp_customize->add_section( 'islemag_section2' , array(
+		'title'       => esc_html__( 'Section 2', 'islemag' ),
+      	'priority'    => 2,
+		'panel' 	  => 'sections_panel'
+	));
+	
+	$wp_customize->add_setting( 'islemag_section2_title', array(
+		'default' => esc_html__('Popular Posts','islemag'),
+		'sanitize_callback' => 'islemag_sanitize_text',
+		//'transport' => 'postMessage'
+	));
+	
+	$wp_customize->add_control( 'islemag_section2_title', array(
+		'label'    => esc_html__( 'Title', 'islemag' ),
+		'section'  => 'islemag_section2',
+		//'active_callback' => 'parallax_one_show_on_front',
+		'priority'    => 1
+	));
+	
+	$wp_customize->add_setting( 'islemag_section2_category', array(
+	//	'sanitize_callback' => 'esc_url',
+	));
+	
+	$wp_customize->add_control( new IseleMagCategorySelector( $wp_customize, 'islemag_section2_category', array(
+	      	'label'    => esc_html__( 'Category', 'islemag' ),
+	      	'section'  => 'islemag_section2',
+			'priority'    => 2,
+	)));
+	
+	//Section3
+	$wp_customize->add_section( 'islemag_section3' , array(
+		'title'       => esc_html__( 'Section 3', 'islemag' ),
+      	'priority'    => 3,
+		'panel' 	  => 'sections_panel'
+	));
+	
+	$wp_customize->add_setting( 'islemag_section3_title', array(
+		'default' => esc_html__('Popular Posts','islemag'),
+		'sanitize_callback' => 'islemag_sanitize_text',
+		//'transport' => 'postMessage'
+	));
+	
+	$wp_customize->add_control( 'islemag_section3_title', array(
+		'label'    => esc_html__( 'Title', 'islemag' ),
+		'section'  => 'islemag_section3',
+		//'active_callback' => 'parallax_one_show_on_front',
+		'priority'    => 1
+	));
+	
+	$wp_customize->add_setting( 'islemag_section3_category', array(
+	//	'sanitize_callback' => 'esc_url',
+	));
+	
+	$wp_customize->add_control( new IseleMagCategorySelector( $wp_customize, 'islemag_section3_category', array(
+	      	'label'    => esc_html__( 'Category', 'islemag' ),
+	      	'section'  => 'islemag_section3',
+			'priority'    => 2,
+	)));
+	
+	
+	//Section4
+	$wp_customize->add_section( 'islemag_section4' , array(
+		'title'       => esc_html__( 'Section 4', 'islemag' ),
+      	'priority'    => 4,
+		'panel' 	  => 'sections_panel'
+	));
+	
+	$wp_customize->add_setting( 'islemag_section4_title', array(
+		'default' => esc_html__('Popular Posts','islemag'),
+		'sanitize_callback' => 'islemag_sanitize_text',
+		//'transport' => 'postMessage'
+	));
+	
+	$wp_customize->add_control( 'islemag_section4_title', array(
+		'label'    => esc_html__( 'Title', 'islemag' ),
+		'section'  => 'islemag_section4',
+		//'active_callback' => 'parallax_one_show_on_front',
+		'priority'    => 1
+	));
+	
+	$wp_customize->add_setting( 'islemag_section4_category', array(
+	//	'sanitize_callback' => 'esc_url',
+	));
+	
+	$wp_customize->add_control( new IseleMagCategorySelector( $wp_customize, 'islemag_section4_category', array(
+	      	'label'    => esc_html__( 'Category', 'islemag' ),
+	      	'section'  => 'islemag_section4',
+			'priority'    => 2,
+	)));
+	
+	
+	//Section5
+	$wp_customize->add_section( 'islemag_section5' , array(
+		'title'       => esc_html__( 'Section 5', 'islemag' ),
+      	'priority'    => 5,
+		'panel' 	  => 'sections_panel'
+	));
+	
+	$wp_customize->add_setting( 'islemag_section5_title', array(
+		'default' => esc_html__('Popular Posts','islemag'),
+		'sanitize_callback' => 'islemag_sanitize_text',
+		//'transport' => 'postMessage'
+	));
+	$wp_customize->add_control( 'islemag_section5_title', array(
+		'label'    => esc_html__( 'Title', 'islemag' ),
+		'section'  => 'islemag_section5',
+		//'active_callback' => 'parallax_one_show_on_front',
+		'priority'    => 1
+	));
+	
+	$wp_customize->add_setting( 'islemag_section5_category', array(
+	//	'sanitize_callback' => 'esc_url',
+	));
+	
+	$wp_customize->add_control( new IseleMagCategorySelector( $wp_customize, 'islemag_section5_category', array(
+	      	'label'    => esc_html__( 'Category', 'islemag' ),
+	      	'section'  => 'islemag_section5',
+			'priority'    => 2,
+	)));
 	
 }
 add_action( 'customize_register', 'islemag_customize_register' );
+
+
+function islemag_sanitize_text( $input ) {
+    return wp_kses_post( force_balance_tags( $input ) );
+}
+
+
 
 /**
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.

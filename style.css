@@ -4381,3 +4381,10 @@ Blog Homepages ---------------------*/
 .entry-meta i {
 	margin-right: 5px;
 }
+
+
+/******************************/
+
+.eb-small .entry-media, .eb-small .entry-title{
+	display: inline-block;
+}
