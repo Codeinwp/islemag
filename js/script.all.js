@@ -29,7 +29,7 @@ jQuery(document).ready(function() {
         nav:true,
         navText: ['<i class="fa fa-angle-left">', '<i class="fa fa-angle-right">'],
         dots: false,
-        autoplay: true,
+        autoplay: false,
         autoplayTimeout: 10000,
         responsive:{
             0:{
@@ -53,7 +53,7 @@ jQuery(document).ready(function() {
         nav:true,
         navText: ['<i class="fa fa-angle-left">', '<i class="fa fa-angle-right">'],
         dots: false,
-        autoplay: true,
+        autoplay: false,
         autoplayTimeout: 15000,
         items:1
     });
@@ -67,7 +67,7 @@ jQuery(document).ready(function() {
         nav:true,
         navText: ['<i class="fa fa-angle-left">', '<i class="fa fa-angle-right">'],
         dots: false,
-        autoplay: true,
+        autoplay: false,
         autoplayTimeout: 13000,
         responsive:{
             0:{

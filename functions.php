@@ -43,6 +43,8 @@ function islemag_setup() {
 	if ( function_exists( 'add_image_size' ) ) add_theme_support( 'post-thumbnails' );
 	if ( function_exists( 'add_image_size' ) ) { 
 		add_image_size( 'main-slider', 400, 400, true );
+		add_image_size( 'sections-small-thumbnail', 110, 110, true );
+		add_image_size( 'section4-big-thumbnail', 420, 420, true );
 	}
 
 
@@ -269,4 +271,10 @@ function wpb_get_post_views($postID){
         return "0 View";
     }
     return $count.' Views';
+}
+
+
+function more_posts() {
+  global $wp_query;
+  return $wp_query->current_post + 1 < $wp_query->post_count;
 }

@@ -2928,7 +2928,8 @@ a.text-white:focus {
 }
 .owl-carousel .owl-item img {
 	display: block;
-	width: 100%;
+	max-width: 100%;
+	margin: 0 auto;
 	-webkit-transform-style: preserve-3d;
 }
 .owl-carousel.owl-text-select-on .owl-item {
@@ -3353,8 +3354,18 @@ Magazine Homepages --------------------*/
 	-webkit-transform:translate3d(0, 100%, 0);
 }
 
-.entry-block{
+.magazine-top-container .entry-block{
 	max-height: 400px;
+}
+
+.entry-media figure{
+	max-height: 400px;
+    overflow: hidden;
+}
+
+.entry-media figure image{
+	max-height: 100%;
+	margin: 0 auto;
 }
 
 .entry-block.entry .entry-media figure > a:after, 
@@ -3845,6 +3856,7 @@ Magazine Homepages --------------------*/
 @media (min-width: 1200px) {
 	.entry-block.eb-small .entry-title {
 		margin:5px 0 15px;
+		display: inline;
 	}
 }
 
@@ -4363,6 +4375,7 @@ Blog Homepages ---------------------*/
 	line-height: 22px;
 	margin-bottom: 10px;
 	font-weight: 600;
+	display: inline;
 }
 
 .entry-overlay-meta .entry-title a {
