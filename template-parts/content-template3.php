@@ -1,23 +1,20 @@
 <div class="post-section">
     <?php
-        $islemag_section4_title = get_theme_mod('islemag_section4_title',esc_html__('Section 1','islemag'));
-        $islemag_section4_category = get_theme_mod('islemag_section4_category');
-        $islemag_section4_max_posts = get_theme_mod('islemag_section4_max_posts',-1);
-        $postperpage = get_theme_mod('islemag_section4_posts_per_page',6);
-        $colors = array("red", "orange", "blue", "green", "purple", "pink", "yellow");
         $choosed_color = array_rand($colors, 1);
     ?>
-    <h2 class="title-border title-bg-line <?php echo $colors[$choosed_color]; ?> mb30"><span><?php if(!empty($islemag_section4_title)) echo $islemag_section4_title; ?></span></h2>
+    <h2 class="title-border title-bg-line <?php echo $colors[$choosed_color]; ?> mb30"><span><?php if(!empty($islemag_section_title)) echo $islemag_section_title; ?></span></h2>
 
     <div class="owl-carousel mbigger-posts smaller-nav no-radius">
         <?php
             $wp_query = new WP_Query( array(
-                'posts_per_page'      => $islemag_section4_max_posts,
-                'meta_key'            => ($islemag_section4_category == "popular" ? 'wpb_post_views_count' : '' ) , 
+                'posts_per_page'      => $islemag_section_max_posts,
+                'meta_key'            => ($islemag_section_category == "popular" ? 'wpb_post_views_count' : '' ) , 
+                'orderby'             => ($islemag_section_category == "popular" ? 'meta_value_num' : '' ) , 
+                'order'               => 'ASC', 
                 'no_found_rows'       => true,
                 'post_status'         => 'publish',
                 'ignore_sticky_posts' => true,
-                'category_name' 	  => (!empty($islemag_section4_category) && $islemag_section4_category != 'all' && $islemag_section4_category !='popular' ? $islemag_section4_category : ''),
+                'category_name' 	  => (!empty($islemag_section_category) && $islemag_section_category != 'all' && $islemag_section_category !='popular' ? $islemag_section_category : ''),
             ) );
 
         

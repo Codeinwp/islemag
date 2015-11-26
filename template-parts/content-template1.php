@@ -1,27 +1,35 @@
 <div class="post-section">
-    <h2 class="title-border title-bg-line red mb30"><span><?php echo $title; ?></span></h2>
+    <?php
+        $choosed_color = array_rand($colors, 1);
+    ?>
+    <h2 class="title-border title-bg-line <?php echo $colors[$choosed_color];?> mb30"><span><?php if(!empty($islemag_section_title)) echo $islemag_section_title; ?></span></h2>
     <div class="owl-carousel mpopular-posts smaller-nav no-radius">
 
-            <?php 
-            $popularpost = new WP_Query( 
-                    array( 
-                            'posts_per_page' => 4, 
-                            'meta_key' => ($cat == "Popular Posts" ? 'wpb_post_views_count' : '' ) , 
-                            'orderby' => ($cat == "Popular Posts" ? 'meta_value_num' : '' ) , 
-                            'order' => 'ASC', 
-                            'category_name' => ($cat != "popular" && $cat != "all" ? $cat : '' )));
+            <?php
+
         
-            while ( $popularpost->have_posts() ) : $popularpost->the_post();
-                $colors = array("red", "orange", "blue", "green", "purple", "pink", "yellow");
+        
+            $wp_query = new WP_Query( 
+                    array( 
+                            'posts_per_page'        => $postperpage, 
+                            'meta_key'              => ($islemag_section_category == "popular" ? 'wpb_post_views_count' : '' ) , 
+                            'orderby'               => ($islemag_section_category == "popular" ? 'meta_value_num' : '' ) , 
+                            'order'                 => 'ASC',
+                            'post_status'           => 'publish',
+                            'category_name'         =>  (!empty($islemag_section_category) && $islemag_section_category != 'all' && $islemag_section_category !='popular' ? $islemag_section_category : '')
+                        )
+            );
+        
+            while ( $wp_query->have_posts() ) : $wp_query->the_post();
                 $choosed_color = array_rand($colors, 1);
                 $category = get_the_category();
             ?>
 
                 <article class="entry entry-overlay entry-block <?php echo $colors[$choosed_color];?>">
-                    <a href="#" class="category-block" title="Category Travel"><?php echo $category[0]->cat_name;?></a>
+                    <a href="<?php echo get_category_link($category[0]->cat_ID);?>" class="category-block" title="Category <?php echo $category[0]->cat_name;?>"><?php echo $category[0]->cat_name;?></a>
                     <div class="entry-media">
                         <figure>
-                            <a href="single.html" title="Ipsa quasi praesentium eos">
+                            <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
                                  <?php
                                     if(has_post_thumbnail()){
                                         the_post_thumbnail('main-slider');

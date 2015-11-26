@@ -46,29 +46,44 @@ get_header(); ?>
         <div class="row">
             <div class="col-md-9">
                 <?php 
-                    $title = get_theme_mod('islemag_section1_title','Section 1');
-                    $cat = get_theme_mod('islemag_section1_category','all');
+                    $colors = array("red", "orange", "blue", "green", "purple", "pink", "yellow");
+                    
+                    $islemag_section_title = get_theme_mod('islemag_section1_title',esc_html__('Template 1','islemag'));
+                    $islemag_section_category = get_theme_mod('islemag_section1_category');
+                    $islemag_section_max_posts = get_theme_mod('islemag_section1_max_posts',-1);
+                    $postperpage = get_theme_mod('islemag_section1_posts_per_page',6);
                     include(locate_template('template-parts/content-template1.php')); ?>
                 
-                
-                <?php 
-                    $title = get_theme_mod('islemag_section2_title','Section 2');
-                    $cat = get_theme_mod('islemag_section1_category','all');
+                <?php
+                    $islemag_section_title = get_theme_mod('islemag_section2_title',esc_html__('Template 2','islemag'));
+                    $islemag_section_category = get_theme_mod('islemag_section2_category');
+                    $islemag_section_max_posts = get_theme_mod('islemag_section2_max_posts',-1);
                     include(locate_template('template-parts/content-template2.php')); ?>
                 
                 
                 <?php 
-                    $title = get_theme_mod('islemag_section3_title','Section 3');
-                    $cat = get_theme_mod('islemag_section3_category','all');
+                    $islemag_section_title = get_theme_mod('islemag_section3_title',esc_html__('Template 3','islemag'));
+                    $islemag_section_category = get_theme_mod('islemag_section3_category');
+                    $islemag_section_max_posts = get_theme_mod('islemag_section3_max_posts',-1);
+                    $postperpage = get_theme_mod('islemag_section3_posts_per_page',6);
                     include(locate_template('template-parts/content-template1.php')); ?>
                 
                 
                 <?php 
-                    $title = get_theme_mod('islemag_section4_title','Section 4');
-                    $cat = get_theme_mod('islemag_section4_category','all');
+                    $islemag_section_title = get_theme_mod('islemag_section4_title',esc_html__('Template 4','islemag'));
+                    $islemag_section_category = get_theme_mod('islemag_section4_category');
+                    $islemag_section_max_posts = get_theme_mod('islemag_section4_max_posts',-1);
+                    $postperpage = get_theme_mod('islemag_section4_posts_per_page',6);
                     include(locate_template('template-parts/content-template3.php'));
                 ?>
-                <?php get_template_part('template-parts/content','template4'); ?>
+                
+                <?php 
+                    $islemag_section_title = get_theme_mod('islemag_section5_title',esc_html__('Template 5','islemag'));
+                    $islemag_section_category = get_theme_mod('islemag_section5_category');
+                    $islemag_section_max_posts = get_theme_mod('islemag_section5_max_posts',-1);
+                    $postperpage = get_theme_mod('islemag_section5_posts_per_page',6);
+                    include(locate_template('template-parts/content-template4.php'));
+                ?>
             </div>
             
             <?php get_sidebar(); ?>
