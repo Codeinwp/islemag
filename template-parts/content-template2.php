@@ -12,7 +12,8 @@
                             'posts_per_page' => $islemag_section_max_posts, 
                             'meta_key' => ($islemag_section_category == "popular" ? 'wpb_post_views_count' : '' ) , 
                             'orderby' => ($islemag_section_category == "popular" ? 'meta_value_num' : '' ) , 
-                            'order' => 'ASC', 
+                            'order' => 'ASC',
+                            'ignore_sticky_posts' => true,
                             'category_name' => ($islemag_section_category != "popular" && $islemag_section_category != "all" ? $islemag_section_category : '' )
                     )
                 );
@@ -43,7 +44,7 @@
 
                             <h3 class="entry-title"><a href="<?php the_permalink(); ?>"><?php the_title();?></a></h3>
                             <div class="entry-meta">
-                                <span class="entry-overlay-date"><i class="fa fa-calendar"></i>><?php echo get_the_date( 'j M' ); ?></span>
+                                <span class="entry-overlay-date"><i class="fa fa-calendar"></i><?php echo get_the_date( 'j M' ); ?></span>
                                 <span class="entry-separator">/</span>
                                 <a href="<?php the_permalink(); ?>" class="entry-comments"><?php comments_number( '0 Comments', '1 Comment', '% Comments' ); ?></a>
                                 <div>

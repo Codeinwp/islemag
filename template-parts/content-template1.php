@@ -11,11 +11,12 @@
         
             $wp_query = new WP_Query( 
                     array( 
-                            'posts_per_page'        => $postperpage, 
+                            'posts_per_page'        => $islemag_section_max_posts, 
                             'meta_key'              => ($islemag_section_category == "popular" ? 'wpb_post_views_count' : '' ) , 
                             'orderby'               => ($islemag_section_category == "popular" ? 'meta_value_num' : '' ) , 
                             'order'                 => 'ASC',
                             'post_status'           => 'publish',
+                            'ignore_sticky_posts'   => true,
                             'category_name'         =>  (!empty($islemag_section_category) && $islemag_section_category != 'all' && $islemag_section_category !='popular' ? $islemag_section_category : '')
                         )
             );

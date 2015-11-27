@@ -1,4 +1,12 @@
 jQuery(document).ready(function() {
+    
+    
+    jQuery("[data-target='#header-search-form']").on('click', function(e) {
+            jQuery('#header-search-form').slideToggle('collapse');
+            e.preventDefault();
+    });
+    
+    
     jQuery('.owl-carousel.magazine-top-carousel').owlCarousel({
         loop:true,
         margin:0,
@@ -77,7 +85,7 @@ jQuery(document).ready(function() {
                 items:2
             },
             992: {
-                items:3
+                items:2
             }
         }
     });

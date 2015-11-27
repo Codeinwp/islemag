@@ -51,6 +51,8 @@ function islemag_setup() {
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
 		'primary' => esc_html__( 'Primary Menu', 'islemag' ),
+		'footer'  => esc_html__( 'Footer Menu', 'islemag'),
+		'header'  => esc_html__( 'Header Menu', 'islemag')
 	) );
 
 	/*
@@ -128,13 +130,58 @@ add_action( 'after_setup_theme', 'islemag_content_width', 0 );
 function islemag_widgets_init() {
 	register_sidebar( array(
 		'name'          => esc_html__( 'Sidebar', 'islemag' ),
-		'id'            => 'sidebar-1',
+		'id'            => 'islemag-sidebar',
 		'description'   => '',
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</div>',
 		'before_title'  => '<h3 class="title-border blue title-bg-line"><span>',
 		'after_title'   => '</span></h3>',
 	) );
+	
+	register_sidebar(
+		array(
+			'name' => esc_html__('Footer area 1','islemag'),
+			'id' => 'islemag-first-footer-area',
+			'before_widget'	=> '<div id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</div>',
+			'before_title'	=> '<h3 class="widget-title">',
+			'after_title'	=> '</h3>'
+		) 
+	);
+		
+	register_sidebar(
+		array(
+			'name' => esc_html__('Footer area 2','islemag'),
+			'id' => 'islemag-second-footer-area',
+			'before_widget'	=> '<div id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</div>',
+			'before_title'	=> '<h3 class="widget-title">',
+			'after_title'	=> '</h3>'
+		) 
+	);
+		
+	register_sidebar(
+		array(
+			'name' => esc_html__('Footer area 3','islemag'),
+			'id' => 'islemag-third-footer-area',
+			'before_widget'	=> '<div id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</div>',
+			'before_title'	=> '<h3 class="widget-title">',
+			'after_title'	=> '</h3>'
+		) 
+	);
+		
+	register_sidebar(
+		array(
+			'name' => esc_html__('Footer area 4','islemag'),
+			'id' => 'islemag-fourth-footer-area',
+			'before_widget'	=> '<div id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</div>',
+			'before_title'	=> '<h3 class="widget-title">',
+			'after_title'	=> '</h3>'
+		) 
+	);
+	
 }
 add_action( 'widgets_init', 'islemag_widgets_init' );
 

@@ -44,14 +44,13 @@ get_header(); ?>
     
     <div class="container">
         <div class="row">
-            <div class="col-md-9">
+            <div class="<?php if ( !is_active_sidebar( 'islemag-sidebar' ) ) { echo 'col-md-12';} else { echo 'col-md-9'; } ?>">
                 <?php 
                     $colors = array("red", "orange", "blue", "green", "purple", "pink", "yellow");
                     
                     $islemag_section_title = get_theme_mod('islemag_section1_title',esc_html__('Template 1','islemag'));
                     $islemag_section_category = get_theme_mod('islemag_section1_category');
                     $islemag_section_max_posts = get_theme_mod('islemag_section1_max_posts',-1);
-                    $postperpage = get_theme_mod('islemag_section1_posts_per_page',6);
                     include(locate_template('template-parts/content-template1.php')); ?>
                 
                 <?php
@@ -64,8 +63,7 @@ get_header(); ?>
                 <?php 
                     $islemag_section_title = get_theme_mod('islemag_section3_title',esc_html__('Template 3','islemag'));
                     $islemag_section_category = get_theme_mod('islemag_section3_category');
-                    $islemag_section_max_posts = get_theme_mod('islemag_section3_max_posts',-1);
-                    $postperpage = get_theme_mod('islemag_section3_posts_per_page',6);
+                    $islemag_section_max_posts = get_theme_mod('islemag_section3_max_posts');
                     include(locate_template('template-parts/content-template1.php')); ?>
                 
                 
@@ -81,12 +79,12 @@ get_header(); ?>
                     $islemag_section_title = get_theme_mod('islemag_section5_title',esc_html__('Template 5','islemag'));
                     $islemag_section_category = get_theme_mod('islemag_section5_category');
                     $islemag_section_max_posts = get_theme_mod('islemag_section5_max_posts',-1);
-                    $postperpage = get_theme_mod('islemag_section5_posts_per_page',6);
                     include(locate_template('template-parts/content-template4.php'));
                 ?>
             </div>
             
             <?php get_sidebar(); ?>
+
         </div>
 
     </div>
