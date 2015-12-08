@@ -89,4 +89,33 @@ jQuery(document).ready(function() {
             }
         }
     });
+    
+    
+    jQuery('.owl-carousel.blog-related-carousel').owlCarousel({
+        loop:false,
+        margin:15,
+        responsiveClass:true,
+        nav:true,
+        navText: ['<i class="fa fa-angle-left">', '<i class="fa fa-angle-right">'],
+        dots: false,
+        responsive:{
+            0:{
+                items:1,
+            },
+            480: {
+                items:2
+            },
+            1200:{
+                items:3,
+            }
+        }
+    });
+    
+    jQuery('.related-show-on-click').click(function(){
+        jQuery('.islemag-cat-show-on-click').show();
+        jQuery(this).hide()
+    });
+    
+    
+    
 });

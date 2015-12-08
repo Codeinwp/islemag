@@ -12,6 +12,6 @@ if ( ! is_active_sidebar( 'islemag-sidebar' ) ) {
 }
 ?>
 
-<aside class="col-md-3 sidebar" role="complementary">
+<aside class="col-md-3 sidebar islemag-content-right " role="complementary">
 	<?php dynamic_sidebar( 'islemag-sidebar' ); ?>
 </aside><!-- #secondary -->

@@ -44,7 +44,7 @@ get_header(); ?>
     
     <div class="container">
         <div class="row">
-            <div class="<?php if ( !is_active_sidebar( 'islemag-sidebar' ) ) { echo 'col-md-12';} else { echo 'col-md-9'; } ?>">
+            <div class="islemag-content-left <?php if ( !is_active_sidebar( 'islemag-sidebar' ) ) { echo 'col-md-12';} else { echo 'col-md-9'; } ?>">
                 <?php 
                     $colors = array("red", "orange", "blue", "green", "purple", "pink", "yellow");
                     

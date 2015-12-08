@@ -56,20 +56,6 @@
 
                         <div class="pull-right">
                             <button type="button" class="navbar-btn btn-icon pull-right last" data-toggle="collapse" data-target="#header-search-form"><i class="fa fa-search"></i></button>
-                            
-                            
-                            
-                          
-                               <!-- <a class="dropdown-toggle" href="#" id="account-dropdown" data-toggle="dropdown" aria-expanded="true">
-                                My Account
-                                <span class="angle"></span>
-                                </a>
-                                <ul class="dropdown-menu" role="menu" aria-labelledby="account-dropdown">
-                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="shop-dashboard.html">My Account</a></li>
-                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="login.html">Login</a></li>
-                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="register.html">Register</a></li>
-                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">My Wishlist</a></li>
-                                </ul>-->
                                 
                                 <?php
 
@@ -93,7 +79,59 @@
                     </div><!-- End .container-fluid -->
                 </div><!-- End .navbar-top -->
             
-                
+                <div class="row">
+                    <div class="col-md-3 navbar-brand">
+                        <?php
+                            global $wp_customize;
+                            $islemag_logo = get_theme_mod('islemag_logo');
+
+
+
+                            if(!empty($islemag_logo)):
+
+                                echo '<a href="'.esc_url( home_url( '/' ) ).'" title="'.get_bloginfo('title').'">';
+
+                                echo '<img src="'.esc_url($islemag_logo).'" alt="'.get_bloginfo('title').'">';
+
+                                echo '</a>';
+
+                                echo '<div class="header-logo-wrap text-header islemag_only_customizer">';
+
+                                echo '<h1 itemprop="headline" id="site-title" class="site-title"><a href="'.esc_url( home_url( '/' ) ).'" title="'.esc_attr( get_bloginfo( 'name', 'display' ) ).'" rel="home">'.get_bloginfo( 'name' ).'</a></h1>';
+
+                                echo '<p itemprop="description" id="site-description" class="site-description">'.get_bloginfo( 'description' ).'</p>';
+
+                                echo '</div>';	
+
+                            else:
+
+                                if( isset( $wp_customize ) ):
+
+                                    echo '<a href="'.esc_url( home_url( '/' ) ).'" class="islemag_only_customizer" title="'.get_bloginfo('title').'">';
+
+                                    echo '<img src="" alt="'.get_bloginfo('title').'">';
+
+                                    echo '</a>';
+
+                                endif;
+
+                                echo '<div class="header-logo-wrap text-header">';
+
+                                echo '<h1 itemprop="headline" id="site-title" class="site-title"><a href="'.esc_url( home_url( '/' ) ).'" title="'.esc_attr( get_bloginfo( 'name', 'display' ) ).'" rel="home">'.get_bloginfo( 'name' ).'</a></h1>';
+
+                                echo '<p itemprop="description" id="site-description" class="site-description">'.get_bloginfo( 'description' ).'</p>';
+
+                                echo '</div>';
+
+                            endif;	
+
+                        ?>
+                    </div>
+
+                    <div class="col-md-9 islemag-banner">
+                        <img src="<?php echo( get_header_image() ); ?>" alt="<?php echo( get_bloginfo( 'title' ) ); ?>" />
+                    </div>
+                </div>
 
                 
                 <nav id="site-navigation" class="main-navigation" role="navigation">
@@ -118,6 +156,8 @@
                 </nav><!-- #site-navigation -->
             
             </div>
+            
+            
             <div class="collapse navbar-white" id="header-search-form">
                 <form class="navbar-form animated fadeInDown"  role="search">
                     <input type="search" id="s" name="s" class="form-control" placeholder="Search in here...">

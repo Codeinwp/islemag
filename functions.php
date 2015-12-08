@@ -45,6 +45,8 @@ function islemag_setup() {
 		add_image_size( 'main-slider', 400, 400, true );
 		add_image_size( 'sections-small-thumbnail', 110, 110, true );
 		add_image_size( 'section4-big-thumbnail', 420, 420, true );
+		add_image_size( 'author-avatar', 90, 90, true );
+		add_image_size( 'related-post', 348, 194, true );
 	}
 
 
@@ -81,8 +83,10 @@ function islemag_setup() {
 
 	// Set up the WordPress core custom background feature.
 	add_theme_support( 'custom-background', apply_filters( 'islemag_custom_background_args', array(
-		'default-color' => 'red',
-		'default-image' => '',
+		'default-image' => '%1$s/img/background.jpg',
+		'default-repeat'         => 'no-repeat',
+		'default-position-x'     => 'center',
+		'default-attachment'     => 'fixed',
 	) ) );
 	
 	// Header image
@@ -324,4 +328,61 @@ function wpb_get_post_views($postID){
 function more_posts() {
   global $wp_query;
   return $wp_query->current_post + 1 < $wp_query->post_count;
+}
+
+
+function get_excerpt(){
+	$excerpt = get_the_content();
+	$permalink = get_the_permalink();
+	$excerpt = preg_replace(" (\[.*?\])",'',$excerpt);
+	$excerpt = strip_shortcodes($excerpt);
+	$excerpt = strip_tags($excerpt);
+	$excerpt = substr($excerpt, 0, 140);
+	$excerpt = substr($excerpt, 0, strripos($excerpt, " "));
+	$excerpt = trim(preg_replace( '/\s+/', ' ', $excerpt));
+	$excerpt = $excerpt.'...';
+	return $excerpt;
+}
+
+
+function islemag_comment($comment, $args, $depth) {
+	$GLOBALS['comment'] = $comment;
+	extract($args, EXTR_SKIP);
+
+	if ( 'div' == $args['style'] ) {
+		$tag = 'div';
+		$add_below = 'comment';
+	} else {
+		$tag = 'li';
+		$add_below = 'div-comment';
+	}
+?>
+	<<?php echo $tag ?> <?php comment_class( empty( $args['has_children'] ) ? '' : 'parent' ) ?> id="comment-<?php comment_ID() ?>">
+	<?php if ( 'div' != $args['style'] ) : ?>
+	<div id="div-comment-<?php comment_ID() ?>" class="comment-body">
+	<?php endif; ?>
+		
+		
+	<div class="comment-author vcard">
+		<?php if ( $args['avatar_size'] != 0 ) echo get_avatar( $comment, $args['avatar_size'] ); ?>
+		<?php printf( __( '<h4 class="media-heading">%s</h4><span class="comment-date">(%2$s - %3$s)</span>' ), get_comment_author_link(), get_comment_date(),  get_comment_time() ); ?><?php edit_comment_link( __( '(Edit)' ), '  ', '' ); ?>
+		<div class="reply pull-right reply-link"> <?php comment_reply_link( array_merge( $args, array( 'add_below' => $add_below, 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?> </div>
+	</div>
+		
+		
+	<?php if ( $comment->comment_approved == '0' ) : ?>
+		<em class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.' ); ?></em>
+		<br />
+	<?php endif; ?>
+
+
+
+	<div class="media-body">
+		<?php comment_text(); ?>
+	</div>
+		
+	<?php if ( 'div' != $args['style'] ) : ?>
+	</div>
+	<?php endif; ?>
+<?php
 }
