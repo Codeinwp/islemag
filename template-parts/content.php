@@ -9,27 +9,29 @@
 
 ?>
 
+<article id="post-<?php the_ID(); ?>" <?php post_class("entry"); ?>>
 
+	<div class="entry-media">
+		<figure>
+			<a href="<?php the_permalink(); ?>">
+			 <?php
+				if(has_post_thumbnail()){
+					the_post_thumbnail('blog-post');
+				} else {
+					echo '<img src="'.get_template_directory_uri().'/img/blogpost-placeholder.jpg" />';
+				}
+			?>
+			</a>
+		</figure>
+	</div><!-- End .entry-media -->
 
-
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
-		<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
-
-		<?php if ( 'post' === get_post_type() ) : ?>
-		<div class="entry-meta">
-			<?php islemag_posted_on(); ?>
-		</div><!-- .entry-meta -->
-		<?php endif; ?>
-	</header><!-- .entry-header -->
-
+	<span class="entry-date">24<span>Feb</span></span>
+	<span class="entry-format"><i class="fa fa-file-image-o"></i></span>
+	<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
+	
 	<div class="entry-content">
 		<?php
-			the_content( sprintf(
-				/* translators: %s: Name of current post. */
-				wp_kses( __( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'islemag' ), array( 'span' => array( 'class' => array() ) ) ),
-				the_title( '<span class="screen-reader-text">"', '"</span>', false )
-			) );
+			the_excerpt();
 		?>
 
 		<?php
@@ -39,8 +41,10 @@
 			) );
 		?>
 	</div><!-- .entry-content -->
-
+	
 	<footer class="entry-footer">
 		<?php islemag_entry_footer(); ?>
 	</footer><!-- .entry-footer -->
-</article><!-- #post-## -->
+	
+
+</article>

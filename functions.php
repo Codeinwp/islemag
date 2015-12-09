@@ -47,6 +47,7 @@ function islemag_setup() {
 		add_image_size( 'section4-big-thumbnail', 420, 420, true );
 		add_image_size( 'author-avatar', 90, 90, true );
 		add_image_size( 'related-post', 348, 194, true );
+		add_image_size( 'blog-post', 770, 430, true );
 	}
 
 

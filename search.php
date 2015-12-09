@@ -8,9 +8,10 @@
  */
 
 get_header(); ?>
+<div class="container">
+    <div class="row">
+        <div class="islemag-content-left <?php if ( !is_active_sidebar( 'islemag-sidebar' ) ) { echo 'col-md-12';} else { echo 'col-md-9'; } ?>">
 
-	<section id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
 
 		<?php if ( have_posts() ) : ?>
 
@@ -40,8 +41,8 @@ get_header(); ?>
 
 		<?php endif; ?>
 
-		</main><!-- #main -->
-	</section><!-- #primary -->
-
+		</div>
 <?php get_sidebar(); ?>
+	</div>
+</div>
 <?php get_footer(); ?>
