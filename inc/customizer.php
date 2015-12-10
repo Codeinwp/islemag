@@ -73,6 +73,19 @@ function islemag_customize_register( $wp_customize ) {
 	      	'section'  => 'islemag_appearance_general',
 			'priority'    => 1,
 	)));
+    
+	$wp_customize->add_setting( 'islemag_banner_link', array(
+		'default' => '#',
+		'sanitize_callback' => 'islemag_sanitize_text',
+		//'transport' => 'postMessage'
+	));
+	
+	$wp_customize->add_control( 'islemag_banner_link', array(
+		'label'    => esc_html__( 'Banner link', 'islemag' ),
+		'section'  => 'islemag_appearance_general',
+		//'active_callback' => 'parallax_one_show_on_front',
+		'priority'    => 1
+	));
 	
 	/*** SECTIONS ***/
 	$wp_customize->add_panel( 'sections_panel', array(
