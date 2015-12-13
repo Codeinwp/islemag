@@ -18,7 +18,6 @@ class IseleMagCategorySelector extends WP_Customize_Control {
             <span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
             <select <?php $this->link(); ?>>
                 <option value="all"><?php esc_html_e('All','islemag');?></option>
-                <option value="popular"><?php esc_html_e('Popular Posts','islemag');?></option>
                 <?php
                     if(!empty($categories)){
                         foreach($categories as $cat){

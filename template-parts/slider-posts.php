@@ -19,12 +19,14 @@ $choosed_color = array_rand($colors, 1);
 			<a href="<?php the_permalink(); ?>" title="Ipsa quasi praesentium eos">
 				<?php
 				if(has_post_thumbnail()){
-					the_post_thumbnail('main-slider');
+					$thumb = wp_get_attachment_image_src( get_post_thumbnail_id($wp_query->ID), 'main-slider' );
+					$url = $thumb['0'];
+					echo '<img class="owl-lazy" data-src="'.$url.'" />';
 				} else {
-					echo '<img src="'.get_template_directory_uri().'/img/placeholder-image.png" />';
+					echo '<img class="owl-lazy" data-src="'.get_template_directory_uri().'/img/placeholder-image.png" />';
 				}
 				?>
-				
+
 			</a>
 		</figure>
 	</div><!-- End .entry-media -->

@@ -1760,6 +1760,58 @@ a.text-white:focus {
 }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* ============================================
 ---------------  3.Navbar TOP -----------------
 ===============================================*/
@@ -1913,7 +1965,6 @@ a.text-white:focus {
         border: none;
     }
 }
-
 
 /* ============================================
 -------------- 3.Header Main Nav ---------------
@@ -2161,44 +2212,42 @@ a.text-white:focus {
 	display: none;
 }
 
+/* ============================================
+-------------- 3.Template none ----------------
+===============================================*/
 
+.no-results{
+	text-align: center;
+}
 
+.no-results .page-header .page-title{
+	font-size:36px;
+}
 
+.no-results .page-content .search-form input{
+	font: 500 16px/1.5 'Raleway', Verdana;
+}
 
+.no-results .page-content .search-form button{
+	padding: 6px;
+	vertical-align: top;
+	font-size: 16px;
+}
 
+/* ============================================
+---------------- 3.Section 1 ------------------
+===============================================*/
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.islemag-template1 .entry-media, .islemag-template1 .entry-media figure img{
+	max-height: 370px;
+}
 
 
 /************* OWL ********************/
 
 /*
- * 	Owl Carousel - Auto Height Plugin
- */
+* 	Owl Carousel - Auto Height Plugin
+*/
 .owl-height {
 	-webkit-transition: height 500ms ease-in-out;
 	-moz-transition: height 500ms ease-in-out;
@@ -2208,8 +2257,8 @@ a.text-white:focus {
 }
 
 /*
- *  Core Owl Carousel CSS File
- */
+*  Core Owl Carousel CSS File
+*/
 .owl-carousel {
 	display: none;
 	width: 100%;
@@ -2305,8 +2354,8 @@ a.text-white:focus {
 }
 
 /*
- * 	Owl Carousel - Lazy Load Plugin
- */
+* 	Owl Carousel - Lazy Load Plugin
+*/
 .owl-carousel .owl-item .owl-lazy {
 	opacity: 0;
 	-webkit-transition: opacity 400ms ease;
@@ -2320,8 +2369,8 @@ a.text-white:focus {
 }
 
 /*
- * 	Owl Carousel - Video Plugin
- */
+* 	Owl Carousel - Video Plugin
+*/
 .owl-carousel .owl-video-wrapper {
 	position: relative;
 	height: 100%;
@@ -2642,6 +2691,30 @@ styled buttons not container for vertical centered navs*/
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* ----------  index23-24  -----------
 Magazine Homepages --------------------*/
 
@@ -2701,7 +2774,7 @@ Magazine Homepages --------------------*/
 	-webkit-transform:translate3d(0, 100%, 0);
 }
 
-.magazine-top-container .entry-block{
+.islemag-top-container .entry-block{
 	max-height: 400px;
 }
 
@@ -2944,15 +3017,15 @@ Magazine Homepages --------------------*/
 	border-radius: 0;
 }
 
-.magazine-top-container {
+.islemag-top-container {
 	margin-bottom: 40px;
 }
 
-.magazine-top-container .entry-block .entry-overlay-meta .entry-title a {
+.islemag-top-container .entry-block .entry-overlay-meta .entry-title a {
 	display: block;
 }
 
-.magazine-top-container.larger {
+.islemag-top-container.larger {
 	margin-bottom: 60px;
 }
 
@@ -5153,10 +5226,6 @@ Blog Homepages ---------------------*/
 	z-index:10;
 }
 
-.entry-media {
-	margin-bottom:20px;
-}
-
 .entry-media,
 .entry-media figure {
 	position: relative;
@@ -5192,12 +5261,6 @@ Blog Homepages ---------------------*/
 .event:hover .entry-media.embed-responsive:after {
 	opacity:0;
 	visibility: hidden;
-}
-
-.entry-media img {
-	display:block;
-	width:100%;
-	height: auto;
 }
 
 .entry-title {
@@ -6169,7 +6232,14 @@ Blog Homepages ---------------------*/
 
 
 
-
+#owl-demo .item{
+  margin: 3px;
+}
+#owl-demo .item img{
+  display: block;
+  width: 100%;
+  height: auto;
+}
 
 
 

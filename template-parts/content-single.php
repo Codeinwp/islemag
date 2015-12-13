@@ -54,7 +54,7 @@
                                 <a href="#" class="entry-comments"><?php comments_number( esc_html__('No Responses','islemag'), esc_html__('One Response','islemag'), esc_html__('% Responses','islemag') ); ?></a>
                                 <span class="entry-separator">/</span>
                                 by <a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>" class="entry-author"><?php the_author(); ?></a>
-                                
+
                             </footer>
 
                             <div class="about-author clearfix">
@@ -65,20 +65,20 @@
                                     if(!empty($profile_pic)){
                                 ?>
                                 <figure class="pull-left">
-                                    <?php echo $profile_pic; ?>                                
+                                    <?php echo $profile_pic; ?>
                                 </figure>
                                 <?php
                                     }
                                 ?>
                                 <div class="author-content">
-                                    <?php echo get_the_author_meta( 'description', $author_id ); ?> 
+                                    <?php echo get_the_author_meta( 'description', $author_id ); ?>
                                 </div><!-- End .athor-content -->
                             </div><!-- End .about-author -->
 
                         </article>
-                        
-                        
-                        
+
+
+
                         <h3 class="mb30 title-underblock custom">Related Posts</h3>
                         <div class="blog-related-carousel owl-carousel small-nav">
                             <?php
@@ -91,25 +91,27 @@
                                                 <div class="entry-media">
                                                     <figure>
                                                         <a href="<?php the_permalink(); ?>">
-                                                            <?php 
-                                                            if ( has_post_thumbnail() ) { 
-                                                                the_post_thumbnail('related-post');  
+                                                            <?php
+                                                            if ( has_post_thumbnail() ) {
+                                                                $thumb = wp_get_attachment_image_src( get_post_thumbnail_id($wp_query->ID), 'related-post' );
+                                                      					$url = $thumb['0'];
+                                                      					echo '<img class="owl-lazy" data-src="'.$url.'" />';
                                                             } else {
-                                                                echo '<img src="'.get_template_directory_uri().'/img/related-placeholder.jpg"/>';
+                                                                echo '<img class="owl-lazy" data-src="'.get_template_directory_uri().'/img/related-placeholder.jpg"/>';
                                                             } ?>
                                                         </a>
                                                     </figure>
                                                 </div><!-- End .entry-media -->
                                         </div><!-- End .entry-media -->
-                                        
+
                                         <div class="entry-content-wrapper">
                                             <span class="entry-date"><?php echo get_the_date( 'd' ); ?><span><?php echo strtoupper(get_the_date( 'M' )); ?></span></span>
                                             <h2 class="entry-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
                                             <div class="entry-content">
-                                                <p><?php echo get_excerpt(); ?></p>
+                                                <p><?php echo islemag_get_excerpt(); ?></p>
                                             </div><!-- End .entry-content -->
                                         </div><!-- End .entry-content-wrapper -->
-                                        
+
                                         <footer class="entry-footer clearfix">
                                             <?php $category = get_the_category();?>
                                             <span class="entry-cats">
@@ -140,13 +142,13 @@
                                         </footer>
                                     </article>
                                 <?php }
-                                wp_reset_postdata(); 
+                                wp_reset_postdata();
                             ?>
-                                
-                                
 
 
-                            
+
+
+
                         </div><!-- End .blog-related-carousel -->
 
 
