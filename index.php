@@ -54,39 +54,95 @@ get_header(); ?>
 						<?php
 					      $colors = array("red", "orange", "blue", "green", "purple", "pink", "yellow");
 
-					      $islemag_section_title = get_theme_mod( 'islemag_section1_title', esc_html__( 'Section 1', 'islemag' ) );
+            ?>
+            <div class="islemag-section1">
+              <?php
+              $islemag_section_title = get_theme_mod( 'islemag_section1_title', esc_html__( 'Section 1', 'islemag' ) );
+              if( !empty( $islemag_section_title ) ) {
+                $choosed_color = array_rand($colors, 1);
+              ?>
+              <h2 class="title-border title-bg-line <?php echo $colors[$choosed_color];?> mb30"><span><?php echo $islemag_section_title; ?></span></h2>
+              <?php } else {
+                global $wp_customize;
+                if( isset( $wp_customize ) ) {?>
+                  <h2 class="title-border title-bg-line islemag_only_customizer <?php echo $colors[$choosed_color];?> mb30"><span></span></h2>
+              <?php } }
 					      $islemag_section_category = get_theme_mod( 'islemag_section1_category', 'all' );
 					      $islemag_section_max_posts = get_theme_mod( 'islemag_section1_max_posts', 6 );
 					      include( locate_template( 'template-parts/content-template1.php' ) ); ?>
+            </div>
 
-					  <?php
-					      $islemag_section_title = get_theme_mod( 'islemag_section2_title', esc_html__( 'Section 2','islemag' ) );
-					      $islemag_section_category = get_theme_mod( 'islemag_section2_category', 'all' );
-					      $islemag_section_max_posts = get_theme_mod( 'islemag_section2_max_posts', 6 );
-					      include( locate_template( 'template-parts/content-template2.php' ) ); ?>
+            <div class="islemag-section2">
+              <?php
+              $islemag_section_title = get_theme_mod( 'islemag_section2_title', esc_html__( 'Section 2','islemag' ) );
+              if( !empty( $islemag_section_title ) ) {
+                $choosed_color = array_rand($colors, 1); ?>
+                <h2 class="title-border title-bg-line <?php echo $colors[$choosed_color];?> mb30"><span><?php echo $islemag_section_title; ?></span></h2>
+              <?php
+              } else {
+                global $wp_customize;
+                if( isset( $wp_customize ) ) {?>
+                  <h2 class="title-border title-bg-line islemag_only_customizer <?php echo $colors[$choosed_color];?> mb30"><span></span></h2>
+              <?php
+                }
+              }
+				      $islemag_section_category = get_theme_mod( 'islemag_section2_category', 'all' );
+				      $islemag_section_max_posts = get_theme_mod( 'islemag_section2_max_posts', 6 );
+				      include( locate_template( 'template-parts/content-template2.php' ) ); ?>
+            </div> <!-- End .islemag-section2 -->
 
 
-					    <?php
-					      $islemag_section_title = get_theme_mod( 'islemag_section3_title', esc_html__( 'Section 3','islemag' ) );
-					      $islemag_section_category = get_theme_mod( 'islemag_section3_category', 'all' );
-					      $islemag_section_max_posts = get_theme_mod( 'islemag_section3_max_posts', 6 );
-					      include( locate_template( 'template-parts/content-template1.php' ) ); ?>
+            <div class="islemag-section3">
+              <?php
+              $islemag_section_title = get_theme_mod( 'islemag_section3_title', esc_html__( 'Section 3','islemag' ) );
+              if( !empty( $islemag_section_title ) ) {
+                $choosed_color = array_rand($colors, 1); ?>
+                <h2 class="title-border title-bg-line <?php echo $colors[$choosed_color];?> mb30"><span><?php echo $islemag_section_title; ?></span></h2>
+              <?php
+              } else {
+                global $wp_customize;
+                if( isset( $wp_customize ) ) {?>
+                  <h2 class="title-border title-bg-line islemag_only_customizer <?php echo $colors[$choosed_color];?> mb30"><span></span></h2>
+              <?php
+                }
+              }
+				      $islemag_section_category = get_theme_mod( 'islemag_section3_category', 'all' );
+			        $islemag_section_max_posts = get_theme_mod( 'islemag_section3_max_posts', 6 );
+				      include( locate_template( 'template-parts/content-template1.php' ) ); ?>
+            </div> <!-- End .islemag-section3 -->
 
 
-					      <?php
-					      $islemag_section_title = get_theme_mod( 'islemag_section4_title', esc_html__( 'Section 4','islemag' ) );
-					      $islemag_section_category = get_theme_mod( 'islemag_section4_category', 'all' );
-					      $islemag_section_max_posts = get_theme_mod( 'islemag_section4_max_posts' , 12);
-					      $postperpage = get_theme_mod( 'islemag_section4_posts_per_page', 6 );
-					      include( locate_template( 'template-parts/content-template3.php' ) );
+            <div class="islemag-section4">
+              <?php
+              $islemag_section_title = get_theme_mod( 'islemag_section4_title', esc_html__( 'Section 4','islemag' ) );
+              if( !empty( $islemag_section_title ) ) {
+                $choosed_color = array_rand($colors, 1); ?>
+                <h2 class="title-border title-bg-line <?php echo $colors[$choosed_color];?> mb30"><span><?php echo $islemag_section_title; ?></span></h2>
+              <?php
+              } else {
+                global $wp_customize;
+                if( isset( $wp_customize ) ) {?>
+                  <h2 class="title-border title-bg-line islemag_only_customizer <?php echo $colors[$choosed_color];?> mb30"><span></span></h2>
+              <?php
+                }
+              }
+
+					    $islemag_section_category = get_theme_mod( 'islemag_section4_category', 'all' );
+					    $islemag_section_max_posts = get_theme_mod( 'islemag_section4_max_posts' , 12);
+					    $postperpage = get_theme_mod( 'islemag_section4_posts_per_page', 6 );
+					    include( locate_template( 'template-parts/content-template3.php' ) );
 					  ?>
+            </div>
 
+            <div class="islemag-section5">
 					  <?php
 					      $islemag_section_title = get_theme_mod( 'islemag_section5_title', esc_html__( 'Section 5',' islemag' ) );
 					      $islemag_section_category = get_theme_mod( 'islemag_section5_category', 'all' );
 					      $islemag_section_max_posts = get_theme_mod( 'islemag_section5_max_posts', 8 );
 					      include( locate_template( 'template-parts/content-template4.php' ) );
 					  ?>
+            </div>
+
           </div><!-- End .islemag-content-left -->
 					<?php get_sidebar(); ?>
 

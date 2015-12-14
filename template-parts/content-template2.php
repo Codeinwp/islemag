@@ -11,13 +11,9 @@ $wp_query = new WP_Query(
 
 if ( $wp_query->have_posts() ) : ?>
   <div class="post-section islemag-template2">
-    <?php $choosed_color = array_rand( $colors, 1 ); ?>
-    <h2 class="title-border title-bg-line <?php echo $colors[$choosed_color];?> mb30"><span><?php if( !empty( $islemag_section_title ) ) echo $islemag_section_title; ?></span></h2>
-    <div class="row">
+  <div class="row">
 
     <?php
-
-
       while ( $wp_query->have_posts() ) : $wp_query->the_post();
         $choosed_color = array_rand( $colors, 1 );
         $category = get_the_category();

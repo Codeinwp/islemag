@@ -108,76 +108,91 @@ function islemag_customize_register( $wp_customize ) {
 	) );
 
 	$wp_customize->add_setting( 'islemag_logo', array(
-			'sanitize_callback'			=> 'esc_url'
+			'sanitize_callback'			=> 'esc_url',
+			'transport'							=> 'postMessage'
 	) );
 
 	$wp_customize->add_setting( 'islemag_banner_link', array(
 			'default'								=> '#',
+			'transport'							=> 'postMessage',
 			'sanitize_callback'			=> 'esc_url'
 	) );
 
 	$wp_customize->add_setting( 'islemag_header_slider_category', array(
 			'default'								=> 'all',
+			'transport'							=> 'postMessage',
 			'sanitize_callback'			=> 'islemag_sanitize_category_dropdown'
 	) );
 
 	$wp_customize->add_setting( 'islemag_header_slider_max_posts', array(
 			'default'								=> 6,
+			'transport'							=> 'postMessage',
 			'sanitize_callback'			=> 'islemag_sanitize_number'
 	) );
 
 	$wp_customize->add_setting( 'islemag_section1_title', array(
 			'default'								=> esc_html__('Section 1','islemag'),
+			'transport'							=> 'postMessage',
 			'sanitize_callback'			=> 'islemag_sanitize_text'
 	) );
 
 	$wp_customize->add_setting( 'islemag_section1_category', array(
 			'default' 							=> 'all',
+			'transport'							=> 'postMessage',
 			'sanitize_callback'			=> 'islemag_sanitize_category_dropdown'
 	) );
 
 	$wp_customize->add_setting( 'islemag_section1_max_posts', array(
 			'default' 							=> 6,
+			'transport'							=> 'postMessage',
 			'sanitize_callback' 		=> 'islemag_sanitize_number'
 	) );
 
 	$wp_customize->add_setting( 'islemag_section2_title', array(
 			'default'								=> esc_html__( 'Section 2', 'islemag' ),
+			'transport'							=> 'postMessage',
 			'sanitize_callback'			=> 'islemag_sanitize_text'
 	) );
 
 	$wp_customize->add_setting( 'islemag_section2_category', array(
 			'default' 							=> 'all',
+			'transport'							=> 'postMessage',
 			'sanitize_callback' 		=> 'islemag_sanitize_category_dropdown'
 	) );
 
 	$wp_customize->add_setting( 'islemag_section2_max_posts', array(
 			'default' 							=> 6,
+			'transport'							=> 'postMessage',
 			'sanitize_callback' 		=> 'islemag_sanitize_number'
 	) );
 
 	$wp_customize->add_setting( 'islemag_section3_title', array(
 			'default' 							=> esc_html__( 'Section 3', 'islemag' ),
+			'transport'							=> 'postMessage',
 			'sanitize_callback' 		=> 'islemag_sanitize_text'
 	) );
 
 	$wp_customize->add_setting( 'islemag_section3_category', array(
 			'default' 							=> 'all',
+			'transport'							=> 'postMessage',
 			'sanitize_callback' 		=> 'islemag_sanitize_category_dropdown'
 	) );
 
 	$wp_customize->add_setting( 'islemag_section3_max_posts', array(
 			'default' 							=> 6,
+			'transport'							=> 'postMessage',
 			'sanitize_callback' 		=> 'islemag_sanitize_number'
 	) );
 
 	$wp_customize->add_setting( 'islemag_section4_title', array(
 			'default'								=> esc_html__('Section 4','islemag'),
+			'transport'							=> 'postMessage',
 			'sanitize_callback'			=> 'islemag_sanitize_text'
 	) );
 
 	$wp_customize->add_setting( 'islemag_section4_category', array(
 			'defalt'								=> 'all',
+			'transport'							=> 'postMessage',
 			'sanitize_callback' 		=> 'islemag_sanitize_category_dropdown'
 	) );
 
@@ -198,6 +213,7 @@ function islemag_customize_register( $wp_customize ) {
 
 	$wp_customize->add_setting( 'islemag_section5_category', array(
 			'default' 							=> 'all',
+			'transport'							=> 'postMessage',
 			'sanitize_callback'			=> 'islemag_sanitize_category_dropdown'
 	) );
 
@@ -413,5 +429,9 @@ function islemag_sanitize_number( $input ){
  */
 function islemag_customize_preview_js() {
 	wp_enqueue_script( 'islemag_customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), '1.0.0', true );
+	wp_localize_script( 'islemag_customizer', 'requestpost', array(
+			'ajaxurl' => admin_url( 'admin-ajax.php' ),
+
+	));
 }
 add_action( 'customize_preview_init', 'islemag_customize_preview_js' );

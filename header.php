@@ -69,7 +69,7 @@
 
                         if(!empty($islemag_logo)):
 
-                            echo '<a href="'.esc_url( home_url( '/' ) ).'" title="'.get_bloginfo('title').'">';
+                            echo '<a href="'.esc_url( home_url( '/' ) ).'" class="islemag_logo" title="'.get_bloginfo('title').'">';
                             echo '<img src="'.esc_url($islemag_logo).'" alt="'.get_bloginfo('title').'">';
                             echo '</a>';
                             echo '<div class="header-logo-wrap text-header islemag_only_customizer">';
@@ -81,7 +81,7 @@
 
                             if( isset( $wp_customize ) ):
 
-                                echo '<a href="'.esc_url( home_url( '/' ) ).'" class="islemag_only_customizer" title="'.get_bloginfo('title').'">';
+                                echo '<a href="'.esc_url( home_url( '/' ) ).'" class="islemag_logo islemag_only_customizer" title="'.get_bloginfo('title').'">';
                                 echo '<img src="" alt="'.get_bloginfo('title').'">';
                                 echo '</a>';
 
@@ -103,7 +103,7 @@
                     <?php
                         $islemag_banner_link = get_theme_mod('islemag_banner_link','#');
                         if(!empty($islemag_banner_link)){
-                            echo '<a href="'.$islemag_banner_link.'">';
+                            echo '<a href="'.esc_url( $islemag_banner_link ).'">';
                             echo '<img src="'.$header_image.'" alt="'.get_bloginfo( 'title' ).'"/>';
                             echo '</a>';
                         } else {

@@ -6,7 +6,7 @@ $wp_query = new WP_Query(
         'no_found_rows'       => true,
         'ignore_sticky_posts' => true,
         'post_status'         => 'publish',
-        'category_name' 	    => ( !empty( $islemag_section4_category ) && $islemag_section4_category != 'all' ? $islemag_section4_category : ''),
+        'category_name' 	    => ( !empty( $islemag_section_category ) && $islemag_section_category != 'all' ? $islemag_section_category : ''),
         )
 );
 

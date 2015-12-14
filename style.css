@@ -1916,6 +1916,9 @@ a.text-white:focus {
 /* ============================================
 -------------- 3.Header Content ---------------
 ===============================================*/
+.islemag_only_customizer{
+	display: none!important;
+}
 .header-logo-wrap{
 	display: inline-block;
 }
