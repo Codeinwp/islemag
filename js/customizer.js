@@ -19,24 +19,111 @@
 		} );
 	} );
 
-	// Header text color.
-	wp.customize( 'header_textcolor', function( value ) {
+	// Titles color
+	wp.customize( 'islemag_title_color', function( value ) {
 		value.bind( function( to ) {
-			if ( 'blank' === to ) {
-				$( '.site-title a, .site-description' ).css( {
-					'clip': 'rect(1px, 1px, 1px, 1px)',
-					'position': 'absolute'
-				} );
-			} else {
-				$( '.site-title a, .site-description' ).css( {
-					'clip': 'auto',
-					'color': to,
-					'position': 'relative'
-				} );
-			}
+			$( 'h1' ).css( { 'color' : to } );
+			$( 'h2' ).css( { 'color' : to } );
+			$( 'h3' ).css( { 'color' : to } );
+			$( 'h4' ).css( { 'color' : to } );
+			$( 'h5' ).css( { 'color' : to } );
+			$( 'h6' ).css( { 'color' : to } );
+			$( 'h1 a' ).css( { 'color' : to } );
+			$( 'h2 a' ).css( { 'color' : to } );
+			$( 'h3 a' ).css( { 'color' : to } );
+			$( 'h4 a' ).css( { 'color' : to } );
+			$( 'h5 a' ).css( { 'color' : to } );
+			$( 'h6 a' ).css( { 'color' : to } );
+			$( '.title-border span').css( { 'color' : to } );
 		} );
 	} );
 
+	// Sidebar text color.
+	wp.customize( 'header_textcolor', function( value ) {
+		value.bind( function( to ) {
+			$( '.islemag-content-right' ).css( { 'color': to } );
+			$( '.islemag-content-right a' ).css( { 'color': to } );
+			$( '.post .entry-content' ).css( { 'color': to } );
+			$( '.post .entry-content p' ).css( { 'color': to } );
+			$( '.post .entry-cats' ).css( { 'color': to } );
+			$( '.post .entry-cats a' ).css( { 'color': to } );
+			$( '.post .entry-comments' ).css( { 'color': to } );
+			$( '.post .entry-separator' ).css( { 'color': to } );
+			$( '.post .entry-footer a' ).css( { 'color': to } );
+			$( '.post .entry-footer span' ).css( { 'color': to } );
+			$( '.post .entry-footer .entry-cats' ).css( { 'color': to } );
+			$( '.post .entry-footer .entry-cats a' ).css( { 'color': to } );
+			$( '.author-content' ).css( { 'color': to } );
+
+		} );
+	} );
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	// Top slider title color
+	wp.customize( 'islemag_top_slider_post_title_color', function( value ) {
+		value.bind( function( to ) {
+			$( '.islemag-top-container .entry-title a' ).css( { 'color' : to } );
+		} );
+	} );
+
+	// Top slider text color
+	wp.customize( 'islemag_top_slider_post_text_color', function( value ) {
+		value.bind( function( to ) {
+			$( '.islemag-top-container .entry-overlay-meta .entry-overlay-date' ).css( { 'color' : to } );
+			$( '.islemag-top-container .entry-overlay-meta .entry-separator' ).css( { 'color' : to } );
+			$( '.islemag-top-container .entry-overlay-meta > a' ).css( { 'color' : to } );
+		} );
+	} );
+
+	// Post title color
+	wp.customize( 'islemag_sections_post_title_color', function( value ) {
+		value.bind( function( to ) {
+			$( '.islemag-content-left .entry-title a' ).css( { 'color' : to } );
+		} );
+	} );
+
+	// Post text color
+	wp.customize( 'islemag_sections_post_text_color', function( value ) {
+		value.bind( function( to ) {
+			$( '.islemag-content-left .entry-meta' ).css( { 'color' : to } );
+			$( '.islemag-content-left .entry-meta .entry-separator' ).css( { 'color' : to } );
+			$( '.islemag-content-left .entry-meta a' ).css( { 'color' : to } );
+			$( '.islemag-content-left .islemag-template3 .col-sm-6 .entry-overlay p' ).css( { 'color' : to } );
+		} );
+	} );
+
+
+
+
+
+	// Repeater
+	wp.customize( "islemag_social_icons", function( value ) {
+		value.bind( function( to ) {
+			var obj = JSON.parse( to );
+			var result ="";
+			var length = obj.length;
+			obj.forEach(function(item) {
+
+					result+=  '<a href="' + item.link + '" class="social-icon"><i class="fa ' + item.icon_value + '"></i></a>';
+
+			});
+
+			$( '.social-icons' ).html( result );
+
+		} );
+  } );
 	// Logo
 	wp.customize( "islemag_logo", function( value ) {
   	value.bind( function( to ) {
@@ -378,7 +465,7 @@
 			}
 		} );
 	} );
-	
+
 	// Section4 Category
 	wp.customize( 'islemag_section4_category', function( value ) {
 		value.bind( function( to ) {
@@ -391,10 +478,10 @@
 						category: to
 					},
 					beforeSend: function() {
-						jQuery('.islemag-section4 .islemag-template3').replaceWith( '<div class="islemag-template3" id="loader">Loading New Posts...</div>' );
+						jQuery( '.islemag-section4' ).find( '.islemag-template3' ).replaceWith( '<div class="islemag-template3" id="loader">Loading New Posts...</div>' );
 					},
 					success: function( result ) {
-						jQuery('.islemag-section4 .islemag-template3').replaceWith(result);
+						jQuery( '.islemag-section4' ).find( '.islemag-template3' ).replaceWith(result);
 						jQuery('.owl-carousel.islemag-template3-posts').owlCarousel({
 							loop:false,
 							margin:0,
@@ -412,6 +499,84 @@
 		} );
 	} );
 
+	// Section 4 number of posts
+	wp.customize( 'islemag_section4_max_posts', function( value ) {
+		value.bind( function( to ) {
+				jQuery.ajax({
+					url: requestpost.ajaxurl,
+					type: 'post',
+					data: {
+						action: 'request_post',
+						section: 'islemag_section4_category',
+						nb_of_posts: to
+					},
+					beforeSend: function() {
+						jQuery( '.islemag-section4' ).find( '.islemag-template3' ).replaceWith( '<div class="islemag-template3" id="loader">Loading New Posts...</div>' );
+					},
+					success: function( result ) {
+						jQuery( '.islemag-section4' ).find( '.islemag-template3' ).replaceWith(result);
+						jQuery('.owl-carousel.islemag-template3-posts').owlCarousel({
+							loop:false,
+							margin:0,
+							responsiveClass:true,
+							nav:true,
+							navText: ['<i class="fa fa-angle-left">', '<i class="fa fa-angle-right">'],
+							dots: false,
+							autoplay: true,
+							autoplayTimeout: 15000,
+							items:1,
+							lazyLoad: true,
+						});
+					}
+				});
+		} );
+	} );
+
+	// Section 4 posts per page
+	wp.customize( 'islemag_section4_posts_per_page', function( value ) {
+		value.bind( function( to ) {
+				jQuery.ajax({
+					url: requestpost.ajaxurl,
+					type: 'post',
+					data: {
+						action: 'request_post',
+						section: 'islemag_section4_category',
+						posts_per_page: to
+					},
+					beforeSend: function() {
+						jQuery( '.islemag-section4' ).find( '.islemag-template3' ).replaceWith( '<div class="islemag-template3" id="loader">Loading New Posts...</div>' );
+					},
+					success: function( result ) {
+						jQuery( '.islemag-section4' ).find( '.islemag-template3' ).replaceWith(result);
+						jQuery('.owl-carousel.islemag-template3-posts').owlCarousel({
+							loop:false,
+							margin:0,
+							responsiveClass:true,
+							nav:true,
+							navText: ['<i class="fa fa-angle-left">', '<i class="fa fa-angle-right">'],
+							dots: false,
+							autoplay: true,
+							autoplayTimeout: 15000,
+							items:1,
+							lazyLoad: true,
+						});
+					}
+				});
+		} );
+	} );
+
+	// Section 5 title
+	wp.customize( 'islemag_section5_title', function( value ) {
+		value.bind( function( to ) {
+			if( to != '' ) {
+				$( '.islemag-section5 .title-border' ).removeClass( 'islemag_only_customizer' );
+				$( '.islemag-section5 .title-border span' ).text( to );
+			} else {
+				$( '.islemag-section5 .title-border' ).addClass( 'islemag_only_customizer' );
+			}
+		} );
+	} );
+
 	// Section5 Category
 	wp.customize( 'islemag_section5_category', function( value ) {
 		value.bind( function( to ) {
@@ -424,10 +589,47 @@
 						category: to
 					},
 					beforeSend: function() {
-						jQuery('.islemag-section5 .islemag-template4').replaceWith( '<div class="islemag-template4" id="loader">Loading New Posts...</div>' );
+						jQuery('.islemag-section5').find( '.islemag-template4').replaceWith( '<div class="islemag-template4" id="loader">Loading New Posts...</div>' );
 					},
 					success: function( result ) {
-						jQuery('.islemag-section5 .islemag-template4').replaceWith(result);
+						jQuery('.islemag-section5').find( '.islemag-template4').replaceWith(result);
+						jQuery('.owl-carousel.islemag-template4-posts').owlCarousel({
+				      loop:true,
+				      margin:30,
+				      responsiveClass:true,
+				      nav:true,
+				      navText: ['<i class="fa fa-angle-left">', '<i class="fa fa-angle-right">'],
+				      dots: false,
+				      autoplay: true,
+				      autoplayTimeout: 17000,
+				      lazyLoad: true,
+				      responsive:{
+				        0:{ items:1 },
+				        600: { items:2 },
+				        992: { items:2 }
+				      }
+				    });
+					}
+				});
+		} );
+	} );
+
+	// Section 5 number of posts
+	wp.customize( 'islemag_section5_max_posts', function( value ) {
+		value.bind( function( to ) {
+				jQuery.ajax({
+					url: requestpost.ajaxurl,
+					type: 'post',
+					data: {
+						action: 'request_post',
+						section: 'islemag_section5_category',
+						nb_of_posts: to
+					},
+					beforeSend: function() {
+						jQuery('.islemag-section5').find( '.islemag-template4').replaceWith( '<div class="islemag-template4" id="loader">Loading New Posts...</div>' );
+					},
+					success: function( result ) {
+						jQuery('.islemag-section5').find( '.islemag-template4').replaceWith(result);
 						jQuery('.owl-carousel.islemag-template4-posts').owlCarousel({
 				      loop:true,
 				      margin:30,

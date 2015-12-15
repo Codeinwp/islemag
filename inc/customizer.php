@@ -14,7 +14,10 @@ function islemag_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
 	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
-
+	$wp_customize->get_setting( 'header_textcolor' )->default = '#454545';
+	$wp_customize->get_control( 'header_textcolor' )->label = __( 'Text color','islemag' );
+	$wp_customize->get_control( 'header_textcolor' )->priority = 2;
+	$wp_customize->remove_setting( 'background_color' );
 
 	require_once ( 'class/islemag-general-control.php');
 	require_once ( 'class/islemag-category-selector.php');
@@ -96,15 +99,47 @@ function islemag_customize_register( $wp_customize ) {
 	 ********** Settings ***********
 	 *******************************/
 
+	$wp_customize->add_setting( 'islemag_title_color', array(
+		 	'default' 							=> '#454545',
+			'transport'							=> 'postMessage',
+		 	'sanitize_callback' 		=> 'islemag_sanitize_text'
+	)	);
+
+	$wp_customize->add_setting( 'islemag_top_slider_post_title_color', array(
+		 	'default' 							=> '#ffffff',
+			'transport'							=> 'postMessage',
+		 	'sanitize_callback' 		=> 'islemag_sanitize_text'
+	)	);
+
+	$wp_customize->add_setting( 'islemag_top_slider_post_text_color', array(
+		'default' 							=> '#ffffff',
+		'transport'							=> 'postMessage',
+		'sanitize_callback' 		=> 'islemag_sanitize_text'
+	)	);
+
+	$wp_customize->add_setting( 'islemag_sections_post_title_color', array(
+		'default' 							=> '#454545',
+		'transport'							=> 'postMessage',
+		'sanitize_callback' 		=> 'islemag_sanitize_text'
+	)	);
+
+	$wp_customize->add_setting( 'islemag_sections_post_text_color', array(
+		'default' 							=> '#454545',
+		'transport'							=> 'postMessage',
+		'sanitize_callback' 		=> 'islemag_sanitize_text'
+	)	);
+
+
 	$wp_customize->add_setting( 'islemag_social_icons', array(
-			'default' => json_encode(
-					array(
-									array('icon_value' =>'fa-facebook-official' , 'link' => '#'),
-									array('icon_value' =>'fa-google' , 'link' => '#'),
-									array('icon_value' =>'fa-instagram' , 'link' => '#')
-								)
-							),
-			'sanitize_callback' => 'islemag_sanitize_repeater'
+			'default' 							=> json_encode(
+																	array(
+																					array('icon_value' =>'fa-facebook-official' , 'link' => '#'),
+																					array('icon_value' =>'fa-google' , 'link' => '#'),
+																					array('icon_value' =>'fa-instagram' , 'link' => '#')
+																				)
+																	),
+			'transport'							=> 'postMessage',
+			'sanitize_callback' 		=> 'islemag_sanitize_repeater'
 	) );
 
 	$wp_customize->add_setting( 'islemag_logo', array(
@@ -198,16 +233,19 @@ function islemag_customize_register( $wp_customize ) {
 
 	$wp_customize->add_setting( 'islemag_section4_max_posts', array(
 			'default'								=> 12,
+			'transport'							=> 'postMessage',
 			'sanitize_callback'			=> 'islemag_sanitize_number'
 	) );
 
 	$wp_customize->add_setting( 'islemag_section4_posts_per_page', array(
 			'default'								=> 6,
+			'transport'							=> 'postMessage',
 			'sanitize_callback'			=> 'islemag_sanitize_number'
 	) );
 
 	$wp_customize->add_setting( 'islemag_section5_title', array(
 			'default'								=> esc_html__('Section 5','islemag'),
+			'transport'							=> 'postMessage',
 			'sanitize_callback'			=> 'islemag_sanitize_text'
 	) );
 
@@ -219,6 +257,7 @@ function islemag_customize_register( $wp_customize ) {
 
 	$wp_customize->add_setting( 'islemag_section5_max_posts', array(
 			'default'								=> 8,
+			'transport'							=> 'postMessage',
 			'sanitize_callback'			=> 'islemag_sanitize_number'
 	) );
 
@@ -226,6 +265,38 @@ function islemag_customize_register( $wp_customize ) {
 	/*******************************
 	 ********** Controls ***********
 	 *******************************/
+
+	 $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'islemag_title_color', array(
+		 	'label'      							=> esc_html__( 'Title color', 'parallax-one' ),
+			'section'    							=> 'colors',
+			'priority'   							=> 1
+	) ) );
+
+	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'islemag_top_slider_post_title_color', array(
+		 'label'      							=> esc_html__( 'Top slider\'s posts title color', 'parallax-one' ),
+		 'section'    							=> 'colors',
+		 'priority'   							=> 3
+	 ) ) );
+
+ $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'islemag_top_slider_post_text_color', array(
+		'label'      								=> esc_html__( 'Top slider\'s posts text color', 'parallax-one' ),
+		'section'    								=> 'colors',
+		'priority'   								=> 4
+	) ) );
+
+
+	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'islemag_sections_post_title_color', array(
+		 'label'      							=> esc_html__( 'Section\'s posts title color', 'parallax-one' ),
+		 'section'    							=> 'colors',
+		 'priority'   							=> 5
+ ) ) );
+
+	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'islemag_sections_post_text_color', array(
+			'label'      							=> esc_html__( 'Section\'s posts text color', 'parallax-one' ),
+			'section'    							=> 'colors',
+			'priority'   							=> 6
+	) ) );
+
 
 	$wp_customize->add_control( new Parallax_One_General_Repeater( $wp_customize, 'islemag_social_icons', array(
 			'label'   								=> esc_html__('Add new social icon','islemag'),
