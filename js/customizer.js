@@ -58,19 +58,6 @@
 		} );
 	} );
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 	// Top slider title color
 	wp.customize( 'islemag_top_slider_post_title_color', function( value ) {
 		value.bind( function( to ) {
@@ -100,7 +87,12 @@
 			$( '.islemag-content-left .entry-meta' ).css( { 'color' : to } );
 			$( '.islemag-content-left .entry-meta .entry-separator' ).css( { 'color' : to } );
 			$( '.islemag-content-left .entry-meta a' ).css( { 'color' : to } );
-			$( '.islemag-content-left .islemag-template3 .col-sm-6 .entry-overlay p' ).css( { 'color' : to } );
+			$( '.islemag-content-left .islemag-template3 .entry-overlay p' ).css( { 'color' : to } );
+			$( '.islemag-content-left .blog-related-carousel .entry-content p' ).css( { 'color' : to } );
+			$( '.islemag-content-left .blog-related-carousel .entry-cats .entry-label' ).css( { 'color' : to } );
+			$( '.islemag-content-left .blog-related-carousel .entry-cats a' ).css( { 'color' : to } );
+			$( '.islemag-content-left .blog-related-carousel > a' ).css( { 'color' : to } );
+			$( '.islemag-content-left .blog-related-carousel .entry-footer > a' ).css( { 'color' : to } );
 		} );
 	} );
 
