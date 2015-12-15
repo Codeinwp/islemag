@@ -40,7 +40,6 @@ function islemag_customize_register( $wp_customize ) {
 		'title' => esc_html__( 'Sections', 'islemag' )
 	) );
 
-
 	/*******************************
 	 ********** Sections ***********
 	 *******************************/
@@ -94,6 +93,10 @@ function islemag_customize_register( $wp_customize ) {
 			'panel'				=> 'sections_panel'
 	) );
 
+	$wp_customize->add_section( 'islemag_single_page' , array(
+			'title' => __( 'Single page settings', 'islemag' ),
+			'priority' => 50,
+	) );
 
 	/*******************************
 	 ********** Settings ***********
@@ -260,6 +263,18 @@ function islemag_customize_register( $wp_customize ) {
 			'transport'							=> 'postMessage',
 			'sanitize_callback'			=> 'islemag_sanitize_number'
 	) );
+
+	$wp_customize->add_setting( 'islemag_single_page_hide_author', array(
+			'defalt'								=> true,
+			'transport' 						=> 'postMessage',
+			'sanitize_callback'			=> 'islemag_sanitize_text'
+	) );
+
+	$wp_customize->add_setting( 'islemag_single_page_hide_related_posts', array(
+			'transport' => 'postMessage',
+			'sanitize_callback'			=> 'islemag_sanitize_text'
+	) );
+
 
 
 	/*******************************
@@ -444,6 +459,22 @@ function islemag_customize_register( $wp_customize ) {
 			'type' 										=> 'number',
 			'input_attrs' 						=> array( 'min' => -1, 'step' => 1 ),
 			'priority'    						=> 3
+	) );
+
+	$wp_customize->add_control( 'islemag_single_page_hide_author', array(
+			'type' => 'checkbox',
+			'label' => __( 'Hide author\'s description?', 'islemag' ),
+			'description' => __( 'If you check this box, the author\'s description will disappear from single page.','islemag' ),
+			'section' => 'islemag_single_page',
+			'priority' => 1,
+	) );
+
+	$wp_customize->add_control( 'islemag_single_page_hide_related_posts', array(
+			'type' => 'checkbox',
+			'label' => __( 'Hide related posts?', 'islemag' ),
+			'description' => __( 'If you check this box, related posts will disappear from single page.','islemag' ),
+			'section' => 'islemag_single_page',
+			'priority' => 2,
 	) );
 
 }

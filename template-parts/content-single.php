@@ -57,7 +57,8 @@
 
                             </footer>
 
-                            <div class="about-author clearfix">
+                            <?php $islemag_single_page_hide_author = get_theme_mod( 'islemag_single_page_hide_author',true ); ?>
+                            <div class="about-author clearfix <?php if ( $islemag_single_page_hide_author == true ) echo 'islemag_hide'; ?>">
                                 <h3 class="title-underblock custom">Post Author: <a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>"><?php the_author(); ?></a></h3>
                                 <?php
                                     $author_id = get_the_author_meta( 'ID' );
@@ -78,9 +79,9 @@
                         </article>
 
 
-
-                        <h3 class="mb30 title-underblock custom">Related Posts</h3>
-                        <div class="blog-related-carousel owl-carousel small-nav">
+                        <?php $islemag_single_page_hide_related_posts = get_theme_mod( 'islemag_single_page_hide_related_posts' ); ?>
+                        <h3 class="mb30 title-underblock custom blog-related-carousel-title <?php if ( $islemag_single_page_hide_related_posts == true ) echo 'islemag_hide'; ?> "><?php esc_html_e( 'Related Posts','islemag' ); ?></h3>
+                        <div class="blog-related-carousel owl-carousel small-nav <?php if ( $islemag_single_page_hide_related_posts == true ) echo 'islemag_hide'; ?> ">
                             <?php
 
                                 $related = get_posts( array( 'category__in' => wp_get_post_categories($post_id), 'numberposts' => 5, 'post__not_in' => array($post_id) ) );

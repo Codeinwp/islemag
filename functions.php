@@ -617,7 +617,7 @@ function islemag_requestpost() {
 }
 
 
-add_action('wp_footer','islemag_style', 100);
+add_action('wp_head','islemag_style', 100);
 function islemag_style() {
 
 	echo '<style type="text/css">';

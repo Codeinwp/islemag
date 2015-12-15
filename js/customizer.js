@@ -643,4 +643,28 @@
 		} );
 	} );
 
+	wp.customize( 'islemag_single_page_hide_author', function( value ) {
+		value.bind( function( to ) {
+			if ( '1' != to ) {
+				$( '.about-author ' ).removeClass( 'islemag_hide' );
+			} else {
+				$( '.about-author ' ).addClass( 'islemag_hide' );
+			}
+		} );
+	} );
+
+	wp.customize( 'islemag_single_page_hide_related_posts', function( value ) {
+		value.bind( function( to ) {
+			if ( '1' != to ) {
+				$( '.blog-related-carousel ' ).removeClass( 'islemag_hide' );
+				$( '.blog-related-carousel-title ' ).removeClass( 'islemag_hide' );
+			} else {
+				$( '.blog-related-carousel ' ).addClass( 'islemag_hide' );
+				$( '.blog-related-carousel-title ' ).addClass( 'islemag_hide' );
+			}
+		} );
+	} );
+
+
+
 } )( jQuery );
