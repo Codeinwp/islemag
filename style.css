@@ -8,7 +8,7 @@ Version: 1.0.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: islemag
-Tags:
+Tags: light, two-columns, right-sidebar, fluid-layout, responsive-layout, custom-colors, custom-background, custom-menu, featured-images, sticky-post, theme-options, threaded-comments, translation-ready
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
@@ -3106,6 +3106,21 @@ ul > li:hover > a,
 	background-color: #fff;
 }
 
+.no-padding-left{
+	padding-left: 10px!important;
+	padding-right: 0px!important;
+	margin-bottom: 20px;
+}
+
+.no-padding-right{
+	padding-right: 10px!important;
+	padding-left: 0px!important;
+	margin-bottom: 20px;
+}
+
+.center-ad{
+	text-align: center;
+}
 
 /* ============================================
 ------------------ 10.Blog --------------------

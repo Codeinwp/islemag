@@ -48,7 +48,15 @@ function islemag_setup() {
 		add_image_size( 'author-avatar', 90, 90, true );
 		add_image_size( 'related-post', 348, 194, true );
 		add_image_size( 'blog-post', 770, 430, true );
+		add_image_size( 'islemag_ad_125', 125, 125, true );
 	}
+
+add_filter( 'image_size_names_choose', 'islemg_media_uploader_custom_sizes' );
+function islemg_media_uploader_custom_sizes( $sizes ) {
+		return array_merge( $sizes, array(
+				'islemag_ad_125' => esc_html__('Small Advertisement','islemag'),
+		) );
+}
 
 
 	// This theme uses wp_nav_menu() in one location.
@@ -132,7 +140,9 @@ add_action( 'after_setup_theme', 'islemag_content_width', 0 );
  *
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
-function islemag_widgets_init() {
+ require_once ( 'inc/class/islemag-widget-multiple-ads.php');
+ require_once ( 'inc/class/islemag-widget-big-ad.php');
+ function islemag_widgets_init() {
 	register_sidebar( array(
 		'name'          => esc_html__( 'Sidebar', 'islemag' ),
 		'id'            => 'islemag-sidebar',
@@ -187,6 +197,8 @@ function islemag_widgets_init() {
 		)
 	);
 
+	register_widget( 'islemag_multiple_ads' );
+	register_widget( 'islemag_big_ad' );
 }
 add_action( 'widgets_init', 'islemag_widgets_init' );
 
@@ -320,13 +332,13 @@ function islemag_comment($comment, $args, $depth) {
 
 	<div class="comment-author vcard">
 		<?php if ( $args['avatar_size'] != 0 ) echo get_avatar( $comment, $args['avatar_size'] ); ?>
-		<?php printf( __( '<h4 class="media-heading">%s</h4><span class="comment-date">(%2$s - %3$s)</span>' ), get_comment_author_link(), get_comment_date(),  get_comment_time() ); ?><?php edit_comment_link( __( '(Edit)' ), '  ', '' ); ?>
+		<?php printf( __( '<h4 class="media-heading">%s</h4><span class="comment-date">(%2$s - %3$s)</span>','islemag' ), get_comment_author_link(), get_comment_date(),  get_comment_time() ); ?><?php edit_comment_link( __( '(Edit)','islemag' ), '  ', '' ); ?>
 		<div class="reply pull-right reply-link"> <?php comment_reply_link( array_merge( $args, array( 'add_below' => $add_below, 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?> </div>
 	</div>
 
 
 	<?php if ( $comment->comment_approved == '0' ) : ?>
-		<em class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.' ); ?></em>
+		<em class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.', 'islemag' ); ?></em>
 		<br />
 	<?php endif; ?>
 

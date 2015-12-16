@@ -2,7 +2,7 @@
 if ( ! class_exists( 'WP_Customize_Control' ) )
     return NULL;
 
-class Parallax_One_General_Repeater extends WP_Customize_Control {
+class Islemag_General_Repeater extends WP_Customize_Control {
 
         private $options = array();
 
@@ -37,7 +37,7 @@ class Parallax_One_General_Repeater extends WP_Customize_Control {
                 $islemag_link_control = false;
             }
 
-            
+
 
  ?>
 
@@ -45,7 +45,7 @@ class Parallax_One_General_Repeater extends WP_Customize_Control {
             <div class="islemag_general_control_repeater islemag_general_control_droppable">
                 <?php
                     if(empty($json)) {
-                        
+
                 ?>
                         <div class="islemag_general_control_repeater_container">
                             <div class="islemag-customize-control-title"><?php esc_html_e('Islemag','islemag')?></div>
@@ -64,8 +64,8 @@ class Parallax_One_General_Repeater extends WP_Customize_Control {
                                                 </select>
                                             </div>
                                 <?php   }
-    
-                        
+
+
 
 
                                     if($islemag_link_control==true){ ?>
@@ -78,20 +78,20 @@ class Parallax_One_General_Repeater extends WP_Customize_Control {
                 <?php
                     } else {
                         if ( !empty($this_default) && empty($json)) {
-                           
+
                             foreach($this_default as $icon){
-                             
+
                 ?>
                                 <div class="islemag_general_control_repeater_container islemag_draggable">
                                     <div class="islemag-customize-control-title"><?php esc_html_e('Islemag','islemag')?></div>
                                     <div class="islemag-box-content-hidden">
-                                         
-                                        <?php	
+
+                                        <?php
 
                                                 if($islemag_icon_control==true){ ?>
                                                     <span class="customize-control-title"><?php esc_html_e('Icon','islemag')?></span>
                                                     <div class="islemag-dd">
-                                                                  
+
                                                         <select name="<?php echo esc_attr($this->id); ?>" class="islemag_icon_control">
                                                             <?php
                                                                 foreach($icons_array as $key => $value) {
@@ -102,7 +102,7 @@ class Parallax_One_General_Repeater extends WP_Customize_Control {
                                                     </div>
                                         <?php
                                                 }
-                                           
+
                                                 if($islemag_link_control){ ?>
                                                     <span class="customize-control-title"><?php esc_html_e('Link','islemag')?></span>
                                                     <input type="text" value="<?php if(!empty($icon->link)) echo esc_url($icon->link); ?>" class="islemag_link_control" placeholder="<?php esc_html_e('Link','islemag'); ?>"/>
@@ -116,7 +116,7 @@ class Parallax_One_General_Repeater extends WP_Customize_Control {
                                 $it++;
                             }
                         } else {
-                            
+
                             foreach($json as $icon){
 
                     ?>
@@ -125,7 +125,7 @@ class Parallax_One_General_Repeater extends WP_Customize_Control {
                                     <div class="islemag-box-content-hidden">
                                     <?php if($islemag_icon_control==true){ ?>
                                             <span class="customize-control-title"><?php esc_html_e('Icon','islemag')?></span>
-                                               
+
                                             <div class="islemag-dd">
                                                 <select name="<?php echo esc_attr($this->id); ?>" class="islemag_icon_control">
                                                     <?php
@@ -137,12 +137,12 @@ class Parallax_One_General_Repeater extends WP_Customize_Control {
                                             </div>
 
                                     <?php }
-                                        
+
                                         if($islemag_link_control){ ?>
                                             <span class="customize-control-title"><?php esc_html_e('Link','islemag')?></span>
                                             <input type="text" value="<?php if(!empty($icon->link)) echo esc_url($icon->link); ?>" class="islemag_link_control" placeholder="<?php esc_html_e('Link','islemag'); ?>"/>
                                         <?php } ?>
-                                        <button type="button" class="islemag_general_control_remove_field button" <?php 
+                                        <button type="button" class="islemag_general_control_remove_field button" <?php
                                             if ($it == 0)
                                             echo 'style="display:none;"'; ?>><?php esc_html_e('Delete field','islemag'); ?></button>
                                     </div>
@@ -150,13 +150,13 @@ class Parallax_One_General_Repeater extends WP_Customize_Control {
                                 </div>
                     <?php
                                 $it++;
-                                
+
                             }
                         }
                     }
 
                 if ( !empty($this_default) && empty($json)) {
-                     
+
                 ?>
                     <input type="hidden" id="islemag_<?php echo $options['section']; ?>_repeater_colector" <?php $this->link(); ?> class="islemag_repeater_colector" value="<?php  echo esc_textarea( json_encode($this_default )); ?>" />
             <?php } else {	?>
@@ -164,7 +164,7 @@ class Parallax_One_General_Repeater extends WP_Customize_Control {
             <?php } ?>
             </div>
 
-            <button type="button"   class="button add_field islemag_general_control_new_field"    
+            <button type="button"   class="button add_field islemag_general_control_new_field"
 
             ><?php esc_html_e('Add new field','islemag'); ?></button>
 

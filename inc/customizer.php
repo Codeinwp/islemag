@@ -282,38 +282,38 @@ function islemag_customize_register( $wp_customize ) {
 	 *******************************/
 
 	 $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'islemag_title_color', array(
-		 	'label'      							=> esc_html__( 'Title color', 'parallax-one' ),
+		 	'label'      							=> esc_html__( 'Title color', 'islemag' ),
 			'section'    							=> 'colors',
 			'priority'   							=> 1
 	) ) );
 
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'islemag_top_slider_post_title_color', array(
-		 'label'      							=> esc_html__( 'Top slider\'s posts title color', 'parallax-one' ),
+		 'label'      							=> esc_html__( 'Top slider\'s posts title color', 'islemag' ),
 		 'section'    							=> 'colors',
 		 'priority'   							=> 3
 	 ) ) );
 
  $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'islemag_top_slider_post_text_color', array(
-		'label'      								=> esc_html__( 'Top slider\'s posts text color', 'parallax-one' ),
+		'label'      								=> esc_html__( 'Top slider\'s posts text color', 'islemag' ),
 		'section'    								=> 'colors',
 		'priority'   								=> 4
 	) ) );
 
 
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'islemag_sections_post_title_color', array(
-		 'label'      							=> esc_html__( 'Section\'s posts title color', 'parallax-one' ),
+		 'label'      							=> esc_html__( 'Section\'s posts title color', 'islemag' ),
 		 'section'    							=> 'colors',
 		 'priority'   							=> 5
  ) ) );
 
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'islemag_sections_post_text_color', array(
-			'label'      							=> esc_html__( 'Section\'s posts text color', 'parallax-one' ),
+			'label'      							=> esc_html__( 'Section\'s posts text color', 'islemag' ),
 			'section'    							=> 'colors',
 			'priority'   							=> 6
 	) ) );
 
 
-	$wp_customize->add_control( new Parallax_One_General_Repeater( $wp_customize, 'islemag_social_icons', array(
+	$wp_customize->add_control( new Islemag_General_Repeater( $wp_customize, 'islemag_social_icons', array(
 			'label'   								=> esc_html__('Add new social icon','islemag'),
 			'section' 								=> 'islemag_header_content',
 			'priority'								=> 1,
