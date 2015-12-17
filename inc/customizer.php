@@ -17,7 +17,7 @@ function islemag_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'header_textcolor' )->default = '#454545';
 	$wp_customize->get_control( 'header_textcolor' )->label = __( 'Text color','islemag' );
 	$wp_customize->get_control( 'header_textcolor' )->priority = 2;
-	$wp_customize->remove_setting( 'background_color' );
+	$wp_customize->remove_control( 'background_color' );
 	$wp_customize->get_control( 'header_image' )->section = 'islemag_appearance_general';
 	$wp_customize->get_control( 'header_image' )->priority = 2;
 
