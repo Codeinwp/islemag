@@ -118,7 +118,7 @@
               <nav id="site-navigation" class="navigation main-navigation" role="navigation">
                 <button class="menu-toggle"><?php _e( 'Menu', 'islemag' ); ?></button>
                 <a class="screen-reader-text skip-link" href="#content" title="<?php esc_attr_e( 'Skip to content', 'islemag' ); ?>"><?php _e( 'Skip to content', 'islemag' ); ?></a>
-                <?php wp_nav_menu( array( 'theme_location' => 'header', 'menu_class' => 'nav-menu', 'menu_id' => 'primary-menu', 'depth' => 0 ) ); ?>
+                <?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'nav-menu', 'menu_id' => 'primary-menu', 'depth' => 0 ) ); ?>
               </nav><!-- #site-navigation -->
             </div><!-- #navbar -->
 
