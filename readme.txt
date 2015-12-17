@@ -1,38 +1,39 @@
 === islemag ===
 
-Contributors: automattic
-Tags: translation-ready, custom-background, theme-options, custom-menu, post-formats, threaded-comments
+Contributors: codeinwp
+Tags: gray, white, light, responsive-layout, two-columns, three-columns, right-sidebar, custom-background, custom-colors, custom-header, custom-menu, featured-images, sticky-post, theme-options, threaded-comments, translation-ready
 
 Requires at least: 4.0
-Tested up to: 4.2.2
+Tested up to: 4.4
 Stable tag: 1.0.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-A starter theme called islemag, or underscores.
-
 == Description ==
 
-Hi. I'm a starter theme called islemag, or underscores, if you like. I'm a theme meant for hacking so don't use me as a Parent Theme. Instead try turning me into the next, most awesome, WordPress theme out there. That's what I'm here for.
+A modern and clean free WordPress theme for magazines, news and media websites, personal blogs, or photography. isleMag is responsive, flat, minimalist, SEO friendly, Retina ready, built with Bootstrap, and has social links. The theme has Google AdSense banners, a featured slider, custom backgrounds, filtered categories, tags, boxed layout, and drop-down menu. isleMag also offers well-structured content and posts, multiple sidebars and widgets. The theme is highly customizable and translation ready.
 
 == Installation ==
-	
+
 1. In your admin panel, go to Appearance > Themes and click the Add New button.
 2. Click Upload and Choose File, then select the theme's .zip file. Click Install Now.
 3. Click Activate to use your new theme right away.
 
-== Frequently Asked Questions ==
+= License =
+Islemag WordPress theme, Copyright (C) 2015 Themeisle.com
+Islemag WordPress theme is licensed under the GPL3.
 
-= Does this theme support any plugins? =
+Unless otherwise specified, all the theme files, scripts and images are licensed under GNU General Public License.
+The exceptions to this license are as follows:
 
-islemag includes support for Infinite Scroll in Jetpack.
+* Bootstrap v3.3.5 (http://getbootstrap.com)
+    Copyright 2011-2015 Twitter, Inc.
+    Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
 
-== Changelog ==
+* Owl Carousel (http://www.owlcarousel.owlgraphic.com/)
+    Copyright (c) Bartosz Wojciechowski
+    Licensed under MIT (http://www.owlcarousel.owlgraphic.com/docs/started-faq.html)
 
-= 1.0 - May 12 2015 =
-* Initial release
-
-== Credits ==
-
-* Based on Underscores http://underscores.me/, (C) 2012-2015 Automattic, Inc., [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
-* normalize.css http://necolas.github.io/normalize.css/, (C) 2012-2015 Nicolas Gallagher and Jonathan Neal, [MIT](http://opensource.org/licenses/MIT)
+* ddSlick
+    Copyright (c) 2007-2013 Ariel Flesler - aflesler<a>gmail<d>com | http://flesler.blogspot.com
+    Licensed under MIT
