@@ -21,7 +21,9 @@ class IseleMagCategorySelector extends WP_Customize_Control {
                 <?php
                     if(!empty($categories)){
                         foreach($categories as $cat){
-                            echo '<option value="'.$cat->slug.'" '.selected( $this->value(),$cat->slug ).'>'.$cat->cat_name.'</option>';
+                            if( $cat->count > 0 ){
+                              echo '<option value="'.$cat->slug.'" '.selected( $this->value(),$cat->slug ).'>'.$cat->cat_name.'</option>';
+                            }
                         }
                     }
                 ?>

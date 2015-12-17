@@ -102,8 +102,7 @@ function islemg_media_uploader_custom_sizes( $sizes ) {
 	$defaults = array(
 		'default-image'          => get_stylesheet_directory_uri().'/img/banner.jpg',
 		'width'                  => 900,
-		'height'                 => 110,
-		// Support flexible height and width.
+		'height'                 => 100,
 		'flex-height'            => true,
 		'flex-width'             => true,
 
