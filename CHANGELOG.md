@@ -5,6 +5,16 @@
  Changes: 
 
 
+ * Merge pull request #13 from cristian-ungureanu/development
+
+!!! removed unused files, added readme
+
+
+### 1.0.0 - 17/12/2015
+
+ Changes: 
+
+
  * Merge pull request #11 from cristian-ungureanu/development
 
 Development
