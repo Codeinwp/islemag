@@ -18,7 +18,9 @@ function islemag_customize_register( $wp_customize ) {
 	$wp_customize->get_control( 'header_textcolor' )->label = __( 'Text color','islemag' );
 	$wp_customize->get_control( 'header_textcolor' )->priority = 2;
 	$wp_customize->remove_setting( 'background_color' );
-
+	$wp_customize->get_control( 'header_image' )->section = 'islemag_appearance_general';
+	$wp_customize->get_control( 'header_image' )->priority = 2;
+	
 	require_once ( 'class/islemag-general-control.php');
 	require_once ( 'class/islemag-category-selector.php');
 
@@ -330,7 +332,7 @@ function islemag_customize_register( $wp_customize ) {
 	$wp_customize->add_control( 'islemag_banner_link', array(
 			'label'										=> esc_html__( 'Banner link', 'islemag' ),
 			'section'									=> 'islemag_appearance_general',
-			'priority'								=> 1
+			'priority'								=> 2
 	) );
 
 	$wp_customize->add_control( new IseleMagCategorySelector( $wp_customize, 'islemag_header_slider_category', array(
