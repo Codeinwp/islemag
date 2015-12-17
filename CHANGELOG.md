@@ -5,6 +5,16 @@
  Changes: 
 
 
+ * Merge pull request #11 from cristian-ungureanu/development
+
+Development
+
+
+### 1.0.0 - 17/12/2015
+
+ Changes: 
+
+
  * Merge pull request #6 from cristian-ungureanu/development
 
 !!! fixed colors and menus
