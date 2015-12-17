@@ -636,7 +636,8 @@ function islemag_style() {
 	$islemag_title_color = get_theme_mod( 'islemag_title_color','#454545' );
 	if(!empty($islemag_title_color)){
 		echo '.title-border span { color: '. $islemag_title_color .' }';
-		echo 'h1, h2, h3, h4, h5, h6, h1 a, h2 a, h3 a, h4 a, h5 a, h6 a { color: '. $islemag_title_color .' }';
+		echo '.post .entry-title, .post h1, .post h2, .post h3, .post h4, .post h5, .post h6, .post h1 a, .post h2 a, .post h3 a, .post h4 a, .post h5 a, .post h6 a { color: '. $islemag_title_color .' }';
+		echo '.page-header h1 { color: '. $islemag_title_color .' }';
 	}
 
 	$islemag_sidebar_textcolor = get_theme_mod( 'header_textcolor','#454545' );
@@ -660,7 +661,7 @@ function islemag_style() {
 
 	$islemag_sections_post_title_color = get_theme_mod( 'islemag_sections_post_title_color','#454545' );
 	if( !empty($islemag_sections_post_title_color) ){
-		echo '.islemag-content-left .entry-title a { color: '. $islemag_sections_post_title_color .' }';
+		echo '.home.blog .islemag-content-left .entry-title a, .blog-related-carousel .entry-title a { color: '. $islemag_sections_post_title_color .' }';
 	}
 
 
