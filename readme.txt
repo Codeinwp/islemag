@@ -1,4 +1,4 @@
-=== islemag ===
+=== IsleMag ===
 
 Contributors: codeinwp
 Tags: gray, white, light, responsive-layout, two-columns, three-columns, right-sidebar, custom-background, custom-colors, custom-header, custom-menu, featured-images, sticky-post, theme-options, threaded-comments, translation-ready
@@ -11,7 +11,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 == Description ==
 
-A modern and clean free WordPress theme for magazines, news and media websites, personal blogs, or photography. isleMag is responsive, flat, minimalist, SEO friendly, Retina ready, built with Bootstrap, and has social links. The theme has Google AdSense banners, a featured slider, custom backgrounds, filtered categories, tags, boxed layout, and drop-down menu. isleMag also offers well-structured content and posts, multiple sidebars and widgets. The theme is highly customizable and translation ready.
+A modern and clean free WordPress theme for magazines, news and media websites, personal blogs, or photography. IsleMag is responsive, flat, minimalist, SEO friendly, Retina ready, built with Bootstrap, and has social links. The theme has Google AdSense banners, a featured slider, custom backgrounds, filtered categories, tags, boxed layout, and drop-down menu. IsleMag also offers well-structured content and posts, multiple sidebars and widgets. The theme is highly customizable and translation ready.
 
 == Installation ==
 
@@ -20,8 +20,8 @@ A modern and clean free WordPress theme for magazines, news and media websites, 
 3. Click Activate to use your new theme right away.
 
 = License =
-Islemag WordPress theme, Copyright (C) 2015 Themeisle.com
-Islemag WordPress theme is licensed under the GPL3.
+IsleMag WordPress theme, Copyright (C) 2015 Themeisle.com
+IsleMag WordPress theme is licensed under the GPL3.
 
 Unless otherwise specified, all the theme files, scripts and images are licensed under GNU General Public License.
 The exceptions to this license are as follows:
