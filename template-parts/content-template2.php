@@ -21,21 +21,20 @@ if ( $wp_query->have_posts() ) : ?>
     ?>
 
       <div class="col-sm-6">
-
         <article class="entry entry-overlay entry-block eb-small <?php echo $colors[$choosed_color];?>">
           <div class="entry-media">
-            <a href="<?php echo get_category_link( $category[0]->cat_ID ); ?>" class="category-block" title="Category <?php echo $category[0]->cat_name; ?>"><?php echo $category[0]->cat_name; ?></a>
-                <figure>
-                    <a href="<?php the_permalink(); ?>" title="<?php echo get_the_title(); ?>">
-                        <?php
-                            if( has_post_thumbnail() ){
-                                the_post_thumbnail( 'main-slider' );
-                            } else {
-                                echo '<img src="'.get_template_directory_uri().'/img/placeholder-image.png" />';
-                            }
-                        ?>
-                    </a>
-                </figure> <!-- End figure -->
+            <a href="<?php echo esc_url( get_category_link( $category[0]->cat_ID ) ); ?>" class="category-block" title="Category <?php echo esc_attr( $category[0]->cat_name ); ?>"><?php echo esc_attr( $category[0]->cat_name ); ?></a>
+              <figure>
+                  <a href="<?php the_permalink(); ?>" title="<?php echo get_the_title(); ?>">
+                      <?php
+                          if( has_post_thumbnail() ){
+                              the_post_thumbnail( 'main-slider' );
+                          } else {
+                              echo '<img src="'.get_template_directory_uri().'/img/placeholder-image.png" />';
+                          }
+                      ?>
+                  </a>
+              </figure> <!-- End figure -->
             </div> <!-- End .entry-media -->
 
             <h3 class="entry-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
@@ -45,11 +44,10 @@ if ( $wp_query->have_posts() ) : ?>
               <span class="entry-separator">/</span>
               <a href="<?php the_permalink(); ?>" class="entry-comments"><?php comments_number( '0 Comments', '1 Comment', '% Comments' ); ?></a>
               <div>
-                <?php esc_html_e( 'Posted By', 'islemag' ); ?><a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>" class="entry-author"><?php the_author(); ?></a>
+                <?php esc_html_e( 'Posted By', 'islemag' ); ?><a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>" class="entry-author"><?php the_author(); ?></a>
               </div>
             </div> <!-- End .entry-meta -->
           </article> <!-- End .entry-block -->
-
         </div> <!-- End .col-sm-6 -->
     <?php
       endwhile;

@@ -36,12 +36,12 @@
                             )
                         ));
 
-                        if(!empty($islemag_social_icons)){
-                            $islemag_social_icons_decode = json_decode($islemag_social_icons);
-                            if(!empty($islemag_social_icons_decode)){
-                                foreach($islemag_social_icons_decode as $icon){
-                                    if(!empty($icon->icon_value))
-                                    echo '<a '.( empty($icon->link) ? '' : 'href="'.$icon->link.'"' ).' class="social-icon"><i class="fa '.$icon->icon_value.'"></i></a>';
+                        if( !empty( $islemag_social_icons ) ){
+                            $islemag_social_icons_decode = json_decode( $islemag_social_icons );
+                            if( !empty( $islemag_social_icons_decode ) ){
+                                foreach( $islemag_social_icons_decode as $icon ){
+                                    if( !empty( $icon->icon_value ) )
+                                    echo '<a '.( empty( $icon->link ) ? '' : 'href="'. esc_url( $icon->link ).'"' ).' class="social-icon"><i class="fa '.esc_attr( $icon->icon_value ).'"></i></a>';
                                 }
                             }
                         }
@@ -65,31 +65,31 @@
                 <div class="col-md-3 col-sm-3 col-xs-12 navbar-brand">
                     <?php
                         global $wp_customize;
-                        $islemag_logo = get_theme_mod('islemag_logo');
+                        $islemag_logo = get_theme_mod( 'islemag_logo' );
 
                         if(!empty($islemag_logo)):
 
-                            echo '<a href="'.esc_url( home_url( '/' ) ).'" class="islemag_logo" title="'.get_bloginfo('title').'">';
-                            echo '<img src="'.esc_url($islemag_logo).'" alt="'.get_bloginfo('title').'">';
+                            echo '<a href="'.esc_url( home_url( '/' ) ).'" class="islemag_logo" title="'. esc_attr( get_bloginfo( 'title' ) ) .'">';
+                            echo '<img src="'.esc_url( $islemag_logo ).'" alt="'. esc_attr( get_bloginfo( 'title' ) ) .'">';
                             echo '</a>';
                             echo '<div class="header-logo-wrap text-header islemag_only_customizer">';
                             echo '<h1 itemprop="headline" id="site-title" class="site-title"><a href="'.esc_url( home_url( '/' ) ).'" title="'.esc_attr( get_bloginfo( 'name', 'display' ) ).'" rel="home">'.get_bloginfo( 'name' ).'</a></h1>';
-                            echo '<p itemprop="description" id="site-description" class="site-description">'.get_bloginfo( 'description' ).'</p>';
+                            echo '<p itemprop="description" id="site-description" class="site-description">'.esc_attr( get_bloginfo( 'description' ) ).'</p>';
                             echo '</div>';
 
                         else:
 
                             if( isset( $wp_customize ) ):
 
-                                echo '<a href="'.esc_url( home_url( '/' ) ).'" class="islemag_logo islemag_only_customizer" title="'.get_bloginfo('title').'">';
-                                echo '<img src="" alt="'.get_bloginfo('title').'">';
+                                echo '<a href="'.esc_url( home_url( '/' ) ).'" class="islemag_logo islemag_only_customizer" title="'.esc_attr( get_bloginfo( 'title' ) ).'">';
+                                echo '<img src="" alt="'.esc_attr( get_bloginfo( 'title' ) ).'">';
                                 echo '</a>';
 
                             endif;
 
                             echo '<div class="header-logo-wrap text-header">';
-                            echo '<h1 itemprop="headline" id="site-title" class="site-title"><a href="'.esc_url( home_url( '/' ) ).'" title="'.esc_attr( get_bloginfo( 'name', 'display' ) ).'" rel="home">'.get_bloginfo( 'name' ).'</a></h1>';
-                            echo '<p itemprop="description" id="site-description" class="site-description">'.get_bloginfo( 'description' ).'</p>';
+                            echo '<h1 itemprop="headline" id="site-title" class="site-title"><a href="'.esc_url( home_url( '/' ) ).'" title="'.esc_attr( get_bloginfo( 'name', 'display' ) ).'" rel="home">'.esc_attr( get_bloginfo( 'name' ) ).'</a></h1>';
+                            echo '<p itemprop="description" id="site-description" class="site-description">'.esc_attr( get_bloginfo( 'description' ) ).'</p>';
                             echo '</div>';
 
                         endif;
@@ -101,13 +101,13 @@
                 if ( !empty($header_image) ) { ?>
                 <div class="col-md-9 col-sm-9 col-xs-12 islemag-banner">
                     <?php
-                        $islemag_banner_link = get_theme_mod('islemag_banner_link','#');
+                        $islemag_banner_link = get_theme_mod( 'islemag_banner_link','#' );
                         if(!empty($islemag_banner_link)){
                             echo '<a href="'.esc_url( $islemag_banner_link ).'">';
-                            echo '<img src="'.$header_image.'" alt="'.get_bloginfo( 'title' ).'"/>';
+                            echo '<img src="'.esc_url( $header_image ).'" alt="'.esc_attr( get_bloginfo( 'title' ) ).'"/>';
                             echo '</a>';
                         } else {
-                            echo '<img src="'.$header_image.'" alt="'.get_bloginfo( 'title' ).'"/>';
+                            echo '<img src="'.esc_url( $header_image ).'" alt="'.esc_attr( get_bloginfo( 'title' ) ).'"/>';
                         }
                     ?>
                 </div>

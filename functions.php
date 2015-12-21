@@ -361,7 +361,7 @@ add_action( 'wp_ajax_request_post', 'islemag_requestpost' );
 $islemag_section1_category = '';
 
 function islemag_requestpost() {
-		$colors = array("red", "orange", "blue", "green", "purple", "pink", "yellow");
+		$colors = array( "red", "orange", "blue", "green", "purple", "pink", "yellow" );
 		$section = $_POST['section'];
 
 		if( $section == 'islemag_topslider_category' ){
@@ -402,7 +402,7 @@ function islemag_requestpost() {
 								'posts_per_page'        => $islemag_header_slider_max_posts,
 								'order'                 => 'ASC',
 								'post_status'           => 'publish',
-								'category_name'         =>  (!empty($islemag_header_slider_category) && $islemag_header_slider_category != 'all' ? $islemag_header_slider_category : '')
+								'category_name'         =>  ( !empty( $islemag_header_slider_category ) && $islemag_header_slider_category != 'all' ? $islemag_header_slider_category : '' )
 						)
 			);
 
@@ -633,40 +633,40 @@ function islemag_style() {
 
 	echo '<style type="text/css">';
 
-	$islemag_title_color = get_theme_mod( 'islemag_title_color','#454545' );
-	if(!empty($islemag_title_color)){
+	$islemag_title_color = esc_attr( get_theme_mod( 'islemag_title_color','#454545' ) );
+	if( !empty( $islemag_title_color ) ){
 		echo '.title-border span { color: '. $islemag_title_color .' }';
 		echo '.post .entry-title, .post h1, .post h2, .post h3, .post h4, .post h5, .post h6, .post h1 a, .post h2 a, .post h3 a, .post h4 a, .post h5 a, .post h6 a { color: '. $islemag_title_color .' }';
 		echo '.page-header h1 { color: '. $islemag_title_color .' }';
 	}
 
-	$islemag_sidebar_textcolor = get_theme_mod( 'header_textcolor','#454545' );
-	if( !empty($islemag_sidebar_textcolor) ){
+	$islemag_sidebar_textcolor = esc_attr( get_theme_mod( 'header_textcolor','#454545' ) );
+	if( !empty( $islemag_sidebar_textcolor ) ){
 		echo '.sidebar .widget li a, .islemag-content-right, .islemag-content-right a, .post .entry-content, .post .entry-content p,
 		 .post .entry-cats, .post .entry-cats a, .post .entry-comments', '.post .entry-separator, .post .entry-footer a,
 		 .post .entry-footer span, .post .entry-footer .entry-cats, .post .entry-footer .entry-cats a, .author-content { color: #'.$islemag_sidebar_textcolor.'}';
 	}
 
-	$islemag_top_slider_post_title_color = get_theme_mod( 'islemag_top_slider_post_title_color','#ffffff' );
-	if( !empty($islemag_top_slider_post_title_color) ){
+	$islemag_top_slider_post_title_color = esc_attr( get_theme_mod( 'islemag_top_slider_post_title_color','#ffffff' ) );
+	if( !empty( $islemag_top_slider_post_title_color ) ){
 		echo '.islemag-top-container .entry-block .entry-overlay-meta .entry-title a { color: '. $islemag_top_slider_post_title_color .' }';
 	}
 
-	$islemag_top_slider_post_text_color = get_theme_mod( 'islemag_top_slider_post_text_color','#ffffff' );
+	$islemag_top_slider_post_text_color = esc_attr( get_theme_mod( 'islemag_top_slider_post_text_color','#ffffff' ) );
 	if( !empty($islemag_top_slider_post_text_color) ){
 		echo '.islemag-top-container .entry-overlay-meta .entry-overlay-date { color: '. $islemag_top_slider_post_text_color .' }';
 		echo '.islemag-top-container .entry-overlay-meta .entry-separator { color: '. $islemag_top_slider_post_text_color .' }';
 		echo '.islemag-top-container .entry-overlay-meta > a { color: '. $islemag_top_slider_post_text_color .' }';
 	}
 
-	$islemag_sections_post_title_color = get_theme_mod( 'islemag_sections_post_title_color','#454545' );
+	$islemag_sections_post_title_color = esc_attr( get_theme_mod( 'islemag_sections_post_title_color','#454545' ) );
 	if( !empty($islemag_sections_post_title_color) ){
 		echo '.home.blog .islemag-content-left .entry-title a, .blog-related-carousel .entry-title a { color: '. $islemag_sections_post_title_color .' }';
 	}
 
 
 
-	$islemag_sections_post_text_color = get_theme_mod( 'islemag_sections_post_text_color','#454545' );
+	$islemag_sections_post_text_color = esc_attr( get_theme_mod( 'islemag_sections_post_text_color','#454545' ) );
 	if( !empty($islemag_sections_post_text_color) ){
 		echo '.islemag-content-left .entry-meta, .islemag-content-left .blog-related-carousel .entry-content p,
 		.islemag-content-left .blog-related-carousel .entry-cats .entry-label, .islemag-content-left .blog-related-carousel .entry-cats a,
