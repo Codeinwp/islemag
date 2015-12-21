@@ -68,8 +68,8 @@ class islemag_big_ad extends WP_Widget {
 
       <p>
         <input type="hidden" name="<?php echo esc_attr( $this->get_field_name('new_tab') ); ?>" value="0" />
-        <input type="checkbox" <?php if( !empty( $instance['new_tab'] ) ): checked($instance['new_tab'], 'on'); endif; ?> id="<?php echo esc_attr( $this->get_field_id('new_tab') ); ?>" name="<?php echo esc_attr( $this->get_field_name('new_tab') ); ?>" />
-        <label for="<?php echo esc_attr( $this->get_field_id('new_tab') ); ?>"><?php _e('Open in new tab','islemag'); ?></label>
+        <input type="checkbox" <?php if( !empty( $instance['new_tab'] ) ): checked( $instance['new_tab'], 'on' ); endif; ?> id="<?php echo esc_attr( $this->get_field_id('new_tab') ); ?>" name="<?php echo esc_attr( $this->get_field_name('new_tab') ); ?>" />
+        <label for="<?php echo esc_attr( $this->get_field_id( 'new_tab' ) ); ?>"><?php _e( 'Open in new tab', 'islemag' ); ?></label>
       </p>
 
       <?php

@@ -366,43 +366,15 @@ function islemag_requestpost() {
 
 		if( $section == 'islemag_topslider_category' ){
 
-			if ( get_option( 'islemag_header_slider_category' ) !== false ) {
-				if( !empty( $_POST['category'] ) ){
-					update_option( 'islemag_header_slider_category', $_POST['category'] );
-				}
-			} else {
-				if( !empty( $_POST['category'] ) ){
-					add_option( 'islemag_header_slider_category', $_POST['category'] );
-				} else {
-					$cat = get_theme_mod( 'islemag_header_slider_category', 'all' );
-					add_option( 'islemag_header_slider_category', $cat );
-				}
-			}
+			$cat = $_POST['category'];
+			$nb_of_posts = $_POST['nb_of_posts'];
 
-
-			if ( get_option( 'islemag_header_slider_max_posts' ) !== false ) {
-				if( !empty( $_POST['nb_of_posts'] ) ){
-					update_option( 'islemag_header_slider_max_posts', $_POST['nb_of_posts'] );
-				}
-			} else {
-				if( !empty( $_POST['nb_of_posts'] ) ){
-					add_option( 'islemag_header_slider_max_posts', $_POST['nb_of_posts'] );
-				} else {
-					$nb_of_posts = get_theme_mod( 'islemag_header_slider_max_posts', 6 );
-					add_option( 'islemag_header_slider_max_posts', $nb_of_posts );
-				}
-			}
-			$cat = get_option( 'islemag_header_slider_category' );
-			$nb_of_posts = get_option( 'islemag_header_slider_max_posts' );
-
-			$islemag_header_slider_category = $cat;
-			$islemag_header_slider_max_posts =  $nb_of_posts;
 			$wp_query = new WP_Query(
 				array(
-								'posts_per_page'        => $islemag_header_slider_max_posts,
+								'posts_per_page'        => $nb_of_posts,
 								'order'                 => 'ASC',
 								'post_status'           => 'publish',
-								'category_name'         =>  ( !empty( $islemag_header_slider_category ) && $islemag_header_slider_category != 'all' ? $islemag_header_slider_category : '' )
+								'category_name'         =>  ( !empty( $cat ) && $cat != 'all' ? $cat : '' )
 						)
 			);
 
@@ -424,205 +396,35 @@ function islemag_requestpost() {
 		}
 
 		if( $section == 'islemag_section1_category' ){
-
-			if ( get_option( 'islemag_section1_category' ) !== false ) {
-				if( !empty( $_POST['category'] ) ){
-					update_option( 'islemag_section1_category', $_POST['category'] );
-				}
-			} else {
-				if( !empty( $_POST['category'] ) ){
-					add_option( 'islemag_section1_category', $_POST['category'] );
-				} else {
-					$cat = get_theme_mod( 'islemag_section1_category', 'all' );
-					add_option( 'islemag_section1_category', $cat );
-				}
-			}
-
-
-			if ( get_option( 'islemag_section1_max_posts' ) !== false ) {
-				if( !empty( $_POST['nb_of_posts'] ) ){
-					update_option( 'islemag_section1_max_posts', $_POST['nb_of_posts'] );
-				}
-			} else {
-				if( !empty( $_POST['nb_of_posts'] ) ){
-					add_option( 'islemag_section1_max_posts', $_POST['nb_of_posts'] );
-				} else {
-					$nb_of_posts = get_theme_mod( 'islemag_section1_max_posts', 6 );
-					add_option( 'islemag_section1_max_posts', $nb_of_posts );
-				}
-			}
-
-			$cat = get_option( 'islemag_section1_category' );
-			$nb_of_posts = get_option( 'islemag_section1_max_posts' );
-
-			$islemag_section_category = $cat;
-			$islemag_section_max_posts = $nb_of_posts;
+			$islemag_section_category = $_POST['category'];
+			$islemag_section_max_posts = $_POST['nb_of_posts'];
 			include( locate_template( 'template-parts/content-template1.php' ) );
-
 		}
 
 		if( $section == 'islemag_section2_category' ){
-
-			if ( get_option( 'islemag_section2_category' ) !== false ) {
-				if( !empty( $_POST['category'] ) ){
-					update_option( 'islemag_section2_category', $_POST['category'] );
-				}
-			} else {
-				if( !empty( $_POST['category'] ) ){
-					add_option( 'islemag_section2_category', $_POST['category'] );
-				} else {
-					$cat = get_theme_mod( 'islemag_section2_category', 'all' );
-					add_option( 'islemag_section2_category', $cat );
-				}
-			}
-
-
-			if ( get_option( 'islemag_section2_max_posts' ) !== false ) {
-				if( !empty( $_POST['nb_of_posts'] ) ){
-					update_option( 'islemag_section2_max_posts', $_POST['nb_of_posts'] );
-				}
-			} else {
-				if( !empty( $_POST['nb_of_posts'] ) ){
-					add_option( 'islemag_section2_max_posts', $_POST['nb_of_posts'] );
-				} else {
-					$nb_of_posts = get_theme_mod( 'islemag_section2_max_posts', 6 );
-					add_option( 'islemag_section2_max_posts', $nb_of_posts );
-				}
-			}
-			$cat = get_option( 'islemag_section2_category' );
-			$nb_of_posts = get_option( 'islemag_section2_max_posts' );
-
-			$islemag_section_category = $cat;
-			$islemag_section_max_posts = $nb_of_posts;
+			$islemag_section_category = $_POST['category'];
+			$islemag_section_max_posts = $_POST['nb_of_posts'];
 			include( locate_template( 'template-parts/content-template2.php' ) );
-
 		}
 
 		if( $section == 'islemag_section3_category' ){
-
-			if ( get_option( 'islemag_section3_category' ) !== false ) {
-				if( !empty( $_POST['category'] ) ){
-					update_option( 'islemag_section3_category', $_POST['category'] );
-				}
-			} else {
-				if( !empty( $_POST['category'] ) ){
-					add_option( 'islemag_section3_category', $_POST['category'] );
-				} else {
-					$cat = get_theme_mod( 'islemag_section3_category', 'all' );
-					add_option( 'islemag_section3_category', $cat );
-				}
-			}
-
-			if ( get_option( 'islemag_section3_max_posts' ) !== false ) {
-				if( !empty( $_POST['nb_of_posts'] ) ){
-					update_option( 'islemag_section3_max_posts', $_POST['nb_of_posts'] );
-				}
-			} else {
-				if( !empty( $_POST['nb_of_posts'] ) ){
-					add_option( 'islemag_section3_max_posts', $_POST['nb_of_posts'] );
-				} else {
-					$nb_of_posts = get_theme_mod( 'islemag_section3_max_posts', 6 );
-					add_option( 'islemag_section3_max_posts', $nb_of_posts );
-				}
-			}
-
-			$cat = get_option( 'islemag_section3_category' );
-			$nb_of_posts = get_option( 'islemag_section3_max_posts' );
-
-			$islemag_section_category = $cat;
-			$islemag_section_max_posts = $nb_of_posts;
+			$islemag_section_category = $_POST['category'];
+			$islemag_section_max_posts = $_POST['nb_of_posts'];
 			include( locate_template( 'template-parts/content-template1.php' ) );
 		}
 
 		if( $section == 'islemag_section4_category' ){
-
-			if ( get_option( 'islemag_section4_category' ) !== false ) {
-				if( !empty( $_POST['category'] ) ){
-					update_option( 'islemag_section4_category', $_POST['category'] );
-				}
-			} else {
-				if( !empty( $_POST['category'] ) ){
-					add_option( 'islemag_section4_category', $_POST['category'] );
-				} else {
-					$cat = get_theme_mod( 'islemag_section4_category', 'all' );
-					add_option( 'islemag_section4_category', $cat );
-				}
-			}
-
-			if ( get_option( 'islemag_section4_max_posts' ) !== false ) {
-				if( !empty( $_POST['nb_of_posts'] ) ){
-					update_option( 'islemag_section4_max_posts', $_POST['nb_of_posts'] );
-				}
-			} else {
-				if( !empty( $_POST['nb_of_posts'] ) ){
-					add_option( 'islemag_section4_max_posts', $_POST['nb_of_posts'] );
-				} else {
-					$nb_of_posts = get_theme_mod( 'islemag_section4_max_posts', 12 );
-					add_option( 'islemag_section4_max_posts', $nb_of_posts );
-				}
-			}
-
-			if ( get_option( 'islemag_section4_posts_per_page' ) !== false ) {
-				if( !empty( $_POST['posts_per_page'] ) ){
-					update_option( 'islemag_section4_posts_per_page', $_POST['posts_per_page'] );
-				}
-			} else {
-				if( !empty( $_POST['posts_per_page'] ) ){
-					add_option( 'islemag_section4_posts_per_page', $_POST['posts_per_page'] );
-				} else {
-					$posts_per_page = get_theme_mod( 'islemag_section4_posts_per_page', 6 );
-					add_option( 'islemag_section4_posts_per_page', $posts_per_page );
-				}
-			}
-			$cat = get_option( 'islemag_section4_category' );
-			$nb_of_posts = get_option( 'islemag_section4_max_posts' );
-			$posts_per_page = get_option( 'islemag_section4_posts_per_page' );
-
-			$islemag_section_category = $cat;
-			$islemag_section_max_posts = $nb_of_posts;
-			$postperpage = $posts_per_page;
+			$islemag_section_category = $_POST['category'];
+			$islemag_section_max_posts = $_POST['nb_of_posts'];
+			$postperpage = $_POST['posts_per_page'];
 			include( locate_template( 'template-parts/content-template3.php' ) );
-
 		}
-
-
-
 
 		if( $section == 'islemag_section5_category' ){
-
-			if ( get_option( 'islemag_section5_category' ) !== false ) {
-				if( !empty( $_POST['category'] ) ){
-					update_option( 'islemag_section5_category', $_POST['category'] );
-				}
-			} else {
-				if( !empty( $_POST['category'] ) ){
-					add_option( 'islemag_section5_category', $_POST['category'] );
-				} else {
-					$cat = get_theme_mod( 'islemag_section5_category', 'all' );
-					add_option( 'islemag_section5_category', $cat );
-				}
-			}
-
-			if ( get_option( 'islemag_section5_max_posts' ) !== false ) {
-				if( !empty( $_POST['nb_of_posts'] ) ){
-					update_option( 'islemag_section5_max_posts', $_POST['nb_of_posts'] );
-				}
-			} else {
-				if( !empty( $_POST['nb_of_posts'] ) ){
-					add_option( 'islemag_section5_max_posts', $_POST['nb_of_posts'] );
-				} else {
-					$nb_of_posts = get_theme_mod( 'islemag_section5_max_posts', 12 );
-					add_option( 'islemag_section5_max_posts', $nb_of_posts );
-				}
-			}
-			$cat = get_option( 'islemag_section5_category' );
-			$nb_of_posts = get_option( 'islemag_section5_max_posts' );
-
-			$islemag_section_category = $cat;
-			$islemag_section_max_posts = $nb_of_posts;
+			$islemag_section_category = $_POST['category'];
+			$islemag_section_max_posts = $_POST['nb_of_posts'];
 			include( locate_template( 'template-parts/content-template4.php' ) );
 		}
-
 
     die();
 }

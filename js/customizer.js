@@ -112,7 +112,8 @@
 				data: {
 					action: 'request_post',
 					section: 'islemag_topslider_category',
-					category: to
+					category: to,
+					nb_of_posts: wp.customize._value.islemag_header_slider_max_posts()
 				},
 				beforeSend: function() {
 					jQuery('.islemag-top-container').replaceWith( '<div class="islemag-top-container" id="loader">Loading New Posts...</div>' );
@@ -150,6 +151,7 @@
 				data: {
 					action: 'request_post',
 					section: 'islemag_topslider_category',
+					category: wp.customize._value.islemag_header_slider_category(),
 					nb_of_posts: to
 				},
 				beforeSend: function() {
@@ -201,7 +203,8 @@
 					data: {
 						action: 'request_post',
 						section: 'islemag_section1_category',
-						category: to
+						category: to,
+						nb_of_posts: wp.customize._value.islemag_section1_max_posts(),
 					},
 					beforeSend: function() {
 						jQuery('.islemag-section1').find('.islemag-template1').replaceWith( '<div class="islemag-template1" id="loader">Loading New Posts...</div>' );
@@ -239,7 +242,8 @@
 					data: {
 						action: 'request_post',
 						section: 'islemag_section1_category',
-						nb_of_posts: to
+						nb_of_posts: to,
+						category: wp.customize._value.islemag_section1_category()
 					},
 					beforeSend: function() {
 						jQuery('.islemag-section1').find('.islemag-template1').replaceWith( '<div class="islemag-template1" id="loader">Loading New Posts...</div>' );
@@ -289,7 +293,8 @@
 				data: {
 					action: 'request_post',
 					section: 'islemag_section2_category',
-					category: to
+					category: to,
+					nb_of_posts: wp.customize._value.islemag_section2_max_posts()
 				},
 				beforeSend: function() {
 					jQuery('.islemag-section2').find( '.islemag-template2' ).replaceWith( '<div class="islemag-template2" id="loader">Loading New Posts...</div>' );
@@ -310,7 +315,8 @@
 				data: {
 					action: 'request_post',
 					section: 'islemag_section2_category',
-					nb_of_posts: to
+					nb_of_posts: to,
+					category: wp.customize._value.islemag_section2_category()
 				},
 				beforeSend: function() {
 					jQuery('.islemag-section2').find( '.islemag-template2' ).replaceWith( '<div class="islemag-template2" id="loader">Loading New Posts...</div>' );
@@ -344,7 +350,8 @@
 					data: {
 						action: 'request_post',
 						section: 'islemag_section3_category',
-						category: to
+						category: to,
+						nb_of_posts: wp.customize._value.islemag_section3_max_posts()
 					},
 					beforeSend: function() {
 						jQuery('.islemag-section3').find('.islemag-template1').replaceWith( '<div class="islemag-template1" id="loader">Loading New Posts...</div>' );
@@ -382,7 +389,8 @@
 					data: {
 						action: 'request_post',
 						section: 'islemag_section3_category',
-						nb_of_posts: to
+						nb_of_posts: to,
+						category: wp.customize._value.islemag_section3_category()
 					},
 					beforeSend: function() {
 						jQuery('.islemag-section3').find('.islemag-template1').replaceWith( '<div class="islemag-template1" id="loader">Loading New Posts...</div>' );
@@ -432,7 +440,10 @@
 					data: {
 						action: 'request_post',
 						section: 'islemag_section4_category',
-						category: to
+						category: to,
+						nb_of_posts: wp.customize._value.islemag_section4_max_posts(),
+						posts_per_page: wp.customize._value.islemag_section4_posts_per_page()
+
 					},
 					beforeSend: function() {
 						jQuery( '.islemag-section4' ).find( '.islemag-template3' ).replaceWith( '<div class="islemag-template3" id="loader">Loading New Posts...</div>' );
@@ -465,7 +476,9 @@
 					data: {
 						action: 'request_post',
 						section: 'islemag_section4_category',
-						nb_of_posts: to
+						nb_of_posts: to,
+						posts_per_page: wp.customize._value.islemag_section4_posts_per_page(),
+						category: wp.customize._value.islemag_section4_category()
 					},
 					beforeSend: function() {
 						jQuery( '.islemag-section4' ).find( '.islemag-template3' ).replaceWith( '<div class="islemag-template3" id="loader">Loading New Posts...</div>' );
@@ -498,7 +511,9 @@
 					data: {
 						action: 'request_post',
 						section: 'islemag_section4_category',
-						posts_per_page: to
+						posts_per_page: to,
+						category: wp.customize._value.islemag_section4_category(),
+						nb_of_posts: wp.customize._value.islemag_section4_max_posts()
 					},
 					beforeSend: function() {
 						jQuery( '.islemag-section4' ).find( '.islemag-template3' ).replaceWith( '<div class="islemag-template3" id="loader">Loading New Posts...</div>' );
@@ -543,7 +558,8 @@
 					data: {
 						action: 'request_post',
 						section: 'islemag_section5_category',
-						category: to
+						category: to,
+						nb_of_posts: wp.customize._value.islemag_section5_max_posts()
 					},
 					beforeSend: function() {
 						jQuery('.islemag-section5').find( '.islemag-template4').replaceWith( '<div class="islemag-template4" id="loader">Loading New Posts...</div>' );
@@ -580,7 +596,8 @@
 					data: {
 						action: 'request_post',
 						section: 'islemag_section5_category',
-						nb_of_posts: to
+						nb_of_posts: to,
+						category: wp.customize._value.islemag_section5_category()
 					},
 					beforeSend: function() {
 						jQuery('.islemag-section5').find( '.islemag-template4').replaceWith( '<div class="islemag-template4" id="loader">Loading New Posts...</div>' );
