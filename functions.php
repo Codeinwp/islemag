@@ -97,6 +97,7 @@ function islemag_setup() {
 		'height'                 => 100,
 		'flex-height'            => true,
 		'flex-width'             => true,
+		'header-text'            => false
 
 		// Random image rotation off by default.
 		'random-default'         => false,

@@ -532,7 +532,7 @@ function islemag_sanitize_number( $input ){
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
  */
 function islemag_customize_preview_js() {
-	wp_enqueue_script( 'islemag_customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), '1.0.2', true );
+	wp_enqueue_script( 'islemag_customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), '1.0.0', true );
 	wp_localize_script( 'islemag_customizer', 'requestpost', array(
 			'ajaxurl' => admin_url( 'admin-ajax.php' ),
 

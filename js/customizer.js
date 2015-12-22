@@ -14,6 +14,7 @@
 		} );
 	} );
 	wp.customize( 'blogdescription', function( value ) {
+		console.log(wp.customize._value);
 		value.bind( function( to ) {
 			$( '.site-description' ).text( to );
 		} );
