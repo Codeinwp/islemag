@@ -626,7 +626,7 @@
 		} );
 	} );
 
-	wp.customize( 'islemag_single_page_hide_author', function( value ) {
+	wp.customize( 'islemag_single_post_hide_author', function( value ) {
 		value.bind( function( to ) {
 			if ( '1' != to ) {
 				$( '.about-author ' ).removeClass( 'islemag_hide' );
@@ -636,7 +636,7 @@
 		} );
 	} );
 
-	wp.customize( 'islemag_single_page_hide_related_posts', function( value ) {
+	wp.customize( 'islemag_single_post_hide_related_posts', function( value ) {
 		value.bind( function( to ) {
 			if ( '1' != to ) {
 				$( '.blog-related-carousel ' ).removeClass( 'islemag_hide' );

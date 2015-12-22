@@ -95,8 +95,8 @@ function islemag_customize_register( $wp_customize ) {
 			'panel'				=> 'sections_panel'
 	) );
 
-	$wp_customize->add_section( 'islemag_single_page' , array(
-			'title' => __( 'Single page settings', 'islemag' ),
+	$wp_customize->add_section( 'islemag_single_post' , array(
+			'title' => __( 'Single post settings', 'islemag' ),
 			'priority' => 50,
 	) );
 
@@ -266,13 +266,13 @@ function islemag_customize_register( $wp_customize ) {
 			'sanitize_callback'			=> 'islemag_sanitize_number'
 	) );
 
-	$wp_customize->add_setting( 'islemag_single_page_hide_author', array(
+	$wp_customize->add_setting( 'islemag_single_post_hide_author', array(
 			'defalt'								=> true,
 			'transport' 						=> 'postMessage',
 			'sanitize_callback'			=> 'islemag_sanitize_text'
 	) );
 
-	$wp_customize->add_setting( 'islemag_single_page_hide_related_posts', array(
+	$wp_customize->add_setting( 'islemag_single_post_hide_related_posts', array(
 			'transport' => 'postMessage',
 			'sanitize_callback'			=> 'islemag_sanitize_text'
 	) );
@@ -463,19 +463,19 @@ function islemag_customize_register( $wp_customize ) {
 			'priority'    						=> 3
 	) );
 
-	$wp_customize->add_control( 'islemag_single_page_hide_author', array(
+	$wp_customize->add_control( 'islemag_single_post_hide_author', array(
 			'type' => 'checkbox',
 			'label' => __( 'Hide author\'s description?', 'islemag' ),
 			'description' => __( 'If you check this box, the author\'s description will disappear from single page.','islemag' ),
-			'section' => 'islemag_single_page',
+			'section' => 'islemag_single_post',
 			'priority' => 1,
 	) );
 
-	$wp_customize->add_control( 'islemag_single_page_hide_related_posts', array(
+	$wp_customize->add_control( 'islemag_single_post_hide_related_posts', array(
 			'type' => 'checkbox',
 			'label' => __( 'Hide related posts?', 'islemag' ),
 			'description' => __( 'If you check this box, related posts will disappear from single page.','islemag' ),
-			'section' => 'islemag_single_page',
+			'section' => 'islemag_single_post',
 			'priority' => 2,
 	) );
 
@@ -532,7 +532,7 @@ function islemag_sanitize_number( $input ){
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
  */
 function islemag_customize_preview_js() {
-	wp_enqueue_script( 'islemag_customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), '1.0.0', true );
+	wp_enqueue_script( 'islemag_customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), '1.0.1', true );
 	wp_localize_script( 'islemag_customizer', 'requestpost', array(
 			'ajaxurl' => admin_url( 'admin-ajax.php' ),
 
