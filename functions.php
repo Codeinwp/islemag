@@ -215,12 +215,6 @@ function islemag_scripts() {
 
 	wp_enqueue_style( 'islemag-style', get_stylesheet_uri() );
 
-	wp_enqueue_style( 'islemag-font1', '//fonts.googleapis.com/css?family=Lato:400,700');
-
-	wp_enqueue_style( 'islemag-font2', '//fonts.googleapis.com/css?family=Raleway:400,600,700');
-
-	wp_enqueue_style( 'islemag-font3', '//fonts.googleapis.com/css?family=Open+Sans:400,700,600');
-
 	wp_enqueue_style( 'islemag-fontawesome', get_stylesheet_directory_uri().'/css/font-awesome.min.css',array(), '4.4.0');
 
 	if( is_home() ){
@@ -244,6 +238,47 @@ function islemag_scripts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'islemag_scripts' );
+
+
+
+function islemag_fonts_url() {
+	$fonts_url = '';
+
+	/* Translators: If there are characters in your language that are not
+	* supported by Lora, translate this to 'off'. Do not translate
+	* into your own language.
+	*/
+	$lato = _x( 'on', 'Lato font: on or off', 'islemag' );
+	$raleway = _x( 'on','Raleway font: on or off','islemag' );
+	$open_sans = _x( 'on', 'Open Sans font: on or off', 'islemag' );
+
+	if( 'off' !== $lato || 'off' !== $raleway || 'off' !== $open_sans ){
+		$font_families = array();
+		if( 'off' !== $lato ){
+			$font_families[] = 'Lato:400,700';
+		}
+		if( 'off' !== $raleway ){
+			$font_families[] = 'Raleway:400,600,700';
+		}
+		if( 'off' !== $open_sans ){
+			$font_families[] = 'Open Sans:400,700,600';
+		}
+		$query_args = array(
+			'family' => urlencode( implode( '|', $font_families ) ),
+			'subset' => urlencode( 'latin,latin-ext' ),
+		);
+		$fonts_url = add_query_arg( $query_args, 'https://fonts.googleapis.com/css' );
+	}
+
+	return $fonts_url;
+}
+
+function islemag_scripts_styles() {
+	wp_enqueue_style( 'islemag-fonts', islemag_fonts_url(), array(), null );
+}
+add_action( 'wp_enqueue_scripts', 'islemag_scripts_styles' );
+
+
 
 /**
  * Implement the Custom Header feature.
