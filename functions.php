@@ -319,19 +319,11 @@ function islemag_customizer_script() {
 
   wp_enqueue_script( 'islemag_customizer_script', get_template_directory_uri() .'/js/islemag_customizer.js', array( 'jquery', 'jquery-ui-draggable', 'islemag_ddslick' ), '1.0.0', true );
 
-}
-add_action(  'customize_controls_enqueue_scripts', 'islemag_customizer_script'  );
-
-
-/**
- * Load admin style
- */
-function islemag_admin_styles() {
-
 	wp_enqueue_style( 'islemag_admin_stylesheet', get_stylesheet_directory_uri().'/css/admin-style.css','1.0.0' );
 
 }
-add_action( 'admin_enqueue_scripts', 'islemag_admin_styles', 10 );
+add_action(  'customize_controls_enqueue_scripts', 'islemag_customizer_script'  );
+
 
 /**
  * Related Posts Excerpt
