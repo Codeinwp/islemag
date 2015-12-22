@@ -240,7 +240,9 @@ function islemag_scripts() {
 add_action( 'wp_enqueue_scripts', 'islemag_scripts' );
 
 
-
+/**
+ * Enqueue scripts and styles.
+ */
 function islemag_fonts_url() {
 	$fonts_url = '';
 
@@ -311,14 +313,14 @@ require get_template_directory() . '/inc/jetpack.php';
  */
 function islemag_customizer_script() {
 
-	wp_enqueue_style( 'islemag-fontawesome_admin', get_stylesheet_directory_uri().'/css/font-awesome.min.css',array(), '1.0.0');
+	wp_enqueue_style( 'islemag-fontawesome_admin', get_stylesheet_directory_uri().'/css/font-awesome.min.css',array(), '1.0.0' );
 
-	wp_enqueue_script( 'islemag_customizer_script', get_template_directory_uri() .'/js/islemag_customizer.js', array("jquery","jquery-ui-draggable","islemag_ddslick"),'1.0.0', true  );
+  wp_register_script( 'islemag_ddslick', get_template_directory_uri() .'/js/jquery.ddslick.js', array("jquery"), '1.0.0');
 
-	wp_enqueue_script( 'islemag_ddslick', get_template_directory_uri() .'/js/jquery.ddslick.js', array("jquery"),'1.0.0', true  );
+  wp_enqueue_script( 'islemag_customizer_script', get_template_directory_uri() .'/js/islemag_customizer.js', array( 'jquery', 'jquery-ui-draggable', 'islemag_ddslick' ), '1.0.0', true );
 
 }
-add_action( 'customize_controls_enqueue_scripts', 'islemag_customizer_script' );
+add_action(  'customize_controls_enqueue_scripts', 'islemag_customizer_script'  );
 
 
 /**
