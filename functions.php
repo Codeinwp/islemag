@@ -41,7 +41,7 @@ function islemag_setup() {
 	 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
 	 */
  	add_theme_support( 'post-thumbnails' );
-	
+
 	add_image_size( 'islemag_main_slider', 400, 400, true );
 	add_image_size( 'islemag_sections_small_thumbnail', 110, 110, true );
 	add_image_size( 'islemag_section4_big_thumbnail', 420, 420, true );
@@ -49,14 +49,6 @@ function islemag_setup() {
 	add_image_size( 'islemag_related_post', 348, 194, true );
 	add_image_size( 'islemag_blog_post', 770, 430, true );
 	add_image_size( 'islemag_ad_125', 125, 125, true );
-
-
-add_filter( 'image_size_names_choose', 'islemg_media_uploader_custom_sizes' );
-function islemg_media_uploader_custom_sizes( $sizes ) {
-		return array_merge( $sizes, array(
-				'islemag_ad_125' => esc_html__('Small Advertisement','islemag'),
-		) );
-}
 
 
 	// This theme uses wp_nav_menu() in one location.
@@ -121,6 +113,18 @@ function islemg_media_uploader_custom_sizes( $sizes ) {
 }
 endif; // islemag_setup
 add_action( 'after_setup_theme', 'islemag_setup' );
+
+
+/**
+ * Add image size in image_size_names_choose for media uploader
+ */
+add_filter( 'image_size_names_choose', 'islemg_media_uploader_custom_sizes' );
+function islemg_media_uploader_custom_sizes( $sizes ) {
+		return array_merge( $sizes, array(
+				'islemag_ad_125' => esc_html__('Small Advertisement','islemag'),
+		) );
+}
+
 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
