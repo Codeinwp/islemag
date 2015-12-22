@@ -98,9 +98,6 @@ function islemag_setup() {
 		'flex-height'            => true,
 		'flex-width'             => true,
 		'header-text'            => false
-
-		// Random image rotation off by default.
-		'random-default'         => false,
 	);
 	add_theme_support( 'custom-header', $defaults );
 
