@@ -41,12 +41,13 @@ function islemag_setup() {
 	 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
 	 */
  	add_theme_support( 'post-thumbnails' );
-	add_image_size( 'main-slider', 400, 400, true );
-	add_image_size( 'sections-small-thumbnail', 110, 110, true );
-	add_image_size( 'section4-big-thumbnail', 420, 420, true );
-	add_image_size( 'author-avatar', 90, 90, true );
-	add_image_size( 'related-post', 348, 194, true );
-	add_image_size( 'blog-post', 770, 430, true );
+	
+	add_image_size( 'islemag_main_slider', 400, 400, true );
+	add_image_size( 'islemag_sections_small_thumbnail', 110, 110, true );
+	add_image_size( 'islemag_section4_big_thumbnail', 420, 420, true );
+	add_image_size( 'islemag_author_avatar', 90, 90, true );
+	add_image_size( 'islemag_related_post', 348, 194, true );
+	add_image_size( 'islemag_blog_post', 770, 430, true );
 	add_image_size( 'islemag_ad_125', 125, 125, true );
 
 

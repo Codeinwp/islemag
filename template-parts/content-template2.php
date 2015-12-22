@@ -28,7 +28,7 @@ if ( $wp_query->have_posts() ) : ?>
                   <a href="<?php the_permalink(); ?>" title="<?php echo get_the_title(); ?>">
                       <?php
                           if( has_post_thumbnail() ){
-                              the_post_thumbnail( 'main-slider' );
+                              the_post_thumbnail( 'islemag_main_slider' );
                           } else {
                               echo '<img src="'.get_template_directory_uri().'/img/placeholder-image.png" />';
                           }

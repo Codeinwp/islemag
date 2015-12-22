@@ -16,7 +16,7 @@
 			<a href="<?php the_permalink(); ?>">
 			 <?php
 				if( has_post_thumbnail() ){
-					the_post_thumbnail('blog-post');
+					the_post_thumbnail('islemag_blog_post');
 				} else {
 					echo '<img src="' . get_template_directory_uri() . '/img/blogpost-placeholder.jpg" />';
 				} ?>

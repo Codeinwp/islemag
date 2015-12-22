@@ -59,7 +59,7 @@
                       <h3 class="title-underblock custom"><?php esc_attr( 'Post Author:','islemag' ) ?> <a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>"><?php the_author(); ?></a></h3>
                       <?php
                           $author_id = get_the_author_meta( 'ID' );
-                          $profile_pic = get_avatar( $author_id, 'author-avatar' );
+                          $profile_pic = get_avatar( $author_id, 'islemag_author_avatar' );
                           if( !empty( $profile_pic ) ){ ?>
                             <figure class="pull-left">
                                 <?php echo $profile_pic; ?>
@@ -87,7 +87,7 @@
                                 <a href="<?php the_permalink(); ?>">
                                     <?php
                                     if ( has_post_thumbnail() ) {
-                                        $thumb = wp_get_attachment_image_src( get_post_thumbnail_id( $wp_query->ID ), 'related-post' );
+                                        $thumb = wp_get_attachment_image_src( get_post_thumbnail_id( $wp_query->ID ), 'islemag_related_post' );
                               					$url = $thumb['0'];
                               					echo '<img class="owl-lazy" data-src="'. esc_url( $url ).'" />';
                                     } else {
