@@ -53,9 +53,9 @@ function islemag_setup() {
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
-		'primary' => esc_html__( 'Primary Menu', 'islemag' ),
-		'footer'  => esc_html__( 'Footer Menu', 'islemag'),
-		'header'  => esc_html__( 'Header Menu', 'islemag')
+		'header'  => esc_html__( 'Top', 'islemag'),
+		'primary' => esc_html__( 'Primary', 'islemag' ),
+		'footer'  => esc_html__( 'Footer', 'islemag')
 	) );
 
 	/*
