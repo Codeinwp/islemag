@@ -66,9 +66,12 @@
                             ?>
                         </div><!-- End .col-md-6 -->
                         <div class="col-md-6 col-md-pull-6 powerdby">
-	                      	<a class="" href="https://themeisle.com/themes/islemag/" target="_blank" rel="nofollow">Islemag </a> <?php printf( esc_html__( ' proudly powered by %s', 'islemag' ),'<a href="https://wordpress.org/">'.esc_html__( 'WordPress', 'islemag' ).'</a>' ); ?>
+													<?php
+														$sitename = esc_attr( get_bloginfo( 'title' ) );
+														$themelink = '<a href="//themeisle.com/themes/islemag/">Themeisle</a>';
+														$wplink = '<a href="//wordpress.org/">WordPress</a>';
+														printf( esc_html__( '%1$s is proudly powered by %2$s and %3$s.', 'islemag' ), ( !empty( $sitename ) ? $sitename : esc_html__( 'Islemag','islemag' ) ) , $themelink, $wplink );?>
                         </div><!-- End .col-md-6 -->
-
                     </div><!-- End .row -->
                 </div><!-- End .container -->
             </div><!-- End #footer-bottom -->
