@@ -48,29 +48,13 @@ class islemag_multiple_ads extends WP_Widget {
       $instance = $old_instance;
 
       $instance['new_tab'] = strip_tags( $new_instance['new_tab'] );
-      $instance['widget_title'] = strip_tags( $new_instance['widget_title'] );
+      $instance['widget_title'] = sanitize_text_field( $new_instance['widget_title'] );
 
-      $instance['title_ad1'] = strip_tags( $new_instance['title_ad1'] );
-      $instance['title_ad2'] = strip_tags( $new_instance['title_ad2'] );
-      $instance['title_ad3'] = strip_tags( $new_instance['title_ad3'] );
-      $instance['title_ad4'] = strip_tags( $new_instance['title_ad4'] );
-      $instance['title_ad5'] = strip_tags( $new_instance['title_ad5'] );
-      $instance['title_ad6'] = strip_tags( $new_instance['title_ad6'] );
-
-
-      $instance['link_ad1'] = strip_tags( $new_instance['link_ad1'] );
-      $instance['link_ad2'] = strip_tags( $new_instance['link_ad2'] );
-      $instance['link_ad3'] = strip_tags( $new_instance['link_ad3'] );
-      $instance['link_ad4'] = strip_tags( $new_instance['link_ad4'] );
-      $instance['link_ad5'] = strip_tags( $new_instance['link_ad5'] );
-      $instance['link_ad6'] = strip_tags( $new_instance['link_ad6'] );
-
-      $instance['image_uri_ad1'] = strip_tags( $new_instance['image_uri_ad1'] );
-      $instance['image_uri_ad2'] = strip_tags( $new_instance['image_uri_ad2'] );
-      $instance['image_uri_ad3'] = strip_tags( $new_instance['image_uri_ad3'] );
-      $instance['image_uri_ad4'] = strip_tags( $new_instance['image_uri_ad4'] );
-      $instance['image_uri_ad5'] = strip_tags( $new_instance['image_uri_ad5'] );
-      $instance['image_uri_ad6'] = strip_tags( $new_instance['image_uri_ad6'] );
+      for($i = 1; $i <= 6; $i++ ){
+        $instance['title_ad' . $i] = sanitize_text_field( $new_instance['title_ad' . $i] );
+        $instance['link_ad' . $i] = esc_url_raw( $new_instance['link_ad' . $i] );
+        $instance['image_uri_ad' . $i] = esc_url_raw( $new_instance['image_uri_ad' . $i] );
+      }
 
       return $instance;
     }

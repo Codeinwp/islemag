@@ -50,10 +50,10 @@ class islemag_big_ad extends WP_Widget {
     function update($new_instance, $old_instance) {
       $instance = $old_instance;
       $instance['new_tab'] = strip_tags( $new_instance['new_tab'] );
-      $instance['widget_title'] = strip_tags( $new_instance['widget_title'] );
-      $instance['title_ad'] = strip_tags( $new_instance['title_ad'] );
-      $instance['link_ad'] = strip_tags( $new_instance['link_ad'] );
-      $instance['image_uri_ad'] = strip_tags( $new_instance['image_uri_ad'] );
+      $instance['widget_title'] = sanitize_text_field( $new_instance['widget_title'] );
+      $instance['title_ad'] = sanitize_text_field( $new_instance['title_ad'] );
+      $instance['link_ad'] = esc_url_raw( $new_instance['link_ad'] );
+      $instance['image_uri_ad'] = esc_url_raw( $new_instance['image_uri_ad'] );
       return $instance;
     }
 

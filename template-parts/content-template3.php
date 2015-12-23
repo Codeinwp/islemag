@@ -30,7 +30,7 @@ if ( $wp_query->have_posts() ) : ?>
 
                                         <div class="col-sm-6">
                                           <article class="entry entry-overlay entry-block <?php echo $colors[$choosed_color]; ?>">
-                                            <a href="<?php echo esc_url( get_category_link( $category[0]->cat_ID ) ); ?>" class="category-block" title="<? esc_html_e( 'Category','islemag' ); ?> <?php echo esc_attr( $category[0]->cat_name ); ?>"><?php echo esc_attr( $category[0]->cat_name ); ?></a>
+                                            <a href="<?php echo esc_url( get_category_link( $category[0]->cat_ID ) ); ?>" class="category-block" title="<?php esc_html_e( 'Category','islemag' ); ?> <?php echo esc_attr( $category[0]->cat_name ); ?>"><?php echo esc_attr( $category[0]->cat_name ); ?></a>
                                             <div class="entry-media">
 
                                               <figure>
@@ -76,7 +76,7 @@ if ( $wp_query->have_posts() ) : ?>
                                       <article class="entry entry-overlay entry-block eb-small <?php echo $colors[$choosed_color]; ?>">
 
                                         <div class="entry-media">
-                                          <a href="<?php echo esc_url( get_category_link( $category[0]->cat_ID ) ); ?>" class="category-block" title="<? esc_html_e( 'Category','islemag' ); ?> <?php echo esc_attr( $category[0]->cat_name ); ?>"><?php echo esc_attr( $category[0]->cat_name ); ?></a>
+                                          <a href="<?php echo esc_url( get_category_link( $category[0]->cat_ID ) ); ?>" class="category-block" title="<?php esc_html_e( 'Category','islemag' ); ?> <?php echo esc_attr( $category[0]->cat_name ); ?>"><?php echo esc_attr( $category[0]->cat_name ); ?></a>
                                           <figure>
                                             <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
                                                 <?php
@@ -119,7 +119,7 @@ if ( $wp_query->have_posts() ) : ?>
                                                         $choosed_color = array_rand($colors, 1); ?>
                                                         <article class="entry entry-overlay entry-block eb-small <?php echo $colors[$choosed_color]; ?>">
                                                           <div class="entry-media">
-                                                            <a href="<?php echo esc_url ( get_category_link( $category[0]->cat_ID ) ); ?>" class="category-block" title="<? esc_html_e( 'Category','islemag' ); ?> <?php echo esc_attr( $category[0]->cat_name ); ?>"><?php echo esc_attr( $category[0]->cat_name ); ?></a>
+                                                            <a href="<?php echo esc_url ( get_category_link( $category[0]->cat_ID ) ); ?>" class="category-block" title="<?php esc_html_e( 'Category','islemag' ); ?> <?php echo esc_attr( $category[0]->cat_name ); ?>"><?php echo esc_attr( $category[0]->cat_name ); ?></a>
                                                             <figure>
                                                               <a href="<?php the_permalink(); ?>" title="Ipsa quasi praesentium eos">
                                                                   <?php
@@ -160,7 +160,7 @@ if ( $wp_query->have_posts() ) : ?>
                                         $choosed_color = array_rand($colors, 1); ?>
                                         <article class="entry entry-overlay entry-block eb-small <?php echo $colors[$choosed_color]; ?>">
                                           <div class="entry-media">
-                                            <a href="<?php echo esc_url( get_category_link( $category[0]->cat_ID ) );?>" class="category-block" title="<? esc_html_e( 'Category','islemag' ); ?> <?php echo esc_attr( $category[0]->cat_name ); ?>"><?php echo esc_attr( $category[0]->cat_name ); ?></a>
+                                            <a href="<?php echo esc_url( get_category_link( $category[0]->cat_ID ) );?>" class="category-block" title="<?php esc_html_e( 'Category','islemag' ); ?> <?php echo esc_attr( $category[0]->cat_name ); ?>"><?php echo esc_attr( $category[0]->cat_name ); ?></a>
                                             <figure>
                                               <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
                                                   <?php
