@@ -215,7 +215,7 @@ function islemag_scripts() {
 
 	wp_enqueue_style( 'islemag-fontawesome', get_stylesheet_directory_uri().'/css/font-awesome.min.css',array(), '4.4.0');
 
-	if( is_home() ){
+	if( is_front_page() ){
 		wp_enqueue_script( 'islemag-script-index', get_template_directory_uri() . '/js/script.index.js', array('jquery'), '1.0.0', true );
 	}
 

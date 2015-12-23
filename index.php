@@ -1,4 +1,5 @@
 <?php
+  get_header();
 
 	$wp_query = new WP_Query(
 	  array(
@@ -6,9 +7,8 @@
 	          'order'                 => 'ASC',
 	          'post_status'           => 'publish',
 	          'no_found_rows'       => true,
-	      )
-	);
-?>
+	       )
+	  ); ?>
 		<div class="container">
 			<div class="row">
 				<div class="islemag-content-left <?php if ( !is_active_sidebar( 'islemag-sidebar' ) ) { echo 'col-md-12'; } else { echo 'col-md-9'; } ?>">
@@ -35,4 +35,4 @@
 		</div><!-- End .container -->
 <?php
 	wp_reset_postdata();
-?>
+  get_footer(); ?>
