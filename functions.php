@@ -90,17 +90,6 @@ function islemag_setup() {
 		'default-attachment'     => 'fixed',
 	) );
 
-	// Header image
-	$defaults = array(
-		'default-image'          => get_stylesheet_directory_uri().'/img/banner.jpg',
-		'width'                  => 900,
-		'height'                 => 100,
-		'flex-height'            => true,
-		'flex-width'             => true,
-		'header-text'            => false
-	);
-	add_theme_support( 'custom-header', $defaults );
-
 	register_default_headers( array(
 		'wheel' => array(
 			'url'           => get_stylesheet_directory_uri().'/img/banner.jpg',
@@ -223,7 +212,11 @@ function islemag_scripts() {
 		wp_enqueue_script( 'islemag-script-single', get_template_directory_uri() . '/js/script.single.js', array('jquery'), '1.0.0', true );
 	}
 
-	wp_enqueue_script( 'islemag-script-all', get_template_directory_uri() . '/js/script.all.js', array('jquery'), '1.0.0', true );
+	wp_enqueue_script( 'islemag-bootstrap-js', get_template_directory_uri() . '/js/bootstrap.min.js', array(), '1.0.0', true );
+
+	wp_enqueue_script( 'islemag-waypoint', get_template_directory_uri() . '/js/waypoints.min.js', array(), '1.0.0', true );
+	wp_enqueue_script( 'islemag-waypoint-sticky', get_template_directory_uri() . '/js/waypoints-sticky.min.js', array(), '1.0.0', true );
+	wp_enqueue_script( 'islemag-script-all', get_template_directory_uri() . '/js/script.all.js', array('jquery','islemag-waypoint','islemag-waypoint-sticky'), '1.0.0', true );
   wp_localize_script( 'islemag-script-all', 'screenReaderText', array(
 		'expand'   => '<span class="screen-reader-text">' . esc_html__( 'expand child menu', 'islemag' ) . '</span>',
 		'collapse' => '<span class="screen-reader-text">' . esc_html__( 'collapse child menu', 'islemag' ) . '</span>',
@@ -258,7 +251,7 @@ function islemag_fonts_url() {
 			$font_families[] = 'Lato:400,700';
 		}
 		if( 'off' !== $raleway ){
-			$font_families[] = 'Raleway:400,600,700';
+			$font_families[] = 'Raleway:400,500,600,700';
 		}
 		if( 'off' !== $open_sans ){
 			$font_families[] = 'Open Sans:400,700,600';

@@ -152,10 +152,9 @@ function islemag_customize_register( $wp_customize ) {
 			'transport'							=> 'postMessage'
 	) );
 
-	$wp_customize->add_setting( 'islemag_banner_link', array(
-			'default'								=> '#',
-			'transport'							=> 'postMessage',
-			'sanitize_callback'			=> 'esc_url'
+	$wp_customize->add_setting( 'islemag_banner', array(
+			'sanitize_callback'			=> 'islemag_sanitize_banner',
+			'transport'							=> 'postMessage'
 	) );
 
 	$wp_customize->add_setting( 'islemag_header_slider_category', array(
@@ -329,8 +328,9 @@ function islemag_customize_register( $wp_customize ) {
 			'priority'								=> 1
 	) ) );
 
-	$wp_customize->add_control( 'islemag_banner_link', array(
-			'label'										=> esc_html__( 'Banner link', 'islemag' ),
+	$wp_customize->add_control( 'islemag_banner', array(
+			'label'										=> esc_html__( 'Banner Code', 'islemag' ),
+			'type' 										=> 'textarea',
 			'section'									=> 'islemag_appearance_general',
 			'priority'								=> 2
 	) );
@@ -517,11 +517,41 @@ function islemag_sanitize_category_dropdown( $input ){
 	return $input;
 }
 
+function islemag_sanitize_banner( $input){
+	$allowed_html = array(
+							'a' => array(
+								'href' => array(),
+								'class' => array(),
+								'id' => array(),
+								'target' => array()
+							),
+							'img' => array(
+								'src' => array(),
+								'alt' => array(),
+								'title' => array(),
+								'width' => array(),
+								'height' => array()
+							),
+							'iframe' => array(
+								'src' => array(),
+								'width' => array(),
+								'height' => array(),
+								'seamless' => array(),
+								'scrolling' => array(),
+								'frameborder' => array(),
+								'allowtransparency' => array()
+							)
+						);
+
+	$string = force_balance_tags($input);
+	return wp_kses($string, $allowed_html);
+}
+
 /**
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
  */
 function islemag_customize_preview_js() {
-	wp_enqueue_script( 'islemag_customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), '1.0.0', true );
+	wp_enqueue_script( 'islemag_customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), '1.0.1', true );
 	wp_localize_script( 'islemag_customizer', 'requestpost', array(
 			'ajaxurl' => admin_url( 'admin-ajax.php' ),
 

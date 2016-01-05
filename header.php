@@ -23,8 +23,10 @@
 <body <?php body_class(); ?>>
     <div id="wrapper" class="boxed-long">
 
-        <header id="masthead" class="site-header" role="banner">
-
+        <header id="header" class="site-header" role="banner">
+            <div class="collapse navbar-white" id="header-search-form">
+              <?php get_search_form(); ?>
+            </div><!-- End #header-search-form -->
             <div class="navbar-top container-fluid">
                 <div class="navbar-left social-icons">
                     <?php
@@ -48,7 +50,7 @@
                     ?>
                 </div>
 
-                <button type="button" class="navbar-btn" data-toggle="collapse" data-target="#header-search-form"><i class="fa fa-search"></i></button>
+                <button type="button" class="navbar-btn collapsed" data-toggle="collapse" data-target="#header-search-form"><i class="fa fa-search"></i></button>
 
                 <div class="navbar-right">
                   <div id="navbar" class="navbar">
@@ -96,25 +98,19 @@
                     ?>
                 </div>
 
-                <?php
-                    $header_image = get_header_image();
-                if ( !empty($header_image) ) { ?>
+
                 <div class="col-md-9 col-sm-9 col-xs-12 islemag-banner">
                     <?php
-                        $islemag_banner_link = get_theme_mod( 'islemag_banner_link','#' );
-                        if(!empty($islemag_banner_link)){
-                            echo '<a href="'.esc_url( $islemag_banner_link ).'">';
-                            echo '<img src="'.esc_url( $header_image ).'" alt="'.esc_attr( get_bloginfo( 'title' ) ).'"/>';
-                            echo '</a>';
-                        } else {
-                            echo '<img src="'.esc_url( $header_image ).'" alt="'.esc_attr( get_bloginfo( 'title' ) ).'"/>';
+                        $islemag_banner = get_theme_mod( 'islemag_banner' );
+                        if(!empty($islemag_banner)){
+                            echo $islemag_banner;
                         }
                     ?>
                 </div>
-                <?php } ?>
+
             </div>
 
-            <div id="navbar" class="navbar">
+            <div id="navbar" class="navbar sticky-menu">
               <nav id="site-navigation" class="navigation main-navigation" role="navigation">
                 <button class="menu-toggle"><?php _e( 'Menu', 'islemag' ); ?></button>
                 <a class="screen-reader-text skip-link" href="#content" title="<?php esc_attr_e( 'Skip to content', 'islemag' ); ?>"><?php _e( 'Skip to content', 'islemag' ); ?></a>
@@ -122,9 +118,6 @@
               </nav><!-- #site-navigation -->
             </div><!-- #navbar -->
 
-            <div id="header-search-form">
-              <?php get_search_form(); ?>
-            </div><!-- End #header-search-form -->
 
 
         </header><!-- End #header -->

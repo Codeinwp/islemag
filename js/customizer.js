@@ -96,6 +96,12 @@
   	} );
   } );
 
+	wp.customize( "islemag_banner", function( value ) {
+		value.bind( function( to ) {
+				jQuery('.islemag-banner').html(to);
+		} );
+	} );
+
 	// Banner link
 	wp.customize( "islemag_banner_link", function( value ) {
 		value.bind( function( to ) {

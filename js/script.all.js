@@ -1,11 +1,69 @@
+
+(function ($) {
+  "use strict";
+  var Islemag = {
+    initialised: false,
+    mobile: false,
+    container : $( '#portfolio-item-container' ),
+    blogContainer: $( '#blog-item-container' ),
+    portfolioElAnimation: true,
+    init: function () {
+      this.stickyMenu();
+      this.destroyStickyMenu();
+      this.headerSearchFormClose();
+    },
+    atresize: function (){
+      this.stickyMenu();
+      this.destroyStickyMenu();
+    },
+
+    stickyMenu: function () {
+      // Stickymenu with waypoint and waypoint sticky plugins
+      if ( $.fn.waypoint && $(window).width() >= 992 ) {
+        $( '.sticky-menu' ).waypoint( 'sticky', {
+          stuckClass:'fixed',
+          offset: 10
+        });
+      }
+    },
+    destroyStickyMenu: function () {
+			// Destroy Stickymenu for smaller devices
+			if($.fn.waypoint && $(window).width() <= 991) {
+				$('.sticky-menu').waypoint('unsticky');
+			}
+		},
+    headerSearchFormClose: function () {
+			// Close searh form when document is clicked
+			$('body').on('click', function(e) {
+			    if ($('#header-search-form').hasClass('in') && !$(e.target).closest('#header-search-form').length) {
+			        $('#header-search-form').collapse('hide').removeClass('fixed');
+
+			        e.preventDefault();
+			    }
+			});
+		},
+  }
+
+
+  $( window ).resize(function() {
+    Islemag.atresize();
+  });
+
+  $(document).ready(function() {
+    Islemag.init();
+  });
+
+})(jQuery);
+
+
 jQuery(document).ready(function() {
 
-  /**
-   * Toggle search input
-   **/
-  jQuery("[data-target='#header-search-form']").on('click', function() {
-          jQuery('#header-search-form').slideToggle( "slow" );
-  });
+
+
+
+
+
+
 
   /**
    * Provides helper functions to enhance the theme experience.

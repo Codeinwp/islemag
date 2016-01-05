@@ -940,6 +940,72 @@ a:active {
 
 }
 
+.sticky-menu.fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    -webkit-perspective: 1000;
+    -webkit-animation-duration: 0.5s;
+    animation-duration: 0.5s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-name: stickyMenu;
+    animation-name: stickyMenu;
+		left: auto;
+		right: auto;
+		background-color: #fff !important;
+    border-color: #eaeaea;
+}
+
+.admin-bar .sticky-menu.fixed{
+	margin-top: 30px;
+}
+
+@-webkit-keyframes stickyMenu {
+	0% {
+		opacity:0;
+		top:-100px;
+	}
+
+	100% {
+		opacity: 1;
+		top:0;
+	}
+}
+
+@keyframes stickyMenu {
+  	0% {
+		opacity:0;
+		top:-100px;
+	}
+
+	100% {
+		opacity: 1;
+		top:0;
+	}
+}
+@media (min-width: 992px){
+	.sticky-menu.fixed{
+		width: 970px;
+	}
+}
+
+@media (min-width: 1200px){
+	.sticky-menu.fixed{
+		width: 1170px;
+	}
+}
+
+@media (min-width: 1280px){
+	.sticky-menu.fixed{
+		width: 1200px;
+	}
+}
+
+
+
 /*--------------------------------------------------------------
 # Accessibility
 --------------------------------------------------------------*/
@@ -1820,10 +1886,12 @@ blockquote {
 /* ============================================
 -------------- 6.Header Search ----------------
 ===============================================*/
+#header{
+	position: relative;
+}
 
 #header-search-form{
 	width:100%;
-	display: none;
 }
 
 #header-search-form label{
@@ -1839,10 +1907,156 @@ blockquote {
 	font-size: 16px;
 }
 
-#header-search-form .search-submit{
-	display: none;
+.navbar-form {
+    padding: 0;
+    margin: 0;
+    border: none;
+    box-shadow: none;
+    -webkit-box-shadow: none;
 }
 
+#header-search-form .form-control {
+    width: 100%;
+    display: block;
+    background-color: transparent;
+    border: none;
+    height: auto;
+    padding: 12px 0 12px 40px;
+    font: 500 16px/1.5 'Raleway', Verdana;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    text-align: right;
+    border-radius: 0;
+    margin-bottom: 0;
+		box-sizing: border-box;
+}
+
+#header-search-form button[type="submit"], #header-search-form input[type="submit"] {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    font-size: 14px;
+    padding: 0;
+    margin: 0;
+    display: block;
+    border: none;
+    width: 32px;
+    height: 32px;
+    line-height: 32px;
+    right: 15px;
+    margin-top: -16px;
+    background-color: transparent;
+    transition: all 0.4s ease-in;
+    -webkit-transition: all 0.4s ease-in;
+}
+
+#header-search-form {
+    padding: 0 15px;
+    position: relative;
+    border-bottom: 1px solid transparent;
+    overflow: hidden;
+}
+
+#header-search-form.navbar-white {
+    background-color: #fff;
+    border-bottom-color: #eaeaea;
+}
+
+@media (min-width: 992px){
+	.boxed #header-search-form, .boxed-long #header-search-form {
+		padding: 0;
+	}
+}
+
+@media (min-width: 768px){
+	#header-search-form {
+	    position: absolute;
+	    left: 0;
+	    right: 0;
+	    top: 100%;
+	    z-index: 300;
+	    padding: 0 15px;
+	}
+
+	#header-search-form .form-control {
+		padding: 20px 0 20px 42px;
+		font-size: 18px;
+	}
+}
+
+
+@media (min-width: 768px){
+	#header-search-form button[type="submit"], #header-search-form input[type="submit"] {
+	    right: 30px;
+	    font-size: 14px;
+	    line-height: 36px;
+	    width: 36px;
+	    height: 36px;
+	    left: 0;
+	    margin-top: -18px;
+	}
+}
+
+@-webkit-keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+
+.fadeInDown {
+  -webkit-animation-name: fadeInDown;
+  animation-name: fadeInDown;
+}
+
+.animated {
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+
+#header-search-form .form-control::-moz-placeholder {
+color:#505050;
+text-transform: capitalize;
+}
+
+#header-search-form .form-control:-ms-input-placeholder {
+color:#505050;
+text-transform: capitalize;
+}
+
+#header-search-form .form-control::-webkit-input-placeholder {
+color:#505050;
+text-transform: capitalize;
+}
+
+#header-search-form .form-control::placeholder {
+color:#505050;
+text-transform: capitalize;
+}
 /* ============================================
 -------------- 7.Template none ----------------
 ===============================================*/
