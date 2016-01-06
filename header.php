@@ -99,14 +99,30 @@
                 </div>
 
 
-                <div class="col-md-9 col-sm-9 col-xs-12 islemag-banner">
                     <?php
-                        $islemag_banner = get_theme_mod( 'islemag_banner' );
-                        if(!empty($islemag_banner)){
-                            echo $islemag_banner;
-                        }
-                    ?>
-                </div>
+                        $islemag_banner = get_theme_mod( 'islemag_banner', json_encode( array( 'choice' => 'image', 'position' => 'center', 'banner_link' => '#' ) ) );
+                        $banner = json_decode( $islemag_banner, true );
+                        if( !empty( $banner ) ){
+                          if ( !empty( $banner['position'] ) ){
+                            echo '<div class="col-md-9 col-sm-9 col-xs-12 islemag-banner" style=" text-align:'. esc_html__( $banner['position'] ) .' ">';
+                          } else {
+                            echo '<div class="col-md-9 col-sm-9 col-xs-12 islemag-banner">';
+                          }
+
+                          if( $banner['choice'] == 'code' ){
+                            if( !empty( $banner['code'] ) ){
+                              echo html_entity_decode ( $banner['code'] );
+                            }
+                          } else {
+                            if( !empty( $banner['link'] ) && !empty( $banner['image_url'] ) ){
+                              echo '<a href="'. esc_url( $banner['link'] ) .'"><img src="'. esc_url( $banner['image_url'] ) .'" alt="'. esc_html__( 'Banner link', 'islemag').'"></a>';
+                            } elseif ( !empty( $banner['image_url'] ) ){
+                              echo '<img src="'. esc_url( $banner['image_url'] ) .'" alt="'. esc_html__( 'Banner link', 'islemag').'">';
+                            }
+                          }
+
+                          echo '</div>';
+                        } ?>
 
             </div>
 
