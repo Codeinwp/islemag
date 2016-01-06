@@ -30,13 +30,13 @@ class Islemag_Banner_control extends WP_Customize_Control {
 
             <div class="islemag-banner-choice-code"  <?php if( !empty( $json['choice'] ) && $json['choice'] != "code" ){ echo 'style="display:none"'; } ?>>
               <span class="customize-control-title"> <?php esc_html_e( 'Banner Code', 'islemag'); ?> </span>
-              <span class="description customize-control-description"><?php esc_html_e( 'Recomanded size: 728px x 90px', 'islemag'); ?></span>
+              <span class="description customize-control-description"><?php esc_html_e( 'Recommended size: 728px x 90px', 'islemag'); ?></span>
               <textarea placeholder="<?php esc_html_e( 'Text', 'islemag' ); ?>" class="islemag-banner-settings-text-control" ><?php if( $json['choice'] == "code" && !empty( $json['code'] ) ) echo $json['code']; ?></textarea>
             </div>
 
             <div class="islemag-banner-choice-image"  <?php if( !empty( $json['choice'] ) && $json['choice'] != "image" ){ echo 'style="display:none"'; } ?>>
               <span class="customize-control-title"> <?php esc_html_e( 'Image', 'islemag'); ?> </span>
-              <span class="description customize-control-description"><?php esc_html_e( 'Recomanded size: 728px x 90px', 'islemag'); ?></span>
+              <span class="description customize-control-description"><?php esc_html_e( 'Recommended size: 728px x 90px', 'islemag'); ?></span>
               <input type="text" class="widefat custom_media_url" value="<?php if( !empty( $json['image_url'] ) ) { echo esc_attr( $json['image_url'] ); } ?>">
               <input type="button" class="button button-primary custom-media-button-islemag" value="<?php esc_html_e( 'Upload Image', 'islemag' ); ?>" />
 
