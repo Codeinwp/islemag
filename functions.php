@@ -48,8 +48,15 @@ function islemag_setup() {
 	add_image_size( 'islemag_author_avatar', 90, 90, true );
 	add_image_size( 'islemag_related_post', 348, 194, true );
 	add_image_size( 'islemag_blog_post', 770, 430, true );
-	add_image_size( 'islemag_ad_125', 125, 125, true );
 
+	/* IAB SIZES */
+	add_image_size( 'islemag_leaderboard', 728, 90, true );
+	add_image_size( 'islemag_3_1_rectangle', 300, 100, true );
+	add_image_size( 'islemag_medium_rectangle', 300, 250, true );
+	add_image_size( 'islemag_half_page', 300, 600, true );
+	add_image_size( 'islemag_square_pop_up', 250, 250, true );
+	add_image_size( 'islemag_vertical_rectangle', 240, 400, true );
+	add_image_size( 'islemag_ad_125', 125, 125, true );
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
@@ -109,8 +116,23 @@ add_filter( 'image_size_names_choose', 'islemg_media_uploader_custom_sizes' );
 function islemg_media_uploader_custom_sizes( $sizes ) {
 		return array_merge( $sizes, array(
 				'islemag_ad_125' => esc_html__('Small Advertisement','islemag'),
+				'islemag_leaderboard' => esc_html__( 'Leaderboard', 'islemag'),
+				'islemag_3_1_rectangle' => esc_html__( '3:1 Rectangle', 'islemag'),
+				'islemag_medium_rectangle' => esc_html__( 'Medium Rectangle', 'islemag'),
+				'islemag_half_page' => esc_html__( 'Half-page ad', 'islemag'),
+				'islemag_square_pop_up' => esc_html__( 'Big Square', 'islemag'),
+				'islemag_vertical_rectangle' => esc_html__( 'Vertical Rectangle', 'islemag'),
+				'islemag_ad_125' => esc_html__( 'Small Square', 'islemag'),
 		) );
 }
+
+add_image_size( 'islemag_leaderboard', 728, 90, true );
+add_image_size( 'islemag_3_1_rectangle', 300, 100, true );
+add_image_size( 'islemag_medium_rectangle', 300, 250, true );
+add_image_size( 'islemag_half_page', 300, 600, true );
+add_image_size( 'islemag_square_pop_up', 250, 250, true );
+add_image_size( 'islemag_vertical_rectangle', 240, 400, true );
+add_image_size( 'islemag_ad_125', 125, 125, true );
 
 
 /**
@@ -189,6 +211,9 @@ add_action( 'after_setup_theme', 'islemag_content_width', 0 );
 
 	register_widget( 'islemag_multiple_ads' );
 	register_widget( 'islemag_big_ad' );
+
+	wp_enqueue_script( 'islemag-widget-js', get_template_directory_uri() . '/js/islemag-wigdet.js', array(), '1.0.0', true );
+
 }
 add_action( 'widgets_init', 'islemag_widgets_init' );
 

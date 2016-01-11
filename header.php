@@ -21,7 +21,7 @@
 </head>
 
 <body <?php body_class(); ?>>
-    <div id="wrapper" class="boxed-long">
+    <div id="wrapper" class="boxed">
 
         <header id="header" class="site-header" role="banner">
             <div class="collapse navbar-white" id="header-search-form">

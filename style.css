@@ -1116,8 +1116,25 @@ a:active {
 /*--------------------------------------------------------------
 # Content
 --------------------------------------------------------------*/
+@media (min-width: 1280px) {
+	.container {
+		width: 1200px;
+	}
+}
+
+#wrapper {
+	width: 100%;
+	background-color: #fff;
+}
+
+#wrapper.boxed,
+#wrapper.boxed-long {
+	width:100%;
+	margin:0;
+}
 
 @media (min-width: 992px) {
+
 	#wrapper.boxed {
 		margin: 40px auto;
 		box-shadow: 0 0 15px rgba(0,0,0, 0.1);
@@ -1138,7 +1155,47 @@ a:active {
 	.boxed-long #header.sticky-menu.fixed .navbar-transparent {
 		width:970px;
 	}
+
+	.boxed .sticky-menu.fixed .container,
+	.boxed-long .sticky-menu.fixed .container,
+	.boxed .sticky-menu.fixed .container-fluid,
+	.boxed-long .sticky-menu.fixed .container-fluid,
+	.boxed #header.sticky-menu.fixed .navbar-transparent,
+	.boxed-long #header.sticky-menu.fixed .navbar-transparent {
+		margin:0 auto;
+	}
+
+	.custom-wrapper {
+		padding-top:22px;
+	}
+
+	/* fix for header2 style */
+	.boxed #header.sticky-menu.fixed,
+	.boxed-long #header.sticky-menu.fixed {
+		border-top:none;
+	}
 }
+
+
+@media (min-width: 1280px) {
+
+	.container {
+		width: 1200px;
+	}
+
+	#wrapper.boxed,
+	#wrapper.boxed-long,
+	.boxed .sticky-menu.fixed .container,
+	.boxed-long .sticky-menu.fixed .container,
+	.boxed .sticky-menu.fixed .container-fluid,
+	.boxed-long .sticky-menu.fixed .container-fluid,
+	.boxed #header.sticky-menu.fixed .navbar-transparent,
+	.boxed-long #header.sticky-menu.fixed .navbar-transparent {
+		width:1200px;
+	}
+
+}
+
 /*--------------------------------------------------------------
 ## Posts and pages
 --------------------------------------------------------------*/
@@ -3108,6 +3165,16 @@ styled buttons not container for vertical centered navs*/
 }
 
 /* SIDEBAR */
+
+.islemag_multiple_ads .col-md-6{
+		padding: 0 5px;
+		margin-bottom: 5px;
+}
+
+.islemag-ad-banner-content{
+	text-align: center;
+}
+
 .sidebar .widget {
 	margin-bottom:50px;
 }

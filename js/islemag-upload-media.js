@@ -24,6 +24,24 @@ function media_upload(button_class) {
 						case 'islemag_ad_125':
 							display_field.val(attachment.sizes.islemag_ad_125.url);
 														display_field.trigger('change');
+						case 'islemag_leaderboard':
+							display_field.val(attachment.sizes.islemag_leaderboard.url);
+														display_field.trigger('change');
+						case 'islemag_3_1_rectangle':
+							display_field.val(attachment.sizes.islemag_3_1_rectangle.url);
+														display_field.trigger('change');
+						case 'islemag_medium_rectangle':
+							display_field.val(attachment.sizes.islemag_medium_rectangle.url);
+														display_field.trigger('change');
+						case 'islemag_half_page':
+							display_field.val(attachment.sizes.islemag_half_page.url);
+														display_field.trigger('change');
+						case 'islemag_square_pop_up':
+							display_field.val(attachment.sizes.islemag_square_pop_up.url);
+														display_field.trigger('change');
+						case 'islemag_vertical_rectangle':
+							display_field.val(attachment.sizes.islemag_vertical_rectangle.url);
+														display_field.trigger('change');
 							break;
 						default:
 							display_field.val(attachment.url);
