@@ -3668,7 +3668,7 @@ ul > li:hover > a,
 	    color: #7a7a7a;
 	border: none;
 	border-radius: 0;
-	padding: 7px 12px;
+	padding: 10px 12px;
 	font-size: 14px;
 	height: auto;
 }
@@ -3922,7 +3922,6 @@ ul > li:hover > a,
 
 #footer button, .pirate-forms-submit-button{
 	border-radius: 0;
-	width: 100%;
 	-webkit-appearance: button;
 	cursor: pointer;
 	background-color: #009688;
