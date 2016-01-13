@@ -420,6 +420,35 @@ table {
 	width: 100%;
 }
 
+blockquote {
+    position: relative;
+    padding: 8px 0 8px 25px;
+    margin: 30px 0;
+    font-size: 16px;
+    border-left: 2px solid transparent;
+		border-left-color: #009688;
+}
+
+blockquote:after {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 1px;
+    top: 0;
+    width: 2px;
+    height: 100%;
+		background-color: #009688;
+}
+
+.dropcap, .dropcap-bg {
+    font-size: 3.8em;
+    line-height: 1;
+    padding-right: 0.2em;
+    float: left;
+    text-transform: uppercase;
+    color: #505050;
+}
+
 /*--------------------------------------------------------------
 # Forms
 --------------------------------------------------------------*/
@@ -487,6 +516,7 @@ textarea {
 	padding-left: 3px;
 	width: 100%;
 }
+
 
 .comment-form p {
     position: relative;
@@ -2991,7 +3021,6 @@ styled buttons not container for vertical centered navs*/
 	border-color:#d4e157;
 }
 
-
 .smaller-nav .owl-next,
 .smaller-nav .owl-prev {
 	width:28px;
@@ -3165,6 +3194,10 @@ styled buttons not container for vertical centered navs*/
 }
 
 /* SIDEBAR */
+
+.islemag_multiple_ads{
+	display: inline-block;
+}
 
 .islemag_multiple_ads .col-md-6{
 		padding: 0 5px;
@@ -3568,9 +3601,112 @@ ul > li:hover > a,
 	border-radius: 0;
 }
 
+.social-icons-label {
+    font-weight: 600;
+    font-size: 13px;
+    text-transform: uppercase;
+    display: block;
+    margin: 35px 0 13px;
+}
+
 #footer .tagcloud a:hover,
 .tagcloud a:hover {
 	color:#eaeaea;
+}
+
+.footer-social-icon {
+    display: inline-block;
+    font-size: 18px;
+    line-height: 1;
+    margin: 0 10px 20px;
+    color: #6d6d6d;
+    border-radius: 4px;
+}
+
+.footer-social-icon:first-child {
+    margin-left: 0;
+}
+
+#footer .footer-social-icon:hover > i{
+	color:#fff;
+}
+
+#footer .widget h3 {
+    font: 700 15px/1.5 'Open Sans', Verdana, sans-serif;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+}
+
+#footer .widget h3:after {
+    content: '';
+    display: block;
+    width: 25px;
+    height: 3px;
+    position: relative;
+    top: 8px;
+    left: 0;
+		background-color: #009688;
+}
+
+#footer .cat-item:before{
+		content: "\f105";
+		font: normal normal normal 14px/1 FontAwesome;
+		margin-right: 10px;
+}
+
+#footer {
+    font-size: 14px;
+    font-family: 'Lato', Verdana, sans-serif;
+    background-color: #fff;
+    color: #505050;
+    border-top: 1px solid #eaeaea;
+}
+
+
+.widget_search input[type="search"]{
+	background-color: rgba(0,0,0, 0.12);
+	    color: #7a7a7a;
+	border: none;
+	border-radius: 0;
+	padding: 7px 12px;
+	font-size: 14px;
+	height: auto;
+}
+
+.widget_search button[type="submit"]:hover{
+	transition: color 0.2s ease, background 0.45s ease, border 0.4s ease-in-out;
+	-webkit-transition: color 0.2s ease, background 0.45s ease, border 0.4s ease-in-out;
+	background-color: #00796b;
+}
+.widget_search button[type="submit"]{
+	padding: 9px 16px;
+  font-size: 14px;
+  background-color: #009688;
+	border:none;
+	border-radius: 0;
+	color:#fff;
+}
+
+#footer .widget select{
+	background: #252525;
+	border: none;
+	color: #7a7a7a;
+}
+
+#footer .widget input:focus {
+  background-color: rgba(0,0,0, 0.26);
+}
+
+.form-control{
+	    transition: all 0.4s ease;
+}
+.form-control:focus{
+		box-shadow: none;
+}
+
+.widget li a {
+    line-height: 2.2;
+		text-transform: capitalize;
 }
 
 @media (min-width: 992px) {
@@ -3585,7 +3721,7 @@ ul > li:hover > a,
 	background-color: transparent;
 	border: none;
 	background-color: #eaeaea;
-	color:#7a7a7a;
+	color:#bebebe;
 	width:100%;
 }
 
@@ -3768,6 +3904,74 @@ ul > li:hover > a,
 .powerdby{
 	line-height: 41px;
 }
+
+/* Pirate forms widget*/
+.form_field_wrap {
+	padding: 0;
+	font-size: 14px;
+	border: none;
+	color: #7a7a7a;
+	width: 100%;
+}
+.form_field_wrap input{
+ 	background-color: rgba(0,0,0, 0.12);
+  padding: 8px;
+	border: none;
+	border-radius: 0;
+}
+
+#footer button, .pirate-forms-submit-button{
+	border-radius: 0;
+	width: 100%;
+	-webkit-appearance: button;
+	cursor: pointer;
+	background-color: #009688;
+	color: #fff;
+	padding: 9px 16px;
+	font-size: 14px;
+	transition: color 0.2s ease, background 0.45s ease, border 0.4s ease-in-out;
+	-webkit-transition: color 0.2s ease, background 0.45s ease, border 0.4s ease-in-out;
+	border:none;
+	margin-bottom: 0px;
+	font-weight: 400;
+	line-height: 1.42857143;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: middle;
+	-ms-touch-action: manipulation;
+	touch-action: manipulation;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+#footer button:hover, #footer .pirate-forms-submit-button:hover{
+	background-color: #00796b;
+}
+
+.construct{
+	display: inline-block;
+}
+
+.islemag-content-right .form_field_wrap input {
+	background-color: #fff;
+	border: 1px solid #ccc;
+}
+
+.islemag-content-right .form_field_wrap textarea{
+	border-radius: 0;
+}
+
+.islemag-content-right .form-control:focus{
+	border-color:#ccc;
+}
+
+.islemag-footer-logo{
+	display: block;
+	margin-bottom:25px
+}
+
 
 /* =============================================
 ------------------- 12.Content -----------------
@@ -3999,6 +4203,7 @@ ul > li:hover > a,
 	position: absolute;
 	bottom:-2px;
 	left:0;
+	background-color: #009688;
 }
 
 .title-underblock.title-bottom-border:after {
@@ -4894,6 +5099,30 @@ ul > li:hover > a,
 	border-radius: 50%;
 }
 
+
+.form-group, .form-control, .input-group, .normal-selectbox, .large-selectbox {
+    margin-bottom: 25px;
+}
+
+label.input-desc {
+    font-size: 14px;
+    font-weight: 700;
+    font-family: 'Open Sans', Verdana;
+    text-transform: uppercase;
+    margin-bottom: 7px;
+}
+
+.form-control {
+    height: 40px;
+    padding: 9px 16px;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    transition: all 0.4s ease;
+    -webkit-transition: all 0.4s ease;
+    border: 1px solid #eaeaea;
+    color: inherit;
+    font-size: 14px;
+}
 
 /* =============================================
 -----------------   14. 404 Page  -------------

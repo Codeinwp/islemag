@@ -179,6 +179,20 @@
 }
 
 
+function islemag_strip_tags(input, allowed) {
+  allowed = (((allowed || '') + '')
+  .toLowerCase()
+  .match(/<[a-z][a-z0-9]*>/g) || [])
+  .join(''); // making sure the allowed arg is a string containing only tags in lowercase (<a><b><c>)
+  var tags = /<\/?([a-z][a-z0-9]*)\b[^>]*>/gi,
+  commentsAndPhpTags = /<!--[\s\S]*?-->|<\?(?:php)?[\s\S]*?\?>/gi;
+  return input.replace(commentsAndPhpTags, '')
+  .replace(tags, function($0, $1) {
+    return allowed.indexOf('<' + $1.toLowerCase() + '>') > -1 ? $0 : '';
+  });
+}
+
+
 ( function( $ ) {
 	// Site title and description.
 	wp.customize( 'blogname', function( value ) {
@@ -836,5 +850,252 @@
 	} );
 
 
+
+  wp.customize( 'islemag_footer_logo' , function( value ){
+    value.bind( function( to ) {
+      $('.islemag-footer-logo img').attr( 'src', to );
+    } )
+  } );
+
+  wp.customize( 'islemag_footer_link' , function( value ){
+    value.bind( function( to ) {
+      $('.islemag-footer-logo').attr( 'href', to );
+    } )
+  } );
+
+  wp.customize( 'islemag_footer_text' , function( value ){
+    value.bind( function( to ) {
+      escaped_content = islemag_strip_tags( to, '<p><br><em><strong><ul><li><a><button><address><abbr>' );
+      $( '.islemag-footer-content' ).html( escaped_content );
+    } );
+  } );
+
+  wp.customize( 'islemag_footer_socials_title' , function( value ){
+    value.bind( function( to ) {
+        $( '.social-icons-label').text( to );
+    } );
+  } );
+
+  wp.customize( 'islemag_footer_social_icons', function( value ) {
+    value.bind( function( to ) {
+      var obj = JSON.parse( to );
+      var result ="";
+      obj.forEach(function(item) {
+
+          result+=  '<a href="' + item.link + '" class="footer-social-icon"><i class="fa ' + item.icon_value + '"></i></a>';
+
+      });
+      $( '.footer-social-icons' ).html( result );
+    } );
+  } );
+
+wp.customize( 'islemag_section1_fullwidth', function( value ) {
+  value.bind( function( to ) {
+    if( to == true){
+      var section1 = $('.islemag-section1')[0].outerHTML;
+      $('.islemag-content-left .islemag-section1').remove();
+      $('.islemag-fullwidth').prepend( section1 );
+    } else {
+      var section1 = $('.islemag-fullwidth .islemag-section1')[0].outerHTML;
+      $('.islemag-fullwidth .islemag-section1').remove();
+      $('.islemag-content-left').prepend( section1 );
+    }
+  } );
+
+  wp.customize( 'islemag_section2_fullwidth', function( value ) {
+    value.bind( function( to ) {
+      var section2 = $('.islemag-section2')[0].outerHTML;
+      if( section2 == '') {
+         section2 = $('.islemag-fullwidth .islemag-section2')[0].outerHTML;
+      }
+
+      if( to == true){ //daca trbuie pusa in full width
+        if ( $(".islemag-fullwidth").has( ".islemag-section1" ).length ){
+          var add_after = ".islemag-section1";
+        }
+
+        if( add_after!='' && typeof add_after != 'undefined'){
+          $(".islemag-fullwidth " + add_after ).after( section2 ); //inserez sectiunea 2 dupa sectiunea 1
+        } else {
+          $('.islemag-fullwidth').prepend( section2 ); // adaug la inceput
+        }
+
+        $('.islemag-content-left .islemag-section2').remove(); //sterg sectiunea 2 din content left
+
+      } else {
+
+        if ( $(".islemag-content-left").has( ".islemag-section1" ).length ){
+          var add_after = ".islemag-section1";
+        }
+
+        if( add_after!='' && typeof add_after != 'undefined' ){
+          $(".islemag-content-left " + add_after).after( section2 );
+        } else {
+          $('.islemag-content-left').prepend( section2 );
+        }
+        $('.islemag-fullwidth .islemag-section2').remove();
+      }
+    } );
+  } );
+
+  wp.customize( 'islemag_section3_fullwidth', function( value ) {
+    value.bind( function( to ) {
+      var section3 = $('.islemag-section3')[0].outerHTML;
+      if( section3 == '') {
+         section2 = $('.islemag-fullwidth .islemag-section3')[0].outerHTML;
+      }
+
+      if( to == true){ //daca trbuie pusa in full width
+
+        if ( $(".islemag-fullwidth").has( ".islemag-section1" ).length ){
+          var add_after = ".islemag-section1";
+        }
+
+        if ( $(".islemag-fullwidth").has( ".islemag-section2" ).length ){
+          var add_after = ".islemag-section2";
+        }
+
+        if( add_after!='' && typeof add_after != 'undefined'){
+          $(".islemag-fullwidth " + add_after ).after( section3 ); //inserez sectiunea 2 dupa sectiunea 1
+        } else {
+          $('.islemag-fullwidth').prepend( section3 ); // adaug la inceput
+        }
+
+        $('.islemag-content-left .islemag-section3').remove(); //sterg sectiunea 2 din content left
+
+      } else {
+
+        if ( $(".islemag-content-left").has( ".islemag-section1" ).length ){
+          var add_after = ".islemag-section1";
+        }
+
+        if ( $(".islemag-content-left").has( ".islemag-section2" ).length ){
+          var add_after = ".islemag-section2";
+        }
+
+
+        if( add_after!='' && typeof add_after != 'undefined' ){
+          $(".islemag-content-left " + add_after).after( section3 );
+        } else {
+          $('.islemag-content-left').prepend( section3 );
+        }
+        $('.islemag-fullwidth .islemag-section3').remove();
+      }
+    } );
+  } );
+
+
+  wp.customize( 'islemag_section4_fullwidth', function( value ) {
+      value.bind( function( to ) {
+        var section4 = $('.islemag-section4')[0].outerHTML;
+        if( section4 == '') {
+           section2 = $('.islemag-fullwidth .islemag-section4')[0].outerHTML;
+        }
+
+
+        if( to == true){ //daca trbuie pusa in full width
+          if ( $(".islemag-fullwidth").has( ".islemag-section1" ).length ){
+            var add_after = ".islemag-section1";
+          }
+          if ( $(".islemag-fullwidth").has( ".islemag-section2" ).length ){
+            var add_after = ".islemag-section2";
+          }
+          if ( $(".islemag-fullwidth").has( ".islemag-section3" ).length ){
+            var add_after = ".islemag-section3";
+          }
+
+          if( add_after!='' && typeof add_after != 'undefined'){
+            $(".islemag-fullwidth " + add_after ).after( section4 ); //inserez sectiunea 2 dupa sectiunea 1
+          } else {
+            $('.islemag-fullwidth').prepend( section4 ); // adaug la inceput
+          }
+
+          $('.islemag-content-left .islemag-section4').remove(); //sterg sectiunea 2 din content left
+
+        } else {
+
+          if ( $(".islemag-content-left").has( ".islemag-section1" ).length ){
+            var add_after = ".islemag-section1";
+          }
+
+          if ( $(".islemag-content-left").has( ".islemag-section2" ).length ){
+            var add_after = ".islemag-section2";
+          }
+
+          if ( $(".islemag-content-left").has( ".islemag-section3" ).length ){
+            var add_after = ".islemag-section3";
+          }
+
+
+          if( add_after!='' && typeof add_after != 'undefined' ){
+            $(".islemag-content-left " + add_after).after( section4 );
+          } else {
+            $('.islemag-content-left').prepend( section4 );
+          }
+          $('.islemag-fullwidth .islemag-section4').remove();
+        }
+      } );
+    } );
+
+      wp.customize( 'islemag_section5_fullwidth', function( value ) {
+        value.bind( function( to ) {
+          var section5 = $('.islemag-section5')[0].outerHTML;
+          if( section5 == '') {
+             section5 = $('.islemag-fullwidth .islemag-section5')[0].outerHTML;
+          }
+
+          if( to == true){ //daca trbuie pusa in full width
+            if ( $(".islemag-fullwidth").has( ".islemag-section1" ).length ){
+              var add_after = ".islemag-section1";
+            }
+            if ( $(".islemag-fullwidth").has( ".islemag-section2" ).length ){
+              var add_after = ".islemag-section2";
+            }
+            if ( $(".islemag-fullwidth").has( ".islemag-section3" ).length ){
+              var add_after = ".islemag-section3";
+            }
+            if ( $(".islemag-fullwidth").has( ".islemag-section4" ).length ){
+              var add_after = ".islemag-section4";
+            }
+
+            if( add_after!='' && typeof add_after != 'undefined'){
+              $(".islemag-fullwidth " + add_after ).after( section5 ); //inserez sectiunea 2 dupa sectiunea 1
+            } else {
+              $('.islemag-fullwidth').prepend( section5 ); // adaug la inceput
+            }
+
+            $('.islemag-content-left .islemag-section5').remove(); //sterg sectiunea 2 din content left
+
+          } else {
+
+            if ( $(".islemag-content-left").has( ".islemag-section1" ).length ){
+              var add_after = ".islemag-section1";
+            }
+
+            if ( $(".islemag-content-left").has( ".islemag-section2" ).length ){
+              var add_after = ".islemag-section2";
+            }
+
+            if ( $(".islemag-content-left").has( ".islemag-section3" ).length ){
+              var add_after = ".islemag-section3";
+            }
+
+            if ( $(".islemag-content-left").has( ".islemag-section4" ).length ){
+              var add_after = ".islemag-section4";
+            }
+
+            if( add_after!='' && typeof add_after != 'undefined' ){
+              $(".islemag-content-left " + add_after).after( section5 );
+            } else {
+              $('.islemag-content-left').prepend( section5 );
+            }
+            $('.islemag-fullwidth .islemag-section5').remove();
+          }
+        } );
+
+
+  } );
+
+} );
 
 } )( jQuery );

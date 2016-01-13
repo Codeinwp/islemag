@@ -198,17 +198,6 @@ add_action( 'after_setup_theme', 'islemag_content_width', 0 );
 		)
 	);
 
-	register_sidebar(
-		array(
-			'name' => esc_html__('Footer area 4','islemag'),
-			'id' => 'islemag-fourth-footer-area',
-			'before_widget'	=> '<div id="%1$s" class="widget %2$s">',
-			'after_widget'  => '</div>',
-			'before_title'	=> '<h3 class="widget-title">',
-			'after_title'	=> '</h3>'
-		)
-	);
-
 	register_widget( 'islemag_multiple_ads' );
 	register_widget( 'islemag_big_ad' );
 

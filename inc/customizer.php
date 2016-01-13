@@ -99,6 +99,11 @@ function islemag_customize_register( $wp_customize ) {
 			'priority' => 50,
 	) );
 
+	$wp_customize->add_section( 'islemag_footer' , array(
+			'title' => __( 'Footer', 'islemag' ),
+			'priority' => 60,
+	) );
+
 	/*******************************
 	 ********** Settings ***********
 	 *******************************/
@@ -171,6 +176,13 @@ function islemag_customize_register( $wp_customize ) {
 			'sanitize_callback'			=> 'absint'
 	) );
 
+
+	$wp_customize->add_setting( 'islemag_section1_fullwidth', array(
+			'defalt'								=> false,
+			'transport' 						=> 'postMessage',
+			'sanitize_callback'			=> 'sanitize_text_field'
+	) );
+
 	$wp_customize->add_setting( 'islemag_section1_title', array(
 			'default'								=> esc_html__('Section 1','islemag'),
 			'transport'							=> 'postMessage',
@@ -187,6 +199,12 @@ function islemag_customize_register( $wp_customize ) {
 			'default' 							=> 6,
 			'transport'							=> 'postMessage',
 			'sanitize_callback' 		=> 'absint'
+	) );
+
+	$wp_customize->add_setting( 'islemag_section2_fullwidth', array(
+			'defalt'								=> false,
+			'transport' 						=> 'postMessage',
+			'sanitize_callback'			=> 'sanitize_text_field'
 	) );
 
 	$wp_customize->add_setting( 'islemag_section2_title', array(
@@ -207,6 +225,12 @@ function islemag_customize_register( $wp_customize ) {
 			'sanitize_callback' 		=> 'absint'
 	) );
 
+	$wp_customize->add_setting( 'islemag_section3_fullwidth', array(
+			'defalt'								=> false,
+			'transport' 						=> 'postMessage',
+			'sanitize_callback'			=> 'sanitize_text_field'
+	) );
+
 	$wp_customize->add_setting( 'islemag_section3_title', array(
 			'default' 							=> esc_html__( 'Section 3', 'islemag' ),
 			'transport'							=> 'postMessage',
@@ -223,6 +247,12 @@ function islemag_customize_register( $wp_customize ) {
 			'default' 							=> 6,
 			'transport'							=> 'postMessage',
 			'sanitize_callback' 		=> 'absint'
+	) );
+
+	$wp_customize->add_setting( 'islemag_section4_fullwidth', array(
+			'defalt'								=> false,
+			'transport' 						=> 'postMessage',
+			'sanitize_callback'			=> 'sanitize_text_field'
 	) );
 
 	$wp_customize->add_setting( 'islemag_section4_title', array(
@@ -247,6 +277,12 @@ function islemag_customize_register( $wp_customize ) {
 			'default'								=> 6,
 			'transport'							=> 'postMessage',
 			'sanitize_callback'			=> 'absint'
+	) );
+
+	$wp_customize->add_setting( 'islemag_section5_fullwidth', array(
+			'defalt'								=> false,
+			'transport' 						=> 'postMessage',
+			'sanitize_callback'			=> 'sanitize_text_field'
 	) );
 
 	$wp_customize->add_setting( 'islemag_section5_title', array(
@@ -278,6 +314,53 @@ function islemag_customize_register( $wp_customize ) {
 			'sanitize_callback'			=> 'sanitize_text_field'
 	) );
 
+	$wp_customize->add_setting( 'islemag_footer_logo', array(
+			'sanitize_callback'			=> 'esc_url',
+			'transport'							=> 'postMessage'
+	) );
+
+	$wp_customize->add_setting( 'islemag_footer_link', array(
+			'default'								=> '#',
+			'sanitize_callback'			=> 'esc_url',
+			'transport'							=> 'postMessage'
+	) );
+
+	$wp_customize->add_setting( 'islemag_footer_text', array(
+			'default'								=>
+					'<p>
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus a efficitur orci, a dictum nunc.
+						Phasellus enim risus, vehicula in est a, lobortis convallis metus. Duis sed accumsan mi.
+						Suspendisse eget ultricies est, ac suscipit dui.
+					</p>
+					<address>
+						Visit us: <a href="#">Test.com</a><br />
+            Email: <a href="mailto:test@test.com">test@test.com</a><br />
+						<br />
+            <abbr title="copyright">Your Company</abbr> ©
+          </address>',
+			'sanitize_callback'			=> 'islemag_sanitize_html',
+			'transport'							=> 'postMessage'
+	) );
+
+	$wp_customize->add_setting( 'islemag_footer_socials_title', array(
+			'default'								=>  esc_html__( 'Find Us at:', 'islemag' ),
+			'sanitize_callback'			=> 'sanitize_text_field',
+			'transport'							=> 'postMessage'
+	) );
+
+	$wp_customize->add_setting( 'islemag_footer_social_icons', array(
+			'default' 							=> json_encode(
+																	array(
+																					array('icon_value' =>'fa-facebook' , 'link' => '#'),
+																					array('icon_value' =>'fa-twitter' , 'link' => '#'),
+																					array('icon_value' =>'fa-google-plus' , 'link' => '#'),
+																					array('icon_value' =>'fa-skype' , 'link' => '#'),
+																					array('icon_value' =>'fa-linkedin' , 'link' => '#')
+																				)
+																	),
+			'transport'							=> 'postMessage',
+			'sanitize_callback' 		=> 'islemag_sanitize_repeater'
+	) );
 
 
 	/*******************************
@@ -350,16 +433,24 @@ function islemag_customize_register( $wp_customize ) {
 			'priority'    						=> 2
 	) );
 
+	$wp_customize->add_control( 'islemag_section1_fullwidth', array(
+			'type'										=> 'checkbox',
+			'label' 									=> __( 'Full width section', 'islemag' ),
+			'description' 						=> __( 'If you check this box and you have a sidebar, the section will be displayed after the sidebar','islemag' ),
+			'section'  								=> 'islemag_section1',
+			'priority' 								=> 1,
+	) );
+
 	$wp_customize->add_control( 'islemag_section1_title', array(
 			'label'   								=> esc_html__( 'Title', 'islemag' ),
 			'section'  								=> 'islemag_section1',
-			'priority'    						=> 1
+			'priority'    						=> 2
 	) );
 
 	$wp_customize->add_control( new IseleMagCategorySelector( $wp_customize, 'islemag_section1_category', array(
     	'label'    								=> esc_html__( 'Category', 'islemag' ),
     	'section'  								=> 'islemag_section1',
-			'priority'    						=> 2
+			'priority'    						=> 3
 	) ) );
 
 	$wp_customize->add_control( 'islemag_section1_max_posts', array(
@@ -368,19 +459,27 @@ function islemag_customize_register( $wp_customize ) {
 			'section'  								=> 'islemag_section1',
 			'type' 										=> 'number',
 			'input_attrs' 						=> array( 'min' => -1, 'step' => 1 ),
-			'priority'    						=> 3
+			'priority'    						=> 4
+	) );
+
+	$wp_customize->add_control( 'islemag_section2_fullwidth', array(
+			'type'										=> 'checkbox',
+			'label' 									=> __( 'Full width section', 'islemag' ),
+			'description' 						=> __( 'If you check this box and you have a sidebar, the section will be displayed after the sidebar','islemag' ),
+			'section'  								=> 'islemag_section2',
+			'priority' 								=> 1,
 	) );
 
 	$wp_customize->add_control( 'islemag_section2_title', array(
 			'label'    								=> esc_html__( 'Title', 'islemag' ),
 			'section'  								=> 'islemag_section2',
-			'priority'    						=> 1
+			'priority'    						=> 2
 	) );
 
 	$wp_customize->add_control( new IseleMagCategorySelector( $wp_customize, 'islemag_section2_category', array(
     	'label'    								=> esc_html__( 'Category', 'islemag' ),
     	'section'  								=> 'islemag_section2',
-			'priority'    						=> 2
+			'priority'    						=> 3
 	) ) );
 
 	$wp_customize->add_control( 'islemag_section2_max_posts', array(
@@ -389,19 +488,28 @@ function islemag_customize_register( $wp_customize ) {
 			'section'  								=> 'islemag_section2',
 			'type' 										=> 'number',
 			'input_attrs' 						=> array( 'min' => -1, 'step' => 1 ),
-			'priority'    						=> 3
+			'priority'    						=> 4
 	) );
+
+	$wp_customize->add_control( 'islemag_section3_fullwidth', array(
+			'type'										=> 'checkbox',
+			'label' 									=> __( 'Full width section', 'islemag' ),
+			'description' 						=> __( 'If you check this box and you have a sidebar, the section will be displayed after the sidebar','islemag' ),
+			'section'  								=> 'islemag_section3',
+			'priority' 								=> 1,
+	) );
+
 
 	$wp_customize->add_control( 'islemag_section3_title', array(
 			'label'    								=> esc_html__( 'Title', 'islemag' ),
 			'section'  								=> 'islemag_section3',
-			'priority'   							=> 1
+			'priority'   							=> 2
 	) );
 
 	$wp_customize->add_control( new IseleMagCategorySelector( $wp_customize, 'islemag_section3_category', array(
     	'label'    								=> esc_html__( 'Category', 'islemag' ),
     	'section'  								=> 'islemag_section3',
-			'priority'    						=> 2
+			'priority'    						=> 3
 	) ) );
 
 	$wp_customize->add_control( 'islemag_section3_max_posts', array(
@@ -410,19 +518,28 @@ function islemag_customize_register( $wp_customize ) {
 			'section'  								=> 'islemag_section3',
 			'type' 										=> 'number',
 			'input_attrs' 						=> array( 'min' => -1, 'step' => 1 ),
-			'priority'    						=> 3
+			'priority'    						=> 4
 	) );
+
+	$wp_customize->add_control( 'islemag_section4_fullwidth', array(
+			'type'										=> 'checkbox',
+			'label' 									=> __( 'Full width section', 'islemag' ),
+			'description' 						=> __( 'If you check this box and you have a sidebar, the section will be displayed after the sidebar','islemag' ),
+			'section'  								=> 'islemag_section4',
+			'priority' 								=> 1,
+	) );
+
 
 	$wp_customize->add_control( 'islemag_section4_title', array(
 			'label'    								=> esc_html__( 'Title', 'islemag' ),
 			'section'  								=> 'islemag_section4',
-			'priority'    						=> 1
+			'priority'    						=> 2
 	) );
 
 	$wp_customize->add_control( new IseleMagCategorySelector( $wp_customize, 'islemag_section4_category', array(
     	'label'    								=> esc_html__( 'Category', 'islemag' ),
     	'section'  								=> 'islemag_section4',
-			'priority'    						=> 2
+			'priority'    						=> 3
 	) ) );
 
 	$wp_customize->add_control( 'islemag_section4_max_posts', array(
@@ -431,7 +548,7 @@ function islemag_customize_register( $wp_customize ) {
 			'section'  								=> 'islemag_section4',
 			'type' 										=> 'number',
 			'input_attrs' 						=> array( 'min' => -1, 'step' => 1 ),
-			'priority'    						=> 3
+			'priority'    						=> 4
 	) );
 
 	$wp_customize->add_control( 'islemag_section4_posts_per_page', array(
@@ -439,19 +556,27 @@ function islemag_customize_register( $wp_customize ) {
 			'section'  								=> 'islemag_section4',
 			'type' 										=> 'number',
 			'input_attrs' 						=> array( 'min' => 1, 'step' => 1	),
-			'priority'    						=> 4
+			'priority'    						=> 5
+	) );
+
+	$wp_customize->add_control( 'islemag_section5_fullwidth', array(
+			'type'										=> 'checkbox',
+			'label' 									=> __( 'Full width section', 'islemag' ),
+			'description' 						=> __( 'If you check this box and you have a sidebar, the section will be displayed after the sidebar','islemag' ),
+			'section'  								=> 'islemag_section5',
+			'priority' 								=> 1,
 	) );
 
 	$wp_customize->add_control( 'islemag_section5_title', array(
 			'label'    								=> esc_html__( 'Title', 'islemag' ),
 			'section'  								=> 'islemag_section5',
-			'priority'    						=> 1
+			'priority'    						=> 2
 	) );
 
 	$wp_customize->add_control( new IseleMagCategorySelector( $wp_customize, 'islemag_section5_category', array(
     	'label'    								=> esc_html__( 'Category', 'islemag' ),
     	'section'									=> 'islemag_section5',
-			'priority'								=> 2
+			'priority'								=> 3
 	) ) );
 
 	$wp_customize->add_control( 'islemag_section5_max_posts', array(
@@ -460,24 +585,60 @@ function islemag_customize_register( $wp_customize ) {
 			'section'  								=> 'islemag_section5',
 			'type' 										=> 'number',
 			'input_attrs' 						=> array( 'min' => -1, 'step' => 1 ),
-			'priority'    						=> 3
+			'priority'    						=> 4
 	) );
 
 	$wp_customize->add_control( 'islemag_single_post_hide_author', array(
-			'type' => 'checkbox',
-			'label' => __( 'Hide author\'s description?', 'islemag' ),
-			'description' => __( 'If you check this box, the author\'s description will disappear from single page.','islemag' ),
-			'section' => 'islemag_single_post',
-			'priority' => 1,
+			'type' 										=> 'checkbox',
+			'label' 									=> __( 'Hide author\'s description?', 'islemag' ),
+			'description' 						=> __( 'If you check this box, the author\'s description will disappear from single page.','islemag' ),
+			'section' 								=> 'islemag_single_post',
+			'priority' 								=> 1,
 	) );
 
 	$wp_customize->add_control( 'islemag_single_post_hide_related_posts', array(
-			'type' => 'checkbox',
-			'label' => __( 'Hide related posts?', 'islemag' ),
-			'description' => __( 'If you check this box, related posts will disappear from single page.','islemag' ),
-			'section' => 'islemag_single_post',
-			'priority' => 2,
+			'type' 										=> 'checkbox',
+			'label'										=> __( 'Hide related posts?', 'islemag' ),
+			'description' 						=> __( 'If you check this box, related posts will disappear from single page.','islemag' ),
+			'section' 								=> 'islemag_single_post',
+			'priority' 								=> 2,
 	) );
+
+	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'islemag_footer_logo', array(
+			'label'										=> esc_html__( 'Footer logo', 'islemag' ),
+			'section'									=> 'islemag_footer',
+			'priority'								=> 1
+	) ) );
+
+	$wp_customize->add_control( 'islemag_footer_link', array(
+			'label' 									=> esc_html__( 'Footer logo link', 'islemag' ),
+			'description' 						=> esc_html__( 'If not set, the footer logo will point to homepage url.', 'islemag' ),
+			'section' 								=> 'islemag_footer',
+			'priority' 								=> 2,
+	) );
+
+	$wp_customize->add_control( 'islemag_footer_text', array(
+			'description'							=> esc_html__( 'Allowed HTML tags: <p>, <br>, <em>, <strong>, <ul>, <li>, <a>, <button>, <address>, <abbr>', 'islemag' ),
+			'type'										=> 'textarea',
+			'label' 									=> esc_html__( 'Footer content', 'islemag' ),
+			'section' 								=> 'islemag_footer',
+			'priority' 								=> 3,
+	) );
+
+	$wp_customize->add_control( 'islemag_footer_socials_title', array(
+			'label' 									=> esc_html__( 'Socials title', 'islemag' ),
+			'section' 								=> 'islemag_footer',
+			'priority' 								=> 4,
+	) );
+
+	$wp_customize->add_control( new Islemag_General_Repeater( $wp_customize, 'islemag_footer_social_icons', array(
+			'label'   								=> esc_html__('Add new social icon','islemag'),
+			'section' 								=> 'islemag_footer',
+			'priority'								=> 5,
+			'islemag_icon_control' 		=> true,
+			'islemag_link_control'		=> true
+	) ) );
+
 
 }
 add_action( 'customize_register', 'islemag_customize_register' );
@@ -570,11 +731,50 @@ function islemag_sanitize_banner( $input){
 	return json_encode( $input_decoded );
 }
 
+
+function islemag_sanitize_html( $input){
+	$allowed_html = array(
+							'p' => array(
+								'class' => array(),
+								'id' => array()
+							),
+							'br' => array(),
+							'em' => array(),
+							'address' => array(),
+							'strong' => array(),
+							'ul' => array(
+								'class' => array(),
+								'id' => array()
+							),
+							'li' => array(
+								'class' => array(),
+								'id' => array()
+							),
+							'a' => array(
+								'href' => array(),
+								'class' => array(),
+								'id' => array(),
+								'target' => array()
+							),
+							'button' => array(
+								'class' => array(),
+								'id' => array()
+							),
+							'abbr' => array(
+								'title'=> array()
+							)
+						);
+
+
+	$string = force_balance_tags($input);
+	return wp_kses($string, $allowed_html);
+}
+
 /**
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
  */
 function islemag_customize_preview_js() {
-	wp_enqueue_script( 'islemag_customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), '1.0.8', true );
+	wp_enqueue_script( 'islemag_customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), '1.0.4', true );
 	wp_localize_script( 'islemag_customizer', 'requestpost', array(
 			'ajaxurl' => admin_url( 'admin-ajax.php' ),
 
