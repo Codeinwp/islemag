@@ -21,21 +21,21 @@ if( $wp_query->have_posts() ) :
         $case = $counter % 2;
         $category = get_the_category();
 
-        switch ($case) {
+        switch ( $case ) {
                           case 0:
                                   $choosed_color = array_rand($colors, 1); ?>
                                   <div class="entry-wrapper">
                                     <article class="entry entry-overlay entry-block eb-small <?php echo $colors[$choosed_color]; ?>">
 
                                       <div class="entry-media">
-                                        <a href="<?php echo get_category_link($category[0]->cat_ID);?>" class="category-block" title="Category <?php echo $category[0]->cat_name;?>"><?php echo $category[0]->cat_name;?></a>
+                                        <a href="<?php echo esc_url( get_category_link( $category[0]->cat_ID ) );?>" class="category-block" title="<?php esc_html_e( 'Category','islemag' ); ?> <?php echo esc_attr( $category[0]->cat_name ); ?>"><?php echo esc_attr( $category[0]->cat_name ); ?></a>
                                         <figure>
-                                          <a href="<?php the_permalink(); ?>" title="<?php echo get_the_title(); ?>">
+                                          <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
                                           <?php
                                             if ( has_post_thumbnail() ) :
-                                              $thumb = wp_get_attachment_image_src( get_post_thumbnail_id($wp_query->ID), 'sections-small-thumbnail' );
+                                              $thumb = wp_get_attachment_image_src( get_post_thumbnail_id( $wp_query->ID ), 'islemag_sections_small_thumbnail' );
                                               $url = $thumb['0'];
-                                              echo '<img class="owl-lazy" data-src="'.$url.'" />';
+                                              echo '<img class="owl-lazy" data-src="' . esc_url( $url ) . '" />';
                                             else :
                                               echo '<img class="owl-lazy" data-src="'.get_template_directory_uri().'/img/placeholder-image.png">';
                                             endif;
@@ -51,7 +51,7 @@ if( $wp_query->have_posts() ) :
                                         <span class="entry-separator">/</span>
                                         <a href="<?php the_permalink(); ?>" class="entry-comments"><?php comments_number( '0 Comments', '1 Comment', '% Comments' ); ?></a>
                                         <div>
-                                          <?php esc_html_e( 'Posted By','islemag' ); ?><a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>" class="entry-author"><?php the_author(); ?></a>
+                                          <?php esc_html_e( 'Posted By','islemag' ); ?><a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>" class="entry-author"><?php the_author(); ?></a>
                                         </div>
                                       </div> <!-- End .entry-meta -->
 
@@ -69,19 +69,19 @@ if( $wp_query->have_posts() ) :
                                   $choosed_color = array_rand($colors, 1); ?>
                                   <article class="entry entry-overlay entry-block eb-small <?php echo $colors[$choosed_color]; ?>">
                                     <div class="entry-media">
-                                      <a href="<?php echo get_category_link($category[0]->cat_ID);?>" class="category-block" title="Category <?php echo $category[0]->cat_name;?>"><?php echo $category[0]->cat_name;?></a>
+                                      <a href="<?php echo esc_url( get_category_link( $category[0]->cat_ID ) );?>" class="category-block" title="<?php esc_html_e( 'Category','islemag' ); ?> <?php echo esc_attr( $category[0]->cat_name ); ?>"><?php echo esc_attr( $category[0]->cat_name );?></a>
                                       <figure>
-                                          <a href="<?php the_permalink(); ?>" title="<?php echo get_the_title(); ?>">
-                                          <?php
-                                            if ( has_post_thumbnail() ) :
-                                              $thumb = wp_get_attachment_image_src( get_post_thumbnail_id($wp_query->ID), 'sections-small-thumbnail' );
-                                              $url = $thumb['0'];
-                                              echo '<img class="owl-lazy" data-src="'.$url.'" />';
-                                            else :
-                                              echo '<img class="owl-lazy" data-src="'.get_template_directory_uri().'/img/placeholder-image.png">';
-                                            endif;
-                                          ?>
-                                          </a>
+                                        <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+                                        <?php
+                                          if ( has_post_thumbnail() ) :
+                                            $thumb = wp_get_attachment_image_src( get_post_thumbnail_id( $wp_query->ID ), 'islemag_sections_small_thumbnail' );
+                                            $url = $thumb['0'];
+                                            echo '<img class="owl-lazy" data-src="' . esc_url( $url ) . '" />';
+                                          else :
+                                            echo '<img class="owl-lazy" data-src="' . get_template_directory_uri() . '/img/placeholder-image.png">';
+                                          endif;
+                                        ?>
+                                        </a>
                                       </figure> <!-- End figure -->
                                     </div> <!-- End .entry-media -->
 
@@ -91,7 +91,7 @@ if( $wp_query->have_posts() ) :
                                       <span class="entry-separator">/</span>
                                       <a href="#" class="entry-comments"><?php comments_number( '0 Comments', '1 Comment', '% Comments' ); ?></a>
                                       <div>
-                                        <?php esc_html_e( 'Posted By','islemag' ); ?><a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>" class="entry-author"><?php the_author(); ?></a>
+                                        <?php esc_html_e( 'Posted By','islemag' ); ?><a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>" class="entry-author"><?php the_author(); ?></a>
                                       </div>
                                     </div> <!-- End .entry-meta -->
 

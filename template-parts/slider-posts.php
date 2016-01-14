@@ -7,26 +7,22 @@
  * @package islemag
  */
 
-
-
-
 $colors = array("red", "orange", "blue", "green", "purple", "pink", "yellow");
 $choosed_color = array_rand($colors, 1);
 ?>
 <article class="entry entry-overlay entry-block <?php echo $colors[$choosed_color];?>">
 	<div class="entry-media">
 		<figure>
-			<a href="<?php the_permalink(); ?>" title="Ipsa quasi praesentium eos">
+			<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
 				<?php
 				if(has_post_thumbnail()){
-					$thumb = wp_get_attachment_image_src( get_post_thumbnail_id($wp_query->ID), 'main-slider' );
+					$thumb = wp_get_attachment_image_src( get_post_thumbnail_id( $wp_query->ID ), 'islemag_main_slider' );
 					$url = $thumb['0'];
-					echo '<img class="owl-lazy" data-src="'.$url.'" />';
+					echo '<img class="owl-lazy" data-src="' . esc_url( $url ) . '" />';
 				} else {
-					echo '<img class="owl-lazy" data-src="'.get_template_directory_uri().'/img/placeholder-image.png" />';
+					echo '<img class="owl-lazy" data-src="' . get_template_directory_uri() . '/img/placeholder-image.png" />';
 				}
 				?>
-
 			</a>
 		</figure>
 	</div><!-- End .entry-media -->
@@ -37,6 +33,6 @@ $choosed_color = array_rand($colors, 1);
 		<span class="entry-separator">/</span>
 		<a href="<?php the_permalink(); ?>" class="entry-comments"><i class="fa fa-comments"></i><?php comments_number( '0', '1', '%' ); ?></a>
 		<span class="entry-separator">/</span>
-		<a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>" class="entry-author"><i class="fa fa-user"></i><?php the_author(); ?></a>
+		<a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>" class="entry-author"><i class="fa fa-user"></i><?php the_author(); ?></a>
 	</div><!-- End .entry-overlay-meta -->
 </article>
