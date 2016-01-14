@@ -280,6 +280,7 @@ textarea {
 	font-size: 16px;
 	font-size: 1rem;
 	line-height: 1.5;
+	border-color:#eaeaea;
 }
 
 h1,
@@ -3202,6 +3203,10 @@ styled buttons not container for vertical centered navs*/
 
 /* SIDEBAR */
 
+.islemag-content-right .tagcloud a:hover {
+    color: #505050;
+}
+
 .islemag_multiple_ads{
 	display: inline-block;
 }
@@ -3675,11 +3680,11 @@ ul > li:hover > a,
 
 
 .widget_search input[type="search"]{
-	background-color: rgba(0,0,0, 0.12);
+	background-color: #fff;
 	    color: #7a7a7a;
-	border: none;
+	border: 1px solid #eaeaea;
 	border-radius: 0;
-	padding: 10px 12px;
+	padding: 6px 12px;
 	font-size: 14px;
 	height: auto;
 }
@@ -3690,12 +3695,13 @@ ul > li:hover > a,
 	background-color: #00796b;
 }
 .widget_search button[type="submit"]{
-	padding: 9px 16px;
-  font-size: 14px;
-  background-color: #009688;
-	border:none;
+	padding: 10px 16px;
+	font-size: 14px;
+	background-color: #29b6f6;
+	border: none;
 	border-radius: 0;
-	color:#fff;
+	color: #fff;
+	vertical-align: middle;
 }
 
 #footer .widget select{
@@ -4018,12 +4024,18 @@ ul > li:hover > a,
 	border: 1px solid #ccc;
 }
 
+
+
 .islemag-content-right .form_field_wrap textarea{
 	border-radius: 0;
 }
 
 .islemag-content-right .form-control:focus{
 	border-color:#ccc;
+}
+
+.islemag-content-right li{
+	list-style-type: none;
 }
 
 .islemag-footer-logo{
