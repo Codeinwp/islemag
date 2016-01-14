@@ -26,6 +26,42 @@
 	</div><!-- End .entry-media -->
 
 	<span class="entry-date"><?php echo get_the_date( 'd' ); ?><span><?php echo strtoupper(get_the_date( 'M' )); ?></span></span>
+	<?php
+		$id = get_the_ID();
+		$format = get_post_format( $id );
+		switch ( $format ) {
+			case 'aside':
+				$icon_class = "fa-file-text";
+				break;
+			case 'chat':
+				$icon_class = "fa-comment";
+				break;
+			case 'gallery':
+				$icon_class = "fa-file-image-o";
+				break;
+			case 'link':
+				$icon_class = "fa-link";
+				break;
+			case 'image':
+				$icon_class = "fa-picture-o";
+				break;
+			case 'quote':
+				$icon_class = "fa-quote-right";
+				break;
+			case 'status':
+				$icon_class = "fa-line-chart";
+				break;
+			case 'video':
+				$icon_class = "fa-video-camera";
+				break;
+			case 'audio':
+				$icon_class = "fa-headphones";
+				break;
+		}
+		if( !empty( $icon_class ) ){ ?>
+			<span class="entry-format"><i class="fa <?php echo $icon_class; ?>"></i></span>
+	<?php
+		} ?>
 	<span class="entry-format"><i class="fa fa-file-image-o"></i></span>
 	<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', get_permalink() ), '</a></h2>' ); ?>
 

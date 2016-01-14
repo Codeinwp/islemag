@@ -22,10 +22,46 @@
                       </div><!-- End .entry-media -->
                   <?php } ?>
                   <span class="entry-date"><?php echo get_the_date( 'd' ); ?><span><?php echo strtoupper( get_the_date( 'M' ) ); ?></span></span>
+                  <?php
+                    $id = get_the_ID();
+                    $format = get_post_format( $id );
+                    switch ( $format ) {
+                      case 'aside':
+                        $icon_class = "fa-file-text";
+                        break;
+                      case 'chat':
+                        $icon_class = "fa-comment";
+                        break;
+                      case 'gallery':
+                        $icon_class = "fa-file-image-o";
+                        break;
+                      case 'link':
+                        $icon_class = "fa-link";
+                        break;
+                      case 'image':
+                        $icon_class = "fa-picture-o";
+                        break;
+                      case 'quote':
+                        $icon_class = "fa-quote-right";
+                        break;
+                      case 'status':
+                        $icon_class = "fa-line-chart";
+                        break;
+                      case 'video':
+                        $icon_class = "fa-video-camera";
+                        break;
+                      case 'audio':
+                        $icon_class = "fa-headphones";
+                        break;
+                    }
+                    if( !empty( $icon_class ) ){ ?>
+                      <span class="entry-format"><i class="fa <?php echo $icon_class; ?>"></i></span>
+                  <?php
+                    } ?>
                   <?php the_title( '<h2 class="entry-title">', '</h2>' ); ?>
 
                   <div class="entry-content">
-                      <?php the_content(); ?>
+                      <?php the_content('Continue Reading'); ?>
                       <?php
                   			wp_link_pages( array(
                   				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'islemag' ),
@@ -106,6 +142,42 @@
 
                           <div class="entry-content-wrapper">
                             <span class="entry-date"><?php echo get_the_date( 'd' ); ?><span><?php echo strtoupper( get_the_date( 'M' ) ); ?></span></span>
+                            <?php
+                              $id = get_the_ID();
+                              $format = get_post_format( $id );
+                              switch ( $format ) {
+                                case 'aside':
+                                  $icon_class = "fa-file-text";
+                                  break;
+                                case 'chat':
+                                  $icon_class = "fa-comment";
+                                  break;
+                                case 'gallery':
+                                  $icon_class = "fa-file-image-o";
+                                  break;
+                                case 'link':
+                                  $icon_class = "fa-link";
+                                  break;
+                                case 'image':
+                                  $icon_class = "fa-picture-o";
+                                  break;
+                                case 'quote':
+                                  $icon_class = "fa-quote-right";
+                                  break;
+                                case 'status':
+                                  $icon_class = "fa-line-chart";
+                                  break;
+                                case 'video':
+                                  $icon_class = "fa-video-camera";
+                                  break;
+                                case 'audio':
+                                  $icon_class = "fa-headphones";
+                                  break;
+                              }
+                              if( !empty( $icon_class ) ){ ?>
+                                <span class="entry-format"><i class="fa <?php echo $icon_class; ?>"></i></span>
+                            <?php
+                              } ?>
                             <h2 class="entry-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
                             <div class="entry-content">
                               <p><?php echo islemag_get_excerpt(); ?></p>

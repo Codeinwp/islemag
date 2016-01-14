@@ -156,6 +156,12 @@ function islemag_customize_register( $wp_customize ) {
 			'transport'							=> 'postMessage'
 	) );
 
+	$wp_customize->add_setting( 'islemag_sticky_menu', array(
+			'default'								=> false,
+			'sanitize_callback'			=> 'sanitize_text_field',
+			'transport'							=> 'postMessage'
+	) );
+
 	$wp_customize->add_setting( 'islemag_banner', array(
 		'default'										=> json_encode(
 																		array( 'choice' => 'image', 'position' => 'center', 'banner_link' => '#')
@@ -413,9 +419,16 @@ function islemag_customize_register( $wp_customize ) {
 			'priority'								=> 1
 	) ) );
 
+	$wp_customize->add_control( 'islemag_sticky_menu', array(
+			'type'										=> 'checkbox',
+			'label' 									=> esc_html__( 'Disable sticky menu', 'islemag' ),
+			'section'  								=> 'islemag_appearance_general',
+			'priority' 								=> 2,
+	) );
+
 	$wp_customize->add_control( new Islemag_Banner_control( $wp_customize, 'islemag_banner', array(
 			'section'									=> 'islemag_appearance_general',
-			'priority'								=> 2
+			'priority'								=> 3
 	) ) );
 
 	$wp_customize->add_control( new IseleMagCategorySelector( $wp_customize, 'islemag_header_slider_category', array(
@@ -774,7 +787,7 @@ function islemag_sanitize_html( $input){
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
  */
 function islemag_customize_preview_js() {
-	wp_enqueue_script( 'islemag_customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), '1.0.4', true );
+	wp_enqueue_script( 'islemag_customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), '1.0.9', true );
 	wp_localize_script( 'islemag_customizer', 'requestpost', array(
 			'ajaxurl' => admin_url( 'admin-ajax.php' ),
 
