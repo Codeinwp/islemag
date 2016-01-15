@@ -165,46 +165,99 @@ add_action( 'after_setup_theme', 'islemag_content_width', 0 );
 		'after_title'   => '</span></h3>',
 	) );
 
-	register_sidebar(
-		array(
-			'name' => esc_html__('Footer area 1','islemag'),
-			'id' => 'islemag-first-footer-area',
-			'before_widget'	=> '<div id="%1$s" class="widget %2$s">',
-			'after_widget'  => '</div>',
-			'before_title'	=> '<h3 class="widget-title">',
-			'after_title'	=> '</h3>'
-		)
-	);
+	$sidebars = array ( 'a' => 'islemag-first-footer-area', 'b' => 'islemag-second-footer-area', 'c' => 'islemag-third-footer-area' );
+	foreach ( $sidebars as $sidebar ){
 
-	register_sidebar(
-		array(
-			'name' => esc_html__('Footer area 2','islemag'),
-			'id' => 'islemag-second-footer-area',
-			'before_widget'	=> '<div id="%1$s" class="widget %2$s">',
-			'after_widget'  => '</div>',
-			'before_title'	=> '<h3 class="widget-title">',
-			'after_title'	=> '</h3>'
-		)
-	);
+		switch ($sidebar) {
+			case 'islemag-first-footer-area':
+				$name = esc_html__('Footer area 1','islemag');
+				break;
+			case 'islemag-second-footer-area':
+				$name = esc_html__('Footer area 2','islemag');
+				break;
+			case 'islemag-third-footer-area':
+				$name = esc_html__('Footer area 3','islemag');
+				break;
+			default:
+				$name = $sidebar;
+		}
 
-	register_sidebar(
-		array(
-			'name' => esc_html__('Footer area 3','islemag'),
-			'id' => 'islemag-third-footer-area',
-			'before_widget'	=> '<div id="%1$s" class="widget %2$s">',
-			'after_widget'  => '</div>',
-			'before_title'	=> '<h3 class="widget-title">',
-			'after_title'	=> '</h3>'
-		)
-	);
+    register_sidebar(
+        array (
+            'name'          => $name,
+            'id'            => $sidebar,
+						'before_widget'	=> '<div id="%1$s" class="widget %2$s">',
+						'after_widget'  => '</div>',
+						'before_title'	=> '<h3 class="widget-title">',
+						'after_title'	=> '</h3>'
+        )
+    );
+	}
+
 
 	register_widget( 'islemag_multiple_ads' );
 	register_widget( 'islemag_big_ad' );
-
 	wp_enqueue_script( 'islemag-widget-js', get_template_directory_uri() . '/js/islemag-wigdet.js', array(), '1.0.0', true );
 
 }
 add_action( 'widgets_init', 'islemag_widgets_init' );
+
+
+/**
+ * Add default widgets
+ */
+add_action('after_switch_theme', 'islemag_register_default_widgets');
+
+function islemag_register_default_widgets() {
+	/* Default widgets */
+	$sidebars = array ( 'a' => 'islemag-first-footer-area', 'b' => 'islemag-second-footer-area', 'c' => 'islemag-third-footer-area' );
+	$active_widgets = get_option( 'sidebars_widgets' );
+
+
+	if ( empty ( $active_widgets[ $sidebars['a'] ] ) ):
+
+		$counter = 1;
+
+		$active_widgets[ $sidebars['a'] ][0] = 'categories-' . $counter;
+		$categories[ $counter ] = array( 'title' => esc_html__( 'Categories', 'islemag' ) );
+		update_option( 'widget_categories', $categories );
+		$counter++;
+
+		$active_widgets[ $sidebars['a'] ][] = 'tag_cloud-' . $counter;
+		$tagcloud[ $counter ] = array( 'title' =>  esc_html__( 'Tagcloud', 'islemag' ) );
+		$counter++;
+
+		update_option( 'sidebars_widgets', $active_widgets );
+
+	endif;
+
+
+	if ( empty ( $active_widgets[ $sidebars['b'] ] ) ):
+
+		$counter = 1;
+
+		$active_widgets[ $sidebars['b'] ][] = 'pages-' . $counter;
+		$pages[ $counter ] = array( 'title' => esc_html__( 'Pages', 'islemag' )  );
+		update_option( 'widget_pages', $pages );
+		$counter++;
+
+		update_option( 'sidebars_widgets', $active_widgets );
+
+	endif;
+
+	if ( empty ( $active_widgets[ $sidebars['c'] ] ) ):
+
+		$counter = 1;
+
+		$active_widgets[ $sidebars['c'] ][] = 'calendar-' . $counter;
+		$calendar[ $counter ] = array ( 'title' => esc_html__( 'Calendar', 'islemag' ) );
+		update_option( 'widget_calendar', $calendar );
+		$counter++;
+
+		update_option( 'sidebars_widgets', $active_widgets );
+
+	endif;
+}
 
 /**
  * Enqueue scripts and styles.
