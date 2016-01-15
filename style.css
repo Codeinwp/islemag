@@ -275,8 +275,8 @@ button,
 input,
 select,
 textarea {
-	color: #404040;
-	font-family: sans-serif;
+	color: inherit;
+	font-family: inherit;
 	font-size: 16px;
 	font-size: 1rem;
 	line-height: 1.5;
@@ -455,13 +455,28 @@ button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
-	border: 1px solid;
-	border-color: #ccc #ccc #bbb;
-	border-radius: 3px;
-	background: #e6e6e6;
-	color: rgba(0, 0, 0, .8);
-	font-size: 12px;
-	line-height: 1;
+	border-radius: 0;
+	-webkit-appearance: button;
+	cursor: pointer;
+	background-color: #009688;
+	color: #fff;
+	padding: 9px 16px;
+	font-size: 14px;
+	transition: color 0.2s ease, background 0.45s ease, border 0.4s ease-in-out;
+	-webkit-transition: color 0.2s ease, background 0.45s ease, border 0.4s ease-in-out;
+	border: none;
+	margin-bottom: 0px;
+	font-weight: 400;
+	line-height: 1.42857143;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: middle;
+	-ms-touch-action: manipulation;
+	touch-action: manipulation;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
 }
 
 button:hover,
@@ -485,13 +500,17 @@ input[type="submit"]:active {
 
 input[type="text"],
 input[type="email"],
-input[type="url"],
+input[type="url"],``
 input[type="password"],
 input[type="search"],
 textarea {
-	color: #666;
-	border: 1px solid #ccc;
-	border-radius: 3px;
+	background-color: #fff;
+	color: #7a7a7a;
+	border: 1px solid #eaeaea;
+	border-radius: 0;
+	padding: 6px 12px;
+	font-size: 14px;
+	height: auto;
 }
 
 input[type="text"]:focus,
@@ -503,41 +522,18 @@ textarea:focus {
 	color: #111;
 }
 
+textarea {
+	padding-left: 3px;
+	width: 100%;
+	resize: vertical;
+}
+
 input[type="text"],
 input[type="email"],
 input[type="url"],
 input[type="password"],
 input[type="search"] {
-	padding: 3px;
-}
-
-textarea {
-	padding-left: 3px;
-	width: 100%;
-}
-
-
-.comment-form p {
-    position: relative;
-    padding-left: 100px;
-}
-
-.comment-form label {
-    position: absolute;
-    left: 0;
-    line-height: 38px;
-    font-weight: 400;
-}
-
-.comment-form input {
-    font-size: 14px;
-    font-weight: 500;
-    min-width: 50%;
-}
-
-.comment-form .form-submit input{
-  padding: 7px 30px;
-  min-width: 10px;
+	padding: 9px 16px;
 }
 
 .comment {
@@ -1278,6 +1274,58 @@ a:active {
 /*--------------------------------------------------------------
 ## Comments
 --------------------------------------------------------------*/
+
+
+
+label.input-desc {
+    font-size: 14px;
+    font-weight: 700;
+    font-family: 'Open Sans', Verdana;
+    text-transform: uppercase;
+    margin-bottom: 7px;
+}
+
+.form-control {
+    height: 20px;
+    padding: 9px 16px;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    transition: all 0.4s ease;
+    -webkit-transition: all 0.4s ease;
+    border: 1px solid #eaeaea;
+    color: inherit;
+    font-size: 14px;
+}
+
+.form-group .form-control {
+	height: 40px;
+}
+
+textarea.form-control {
+    height: auto;
+		min-height: 120px;
+}
+
+.form-group .form-control {
+    margin-bottom: 0;
+}
+
+.form-control:focus {
+	  border-color: #dadada;
+	  -webkit-box-shadow: 0 0 8px rgba(0,0,0, 0.22);
+	  box-shadow: 0 0 8px rgba(0,0,0, 0.22);
+}
+
+.form-control::-moz-placeholder {
+	color: #6a6a6a;
+}
+.form-control:-ms-input-placeholder {
+	color: #6a6a6a;
+}
+.form-control::-webkit-input-placeholder {
+	color: #6a6a6a;
+}
+
 .comment-content a {
 	word-wrap: break-word;
 }
@@ -1286,6 +1334,11 @@ a:active {
 	display: block;
 }
 
+.comments-list .pingback .media-body{
+	padding-left: 10px;
+	padding-top: 10px;
+	padding-bottom: 25px;
+}
 /*--------------------------------------------------------------
 # Infinite scroll
 --------------------------------------------------------------*/
@@ -1409,9 +1462,9 @@ body {
 	font: 400 14px/1.6 'Lato', Verdana, sans-serif;
 	color: #505050;
 	-webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    background-color: #fff;
-    min-height: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #fff;
+  min-height: 100%;
 }
 
 
@@ -1545,6 +1598,10 @@ ul,ol {
 	margin:0;
 }
 
+#content .entry-content ul, #content .entry-content ol {
+	margin-left: 20px;
+}
+
 p {
 	margin: 0 0 10px;
 }
@@ -1665,6 +1722,7 @@ blockquote {
     display: inline-block;
     transition: background-color 100ms linear;
     float: right;
+		color:#505050;
 }
 
 .navbar-btn:hover{
@@ -2658,6 +2716,14 @@ styled buttons not container for vertical centered navs*/
 	width: auto;
 }
 
+.blog-related-carousel .entry-content-wrapper .entry-title{
+	margin-top: 0;
+}
+
+.blog-related-carousel .entry-content-wrapper .entry-content{
+	margin: 0;
+}
+
 .entry-block.entry .entry-media figure > a:after,
 .entry-block.entry .entry-media .item > a:after,
 .entry-block.entry .entry-media.embed-responsive:after {
@@ -3203,10 +3269,6 @@ styled buttons not container for vertical centered navs*/
 
 /* SIDEBAR */
 
-.islemag-content-right .tagcloud a:hover {
-    color: #505050;
-}
-
 .islemag_multiple_ads{
 	display: inline-block;
 }
@@ -3258,14 +3320,15 @@ ul > li:hover > a,
 	float:left;
 	font-size:14px!important;
 	padding:4px 13px;
-	background-color: #eaeaea;
-	color:#7a7a7a;
+	background-color: #b1b1b1;
+	color:#505050!important;
 	margin:0 7px 7px 0;
-	border-radius: 4px;
+	transition: all 0.2s ease-in;
 }
 
 .tagcloud a:hover {
-	color:#fff;
+	color:#fff!important;
+  background-color: #009688;
 }
 
 /* Title Styles - elements-titles.html */
@@ -3600,23 +3663,6 @@ ul > li:hover > a,
 	color:#bebebe;
 }
 
-.tagcloud a {
-	display:block;
-	float:left;
-	font-size:13px;
-	padding:3px 10px;
-	background-color: #eee;
-	color:#7a7a7a;
-	margin:0 7px 7px 0;
-	border-radius: 3px;
-	transition:background 0.4s ease, color 0.05s;
-	-webkit-transition:background 0.4s ease, color 0.05s;
-}
-
-.tagcloud.no-radius a {
-	border-radius: 0;
-}
-
 .social-icons-label {
     font-weight: 600;
     font-size: 13px;
@@ -3625,10 +3671,6 @@ ul > li:hover > a,
     margin: 35px 0 13px;
 }
 
-#footer .tagcloud a:hover,
-.tagcloud a:hover {
-	color:#eaeaea;
-}
 
 .footer-social-icon {
     display: inline-block;
@@ -3679,31 +3721,6 @@ ul > li:hover > a,
 }
 
 
-.widget_search input[type="search"]{
-	background-color: #fff;
-	    color: #7a7a7a;
-	border: 1px solid #eaeaea;
-	border-radius: 0;
-	padding: 6px 12px;
-	font-size: 14px;
-	height: auto;
-}
-
-.widget_search button[type="submit"]:hover{
-	transition: color 0.2s ease, background 0.45s ease, border 0.4s ease-in-out;
-	-webkit-transition: color 0.2s ease, background 0.45s ease, border 0.4s ease-in-out;
-	background-color: #00796b;
-}
-.widget_search button[type="submit"]{
-	padding: 10px 16px;
-	font-size: 14px;
-	background-color: #29b6f6;
-	border: none;
-	border-radius: 0;
-	color: #fff;
-	vertical-align: middle;
-}
-
 #footer .widget select{
 	background: #252525;
 	border: none;
@@ -3716,9 +3733,6 @@ ul > li:hover > a,
 
 .form-control{
 	    transition: all 0.4s ease;
-}
-.form-control:focus{
-		box-shadow: none;
 }
 
 .widget li a {
@@ -3911,14 +3925,6 @@ ul > li:hover > a,
 	color:#aeaeae;
 }
 
-#footer.footer-inverse .tagcloud a {
-	background-color: #b1b1b1;
-	color:#505050;
-}
-
-#footer.footer-inverse .tagcloud a:hover {
-	color:#f2f2f2;
-}
 
 #footer.footer-inverse .widget .tweet_time a {
 	color:#6e6e6e;
@@ -4017,6 +4023,10 @@ ul > li:hover > a,
 
 .construct{
 	display: inline-block;
+}
+
+.islemag-content-right {
+	margin-top: 30px;
 }
 
 .islemag-content-right .form_field_wrap input {
@@ -4305,6 +4315,19 @@ ul > li:hover > a,
 /* =============================================
 ---------------  13.Blog template  --------------
 ================================================*/
+
+.nav-links{
+	font-size: 20px;
+}
+
+.nav-links a {
+	color: #454545;
+	transition: color 0.2s ease;
+}
+
+.nav-links a:hover{
+	color: #009866;
+}
 
 .entry {
 	position: relative;
