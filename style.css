@@ -277,10 +277,15 @@ select,
 textarea {
 	color: inherit;
 	font-family: inherit;
-	font-size: 16px;
-	font-size: 1rem;
+	font-size: 14px;
 	line-height: 1.5;
-	border-color:#eaeaea;
+	border: 1px solid #eaeaea;
+}
+
+input[type="text"]:focus {
+    border-color: #dadada;
+    -webkit-box-shadow: 0 0 8px rgba(0,0,0, 0.22);
+    box-shadow: 0 0 8px rgba(0,0,0, 0.22);
 }
 
 h1,
