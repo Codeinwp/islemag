@@ -489,7 +489,8 @@ button:hover,
 input[type="button"]:hover,
 input[type="reset"]:hover,
 input[type="submit"]:hover {
-	border-color: #ccc #bbb #aaa;
+	border-color: #00796b;
+	background-color: #00796b;
 }
 
 button:focus,
@@ -3060,6 +3061,20 @@ styled buttons not container for vertical centered navs*/
 	border-color:#66bb6a;
 }
 
+.title-border.title-bg.dkgreen,
+.title-bg-line.dkgreen:after,
+.title-underblock.dkgreen:after,
+.dkgreen .category-block {
+	background-color: #009688;
+}
+
+.title-border.dkgreen,
+.title-border.text-right.dkgreen,
+.title-border.text-center.dkgreen > span,
+.title-bottom-border.dkgreen {
+	border-color:#009688;
+}
+
 .title-border.title-bg.purple,
 .title-bg-line.purple:after,
 .title-underblock.purple:after,
@@ -4067,7 +4082,7 @@ ul > li:hover > a,
 
 #content {
 	width:100%;
-	padding:0 0 40px;
+	padding:15px 0px;
 }
 
 .no-padding {
@@ -4396,6 +4411,10 @@ ul > li:hover > a,
 	line-height: 1.4;
 	letter-spacing: 1px;
 	margin-bottom: 15px;
+}
+
+#content .entry-title{
+	margin-top: 0px;
 }
 
 .entry-title a {

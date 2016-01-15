@@ -54,7 +54,7 @@ function islemag_entry_footer() {
 
 		/* translators: used between list items, there is a space after the comma */
 		$tags_list = get_the_tag_list( '', esc_html__( ', ', 'islemag' ) );
-		if ( $tags_list ) {
+		if ( !empty ( $tags_list ) ) {
 			printf( '<span class="tags-links">' . esc_html__( 'Tagged: %1$s', 'islemag' ) . '</span>', $tags_list ); // WPCS: XSS OK.
 		}
 	}
@@ -69,7 +69,7 @@ function islemag_entry_footer() {
 
 		sprintf(
 			/* translators: %s: Name of current post */
-			( $tags_list || $categories_list ? esc_html__( ' / Edit %s', 'islemag' ) : esc_html__( 'Edit %s', 'islemag' ) ),
+			( !empty ( $tags_list ) || !empty ($categories_list ) ? esc_html__( ' / Edit %s', 'islemag' ) : esc_html__( 'Edit %s', 'islemag' ) ),
 			the_title( '<span class="screen-reader-text">"', '"</span>', false )
 		),
 		'<span class="edit-link">',
