@@ -225,6 +225,7 @@ function islemag_register_default_widgets() {
 
 		$active_widgets[ $sidebars['a'] ][] = 'tag_cloud-' . $counter;
 		$tagcloud[ $counter ] = array( 'title' =>  esc_html__( 'Tagcloud', 'islemag' ) );
+		update_option( 'widget_tag_cloud', $tagcloud );
 		$counter++;
 
 		update_option( 'sidebars_widgets', $active_widgets );
