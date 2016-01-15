@@ -1314,6 +1314,11 @@ textarea.form-control {
 	display: block;
 }
 
+.comments-list .pingback .media-body{
+	padding-left: 10px;
+	padding-top: 10px;
+	padding-bottom: 25px;
+}
 /*--------------------------------------------------------------
 # Infinite scroll
 --------------------------------------------------------------*/
