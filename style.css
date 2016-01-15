@@ -3353,6 +3353,10 @@ ul > li:hover > a,
   background-color: #009688;
 }
 
+.islemag-content-right .tagcloud a :hover {
+	background-color: #009688;
+}
+
 .islemag-content-right .tagcloud a {
 	background-color: #eaeaea;
 }
@@ -3758,7 +3762,8 @@ ul > li:hover > a,
   background-color: rgba(0,0,0, 0.26);
 }
 
-#footer input[type="text"]{
+#footer input[type="text"],
+#footer input[type="search"]{
 	border: none;
 	border-radius: none;
 	background-color: #252525;
@@ -3772,6 +3777,10 @@ ul > li:hover > a,
 .widget li a {
     line-height: 2.2;
 		text-transform: capitalize;
+}
+
+.rsswidget{
+	color:#454545;
 }
 
 @media (min-width: 992px) {
