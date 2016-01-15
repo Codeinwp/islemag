@@ -2686,6 +2686,14 @@ styled buttons not container for vertical centered navs*/
 	width: auto;
 }
 
+.blog-related-carousel .entry-content-wrapper .entry-title{
+	margin-top: 0;
+}
+
+.blog-related-carousel .entry-content-wrapper .entry-content{
+	margin: 0;
+}
+
 .entry-block.entry .entry-media figure > a:after,
 .entry-block.entry .entry-media .item > a:after,
 .entry-block.entry .entry-media.embed-responsive:after {

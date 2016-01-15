@@ -178,7 +178,9 @@
                                 <span class="entry-format"><i class="fa <?php echo $icon_class; ?>"></i></span>
                             <?php
                               } ?>
+                            <?php $title = get_the_title(); if ( !empty( $title ) ) { ?>
                             <h2 class="entry-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+                            <?php } ?>
                             <div class="entry-content">
                               <p><?php echo islemag_get_excerpt(); ?></p>
                             </div><!-- End .entry-content -->
