@@ -846,14 +846,14 @@ input[type="submit"].btn-dark.active,
 ## Links
 --------------------------------------------------------------*/
 a {
-	color: royalblue;
+	color: #009688;
 }
 
 
 a:hover,
 a:focus,
 a:active {
-	color: midnightblue;
+	color: #00796b;
 }
 
 a:focus {
@@ -4045,10 +4045,6 @@ ul > li:hover > a,
 
 .construct{
 	display: inline-block;
-}
-
-.islemag-content-right {
-	margin-top: 30px;
 }
 
 .islemag-content-right .form_field_wrap input {
