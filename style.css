@@ -3353,7 +3353,7 @@ ul > li:hover > a,
   background-color: #009688;
 }
 
-.islemag-content-right .tagcloud a :hover {
+.islemag-content-right .tagcloud a:hover {
 	background-color: #009688;
 }
 
@@ -3763,11 +3763,17 @@ ul > li:hover > a,
 }
 
 #footer input[type="text"],
-#footer input[type="search"]{
+#footer input[type="search"],
+{
 	border: none;
 	border-radius: none;
 	background-color: #252525;
 	color: #7a7a7a;
+}
+
+
+#footr button{
+	border: none;
 }
 
 .form-control{
