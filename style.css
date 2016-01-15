@@ -1573,6 +1573,10 @@ ul,ol {
 	margin:0;
 }
 
+#content .entry-content ul, #content .entry-content ol {
+	margin-left: 20px;
+}
+
 p {
 	margin: 0 0 10px;
 }
