@@ -518,3 +518,40 @@ function islemag_style() {
 
 	echo '</style>';
 }
+
+add_filter( 'comment_form_fields', 'islemag__move_comment_field_to_bottom' );
+function islemag__move_comment_field_to_bottom( $fields ) {
+	$comment_field = $fields['comment'];
+	unset( $fields['comment'] );
+	$fields['comment'] = $comment_field;
+	return $fields;
+}
+
+
+
+//for the comment wrapping functions - ensures HTML does not break.
+$comment_open_div = 0;
+
+/**
+ * Creates an opening div for a bootstrap row.
+ * @global int $comment_open_div
+ */
+function _lp_before_comment_fields(){
+    global $comment_open_div;
+    $comment_open_div = 1;
+    echo '<div class="row">';
+}
+/**
+ * Creates a closing div for a bootstrap row.
+ * @global int $comment_open_div
+ * @return type
+ */
+function _lp_after_comment_fields(){
+    global $comment_open_div;
+    if($comment_open_div == 0)
+        return;
+    echo '</div>';
+}
+
+add_action('comment_form_before_fields', '_lp_before_comment_fields');
+add_action('comment_form_after_fields', '_lp_after_comment_fields');
