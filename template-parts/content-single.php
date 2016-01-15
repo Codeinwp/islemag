@@ -9,7 +9,7 @@
 
     $post_id = get_the_ID();
 ?>
-        <div id="content" role="main">
+
           <div class="row">
             <div class="col-md-12">
 
@@ -223,5 +223,3 @@
             </div><!-- End .col-md-12 -->
           </div><!-- End .row -->
           <div class="mb20"></div><!-- space -->
-
-        </div><!-- End #content -->

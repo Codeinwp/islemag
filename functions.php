@@ -161,7 +161,7 @@ add_action( 'after_setup_theme', 'islemag_content_width', 0 );
 		'description'   => '',
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</div>',
-		'before_title'  => '<h3 class="title-border blue title-bg-line"><span>',
+		'before_title'  => '<h3 class="title-border dkgreen title-bg-line"><span>',
 		'after_title'   => '</span></h3>',
 	) );
 
