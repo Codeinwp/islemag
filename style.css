@@ -3763,8 +3763,7 @@ ul > li:hover > a,
 }
 
 #footer input[type="text"],
-#footer input[type="search"],
-{
+#footer input[type="search"]{
 	border: none;
 	border-radius: none;
 	background-color: #252525;
@@ -3772,7 +3771,7 @@ ul > li:hover > a,
 }
 
 
-#footr button{
+#footer button{
 	border: none;
 }
 
