@@ -3353,6 +3353,11 @@ ul > li:hover > a,
   background-color: #009688;
 }
 
+.islemag-content-right .tagcloud a {
+	background-color: #eaeaea;
+}
+
+
 /* Title Styles - elements-titles.html */
 .title-border {
 	padding:0 0 0 0.8em;
@@ -3751,6 +3756,13 @@ ul > li:hover > a,
 
 #footer .widget input:focus {
   background-color: rgba(0,0,0, 0.26);
+}
+
+#footer input[type="text"]{
+	border: none;
+	border-radius: none;
+	background-color: #252525;
+	color: #7a7a7a;
 }
 
 .form-control{
