@@ -4343,6 +4343,19 @@ ul > li:hover > a,
 ---------------  13.Blog template  --------------
 ================================================*/
 
+.nav-links{
+	font-size: 20px;
+}
+
+.nav-links a {
+	color: #454545;
+	transition: color 0.2s ease;
+}
+
+.nav-links a:hover{
+	color: #009866;
+}
+
 .entry {
 	position: relative;
 	margin-bottom:50px;
