@@ -482,6 +482,7 @@ input[type="submit"] {
 	-moz-user-select: none;
 	-ms-user-select: none;
 	user-select: none;
+	border:1px solid #009688;
 }
 
 button:hover,
@@ -539,6 +540,7 @@ input[type="url"],
 input[type="password"],
 input[type="search"] {
 	padding: 9px 16px;
+	vertical-align: middle;
 }
 
 .comment {
