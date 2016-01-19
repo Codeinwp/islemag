@@ -185,7 +185,7 @@
                   }
                 }
                 $islemag_section_category = esc_attr( get_theme_mod( 'islemag_section1_category', 'all' ) );
-                $islemag_section_max_posts = esc_attr( get_theme_mod( 'islemag_section1_max_posts', 6 ) );
+                $islemag_section_max_posts = absint( get_theme_mod( 'islemag_section1_max_posts', 6 ) );
                 include( locate_template( 'template-parts/content-template1.php' ) ); ?>
               </div>
               <?php } ?>
@@ -206,7 +206,7 @@
                   }
                 }
                 $islemag_section_category = esc_attr( get_theme_mod( 'islemag_section2_category', 'all' ) );
-                $islemag_section_max_posts = esc_attr( get_theme_mod( 'islemag_section2_max_posts', 6 ) );
+                $islemag_section_max_posts = absint( get_theme_mod( 'islemag_section2_max_posts', 6 ) );
                 include( locate_template( 'template-parts/content-template2.php' ) ); ?>
               </div> <!-- End .islemag-section2 -->
               <?php } ?>
@@ -227,7 +227,7 @@
                   }
                 }
                 $islemag_section_category = esc_attr( get_theme_mod( 'islemag_section3_category', 'all' ) );
-                $islemag_section_max_posts = esc_attr( get_theme_mod( 'islemag_section3_max_posts', 6 ) );
+                $islemag_section_max_posts = absint( get_theme_mod( 'islemag_section3_max_posts', 6 ) );
                 include( locate_template( 'template-parts/content-template1.php' ) ); ?>
               </div> <!-- End .islemag-section3 -->
               <?php } ?>
@@ -249,7 +249,7 @@
                 }
 
                 $islemag_section_category = esc_attr( get_theme_mod( 'islemag_section4_category', 'all' ) );
-                $islemag_section_max_posts = esc_attr( get_theme_mod( 'islemag_section4_max_posts' , 12) );
+                $islemag_section_max_posts = absint( get_theme_mod( 'islemag_section4_max_posts' , 12) );
                 $postperpage = get_theme_mod( 'islemag_section4_posts_per_page', 6 );
                 include( locate_template( 'template-parts/content-template3.php' ) );
               ?>
@@ -272,7 +272,7 @@
                   }
                 }
                 $islemag_section_category = esc_attr( get_theme_mod( 'islemag_section5_category', 'all' ) );
-                $islemag_section_max_posts = esc_attr( get_theme_mod( 'islemag_section5_max_posts', 8 ) );
+                $islemag_section_max_posts = absint( get_theme_mod( 'islemag_section5_max_posts', 8 ) );
                 include( locate_template( 'template-parts/content-template4.php' ) );
               ?>
               </div>

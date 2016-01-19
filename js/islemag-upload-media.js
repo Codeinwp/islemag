@@ -1,4 +1,4 @@
-function media_upload(button_class) {
+function islemag_media_upload(button_class) {
 
 	jQuery('body').on('click', button_class, function(e) {
 		var button_id ='#'+jQuery(this).attr('id');
@@ -62,5 +62,5 @@ function media_upload(button_class) {
 }
 
 jQuery(document).ready(function($) {
-  media_upload(".upload_image_button");
+  islemag_media_upload(".upload_image_button");
 });

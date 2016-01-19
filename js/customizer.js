@@ -6,7 +6,7 @@
  * Contains handlers to make Theme Customizer preview reload changes asynchronously.
  */
 
- function html_entity_decode(string, quote_style) {
+ function islemag_html_entity_decode(string, quote_style) {
 
    var hash_map = {},
      symbol = '',
@@ -14,7 +14,7 @@
      entity = '';
    tmp_str = string.toString();
 
-   if (false === (hash_map =  get_html_translation_table('HTML_ENTITIES', quote_style))) {
+   if (false === (hash_map =  islemag_get_html_translation_table('HTML_ENTITIES', quote_style))) {
      return false;
    }
 
@@ -32,7 +32,7 @@
    return tmp_str;
  }
 
- function get_html_translation_table(table, quote_style) {
+ function islemag_get_html_translation_table(table, quote_style) {
 
   var entities = {},
     hash_map = {},
@@ -300,7 +300,7 @@ function islemag_strip_tags(input, allowed) {
 				}
 				if( obj.choice == 'code' ){
 					if( obj.code != '' ){
-						$('.islemag-banner').html( html_entity_decode(obj.code ) );
+						$('.islemag-banner').html( islemag_html_entity_decode(obj.code ) );
 					}
 				} else {
 					if( obj.image_url != '' ){

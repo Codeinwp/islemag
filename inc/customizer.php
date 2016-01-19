@@ -696,7 +696,7 @@ function islemag_sanitize_banner( $input){
 
 	$choice = $input_decoded['choice'];
 	$position = $input_decoded['position'];
-	$code = html_entity_decode ( $input_decoded['code'] );
+	$code = islemag_html_entity_decode ( $input_decoded['code'] );
 	$link = $input_decoded['link'];
 	$image = $input_decoded['image_url'];
 
