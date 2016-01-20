@@ -57,7 +57,7 @@ class Islemag_General_Repeater extends WP_Customize_Control {
                                                 <select name="<?php echo esc_attr($this->id); ?>" class="islemag_icon_control">
                                                     <?php
                                                         foreach($icons_array as $key => $value) {
-                                                            echo '<option value="'.$value.'" data-iconclass="'.$value.'" >'.esc_attr($key).'</option>';
+                                                            echo '<option value="'.esc_attr($value).'" data-iconclass="'.esc_attr($value).'" >'.esc_attr($key).'</option>';
                                                         }
                                                     ?>
                                                 </select>
@@ -94,7 +94,7 @@ class Islemag_General_Repeater extends WP_Customize_Control {
                                                         <select name="<?php echo esc_attr($this->id); ?>" class="islemag_icon_control">
                                                             <?php
                                                                 foreach($icons_array as $key => $value) {
-                                                                    echo '<option value="'.$value.'" '.selected($icon->icon_value,$value).' data-iconclass="'.$value.'" >'.esc_attr($key).'</option>';
+                                                                    echo '<option value="'.esc_attr($value).'" '.selected($icon->icon_value,$value).' data-iconclass="'.esc_attr($value).'" >'.esc_attr($key).'</option>';
                                                                 }
                                                             ?>
                                                         </select>
@@ -129,7 +129,7 @@ class Islemag_General_Repeater extends WP_Customize_Control {
                                                 <select name="<?php echo esc_attr($this->id); ?>" class="islemag_icon_control">
                                                     <?php
                                                         foreach($icons_array as $key => $value) {
-                                                            echo '<option value="'.$value.'" '.selected($value,$icon->icon_value).' data-iconclass="'.$value.'" >'.esc_attr($key).'</option>';
+                                                            echo '<option value="'.esc_attr($value).'" '.selected($value,$icon->icon_value).' data-iconclass="'.esc_attr($value).'" >'.esc_attr($key).'</option>';
                                                         }
                                                     ?>
                                                 </select>
