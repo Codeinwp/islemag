@@ -280,8 +280,6 @@ function islemag_scripts() {
 		wp_enqueue_script( 'islemag-script-single', get_template_directory_uri() . '/js/script.single.js', array('jquery'), '1.0.0', true );
 	}
 
-	wp_enqueue_script( 'islemag-bootstrap-js', get_template_directory_uri() . '/js/bootstrap.min.js', array(), '1.0.0', true );
-
 	wp_enqueue_script( 'islemag-waypoint', get_template_directory_uri() . '/js/waypoints.min.js', array(), '1.0.0', true );
 	wp_enqueue_script( 'islemag-waypoint-sticky', get_template_directory_uri() . '/js/waypoints-sticky.min.js', array(), '1.0.0', true );
 	wp_enqueue_script( 'islemag-script-all', get_template_directory_uri() . '/js/script.all.js', array('jquery','islemag-waypoint','islemag-waypoint-sticky'), '1.0.0', true );
@@ -453,7 +451,7 @@ add_action( 'wp_ajax_request_post', 'islemag_requestpost' );
 $islemag_section1_category = '';
 
 function islemag_requestpost() {
-		$colors = array( "red", "orange", "blue", "green", "purple", "pink", "yellow" );
+		$colors = array( "red", "orange", "blue", "green", "purple", "pink", "light_red" );
 		$section = $_POST['section'];
 
 		if( $section == 'islemag_topslider_category' ){

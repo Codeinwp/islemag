@@ -51,7 +51,7 @@
 				<div class="row">
 
 					<div class="islemag-content-left <?php if ( !is_active_sidebar( 'islemag-sidebar' ) ) { echo 'col-md-12'; } else { echo 'col-md-9'; } ?>">
-						<?php $colors = array( "red", "orange", "blue", "green", "purple", "pink", "yellow" ); ?>
+						<?php $colors = array( "red", "orange", "blue", "green", "purple", "pink", "light_red" ); ?>
 
             <?php if ( is_active_sidebar( 'islemag-sidebar' ) && get_theme_mod( 'islemag_section1_fullwidth', false) == false ) { ?>
             <div class="islemag-section1">
@@ -167,7 +167,7 @@
 
           <?php if ( is_active_sidebar( 'islemag-sidebar' ) && ( get_theme_mod( 'islemag_section1_fullwidth', false) == true ||  get_theme_mod( 'islemag_section2_fullwidth', false) == true ||  get_theme_mod( 'islemag_section3_fullwidth', false) == true ||  get_theme_mod( 'islemag_section4_fullwidth', false) == true ||  get_theme_mod( 'islemag_section5_fullwidth', false) == true ) ) { ?>
             <div class="col-md-12 islemag-fullwidth">
-              <?php $colors = array( "red", "orange", "blue", "green", "purple", "pink", "yellow" ); ?>
+              <?php $colors = array( "red", "orange", "blue", "green", "purple", "pink", "light_red" ); ?>
 
               <?php if ( get_theme_mod( 'islemag_section1_fullwidth', false) == true ) { ?>
               <div class="islemag-section1">

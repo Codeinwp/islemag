@@ -64,9 +64,26 @@ jQuery(window).on('resize', function(){
   } else {
     jQuery('#header-search-form').css('margin-top', '15px');
   }
+
+  if( jQuery( window ).width() < 992 ){
+    jQuery('.islemag-sticky').removeClass('.sticky-menu')
+  } else {
+    if( !jQuery('.islemag-sticky').hasClass('.sticky-menu') ){
+      jQuery('.islemag-sticky').addClass('.sticky-menu')
+    }
+  }
+
 });
 
 jQuery(document).ready(function() {
+
+  if( jQuery( window ).width() < 992 ){
+    jQuery('.islemag-sticky').removeClass('.sticky-menu')
+  } else {
+    if( !jQuery('.islemag-sticky').hasClass('.sticky-menu') ){
+      jQuery('.islemag-sticky').addClass('.sticky-menu')
+    }
+  }
 
   var top_navbar = jQuery('.navbar-top').height();
   if( top_navbar > 38 ){

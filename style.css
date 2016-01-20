@@ -1873,7 +1873,7 @@ blockquote {
 }
 
 .main-navigation .nav-menu > li:nth-child(8n+3) > a {
-	border-top-color: #ffeb3b;
+	border-top-color: #FF6B6B;
 }
 
 .main-navigation .nav-menu > li:nth-child(8n+4) > a {
@@ -2112,6 +2112,11 @@ blockquote {
 .form-control{
 	display: inline-block;
 	width: auto;
+}
+
+#header-search-form .navbar-form{
+	padding: 0;
+	margin: 0;
 }
 
 
@@ -2905,20 +2910,20 @@ styled buttons not container for vertical centered navs*/
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffc107', endColorstr='#a6ffc107',GradientType=0 ); /* IE6-9 */
 }
 
-.entry-block.entry.yellow .entry-media figure > a:after,
-.entry-block.entry.yellow .entry-media .item > a:after,
-.entry-block.entry.yellow .entry-media.embed-responsive:after {
-	background: rgba(255,235,59,0.35);
+.entry-block.entry.light_red .entry-media figure > a:after,
+.entry-block.entry.light_red .entry-media .item > a:after,
+.entry-block.entry.light_red .entry-media.embed-responsive:after {
+	background: rgba(255,107,107,0.35);
 }
 
-.entry-overlay.entry-block.yellow .entry-overlay-meta,
-.entry-overlay.entry-block.yellow:hover .entry-overlay-meta {
-	background: -moz-linear-gradient(top,  rgba(255,235,59,0) 0%, rgba(255,235,59,0.65) 46%, rgba(255,235,59,0.65) 100%); /* FF3.6+ */
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,235,59,0)), color-stop(46%,rgba(255,235,59,0.65)), color-stop(100%,rgba(255,235,59,0.65))); /* Chrome,Safari4+ */
-	background: -webkit-linear-gradient(top,  rgba(255,235,59,0) 0%,rgba(255,235,59,0.65) 46%,rgba(255,235,59,0.65) 100%); /* Chrome10+,Safari5.1+ */
-	background: -o-linear-gradient(top,  rgba(255,235,59,0) 0%,rgba(255,235,59,0.65) 46%,rgba(255,235,59,0.65) 100%); /* Opera 11.10+ */
-	background: -ms-linear-gradient(top,  rgba(255,235,59,0) 0%,rgba(255,235,59,0.65) 46%,rgba(255,235,59,0.65) 100%); /* IE10+ */
-	background: linear-gradient(to bottom,  rgba(255,235,59,0) 0%,rgba(255,235,59,0.65) 46%,rgba(255,235,59,0.65) 100%); /* W3C */
+.entry-overlay.entry-block.light_red .entry-overlay-meta,
+.entry-overlay.entry-block.light_red:hover .entry-overlay-meta {
+	background: -moz-linear-gradient(top,  rgba(255,107,107,0) 0%, rgba(255,107,107,0.65) 46%, rgba(255,107,107,0.65) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,107,107,0)), color-stop(46%,rgba(255,107,107,0.65)), color-stop(100%,rgba(255,107,107,0.65))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  rgba(255,107,107,0) 0%,rgba(255,107,107,0.65) 46%,rgba(255,107,107,0.65) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  rgba(255,107,107,0) 0%,rgba(255,107,107,0.65) 46%,rgba(255,107,107,0.65) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  rgba(255,107,107,0) 0%,rgba(255,107,107,0.65) 46%,rgba(255,107,107,0.65) 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  rgba(255,107,107,0) 0%,rgba(255,107,107,0.65) 46%,rgba(255,107,107,0.65) 100%); /* W3C */
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffeb3b', endColorstr='#a6ffeb3b',GradientType=0 ); /* IE6-9 */
 }
 
@@ -3083,18 +3088,18 @@ styled buttons not container for vertical centered navs*/
 	border-color:#ffc107;
 }
 
-.title-border.title-bg.yellow,
-.title-bg-line.yellow:after,
-.title-underblock.yellow:after,
-.yellow .category-block {
-	background-color: #ffeb3b;
+.title-border.title-bg.light_red,
+.title-bg-line.light_red:after,
+.title-underblock.light_red:after,
+.light_red .category-block {
+	background-color: #FF6B6B;
 }
 
-.title-border.yellow,
-.title-border.text-right.yellow,
-.title-border.text-center.yellow > span,
-.title-bottom-border.yellow {
-	border-color:#ffeb3b;
+.title-border.light_red,
+.title-border.text-right.light_red,
+.title-border.text-center.light_red > span,
+.title-bottom-border.light_red {
+	border-color:#FF6B6B;
 }
 
 .title-border.title-bg.blue,
@@ -3305,7 +3310,7 @@ styled buttons not container for vertical centered navs*/
 	}
 
 	.navbar-nav-colored.navbar-nav > li:nth-child(3) > a {
-		border-top-color:#ffeb3b !important;
+		border-top-color:#FF6B6B !important;
 	}
 
 	.navbar-nav-colored.navbar-nav > li:nth-child(4) > a {
