@@ -130,7 +130,7 @@ class islemag_multiple_ads extends WP_Widget {
         <div class="widget-inside">
         	<p>
         		<label for="<?php echo esc_attr( $this->get_field_id($title_alt) ); ?>"><?php _e('Alt Title','islemag'); ?></label><br />
-        		<input type="text" name="<?php echo esc_attr( $this->get_field_name($title_alt) ); ?>" id="<?php echo esc_attr( $this->get_field_id($title_alt) ); ?>" value="<?php if( !empty( $instance[$title_alt] ) ): echo $instance[$title_alt]; endif; ?>" class="widefat" />
+        		<input type="text" name="<?php echo esc_attr( $this->get_field_name($title_alt) ); ?>" id="<?php echo esc_attr( $this->get_field_id($title_alt) ); ?>" value="<?php if( !empty( $instance[$title_alt] ) ): echo esc_attr( $instance[$title_alt] ); endif; ?>" class="widefat" />
         	</p>
 
           <p>
