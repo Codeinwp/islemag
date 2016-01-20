@@ -112,7 +112,7 @@
 
                           if( $banner['choice'] == 'code' ){
                             if( !empty( $banner['code'] ) ){
-                              echo islemag_html_entity_decode ( $banner['code'] );
+                              echo html_entity_decode ( $banner['code'] );
                             }
                           } else {
                             if( !empty( $banner['link'] ) && !empty( $banner['image_url'] ) ){

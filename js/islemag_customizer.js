@@ -32,6 +32,7 @@ function islemag_refresh_general_control_values(){
                 });
             }
         });
+        console.log( values );
         th.find('.islemag_repeater_colector').val(JSON.stringify(values));
         th.find('.islemag_repeater_colector').trigger('change');
     });

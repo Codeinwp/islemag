@@ -2055,13 +2055,17 @@ blockquote {
 
 #header-search-form{
 	position: absolute;
-	top: 100%;
-	right: 15px;
-    border: 1px solid #eaeaea;
-	margin-top: 15px;
-	padding: 10px;
-	background-color: #f5f5f5;
-	display: none;
+  top: 100%;
+  right: 15px;
+  border: 1px solid #dadada;
+  margin-top: 15px;
+  padding: 10px;
+  background-color: #f5f5f5;
+  display: none;
+  border-radius: 5px 0px 5px 5px;
+  z-index: 1;
+	-webkit-box-shadow: 0 0 8px rgba(0,0,0, 0.22);
+	box-shadow: 0 0 8px rgba(0,0,0, 0.22);
 }
 
 #header-search-form.top:after {
@@ -2105,6 +2109,10 @@ blockquote {
     width: 0;
 }
 
+.form-control{
+	display: inline-block;
+	width: auto;
+}
 
 
 /*#header-search-form{
@@ -3342,6 +3350,12 @@ styled buttons not container for vertical centered navs*/
 @media (max-width: 767px) {
 	.rect-dots .owl-dot {
 		width:28px;
+	}
+}
+
+@media (max-width: 600px) {
+	.islemag-banner {
+		display:none;
 	}
 }
 
