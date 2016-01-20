@@ -339,10 +339,6 @@ add_action( 'wp_enqueue_scripts', 'islemag_scripts_styles' );
 
 
 
-/**
- * Implement the Custom Header feature.
- */
-require get_template_directory() . '/inc/custom-header.php';
 
 /**
  * Custom template tags for this theme.
