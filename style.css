@@ -1672,6 +1672,7 @@ blockquote {
 	background-color: #f5f5f5;
 	border-bottom:1px solid #eaeaea;
 	font:600 13px/38px 'Open Sans', Verdana;
+	position: relative;
 }
 
 .navbar-top .navbar-right{
@@ -1749,14 +1750,19 @@ blockquote {
 
 	.top-navigation.toggled-on ul li{
 		display: list-item;
+		list-style-type: none;
 	}
 
 	.navbar-top .menu-toggle {
-				display: inline-block;
-		    float: right;
-		    margin: 4px;
-		    border: none;
-		    line-height: 28px;
+		display: inline-block;
+    float: right;
+    border: none;
+    line-height: 38px;
+    padding: 0 13px;
+    color: #505050;
+    background: transparent;
+    font-size: 14px;
+    font: 600 13px/38px 'Open Sans', Verdana;
 	}
 
 	.navbar-top .navbar-left{
@@ -2046,22 +2052,73 @@ blockquote {
 /* ============================================
 -------------- 6.Header Search ----------------
 ===============================================*/
-#header{
-	position: relative;
-}
 
 #header-search-form{
-	width:100%;
+	position: absolute;
+	top: 100%;
+	right: 15px;
+    border: 1px solid #eaeaea;
+	margin-top: 15px;
+	padding: 10px;
+	background-color: #f5f5f5;
+	display: none;
+}
+
+#header-search-form.top:after {
+    top: -13px;
+    bottom: auto;
+    left: auto;
+    right: 7px;
+    border-width: 0 13px 13px;
+}
+
+#header-search-form:after {
+    content: "";
+    position: absolute;
+    bottom: -15px;
+    left: 50px;
+    border-width: 15px 15px 0;
+    border-style: solid;
+    border-color: #f5f5f5 transparent;
+    display: block;
+    width: 0;
+}
+
+#header-search-form.top:before {
+    top: -20px;
+    bottom: auto;
+    left: auto;
+    right: 0;
+    border-width: 0 20px 20px;
+}
+
+
+#header-search-form:before {
+    content: "";
+    position: absolute;
+    bottom: -20px;
+    left: 40px;
+    border-width: 20px 20px 0;
+    border-style: solid;
+    border-color: #009688 transparent;
+    display: block;
+    width: 0;
+}
+
+
+
+/*#header-search-form{
+	width:auto;
 }
 
 #header-search-form label{
-	width: 100%;
+	width: auto;
 	padding: 10px 20px;
 	border-bottom: 1px solid #eaeaea;
 }
 
 #header-search-form label input{
-	width: 100%;
+	width: auto;
 	border: none;
 
 	font-size: 16px;
@@ -2076,7 +2133,7 @@ blockquote {
 }
 
 #header-search-form .form-control {
-    width: 100%;
+    width: auto;
     display: block;
     background-color: transparent;
     border: none;
@@ -2216,7 +2273,7 @@ text-transform: capitalize;
 #header-search-form .form-control::placeholder {
 color:#505050;
 text-transform: capitalize;
-}
+}*/
 /* ============================================
 -------------- 7.Template none ----------------
 ===============================================*/

@@ -58,7 +58,9 @@
 
 jQuery(document).ready(function() {
 
-
+  jQuery('.navbar-btn').click(function(){
+    jQuery('#header-search-form').fadeToggle( "fast", "linear" );
+  })
 
 
 
