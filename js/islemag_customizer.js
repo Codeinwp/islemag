@@ -65,6 +65,12 @@ function islemag_refresh_banner_control(){
 
 jQuery(document).ready(function(){
 
+  /* Widget acordion */
+
+  jQuery('#customize-theme-controls').on('click','.islemag-ad-widget',function(){
+    jQuery(this).find('.islemag-ad-widget-inside').slideToggle();
+  });
+
 	/* Dropdown control */
     jQuery('#customize-theme-controls').on('click','.islemag-customize-control-title',function(){
         jQuery(this).next().slideToggle('medium', function() {

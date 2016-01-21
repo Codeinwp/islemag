@@ -52,7 +52,49 @@ button.islemag_general_control_remove_field:hover{
 	display:block !important;
 }
 
+.islemag-ad-widget{
+    margin: 0 auto 10px;
+    position: relative;
+    box-sizing: border-box;
+}
 
+.islemag-ad-widget-top{
+	background: #fafafa;
+	color: #23282d;
+	-webkit-transition: opacity .5s;
+	transition: opacity .5s;
+	padding: 0;
+	line-height: 1.4em;
+	font-size: 13px;
+	font-weight: 600;
+	border: 1px solid #e5e5e5;
+	-webkit-box-shadow: 0 1px 1px rgba(0,0,0,.04);
+	box-shadow: 0 1px 1px rgba(0,0,0,.04);
+}
+
+.islemag-ad-widget-inside{
+	display: none;
+}
+
+.islemag-ad-widget-title{
+	font-size: 1em;
+	margin: 0;
+	padding: 0 15px;
+	font-size: 1em;
+	line-height: 1;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	user-select: none;
+}
+
+.islemag-ad-widget-inside {
+    padding: 1px 10px 10px;
+    line-height: 16px;
+    background: #fff;
+		border: 1px solid #e5e5e5;
+		border-top: none;
+}
 
 .islemag_our_services_image_control{
 	display:none;
