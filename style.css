@@ -279,7 +279,6 @@ textarea {
 	font-family: inherit;
 	font-size: 14px;
 	line-height: 1.5;
-	border: 1px solid #eaeaea;
 }
 
 input[type="text"]:focus {
@@ -1160,11 +1159,43 @@ a:active {
 /*--------------------------------------------------------------
 # Content
 --------------------------------------------------------------*/
+
+/* fix outlines on focus */
+*:focus {
+	outline:none;
+}
+
+html {
+	height:100%;
+}
+
+/* added html to fix masonry unwanted space issue */
+.home-masonry {
+	overflow-y:scroll;
+}
+
+body {
+	font: 400 14px/1.6 'Lato', Verdana, sans-serif;
+	color: #505050;
+	-webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: #fff;
+    min-height: 100%;
+}
+
+
 @media (min-width: 1280px) {
-	.container {
+	.container,.sticky-menu {
 		width: 1200px;
 	}
 }
+
+@media (min-width: 992px){
+	.sticky-menu {
+	    width: 970px;
+	}
+}
+
 
 #wrapper {
 	width: 100%;
@@ -1189,6 +1220,7 @@ a:active {
 		box-shadow: 3px 0 10px rgba(0,0,0, 0.15), -3px 0 10px rgba(0,0,0, 0.1);
 	}
 
+	.sticky-menu,
 	#wrapper.boxed,
 	#wrapper.boxed-long,
 	.boxed .sticky-menu.fixed .container,
@@ -1221,9 +1253,29 @@ a:active {
 }
 
 
+@media (min-width: 1200px) {
+
+	#wrapper.boxed {
+		width:1170px;
+		margin: 50px auto;
+	}
+
+	.sticky-menu,
+	#wrapper.boxed,
+	#wrapper.boxed-long,
+	.boxed .sticky-menu.fixed .container,
+	.boxed-long .sticky-menu.fixed .container,
+	.boxed .sticky-menu.fixed .container-fluid,
+	.boxed-long .sticky-menu.fixed .container-fluid,
+	.boxed #header.sticky-menu.fixed .navbar-transparent,
+	.boxed-long #header.sticky-menu.fixed .navbar-transparent {
+		width:1170px;
+	}
+}
+
 @media (min-width: 1280px) {
 
-	.container {
+	.container,.sticky-menu {
 		width: 1200px;
 	}
 
@@ -1239,7 +1291,6 @@ a:active {
 	}
 
 }
-
 /*--------------------------------------------------------------
 ## Posts and pages
 --------------------------------------------------------------*/
@@ -1822,6 +1873,14 @@ blockquote {
 
 .islemag-banner{
     line-height: 100px;
+}
+
+.islemag-small-banner{
+	display: inline-block;
+	width: 125px;
+	height: 125px;
+	margin-bottom: 10px;
+	margin: 5px;
 }
 
 @media (max-width:767px){
@@ -3369,6 +3428,7 @@ styled buttons not container for vertical centered navs*/
 
 .islemag_multiple_ads{
 	display: inline-block;
+	text-align: center;
 }
 
 .islemag_multiple_ads .col-md-6{

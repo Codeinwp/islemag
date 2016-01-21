@@ -280,9 +280,7 @@ function islemag_scripts() {
 		wp_enqueue_script( 'islemag-script-single', get_template_directory_uri() . '/js/script.single.js', array('jquery'), '1.0.0', true );
 	}
 
-	wp_enqueue_script( 'islemag-waypoint', get_template_directory_uri() . '/js/waypoints.min.js', array(), '1.0.0', true );
-	wp_enqueue_script( 'islemag-waypoint-sticky', get_template_directory_uri() . '/js/waypoints-sticky.min.js', array(), '1.0.0', true );
-	wp_enqueue_script( 'islemag-script-all', get_template_directory_uri() . '/js/script.all.js', array('jquery','islemag-waypoint','islemag-waypoint-sticky'), '1.0.0', true );
+	wp_enqueue_script( 'islemag-script-all', get_template_directory_uri() . '/js/script.all.js', array('jquery'), '1.0.1', true );
   wp_localize_script( 'islemag-script-all', 'screenReaderText', array(
 		'expand'   => '<span class="screen-reader-text">' . esc_html__( 'expand child menu', 'islemag' ) . '</span>',
 		'collapse' => '<span class="screen-reader-text">' . esc_html__( 'collapse child menu', 'islemag' ) . '</span>',

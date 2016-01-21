@@ -67,8 +67,8 @@ jQuery(document).ready(function(){
 
   /* Widget acordion */
 
-  jQuery('#customize-theme-controls').on('click','.islemag-ad-widget',function(){
-    jQuery(this).find('.islemag-ad-widget-inside').slideToggle();
+  jQuery('#customize-theme-controls').on('click','.islemag-ad-widget-top',function(){
+    jQuery(this).next().slideToggle();
   });
 
 	/* Dropdown control */
