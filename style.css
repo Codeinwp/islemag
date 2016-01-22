@@ -982,27 +982,14 @@ a:active {
 
 }
 
-.sticky-menu.fixed {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1000;
-    -webkit-perspective: 1000;
-    -webkit-animation-duration: 0.5s;
-    animation-duration: 0.5s;
-    -webkit-animation-fill-mode: both;
-    animation-fill-mode: both;
-    -webkit-animation-name: stickyMenu;
-    animation-name: stickyMenu;
-		left: auto;
-		right: auto;
-		background-color: #fff !important;
-    border-color: #eaeaea;
+.sticky-menu {
+	position: fixed;
+	top: 0;
+	z-index: 2;
+	background-color: #fff;
 }
-
-.admin-bar .sticky-menu.fixed{
-	margin-top: 30px;
+.admin-bar .sticky-menu{
+	top: 32px;
 }
 
 @-webkit-keyframes stickyMenu {
