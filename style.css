@@ -987,7 +987,13 @@ a:active {
 	top: 0;
 	z-index: 2;
 	background-color: #fff;
+	border: none;
 }
+
+.sticky-menu .navigation {
+		border-top: none;
+}
+
 .admin-bar .sticky-menu{
 	top: 32px;
 }
@@ -1092,6 +1098,7 @@ a:active {
 /*--------------------------------------------------------------
 # Clearings
 --------------------------------------------------------------*/
+
 .clear:before,
 .clear:after,
 .entry-content:before,
@@ -2044,6 +2051,7 @@ blockquote {
 			 -moz-border-radius: 2px;
 			 border-radius: 2px;
 			 background: #999999;
+			 border: none;
 	 }
 
 	 .dropdown-toggle:after {
@@ -2808,6 +2816,10 @@ styled buttons not container for vertical centered navs*/
 /* ============================================
 ----------------- 9.Homepage ------------------
 ===============================================*/
+
+.home #content{
+	padding: 0;
+}
 
 .entry-overlay-meta {
 	position: absolute;
@@ -5105,7 +5117,7 @@ ul > li:hover > a,
 		margin-bottom:15px;
 	}
 	.entry-media {
-		margin-bottom:15px;
+		margin-bottom:0px;
 	}
 }
 
