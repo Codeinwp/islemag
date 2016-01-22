@@ -42,14 +42,14 @@ class islemag_multiple_ads extends WP_Widget {
         if( !empty( $instance[$type] ) && $instance[$type] == 'image' ){
           if( !empty( $instance[$url] ) ){
             if( !empty( $instance[$link] ) ){
-              echo '<div class="col-md-6"> <a href="' . esc_url( $instance[$link] ) . '" target="_blank" ><img src="' . esc_url( $instance[$url] ) . '" alt="' . ( !empty( $instance[$title_alt] ) ? esc_attr( $instance[$title_alt] ) : '' ).'"/></a></div>';
+              echo '<div class="islemag-small-banner"> <a href="' . esc_url( $instance[$link] ) . '" target="_blank" ><img src="' . esc_url( $instance[$url] ) . '" alt="' . ( !empty( $instance[$title_alt] ) ? esc_attr( $instance[$title_alt] ) : '' ).'"/></a></div>';
             } else {
-              echo '<div class="col-md-6"> <img src="' . esc_url( $instance[$url] ) . '" alt="'.( !empty( $instance[$title_alt] ) ? esc_attr( $instance[$title_alt] ) : '' ).'"/></div>';
+              echo '<div class="islemag-small-banner"> <img src="' . esc_url( $instance[$url] ) . '" alt="'.( !empty( $instance[$title_alt] ) ? esc_attr( $instance[$title_alt] ) : '' ).'"/></div>';
             }
           }
         } else {
           if( !empty( $instance[$code] ) ){
-            echo '<div class="col-md-6">'.$instance[$code].'</div>';
+            echo '<div class="islemag-small-banner">'.$instance[$code].'</div>';
           }
         }
       }
@@ -121,16 +121,16 @@ class islemag_multiple_ads extends WP_Widget {
           $instance[$type] = "image";
         }
       ?>
-      <div class="widget">
-        <div class="widget-top">
-          <div class="widget-title">
+      <div class="islemag-ad-widget">
+        <div class="islemag-ad-widget-top">
+          <div class="islemag-ad-widget-title">
             <h3><?php esc_html_e( 'Advertisement ','islemag' ); echo $i; ?> </h3>
           </div>
         </div>
-        <div class="widget-inside">
+        <div class="islemag-ad-widget-inside">
         	<p>
         		<label for="<?php echo esc_attr( $this->get_field_id($title_alt) ); ?>"><?php _e('Alt Title','islemag'); ?></label><br />
-        		<input type="text" name="<?php echo esc_attr( $this->get_field_name($title_alt) ); ?>" id="<?php echo esc_attr( $this->get_field_id($title_alt) ); ?>" value="<?php if( !empty( $instance[$title_alt] ) ): echo $instance[$title_alt]; endif; ?>" class="widefat" />
+        		<input type="text" name="<?php echo esc_attr( $this->get_field_name($title_alt) ); ?>" id="<?php echo esc_attr( $this->get_field_id($title_alt) ); ?>" value="<?php if( !empty( $instance[$title_alt] ) ): echo esc_attr( $instance[$title_alt] ); endif; ?>" class="widefat" />
         	</p>
 
           <p>

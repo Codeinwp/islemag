@@ -7,7 +7,7 @@
  * @package islemag
  */
 
-$colors = array("red", "orange", "blue", "green", "purple", "pink", "yellow");
+$colors = array("red", "orange", "blue", "green", "purple", "pink", "light_red");
 $choosed_color = array_rand($colors, 1);
 ?>
 <article class="entry entry-overlay entry-block <?php echo $colors[$choosed_color];?>">

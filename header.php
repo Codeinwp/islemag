@@ -24,9 +24,6 @@
     <div id="wrapper" class="boxed">
 
         <header id="header" class="site-header" role="banner">
-            <div class="collapse navbar-white" id="header-search-form">
-              <?php get_search_form(); ?>
-            </div><!-- End #header-search-form -->
             <div class="navbar-top container-fluid">
                 <div class="navbar-left social-icons">
                     <?php
@@ -50,7 +47,7 @@
                     ?>
                 </div>
 
-                <button type="button" class="navbar-btn collapsed" data-toggle="collapse" data-target="#header-search-form"><i class="fa fa-search"></i></button>
+                <button type="button" class="navbar-btn"><i class="fa fa-search"></i></button>
 
                 <div class="navbar-right">
                   <div id="navbar" class="navbar">
@@ -61,6 +58,10 @@
             				</nav><!-- #site-navigation -->
             			</div><!-- #navbar -->
                 </div>
+                <div class="navbar-white top" id="header-search-form">
+                  <?php get_search_form(); ?>
+                </div><!-- End #header-search-form -->
+
             </div>
 
             <div class="header-content clearfix">
@@ -125,8 +126,9 @@
                         } ?>
 
             </div>
+            
             <?php $islemag_sticky_menu = get_theme_mod( 'islemag_sticky_menu', false ); ?>
-            <div id="navbar" class="islemag-sticky navbar <?php if( isset( $islemag_sticky_menu ) && $islemag_sticky_menu == false ) echo 'sticky-menu';?>">
+            <div id="navbar" class="navbar <?php if( isset( $islemag_sticky_menu ) && $islemag_sticky_menu == false ) echo 'islemag-sticky'; ?>">
               <nav id="site-navigation" class="navigation main-navigation" role="navigation">
                 <button class="menu-toggle"><?php _e( 'Menu', 'islemag' ); ?></button>
                 <a class="screen-reader-text skip-link" href="#content" title="<?php esc_attr_e( 'Skip to content', 'islemag' ); ?>"><?php _e( 'Skip to content', 'islemag' ); ?></a>

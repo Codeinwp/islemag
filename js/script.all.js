@@ -1,64 +1,58 @@
+jQuery(document).ready(function() {
+var stickyNavTop = jQuery('.islemag-sticky').offset().top;
 
-(function ($) {
-  "use strict";
-  var Islemag = {
-    initialised: false,
-    mobile: false,
-    container : $( '#portfolio-item-container' ),
-    blogContainer: $( '#blog-item-container' ),
-    portfolioElAnimation: true,
-    init: function () {
-      this.stickyMenu();
-      this.destroyStickyMenu();
-      this.headerSearchFormClose();
-    },
-    atresize: function (){
-      this.stickyMenu();
-      this.destroyStickyMenu();
-    },
+var stickyNav = function(){
+var scrollTop = jQuery(window).scrollTop();
+var window_width = jQuery(window).outerWidth(true);
 
-    stickyMenu: function () {
-      // Stickymenu with waypoint and waypoint sticky plugins
-      if ( $.fn.waypoint && $(window).width() >= 992 ) {
-        $( '.sticky-menu' ).waypoint( 'sticky', {
-          stuckClass:'fixed',
-          offset: 10
-        });
-      }
-    },
-    destroyStickyMenu: function () {
-			// Destroy Stickymenu for smaller devices
-			if($.fn.waypoint && $(window).width() <= 991) {
-				$('.sticky-menu').waypoint('unsticky');
-			}
-		},
-    headerSearchFormClose: function () {
-			// Close searh form when document is clicked
-			$('body').on('click', function(e) {
-			    if ($('#header-search-form').hasClass('in') && !$(e.target).closest('#header-search-form').length) {
-			        $('#header-search-form').collapse('hide').removeClass('fixed');
+if (scrollTop > stickyNavTop && window_width > 991) {
+  jQuery('.islemag-sticky').addClass('sticky-menu');
+} else {
+  jQuery('.islemag-sticky').removeClass('sticky-menu');
+}
 
-			        e.preventDefault();
-			    }
-			});
-		},
+};
+
+if( stickyMenu.disable_sticky != true ){
+  stickyNav();
+}
+jQuery(window).scroll(function() {
+  if( stickyMenu.disable_sticky != true ){
+    stickyNav();
+  }
+});
+});
+
+
+jQuery(window).on('resize', function(){
+
+  //Search Box
+  var top_navbar = jQuery('.navbar-top').height();
+  if( top_navbar > 40 ){
+    var searchbox_margin = ( top_navbar - 53 ) * -1;
+    jQuery('#header-search-form').css('margin-top', searchbox_margin);
+  } else {
+    jQuery('#header-search-form').css('margin-top', '15px');
   }
 
-
-  $( window ).resize(function() {
-    Islemag.atresize();
-  });
-
-  $(document).ready(function() {
-    Islemag.init();
-  });
-
-})(jQuery);
-
+});
 
 jQuery(document).ready(function() {
 
 
+
+  //Search box
+  var top_navbar = jQuery('.navbar-top').height();
+  if( top_navbar > 38 ){
+    var searchbox_margin = ( top_navbar - 53 ) * -1;
+    jQuery('#header-search-form').css('margin-top', searchbox_margin);
+  } else {
+    jQuery('#header-search-form').css('margin-top', searchbox_margin);
+  }
+
+  jQuery('.navbar-btn').click(function(){
+    jQuery('#header-search-form').fadeToggle( "fast", "linear" );
+  });
 
 
 

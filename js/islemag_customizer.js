@@ -9,7 +9,7 @@ var entityMap = {
     "'": '&#39;',
     "/": '&#x2F;',
   };
-function escapeHtml(string) {
+function islemag_escapeHtml(string) {
 	string = String(string).replace(new RegExp('\r?\n','g'), '<br />');
 	string = String(string).replace(/\\/g,'&#92;');
 	return String(string).replace(/[&<>"'\/]/g, function (s) {
@@ -32,6 +32,7 @@ function islemag_refresh_general_control_values(){
                 });
             }
         });
+        console.log( values );
         th.find('.islemag_repeater_colector').val(JSON.stringify(values));
         th.find('.islemag_repeater_colector').trigger('change');
     });
@@ -52,7 +53,7 @@ function islemag_refresh_banner_control(){
 					"position" : banner_position,
 					"image_url" : img_url,
 					"link" : link,
-					"code" : escapeHtml(code)
+					"code" : islemag_escapeHtml(code)
 			};
 	}
 	th.find('.islemag-banner-colector').val(JSON.stringify(values));
@@ -63,6 +64,12 @@ function islemag_refresh_banner_control(){
 
 
 jQuery(document).ready(function(){
+
+  /* Widget acordion */
+
+  jQuery('#customize-theme-controls').on('click','.islemag-ad-widget-top',function(){
+    jQuery(this).next().slideToggle();
+  });
 
 	/* Dropdown control */
     jQuery('#customize-theme-controls').on('click','.islemag-customize-control-title',function(){
@@ -148,7 +155,7 @@ jQuery(document).ready(function(){
 		return false;
 	});
 
-	media_upload('.custom-media-button-islemag');
+	islemag_media_upload('.custom-media-button-islemag');
 	jQuery("#customize-theme-controls").on( "change", ".custom_media_url",function(){
 		islemag_refresh_banner_control();
 		return false;

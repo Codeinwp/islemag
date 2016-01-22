@@ -280,15 +280,13 @@ function islemag_scripts() {
 		wp_enqueue_script( 'islemag-script-single', get_template_directory_uri() . '/js/script.single.js', array('jquery'), '1.0.0', true );
 	}
 
-	wp_enqueue_script( 'islemag-bootstrap-js', get_template_directory_uri() . '/js/bootstrap.min.js', array(), '1.0.0', true );
-
-	wp_enqueue_script( 'islemag-waypoint', get_template_directory_uri() . '/js/waypoints.min.js', array(), '1.0.0', true );
-	wp_enqueue_script( 'islemag-waypoint-sticky', get_template_directory_uri() . '/js/waypoints-sticky.min.js', array(), '1.0.0', true );
-	wp_enqueue_script( 'islemag-script-all', get_template_directory_uri() . '/js/script.all.js', array('jquery','islemag-waypoint','islemag-waypoint-sticky'), '1.0.0', true );
-  wp_localize_script( 'islemag-script-all', 'screenReaderText', array(
+	wp_enqueue_script( 'islemag-script-all', get_template_directory_uri() . '/js/script.all.js', array('jquery'), '1.0.1', true );
+	wp_localize_script( 'islemag-script-all', 'screenReaderText', array(
 		'expand'   => '<span class="screen-reader-text">' . esc_html__( 'expand child menu', 'islemag' ) . '</span>',
 		'collapse' => '<span class="screen-reader-text">' . esc_html__( 'collapse child menu', 'islemag' ) . '</span>',
 	) );
+	$sticky_menu = get_theme_mod( 'islemag_sticky_menu', false );
+	wp_localize_script( 'islemag-script-all', 'stickyMenu', array( 'disable_sticky' => $sticky_menu ) );
 
 	wp_enqueue_script( 'islemag-owl-carousel', get_template_directory_uri() . '/js/owl.carousel.min.js', array('jquery'), '2.0.0', true );
 
@@ -341,10 +339,6 @@ add_action( 'wp_enqueue_scripts', 'islemag_scripts_styles' );
 
 
 
-/**
- * Implement the Custom Header feature.
- */
-require get_template_directory() . '/inc/custom-header.php';
 
 /**
  * Custom template tags for this theme.
@@ -453,7 +447,7 @@ add_action( 'wp_ajax_request_post', 'islemag_requestpost' );
 $islemag_section1_category = '';
 
 function islemag_requestpost() {
-		$colors = array( "red", "orange", "blue", "green", "purple", "pink", "yellow" );
+		$colors = array( "red", "orange", "blue", "green", "purple", "pink", "light_red" );
 		$section = $_POST['section'];
 
 		if( $section == 'islemag_topslider_category' ){
