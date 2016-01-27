@@ -1,5 +1,5 @@
 jQuery( document ).ready(function() {
-
+  
   jQuery( 'body' ).on( 'change', '.islemag-big-ad-type',function(){
     var th = jQuery(this);
     if( th.is( ':checked' ) ){
@@ -25,6 +25,12 @@ jQuery( document ).ready(function() {
         th.parent().next().next().show();
       }
     }
+  });
+
+
+  //widget dropdown
+  jQuery( "body" ).on('click','.islemag-ad-widget-top',function(){
+    jQuery(this).next().slideToggle();
   });
 
 });
