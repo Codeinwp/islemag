@@ -584,22 +584,71 @@ $comment_open_div = 0;
  * Creates an opening div for a bootstrap row.
  * @global int $comment_open_div
  */
+add_action('comment_form_before_fields', 'islemag_before_comment_fields');
 function islemag_before_comment_fields(){
     global $comment_open_div;
     $comment_open_div = 1;
     echo '<div class="row">';
 }
+
 /**
  * Creates a closing div for a bootstrap row.
  * @global int $comment_open_div
  * @return type
  */
-function islemag_after_comment_fields(){
-    global $comment_open_div;
-    if($comment_open_div == 0)
-        return;
-    echo '</div>';
-}
+	add_action('comment_form_after_fields', 'islemag_after_comment_fields');
+	function islemag_after_comment_fields(){
+	    global $comment_open_div;
+	    if($comment_open_div == 0)
+	        return;
+	    echo '</div>';
+	}
 
-add_action('comment_form_before_fields', 'islemag_before_comment_fields');
-add_action('comment_form_after_fields', 'islemag_after_comment_fields');
+
+add_action('admin_head', 'islemag_widget_stile');
+function islemag_widget_stile() {
+	$screen = get_current_screen();
+	if( $screen->base == "widgets"){
+		echo '
+		<style type="text/css">
+		.islemag-ad-widget-top{
+			background: #fafafa;
+			color: #23282d;
+			-webkit-transition: opacity .5s;
+			transition: opacity .5s;
+			padding: 0;
+			line-height: 1.4em;
+			font-size: 13px;
+			font-weight: 600;
+			border: 1px solid #e5e5e5;
+			-webkit-box-shadow: 0 1px 1px rgba(0,0,0,.04);
+			box-shadow: 0 1px 1px rgba(0,0,0,.04);
+		}
+
+		.islemag-ad-widget-inside{
+			display: none;
+		}
+
+		.islemag-ad-widget-title{
+			font-size: 1em;
+			margin: 0;
+			padding: 0 15px;
+			font-size: 1em;
+			line-height: 1;
+			overflow: hidden;
+			white-space: nowrap;
+			text-overflow: ellipsis;
+			user-select: none;
+		}
+
+		.islemag-ad-widget-inside {
+				padding: 1px 10px 10px;
+				line-height: 16px;
+				background: #fff;
+				border: 1px solid #e5e5e5;
+				border-top: none;
+		}
+
+		</style>';
+	}
+}

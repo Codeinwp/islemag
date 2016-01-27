@@ -27,6 +27,12 @@ jQuery( document ).ready(function() {
     }
   });
 
+
+  //widget dropdown
+  jQuery( "body" ).on('click','.islemag-ad-widget-top',function(){
+    jQuery(this).next().slideToggle();
+  });
+
 });
 
 

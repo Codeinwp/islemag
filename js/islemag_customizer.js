@@ -71,13 +71,28 @@ jQuery(document).ready(function(){
     jQuery(this).next().slideToggle();
   });
 
-	/* Dropdown control */
-    jQuery('#customize-theme-controls').on('click','.islemag-customize-control-title',function(){
-        jQuery(this).next().slideToggle('medium', function() {
-            if (jQuery(this).is(':visible'))
-                jQuery(this).css('display','block');
-        });
-    });
+  jQuery('#customize-theme-controls').on( 'change', '.islemag-small-ad-type',function(){
+    var th = jQuery(this);
+    if( th.is( ':checked' ) ){
+
+      if( th.val() == 'image' ){
+        th.parent().next().show();
+        th.parent().next().next().hide();
+      } else {
+        th.parent().next().hide();
+        th.parent().next().next().show();
+      }
+    }
+  });
+
+/* Dropdown control */
+  jQuery('#customize-theme-controls').on('click','.islemag-customize-control-title',function(){
+      jQuery(this).next().slideToggle('medium', function() {
+          if (jQuery(this).is(':visible'))
+              jQuery(this).css('display','block');
+      });
+  });
+
 
 
 	jQuery("#customize-theme-controls").on('change', '.dd-selected-value',function(){
