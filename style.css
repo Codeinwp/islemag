@@ -4205,16 +4205,27 @@ ul > li:hover > a,
 	background-color: #00796b;
 }
 
+#footer .pirate_forms_wrap .form_field_wrap {
+    padding: 0;
+}
+
+#pirate-forms-contact-submit{
+	margin: 0;
+}
+
+.pirate_forms_wrap .form-control {
+	padding: 9px 16px;
+	height: 38px;
+}
+
 .construct{
 	display: inline-block;
 }
 
 .islemag-content-right .form_field_wrap input {
 	background-color: #fff;
-	border: 1px solid #ccc;
+	border: 1px solid #eaeaea;
 }
-
-
 
 .islemag-content-right .form_field_wrap textarea{
 	border-radius: 0;
