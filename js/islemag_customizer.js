@@ -84,6 +84,19 @@ jQuery(document).ready(function(){
       }
     }
   });
+  
+  jQuery( '#customize-theme-controls' ).on( 'change', '.islemag-big-ad-type',function(){
+    var th = jQuery(this);
+    if( th.is( ':checked' ) ){
+      if( th.val() == 'image' ){
+        th.parent().parent().children('.islemag-big-ad-image').show();
+        th.parent().parent().children('.islemag-big-ad-code').hide();
+      } else {
+        th.parent().parent().children('.islemag-big-ad-image').hide();
+        th.parent().parent().children('.islemag-big-ad-code').show();
+      }
+    }
+  });
 
 /* Dropdown control */
   jQuery('#customize-theme-controls').on('click','.islemag-customize-control-title',function(){

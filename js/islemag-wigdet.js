@@ -1,5 +1,5 @@
 jQuery( document ).ready(function() {
-
+  
   jQuery( 'body' ).on( 'change', '.islemag-big-ad-type',function(){
     var th = jQuery(this);
     if( th.is( ':checked' ) ){

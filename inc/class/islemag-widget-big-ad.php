@@ -23,8 +23,9 @@ class islemag_big_ad extends WP_Widget {
       extract( $args );
       echo $before_widget;
 
-      $title = $instance['widget_title'];
-
+      if(!empty($instance['widget_title'])){
+        $title = $instance['widget_title'];
+      }
       if( !empty( $title ) ){
         echo $before_title. esc_html( $title ) . $after_title;
       }
