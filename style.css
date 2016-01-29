@@ -974,6 +974,15 @@ a:active {
 	width: 50%;
 }
 
+.sub-menu{
+	border: none;
+	border-top: 1px solid transparent;
+	margin: 0;
+	border-radius: 0;
+	min-width: 220px;
+	padding: 7px 0;
+}
+
 .sub-menu li a{
 	position: relative;
 	display: block;
@@ -1890,15 +1899,25 @@ blockquote {
 ===============================================*/
 .main-navigation li {
 	display: inline-block;
+	float: left;
 }
 
-.main-navigation .nav-menu li > .children {
+.main-navigation .sub-menu a {
 	border: none;
 	border-top: 1px solid transparent;
 	margin: 0;
 	border-radius: 0;
 	min-width: 220px;
-	padding: 7px 0;
+	padding: 7px 15px;
+}
+
+.main-navigation .children a {
+	border: none;
+	border-top: 1px solid transparent;
+	margin: 0;
+	border-radius: 0;
+	min-width: 220px;
+	padding: 7px 15px;
 }
 
 .main-navigation .nav-menu li .children li {
@@ -3283,6 +3302,10 @@ styled buttons not container for vertical centered navs*/
 	margin-bottom: 30px;
 }
 
+.mb30 {
+    margin-bottom: 30px!important;
+}
+
 .entry-block.eb-small {
 	margin-bottom: 20px;
 }
@@ -3298,18 +3321,10 @@ styled buttons not container for vertical centered navs*/
 	margin-bottom: 10px;
 }
 
-.entry-block.eb-small .entry-title {
-	margin-left:130px;
-	font-size:14px;
-	line-height: 22px;
-	margin:-4px 0 10px;
-	display: inline;
-}
 
 @media (min-width: 1200px) {
 	.entry-block.eb-small .entry-title {
 		margin:5px 0 15px;
-		display: inline;
 	}
 }
 
@@ -4219,6 +4234,7 @@ ul > li:hover > a,
 .pirate_forms_wrap .form-control {
 	padding: 9px 16px;
 	height: 38px;
+	width: 100%;
 }
 
 .construct{
@@ -4585,9 +4601,14 @@ ul > li:hover > a,
 	margin-bottom: 15px;
 }
 
+.home #content .entry-title{
+	margin-top: 15px
+}
+
 #content .entry-title{
 	margin-top: 0px;
 }
+
 
 .entry-title a {
 	color:#444;
