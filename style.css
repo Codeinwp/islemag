@@ -985,7 +985,7 @@ a:active {
 .sticky-menu {
 	position: fixed;
 	top: 0;
-	z-index: 2;
+	z-index: 999;
 	background-color: #fff;
 	border: none;
 }
@@ -3791,7 +3791,7 @@ ul > li:hover > a,
 @media (min-width: 992px) {
 
 	#footer-inner {
-		padding: 70px 0 60px;
+		padding: 70px 0 0;
 	}
 
 	#footer .widget {
@@ -3862,6 +3862,7 @@ ul > li:hover > a,
     font: 700 15px/1.5 'Open Sans', Verdana, sans-serif;
     text-transform: uppercase;
     margin-bottom: 30px;
+		margin-top: 0px;
 }
 
 #footer .widget h3:after {
@@ -5297,6 +5298,11 @@ ul > li:hover > a,
 .about-author h3 {
 	margin-bottom:30px;
 	font-size:18px;
+	margin-top: 0;
+}
+
+.about-author .title-underblock a{
+	color: #009688;
 }
 
 .about-author figure,
@@ -5310,6 +5316,10 @@ ul > li:hover > a,
 
 .blog-related-carousel {
 	margin-bottom:20px;
+}
+
+.blog-related-carousel .entry-media{
+	margin-bottom: 15px;
 }
 
 .islemag-cat-show-on-click{

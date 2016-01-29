@@ -98,7 +98,7 @@
 
                   <?php $islemag_single_post_hide_author = get_theme_mod( 'islemag_single_post_hide_author' ); ?>
                   <div class="about-author clearfix <?php if ( $islemag_single_post_hide_author == true ) echo 'islemag_hide'; ?>">
-                      <h3 class="title-underblock custom"><?php esc_attr( 'Post Author:','islemag' ) ?> <a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>"><?php the_author(); ?></a></h3>
+                      <h3 class="title-underblock custom"><?php echo esc_attr( 'Post Author:','islemag' ) ?> <a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>"><?php the_author(); ?></a></h3>
                       <?php
                           $author_id = get_the_author_meta( 'ID' );
                           $profile_pic = get_avatar( $author_id, 'islemag_author_avatar' );
