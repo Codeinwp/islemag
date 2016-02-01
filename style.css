@@ -980,7 +980,7 @@ a:active {
 	margin: 0;
 	border-radius: 0;
 	min-width: 220px;
-	padding: 7px 0;
+	padding: 7px;
 }
 
 .sub-menu li a{
@@ -3486,9 +3486,6 @@ styled buttons not container for vertical centered navs*/
 	text-indent: 4px;
 }
 
-.sidebar .widget_rss li a{
-	font-weight: bold;
-}
 
 .social-icons a:hover > i,
 ul > li:hover > a,
