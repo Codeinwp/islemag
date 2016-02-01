@@ -2862,6 +2862,10 @@ styled buttons not container for vertical centered navs*/
 	max-height: 400px;
 }
 
+.entry-block h3{
+	clear: none;
+}
+
 .blog-related-carousel .entry-media figure{
 	max-height: 194px;
     overflow: hidden;
