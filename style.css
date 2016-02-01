@@ -3482,15 +3482,11 @@ styled buttons not container for vertical centered navs*/
 	color:#505050;
 }
 
-.sidebar .rsswidget li a{
+.sidebar .widget_rss li a{
 	font-weight: bold;
 }
 
-.sidebar .widget li:hover .rssSummary{
-	text-indent: 0;
-}
-
-.sidebar .widget li:not(.rssSummary):hover {
+.sidebar .widget li:hover {
 	text-indent: 4px;
 }
 
@@ -3816,7 +3812,7 @@ ul > li:hover > a,
 @media (min-width: 992px) {
 
 	#footer-inner {
-		padding: 70px 0 0;
+	  padding: 70px 0 60px;
 	}
 
 	#footer .widget {
