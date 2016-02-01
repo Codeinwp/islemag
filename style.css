@@ -3482,7 +3482,7 @@ styled buttons not container for vertical centered navs*/
 	color:#505050;
 }
 
-.sidebar .widget li:hover a {
+.sidebar .widget li:hover {
 	text-indent: 4px;
 }
 
