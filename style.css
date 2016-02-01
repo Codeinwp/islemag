@@ -3482,7 +3482,15 @@ styled buttons not container for vertical centered navs*/
 	color:#505050;
 }
 
-.sidebar .widget li:hover {
+.sidebar .rsswidget li a{
+	font-weight: bold;
+}
+
+.sidebar .widget li:hover .rssSummary{
+	text-indent: 0;
+}
+
+.sidebar .widget li:not(.rssSummary):hover {
 	text-indent: 4px;
 }
 
