@@ -6,6 +6,193 @@
  * Contains handlers to make Theme Customizer preview reload changes asynchronously.
  */
 
+ function islemag_html_entity_decode(string, quote_style) {
+
+   var hash_map = {},
+     symbol = '',
+     tmp_str = '',
+     entity = '';
+   tmp_str = string.toString();
+
+   if (false === (hash_map =  islemag_get_html_translation_table('HTML_ENTITIES', quote_style))) {
+     return false;
+   }
+
+   delete(hash_map['&']);
+   hash_map['&'] = '&amp;';
+
+   for (symbol in hash_map) {
+     entity = hash_map[symbol];
+     tmp_str = tmp_str.split(entity)
+       .join(symbol);
+   }
+   tmp_str = tmp_str.split('&#039;')
+     .join("'");
+
+   return tmp_str;
+ }
+
+ function islemag_get_html_translation_table(table, quote_style) {
+
+  var entities = {},
+    hash_map = {},
+    decimal;
+  var constMappingTable = {},
+    constMappingQuoteStyle = {};
+  var useTable = {},
+    useQuoteStyle = {};
+
+  // Translate arguments
+  constMappingTable[0] = 'HTML_SPECIALCHARS';
+  constMappingTable[1] = 'HTML_ENTITIES';
+  constMappingQuoteStyle[0] = 'ENT_NOQUOTES';
+  constMappingQuoteStyle[2] = 'ENT_COMPAT';
+  constMappingQuoteStyle[3] = 'ENT_QUOTES';
+
+  useTable = !isNaN(table) ? constMappingTable[table] : table ? table.toUpperCase() : 'HTML_SPECIALCHARS';
+  useQuoteStyle = !isNaN(quote_style) ? constMappingQuoteStyle[quote_style] : quote_style ? quote_style.toUpperCase() :
+    'ENT_COMPAT';
+
+  if (useTable !== 'HTML_SPECIALCHARS' && useTable !== 'HTML_ENTITIES') {
+    throw new Error('Table: ' + useTable + ' not supported');
+    // return false;
+  }
+
+  entities['38'] = '&amp;';
+  if (useTable === 'HTML_ENTITIES') {
+    entities['160'] = '&nbsp;';
+    entities['161'] = '&iexcl;';
+    entities['162'] = '&cent;';
+    entities['163'] = '&pound;';
+    entities['164'] = '&curren;';
+    entities['165'] = '&yen;';
+    entities['166'] = '&brvbar;';
+    entities['167'] = '&sect;';
+    entities['168'] = '&uml;';
+    entities['169'] = '&copy;';
+    entities['170'] = '&ordf;';
+    entities['171'] = '&laquo;';
+    entities['172'] = '&not;';
+    entities['173'] = '&shy;';
+    entities['174'] = '&reg;';
+    entities['175'] = '&macr;';
+    entities['176'] = '&deg;';
+    entities['177'] = '&plusmn;';
+    entities['178'] = '&sup2;';
+    entities['179'] = '&sup3;';
+    entities['180'] = '&acute;';
+    entities['181'] = '&micro;';
+    entities['182'] = '&para;';
+    entities['183'] = '&middot;';
+    entities['184'] = '&cedil;';
+    entities['185'] = '&sup1;';
+    entities['186'] = '&ordm;';
+    entities['187'] = '&raquo;';
+    entities['188'] = '&frac14;';
+    entities['189'] = '&frac12;';
+    entities['190'] = '&frac34;';
+    entities['191'] = '&iquest;';
+    entities['192'] = '&Agrave;';
+    entities['193'] = '&Aacute;';
+    entities['194'] = '&Acirc;';
+    entities['195'] = '&Atilde;';
+    entities['196'] = '&Auml;';
+    entities['197'] = '&Aring;';
+    entities['198'] = '&AElig;';
+    entities['199'] = '&Ccedil;';
+    entities['200'] = '&Egrave;';
+    entities['201'] = '&Eacute;';
+    entities['202'] = '&Ecirc;';
+    entities['203'] = '&Euml;';
+    entities['204'] = '&Igrave;';
+    entities['205'] = '&Iacute;';
+    entities['206'] = '&Icirc;';
+    entities['207'] = '&Iuml;';
+    entities['208'] = '&ETH;';
+    entities['209'] = '&Ntilde;';
+    entities['210'] = '&Ograve;';
+    entities['211'] = '&Oacute;';
+    entities['212'] = '&Ocirc;';
+    entities['213'] = '&Otilde;';
+    entities['214'] = '&Ouml;';
+    entities['215'] = '&times;';
+    entities['216'] = '&Oslash;';
+    entities['217'] = '&Ugrave;';
+    entities['218'] = '&Uacute;';
+    entities['219'] = '&Ucirc;';
+    entities['220'] = '&Uuml;';
+    entities['221'] = '&Yacute;';
+    entities['222'] = '&THORN;';
+    entities['223'] = '&szlig;';
+    entities['224'] = '&agrave;';
+    entities['225'] = '&aacute;';
+    entities['226'] = '&acirc;';
+    entities['227'] = '&atilde;';
+    entities['228'] = '&auml;';
+    entities['229'] = '&aring;';
+    entities['230'] = '&aelig;';
+    entities['231'] = '&ccedil;';
+    entities['232'] = '&egrave;';
+    entities['233'] = '&eacute;';
+    entities['234'] = '&ecirc;';
+    entities['235'] = '&euml;';
+    entities['236'] = '&igrave;';
+    entities['237'] = '&iacute;';
+    entities['238'] = '&icirc;';
+    entities['239'] = '&iuml;';
+    entities['240'] = '&eth;';
+    entities['241'] = '&ntilde;';
+    entities['242'] = '&ograve;';
+    entities['243'] = '&oacute;';
+    entities['244'] = '&ocirc;';
+    entities['245'] = '&otilde;';
+    entities['246'] = '&ouml;';
+    entities['247'] = '&divide;';
+    entities['248'] = '&oslash;';
+    entities['249'] = '&ugrave;';
+    entities['250'] = '&uacute;';
+    entities['251'] = '&ucirc;';
+    entities['252'] = '&uuml;';
+    entities['253'] = '&yacute;';
+    entities['254'] = '&thorn;';
+    entities['255'] = '&yuml;';
+  }
+
+  if (useQuoteStyle !== 'ENT_NOQUOTES') {
+    entities['34'] = '&quot;';
+  }
+  if (useQuoteStyle === 'ENT_QUOTES') {
+    entities['39'] = '&#39;';
+  }
+  entities['60'] = '&lt;';
+  entities['47'] = '&#x2F;';
+  entities['62'] = '&gt;';
+
+  // ascii decimals to real symbols
+  for (decimal in entities) {
+    if (entities.hasOwnProperty(decimal)) {
+      hash_map[String.fromCharCode(decimal)] = entities[decimal];
+    }
+  }
+
+  return hash_map;
+}
+
+
+function islemag_strip_tags(input, allowed) {
+  allowed = (((allowed || '') + '')
+  .toLowerCase()
+  .match(/<[a-z][a-z0-9]*>/g) || [])
+  .join(''); // making sure the allowed arg is a string containing only tags in lowercase (<a><b><c>)
+  var tags = /<\/?([a-z][a-z0-9]*)\b[^>]*>/gi,
+  commentsAndPhpTags = /<!--[\s\S]*?-->|<\?(?:php)?[\s\S]*?\?>/gi;
+  return input.replace(commentsAndPhpTags, '')
+  .replace(tags, function($0, $1) {
+    return allowed.indexOf('<' + $1.toLowerCase() + '>') > -1 ? $0 : '';
+  });
+}
+
+
 ( function( $ ) {
 	// Site title and description.
 	wp.customize( 'blogname', function( value ) {
@@ -70,7 +257,6 @@
 		value.bind( function( to ) {
 			var obj = JSON.parse( to );
 			var result ="";
-			var length = obj.length;
 			obj.forEach(function(item) {
 
 					result+=  '<a href="' + item.link + '" class="social-icon"><i class="fa ' + item.icon_value + '"></i></a>';
@@ -96,10 +282,26 @@
   	} );
   } );
 
-	// Banner link
-	wp.customize( "islemag_banner_link", function( value ) {
+	wp.customize( "islemag_banner", function( value ) {
 		value.bind( function( to ) {
-			$( '.islemag-banner a' ).attr( 'href', to );
+				var obj = JSON.parse( to );
+				if( obj.position !='' ){
+					$('.islemag-banner').attr('style','text-align:'+obj.position);
+				}
+				if( obj.choice == 'code' ){
+					if( obj.code != '' ){
+						$('.islemag-banner').html( islemag_html_entity_decode(obj.code ) );
+					}
+				} else {
+					if( obj.image_url != '' ){
+						if( obj.link != ''){
+							$('.islemag-banner').html( '<a href="'+ obj.link +'"><img src="'+ obj.image_url +'" alt="Banner link"></a>' );
+						} else {
+							$('.islemag-banner').html( '<img src="'+ obj.image_url +'" alt="Banner link">' );
+						}
+					}
+				}
+
 		} );
 	} );
 
@@ -112,7 +314,8 @@
 				data: {
 					action: 'request_post',
 					section: 'islemag_topslider_category',
-					category: to
+					category: to,
+					nb_of_posts: wp.customize._value.islemag_header_slider_max_posts()
 				},
 				beforeSend: function() {
 					jQuery('.islemag-top-container').replaceWith( '<div class="islemag-top-container" id="loader">Loading New Posts...</div>' );
@@ -150,6 +353,7 @@
 				data: {
 					action: 'request_post',
 					section: 'islemag_topslider_category',
+					category: wp.customize._value.islemag_header_slider_category(),
 					nb_of_posts: to
 				},
 				beforeSend: function() {
@@ -201,7 +405,8 @@
 					data: {
 						action: 'request_post',
 						section: 'islemag_section1_category',
-						category: to
+						category: to,
+						nb_of_posts: wp.customize._value.islemag_section1_max_posts(),
 					},
 					beforeSend: function() {
 						jQuery('.islemag-section1').find('.islemag-template1').replaceWith( '<div class="islemag-template1" id="loader">Loading New Posts...</div>' );
@@ -239,7 +444,8 @@
 					data: {
 						action: 'request_post',
 						section: 'islemag_section1_category',
-						nb_of_posts: to
+						nb_of_posts: to,
+						category: wp.customize._value.islemag_section1_category()
 					},
 					beforeSend: function() {
 						jQuery('.islemag-section1').find('.islemag-template1').replaceWith( '<div class="islemag-template1" id="loader">Loading New Posts...</div>' );
@@ -289,7 +495,8 @@
 				data: {
 					action: 'request_post',
 					section: 'islemag_section2_category',
-					category: to
+					category: to,
+					nb_of_posts: wp.customize._value.islemag_section2_max_posts()
 				},
 				beforeSend: function() {
 					jQuery('.islemag-section2').find( '.islemag-template2' ).replaceWith( '<div class="islemag-template2" id="loader">Loading New Posts...</div>' );
@@ -310,7 +517,8 @@
 				data: {
 					action: 'request_post',
 					section: 'islemag_section2_category',
-					nb_of_posts: to
+					nb_of_posts: to,
+					category: wp.customize._value.islemag_section2_category()
 				},
 				beforeSend: function() {
 					jQuery('.islemag-section2').find( '.islemag-template2' ).replaceWith( '<div class="islemag-template2" id="loader">Loading New Posts...</div>' );
@@ -344,7 +552,8 @@
 					data: {
 						action: 'request_post',
 						section: 'islemag_section3_category',
-						category: to
+						category: to,
+						nb_of_posts: wp.customize._value.islemag_section3_max_posts()
 					},
 					beforeSend: function() {
 						jQuery('.islemag-section3').find('.islemag-template1').replaceWith( '<div class="islemag-template1" id="loader">Loading New Posts...</div>' );
@@ -382,7 +591,8 @@
 					data: {
 						action: 'request_post',
 						section: 'islemag_section3_category',
-						nb_of_posts: to
+						nb_of_posts: to,
+						category: wp.customize._value.islemag_section3_category()
 					},
 					beforeSend: function() {
 						jQuery('.islemag-section3').find('.islemag-template1').replaceWith( '<div class="islemag-template1" id="loader">Loading New Posts...</div>' );
@@ -432,7 +642,10 @@
 					data: {
 						action: 'request_post',
 						section: 'islemag_section4_category',
-						category: to
+						category: to,
+						nb_of_posts: wp.customize._value.islemag_section4_max_posts(),
+						posts_per_page: wp.customize._value.islemag_section4_posts_per_page()
+
 					},
 					beforeSend: function() {
 						jQuery( '.islemag-section4' ).find( '.islemag-template3' ).replaceWith( '<div class="islemag-template3" id="loader">Loading New Posts...</div>' );
@@ -465,7 +678,9 @@
 					data: {
 						action: 'request_post',
 						section: 'islemag_section4_category',
-						nb_of_posts: to
+						nb_of_posts: to,
+						posts_per_page: wp.customize._value.islemag_section4_posts_per_page(),
+						category: wp.customize._value.islemag_section4_category()
 					},
 					beforeSend: function() {
 						jQuery( '.islemag-section4' ).find( '.islemag-template3' ).replaceWith( '<div class="islemag-template3" id="loader">Loading New Posts...</div>' );
@@ -498,7 +713,9 @@
 					data: {
 						action: 'request_post',
 						section: 'islemag_section4_category',
-						posts_per_page: to
+						posts_per_page: to,
+						category: wp.customize._value.islemag_section4_category(),
+						nb_of_posts: wp.customize._value.islemag_section4_max_posts()
 					},
 					beforeSend: function() {
 						jQuery( '.islemag-section4' ).find( '.islemag-template3' ).replaceWith( '<div class="islemag-template3" id="loader">Loading New Posts...</div>' );
@@ -543,7 +760,8 @@
 					data: {
 						action: 'request_post',
 						section: 'islemag_section5_category',
-						category: to
+						category: to,
+						nb_of_posts: wp.customize._value.islemag_section5_max_posts()
 					},
 					beforeSend: function() {
 						jQuery('.islemag-section5').find( '.islemag-template4').replaceWith( '<div class="islemag-template4" id="loader">Loading New Posts...</div>' );
@@ -580,7 +798,8 @@
 					data: {
 						action: 'request_post',
 						section: 'islemag_section5_category',
-						nb_of_posts: to
+						nb_of_posts: to,
+						category: wp.customize._value.islemag_section5_category()
 					},
 					beforeSend: function() {
 						jQuery('.islemag-section5').find( '.islemag-template4').replaceWith( '<div class="islemag-template4" id="loader">Loading New Posts...</div>' );
@@ -608,7 +827,7 @@
 		} );
 	} );
 
-	wp.customize( 'islemag_single_page_hide_author', function( value ) {
+	wp.customize( 'islemag_single_post_hide_author', function( value ) {
 		value.bind( function( to ) {
 			if ( '1' != to ) {
 				$( '.about-author ' ).removeClass( 'islemag_hide' );
@@ -618,7 +837,7 @@
 		} );
 	} );
 
-	wp.customize( 'islemag_single_page_hide_related_posts', function( value ) {
+	wp.customize( 'islemag_single_post_hide_related_posts', function( value ) {
 		value.bind( function( to ) {
 			if ( '1' != to ) {
 				$( '.blog-related-carousel ' ).removeClass( 'islemag_hide' );
@@ -631,5 +850,252 @@
 	} );
 
 
+
+  wp.customize( 'islemag_footer_logo' , function( value ){
+    value.bind( function( to ) {
+      $('.islemag-footer-logo img').attr( 'src', to );
+    } )
+  } );
+
+  wp.customize( 'islemag_footer_link' , function( value ){
+    value.bind( function( to ) {
+      $('.islemag-footer-logo').attr( 'href', to );
+    } )
+  } );
+
+  wp.customize( 'islemag_footer_text' , function( value ){
+    value.bind( function( to ) {
+      escaped_content = islemag_strip_tags( to, '<p><br><em><strong><ul><li><a><button><address><abbr>' );
+      $( '.islemag-footer-content' ).html( escaped_content );
+    } );
+  } );
+
+  wp.customize( 'islemag_footer_socials_title' , function( value ){
+    value.bind( function( to ) {
+        $( '.social-icons-label').text( to );
+    } );
+  } );
+
+  wp.customize( 'islemag_footer_social_icons', function( value ) {
+    value.bind( function( to ) {
+      var obj = JSON.parse( to );
+      var result ="";
+      obj.forEach(function(item) {
+
+          result+=  '<a href="' + item.link + '" class="footer-social-icon"><i class="fa ' + item.icon_value + '"></i></a>';
+
+      });
+      $( '.footer-social-icons' ).html( result );
+    } );
+  } );
+
+wp.customize( 'islemag_section1_fullwidth', function( value ) {
+  value.bind( function( to ) {
+    if( to == true){
+      var section1 = $('.islemag-section1')[0].outerHTML;
+      $('.islemag-content-left .islemag-section1').remove();
+      $('.islemag-fullwidth').prepend( section1 );
+    } else {
+      var section1 = $('.islemag-fullwidth .islemag-section1')[0].outerHTML;
+      $('.islemag-fullwidth .islemag-section1').remove();
+      $('.islemag-content-left').prepend( section1 );
+    }
+  } );
+
+  wp.customize( 'islemag_section2_fullwidth', function( value ) {
+    value.bind( function( to ) {
+      var section2 = $('.islemag-section2')[0].outerHTML;
+      if( section2 == '') {
+         section2 = $('.islemag-fullwidth .islemag-section2')[0].outerHTML;
+      }
+
+      if( to == true){ //daca trbuie pusa in full width
+        if ( $(".islemag-fullwidth").has( ".islemag-section1" ).length ){
+          var add_after = ".islemag-section1";
+        }
+
+        if( add_after!='' && typeof add_after != 'undefined'){
+          $(".islemag-fullwidth " + add_after ).after( section2 ); //inserez sectiunea 2 dupa sectiunea 1
+        } else {
+          $('.islemag-fullwidth').prepend( section2 ); // adaug la inceput
+        }
+
+        $('.islemag-content-left .islemag-section2').remove(); //sterg sectiunea 2 din content left
+
+      } else {
+
+        if ( $(".islemag-content-left").has( ".islemag-section1" ).length ){
+          var add_after = ".islemag-section1";
+        }
+
+        if( add_after!='' && typeof add_after != 'undefined' ){
+          $(".islemag-content-left " + add_after).after( section2 );
+        } else {
+          $('.islemag-content-left').prepend( section2 );
+        }
+        $('.islemag-fullwidth .islemag-section2').remove();
+      }
+    } );
+  } );
+
+  wp.customize( 'islemag_section3_fullwidth', function( value ) {
+    value.bind( function( to ) {
+      var section3 = $('.islemag-section3')[0].outerHTML;
+      if( section3 == '') {
+         section2 = $('.islemag-fullwidth .islemag-section3')[0].outerHTML;
+      }
+
+      if( to == true){ //daca trbuie pusa in full width
+
+        if ( $(".islemag-fullwidth").has( ".islemag-section1" ).length ){
+          var add_after = ".islemag-section1";
+        }
+
+        if ( $(".islemag-fullwidth").has( ".islemag-section2" ).length ){
+          var add_after = ".islemag-section2";
+        }
+
+        if( add_after!='' && typeof add_after != 'undefined'){
+          $(".islemag-fullwidth " + add_after ).after( section3 ); //inserez sectiunea 2 dupa sectiunea 1
+        } else {
+          $('.islemag-fullwidth').prepend( section3 ); // adaug la inceput
+        }
+
+        $('.islemag-content-left .islemag-section3').remove(); //sterg sectiunea 2 din content left
+
+      } else {
+
+        if ( $(".islemag-content-left").has( ".islemag-section1" ).length ){
+          var add_after = ".islemag-section1";
+        }
+
+        if ( $(".islemag-content-left").has( ".islemag-section2" ).length ){
+          var add_after = ".islemag-section2";
+        }
+
+
+        if( add_after!='' && typeof add_after != 'undefined' ){
+          $(".islemag-content-left " + add_after).after( section3 );
+        } else {
+          $('.islemag-content-left').prepend( section3 );
+        }
+        $('.islemag-fullwidth .islemag-section3').remove();
+      }
+    } );
+  } );
+
+
+  wp.customize( 'islemag_section4_fullwidth', function( value ) {
+      value.bind( function( to ) {
+        var section4 = $('.islemag-section4')[0].outerHTML;
+        if( section4 == '') {
+           section2 = $('.islemag-fullwidth .islemag-section4')[0].outerHTML;
+        }
+
+
+        if( to == true){ //daca trbuie pusa in full width
+          if ( $(".islemag-fullwidth").has( ".islemag-section1" ).length ){
+            var add_after = ".islemag-section1";
+          }
+          if ( $(".islemag-fullwidth").has( ".islemag-section2" ).length ){
+            var add_after = ".islemag-section2";
+          }
+          if ( $(".islemag-fullwidth").has( ".islemag-section3" ).length ){
+            var add_after = ".islemag-section3";
+          }
+
+          if( add_after!='' && typeof add_after != 'undefined'){
+            $(".islemag-fullwidth " + add_after ).after( section4 ); //inserez sectiunea 2 dupa sectiunea 1
+          } else {
+            $('.islemag-fullwidth').prepend( section4 ); // adaug la inceput
+          }
+
+          $('.islemag-content-left .islemag-section4').remove(); //sterg sectiunea 2 din content left
+
+        } else {
+
+          if ( $(".islemag-content-left").has( ".islemag-section1" ).length ){
+            var add_after = ".islemag-section1";
+          }
+
+          if ( $(".islemag-content-left").has( ".islemag-section2" ).length ){
+            var add_after = ".islemag-section2";
+          }
+
+          if ( $(".islemag-content-left").has( ".islemag-section3" ).length ){
+            var add_after = ".islemag-section3";
+          }
+
+
+          if( add_after!='' && typeof add_after != 'undefined' ){
+            $(".islemag-content-left " + add_after).after( section4 );
+          } else {
+            $('.islemag-content-left').prepend( section4 );
+          }
+          $('.islemag-fullwidth .islemag-section4').remove();
+        }
+      } );
+    } );
+
+      wp.customize( 'islemag_section5_fullwidth', function( value ) {
+        value.bind( function( to ) {
+          var section5 = $('.islemag-section5')[0].outerHTML;
+          if( section5 == '') {
+             section5 = $('.islemag-fullwidth .islemag-section5')[0].outerHTML;
+          }
+
+          if( to == true){ //daca trbuie pusa in full width
+            if ( $(".islemag-fullwidth").has( ".islemag-section1" ).length ){
+              var add_after = ".islemag-section1";
+            }
+            if ( $(".islemag-fullwidth").has( ".islemag-section2" ).length ){
+              var add_after = ".islemag-section2";
+            }
+            if ( $(".islemag-fullwidth").has( ".islemag-section3" ).length ){
+              var add_after = ".islemag-section3";
+            }
+            if ( $(".islemag-fullwidth").has( ".islemag-section4" ).length ){
+              var add_after = ".islemag-section4";
+            }
+
+            if( add_after!='' && typeof add_after != 'undefined'){
+              $(".islemag-fullwidth " + add_after ).after( section5 ); //inserez sectiunea 2 dupa sectiunea 1
+            } else {
+              $('.islemag-fullwidth').prepend( section5 ); // adaug la inceput
+            }
+
+            $('.islemag-content-left .islemag-section5').remove(); //sterg sectiunea 2 din content left
+
+          } else {
+
+            if ( $(".islemag-content-left").has( ".islemag-section1" ).length ){
+              var add_after = ".islemag-section1";
+            }
+
+            if ( $(".islemag-content-left").has( ".islemag-section2" ).length ){
+              var add_after = ".islemag-section2";
+            }
+
+            if ( $(".islemag-content-left").has( ".islemag-section3" ).length ){
+              var add_after = ".islemag-section3";
+            }
+
+            if ( $(".islemag-content-left").has( ".islemag-section4" ).length ){
+              var add_after = ".islemag-section4";
+            }
+
+            if( add_after!='' && typeof add_after != 'undefined' ){
+              $(".islemag-content-left " + add_after).after( section5 );
+            } else {
+              $('.islemag-content-left').prepend( section5 );
+            }
+            $('.islemag-fullwidth .islemag-section5').remove();
+          }
+        } );
+
+
+  } );
+
+} );
 
 } )( jQuery );

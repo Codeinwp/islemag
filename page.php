@@ -15,7 +15,7 @@
 get_header(); ?>
 
 	<div id="primary" class="content-area">
-		<div class="islemag-content-left <?php if ( !is_active_sidebar( 'islemag-sidebar' ) ) { echo 'col-md-12';} else { echo 'col-md-9'; } ?>">
+		<div class="islemag-content-left <?php if ( !is_active_sidebar( 'islemag-sidebar' ) ) { echo 'col-md-12'; } else { echo 'col-md-9'; } ?>">
 			<main id="main" class="site-main" role="main">
 
 				<?php while ( have_posts() ) : the_post(); ?>
@@ -23,7 +23,6 @@ get_header(); ?>
 					<?php get_template_part( 'template-parts/content', 'page' ); ?>
 
 					<?php
-						// If comments are open or we have at least one comment, load up the comment template.
 						if ( comments_open() || get_comments_number() ) :
 							comments_template();
 						endif;

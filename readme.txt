@@ -37,3 +37,22 @@ The exceptions to this license are as follows:
 * ddSlick
     Copyright (c) 2007-2013 Ariel Flesler - aflesler<a>gmail<d>com | http://flesler.blogspot.com
     Licensed under MIT
+
+* fontawesome
+    Created by Dave Gandy
+    Licensed under SIL OFL 1.1 (http://scripts.sil.org/OFL)
+
+* Images
+
+	License:
+    All mystock.photos images are licensed under the terms of the Creative Commons Zero, http://creativecommons.org/publicdomain/zero/1.0/
+		All unsplash.com images are licensed under the terms of the Creative Commons Zero, http://creativecommons.org/publicdomain/zero/1.0/
+
+		Images from screenshot:
+
+		* http://mystock.photos/post/132527690560/vatican
+		* http://mystock.photos/post/133917896765/architecture
+		* https://unsplash.com/photos/HeVd38MWnw4
+		* https://unsplash.com/photos/bS92UkQY8xI
+		* https://unsplash.com/photos/GkKJ56oZ_30
+		* https://unsplash.com/photos/bviex5lwf3s
