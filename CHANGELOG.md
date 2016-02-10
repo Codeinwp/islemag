@@ -1,5 +1,89 @@
 
 
+### 1.0.1 - 10/02/2016
+
+ Changes: 
+
+
+ * #21 - prefix all handle names
+ * added control for header banner, now you can choose between image and code
+ * Merge pull request #42 from cristian-ungureanu/development
+
+Development
+ * Merge pull request #43 from cristian-ungureanu/development
+
+!!! small css fixes
+ * Merge pull request #57 from cristian-ungureanu/development
+
+Development
+ * Merge pull request #58 from cristian-ungureanu/development
+
+!!! small change
+ * Merge pull request #59 from cristian-ungureanu/development
+
+!!! small fix
+ * Merge pull request #60 from cristian-ungureanu/development
+
+Development
+ * Merge pull request #61 from cristian-ungureanu/development
+
+!!! css fix
+ * Merge pull request #62 from cristian-ungureanu/development
+
+!!! css fix
+ * Merge pull request #63 from cristian-ungureanu/development
+
+!!! css fix
+ * Merge pull request #64 from cristian-ungureanu/development
+
+!!! small fix
+ * Merge pull request #74 from cristian-ungureanu/development
+
+Development
+ * Merge pull request #75 from cristian-ungureanu/development
+
+Development
+ * Merge pull request #76 from cristian-ungureanu/development
+
+!!! this fixes pirate form style
+ * Merge pull request #77 from cristian-ungureanu/development
+
+!!! fix comment form
+ * Merge pull request #78 from cristian-ungureanu/development
+
+!!! small css fix
+ * Merge pull request #79 from cristian-ungureanu/development
+
+!!! css fixes
+ * Merge pull request #80 from cristian-ungureanu/development
+
+!!!fix css
+ * Merge pull request #81 from cristian-ungureanu/development
+
+!!! css fix
+ * Merge pull request #82 from cristian-ungureanu/development
+
+!!!css fix
+ * Merge pull request #83 from cristian-ungureanu/development
+
+!!! style for rss feed
+ * Merge pull request #84 from cristian-ungureanu/development
+
+!!! fix
+ * Merge pull request #85 from cristian-ungureanu/development
+
+!!!fix
+ * Merge pull request #86 from cristian-ungureanu/development
+
+!!! fix
+ * Merge pull request #87 from cristian-ungureanu/development
+
+!!! css fix
+ * Merge pull request #88 from cristian-ungureanu/development
+
+!!! css fix
+
+
 ### 1.0.0 - 17/12/2015
 
  Changes: 
