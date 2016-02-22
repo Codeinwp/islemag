@@ -3326,6 +3326,44 @@ styled buttons not container for vertical centered navs*/
 }
 
 
+.star-ratings-css {
+    unicode-bidi: bidi-override;
+    color: #c5c5c5;
+    font-size: 12px;
+    height: 20px;
+    width: 56px;
+    position: relative;
+    padding: 0;
+    text-shadow: 0px 1px 0 #a2a2a2;
+    display: inline-block;
+}
+
+.star-ratings-css .star-ratings-css-top {
+    color: #e7711b;
+    padding: 0;
+    text-shadow: 0px 1px 0 #ab5414;
+    position: absolute;
+    z-index: 1;
+    display:block;
+    left: 0px;
+    overflow: hidden;
+    height: 25px;
+  }
+  .star-ratings-css .star-ratings-css-top span i {
+  	display: inherit;
+  }
+.star-ratings-css .star-ratings-css-bottom {
+    z-index: 0;
+}
+
+.islemag-template2 .entry-block.eb-small .entry-title{
+	margin-bottom: 0px;
+}
+
+.islemag-template2 .entry-block.eb-small .entry-meta{
+	margin-top: 15px;
+}
+
 @media (min-width: 1200px) {
 	.entry-block.eb-small .entry-title {
 		margin:5px 0 15px;
