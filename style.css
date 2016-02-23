@@ -3349,11 +3349,17 @@ styled buttons not container for vertical centered navs*/
     overflow: hidden;
     height: 25px;
   }
-  .star-ratings-css .star-ratings-css-top span i {
-  	display: inherit;
-  }
+
+.star-ratings-css .star-ratings-css-top span i {
+	display: inherit;
+}
+
 .star-ratings-css .star-ratings-css-bottom {
     z-index: 0;
+}
+
+.islemag-template1 .entry-block .entry-media + .entry-title{
+	margin-bottom: 0px;
 }
 
 .islemag-template2 .entry-block.eb-small .entry-title{
@@ -3363,6 +3369,27 @@ styled buttons not container for vertical centered navs*/
 .islemag-template2 .entry-block.eb-small .entry-meta{
 	margin-top: 15px;
 }
+
+.islemag-template3 .entry-block.eb-small .entry-title {
+	margin-bottom: 0px;
+}
+
+.islemag-template3 .entry-block.eb-small .entry-meta{
+	margin-top: 15px;
+}
+
+.islemag-template4 .entry-block.eb-small .entry-title {
+	margin-bottom: 0px;
+}
+
+.islemag-template4 .entry-block.eb-small .entry-meta{
+	margin-top: 15px;
+}
+
+.islemag-template3 .entry-block .entry-media + .entry-title{
+	margin-bottom: 0;
+}
+
 
 @media (min-width: 1200px) {
 	.entry-block.eb-small .entry-title {
