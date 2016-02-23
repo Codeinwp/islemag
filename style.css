@@ -3299,7 +3299,7 @@ styled buttons not container for vertical centered navs*/
 }
 
 .post-section {
-	margin-bottom: 50px;
+	margin-bottom: 35px;
 }
 
 .post-section.md-margin {
@@ -3390,6 +3390,10 @@ styled buttons not container for vertical centered navs*/
 	margin-bottom: 0;
 }
 
+#sidebar-ads-area-1, #sidebar-ads-area-2, #sidebar-ads-area-3,
+#sidebar-ads-area-4, #sidebar-ads-area-5{
+	margin-bottom: 35px;
+}
 
 @media (min-width: 1200px) {
 	.entry-block.eb-small .entry-title {
