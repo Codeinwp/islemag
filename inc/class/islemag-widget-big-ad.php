@@ -7,7 +7,7 @@ class islemag_big_ad extends WP_Widget {
      **/
     public function __construct() {
         $widget_ops = array( 'classname' => 'islemag_single_ad' );
-        parent::__construct( 'islemag_single_ad-widget', 'Islemag - Single advertisement widget for sidebar', $widget_ops );
+        parent::__construct( 'islemag_single_ad-widget', 'Sidebar single advertisement', $widget_ops );
         add_action( 'admin_enqueue_scripts', array($this, 'upload_scripts') );
     }
 
