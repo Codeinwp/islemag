@@ -166,6 +166,14 @@ add_action( 'after_setup_theme', 'islemag_content_width', 0 );
 		'after_title'   => '</span></h3>',
 	) );
 
+	register_sidebar( array(
+		'name'          => esc_html__( 'Header advertisment area', 'islemag' ),
+		'id'            => 'islemag-header-ad',
+		'description'   => '',
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</div>',
+	) );
+
 	register_sidebars(5, array(
 	'name'          => __('Advertisments area %d'),
     'id'            => 'ads',          
