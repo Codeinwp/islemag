@@ -154,6 +154,7 @@ add_action( 'after_setup_theme', 'islemag_content_width', 0 );
  */
  require_once ( 'inc/class/islemag-widget-multiple-ads.php');
  require_once ( 'inc/class/islemag-widget-big-ad.php');
+ require_once ( 'inc/class/islemag-widget-content-ad.php');
  function islemag_widgets_init() {
 	register_sidebar( array(
 		'name'          => esc_html__( 'Sidebar', 'islemag' ),
@@ -164,6 +165,25 @@ add_action( 'after_setup_theme', 'islemag_content_width', 0 );
 		'before_title'  => '<h3 class="title-border dkgreen title-bg-line"><span>',
 		'after_title'   => '</span></h3>',
 	) );
+
+	register_sidebar( array(
+		'name'          => esc_html__( 'Header advertisment area', 'islemag' ),
+		'id'            => 'islemag-header-ad',
+		'description'   => '',
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</div>',
+	) );
+
+	register_sidebars(5, array(
+	'name'          => __('Advertisments area %d'),
+    'id'            => 'ads',          
+	'class'         => 'islemag-ads',
+	'before_widget' => '<div id="%1$s" class="widget %2$s">',
+	'after_widget'  => '</div>',
+	'before_title'  => '<h2 class="widgettitle">',
+	'after_title'   => '</h2>' ) );
+
+
 
 	$sidebars = array ( 'a' => 'islemag-first-footer-area', 'b' => 'islemag-second-footer-area', 'c' => 'islemag-third-footer-area' );
 	foreach ( $sidebars as $sidebar ){
@@ -186,10 +206,10 @@ add_action( 'after_setup_theme', 'islemag_content_width', 0 );
         array (
             'name'          => $name,
             'id'            => $sidebar,
-						'before_widget'	=> '<div id="%1$s" class="widget %2$s">',
-						'after_widget'  => '</div>',
-						'before_title'	=> '<h3 class="widget-title">',
-						'after_title'	=> '</h3>'
+			'before_widget'	=> '<div id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</div>',
+			'before_title'	=> '<h3 class="widget-title">',
+			'after_title'	=> '</h3>'
         )
     );
 	}
@@ -197,6 +217,7 @@ add_action( 'after_setup_theme', 'islemag_content_width', 0 );
 
 	register_widget( 'islemag_multiple_ads' );
 	register_widget( 'islemag_big_ad' );
+	register_widget( 'islemag_content_ad' );
 	wp_enqueue_script( 'islemag-widget-js', get_template_directory_uri() . '/js/islemag-wigdet.js', array(), '1.0.0', true );
 
 }

@@ -1,13 +1,13 @@
 <?php
 
-class islemag_big_ad extends WP_Widget {
+class islemag_content_ad extends WP_Widget {
 
 	 /**
      * Constructor
      **/
     public function __construct() {
-        $widget_ops = array( 'classname' => 'islemag_single_ad' );
-        parent::__construct( 'islemag_single_ad-widget', 'Sidebar single advertisement', $widget_ops );
+        $widget_ops = array( 'classname' => 'islemag_content_ad' );
+        parent::__construct( 'islemag_content_ad-widget', 'Content advertisment widget', $widget_ops );
         add_action( 'admin_enqueue_scripts', array($this, 'upload_scripts') );
     }
 
@@ -23,14 +23,10 @@ class islemag_big_ad extends WP_Widget {
       extract( $args );
       echo $before_widget;
 
-      if(!empty($instance['widget_title'])){
-        $title = $instance['widget_title'];
-      }
       if( !empty( $title ) ){
         echo $before_title. esc_html( $title ) . $after_title;
       }
 
-      $title_alt = 'title_ad';
       $link = 'link_ad';
       $url = 'image_uri_ad';
 
@@ -60,8 +56,6 @@ class islemag_big_ad extends WP_Widget {
       $instance = $old_instance;
       $instance['new_tab'] = strip_tags( $new_instance['new_tab'] );
       $instance['ad_type'] = strip_tags( $new_instance['ad_type'] );
-      $instance['widget_title'] = sanitize_text_field( $new_instance['widget_title'] );
-      $instance['title_ad'] = sanitize_text_field( $new_instance['title_ad'] );
       $instance['link_ad'] = esc_url_raw( $new_instance['link_ad'] );
       $instance['image_uri_ad'] = esc_url_raw( $new_instance['image_uri_ad'] );
 
@@ -107,13 +101,7 @@ class islemag_big_ad extends WP_Widget {
       }
       ?>
 
-      <p>
-        <label for="<?php echo esc_attr( $this->get_field_id( 'widget_title' ) ); ?>"><?php _e( 'Title', 'islemag' ); ?></label><br/>
-        <input type="text" name="<?php echo esc_attr( $this->get_field_name( 'widget_title' ) ); ?>" id="<?php echo esc_attr( $this->get_field_id('widget_title') ); ?>" value="<?php if( !empty( $instance['widget_title'] ) ): echo esc_attr( $instance['widget_title'] ); endif; ?>" class="widefat" />
-      </p>
-
       <?php
-        $title_alt = 'title_ad';
         $link = 'link_ad';
         $url = 'image_uri_ad';
         $code = 'banner_code';
@@ -123,17 +111,13 @@ class islemag_big_ad extends WP_Widget {
         <?php
           echo sprintf('%s<br/>%s, %s, %s, %s',
             esc_html__( 'Recommended sizes:', 'islemag' ),
-            esc_html__( '300 x 250 px', 'islemag' ),
+            esc_html__( '728 x 90 px', 'islemag' ),
             esc_html__( '300 x 100 px', 'islemag' ),
-            esc_html__( '300 x 600 px', 'islemag' ),
-            esc_html__( '250 x 250 px', 'islemag' )
+            esc_html__( '468 x 60 px', 'islemag' ),
+            esc_html__( '234 x 60 px', 'islemag' )
           );
         ?>
       </p>
-    	<p>
-    		<label for="<?php echo esc_attr( $this->get_field_id($title_alt) ); ?>"><?php _e('Alt Title','islemag'); ?></label><br/>
-    		<input type="text" name="<?php echo esc_attr( $this->get_field_name( $title_alt ) ); ?>" id="<?php echo esc_attr( $this->get_field_id( $title_alt ) ); ?>" value="<?php if( !empty( $instance[$title_alt] ) ): echo esc_attr( $instance[$title_alt] ); endif; ?>" class="widefat" />
-    	</p>
 
       <p>
         <input type="radio" name="<?php echo esc_attr( $this->get_field_name('ad_type') ); ?>" value="image" class="islemag-big-ad-type" <?php if( !empty( $instance['ad_type'] ) ): checked( $instance['ad_type'], 'image' ); endif; ?>/> <?php esc_html_e( 'Image', 'islemag' ); ?>

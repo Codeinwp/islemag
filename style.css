@@ -4,7 +4,7 @@ Theme URI: http://themeisle.com/themes/islemag/
 Author: Themeisle
 Author URI: http://themeisle.com
 Description: A modern and clean free WordPress theme for magazines, news and media websites, personal blogs, or photography. IsleMag is responsive, flat, minimalist, SEO friendly, Retina ready, built with Bootstrap, and has social links. The theme has Google AdSense banners, a featured slider, custom backgrounds, filtered categories, tags, boxed layout, and drop-down menu. IsleMag also offers well-structured content and posts, multiple sidebars and widgets. The theme is highly customizable and translation ready.
-Version: 1.0.1
+Version: 1.0.2
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: islemag
@@ -1365,6 +1365,10 @@ label.input-desc {
 	height: 40px;
 }
 
+.form-group input{
+	max-width: 100%;
+}
+
 textarea.form-control {
     height: auto;
 		min-height: 120px;
@@ -1390,6 +1394,14 @@ textarea.form-control {
 .form-control::-webkit-input-placeholder {
 	color: #6a6a6a;
 }
+.input-desc{
+	width:83px;
+}
+
+.form-group textarea{
+	max-width: 100%;
+}
+
 
 .comment-content a {
 	word-wrap: break-word;
@@ -1403,6 +1415,16 @@ textarea.form-control {
 	padding-left: 10px;
 	padding-top: 10px;
 	padding-bottom: 25px;
+}
+
+@media (max-width: 767px){
+	.form-group .form-control{
+	    margin-left: 20px;
+	}
+
+	.form-group textarea{
+		margin:0;
+	}
 }
 /*--------------------------------------------------------------
 # Infinite scroll
@@ -1878,6 +1900,10 @@ blockquote {
 
 .islemag-banner{
     line-height: 100px;
+}
+
+.islemag-banner .islemag_content_ad{
+	margin-bottom: 0;
 }
 
 .islemag-small-banner{
@@ -3299,7 +3325,7 @@ styled buttons not container for vertical centered navs*/
 }
 
 .post-section {
-	margin-bottom: 50px;
+	margin-bottom: 35px;
 }
 
 .post-section.md-margin {
@@ -3325,6 +3351,75 @@ styled buttons not container for vertical centered navs*/
 	margin-bottom: 10px;
 }
 
+
+.star-ratings-css {
+    unicode-bidi: bidi-override;
+    color: #c5c5c5;
+    font-size: 12px;
+    height: 20px;
+    width: 56px;
+    position: relative;
+    padding: 0;
+    text-shadow: 0px 1px 0 #a2a2a2;
+    display: inline-block;
+}
+
+.star-ratings-css .star-ratings-css-top {
+    color: #e7711b;
+    padding: 0;
+    text-shadow: 0px 1px 0 #ab5414;
+    position: absolute;
+    z-index: 1;
+    display:block;
+    left: 0px;
+    overflow: hidden;
+    height: 25px;
+  }
+
+.star-ratings-css .star-ratings-css-top span i {
+	display: inherit;
+}
+
+.star-ratings-css .star-ratings-css-bottom {
+    z-index: 0;
+}
+
+.islemag-template1 .entry-block .entry-media + .entry-title{
+	margin-bottom: 0px;
+}
+
+.islemag-template2 .entry-block.eb-small .entry-title{
+	margin-bottom: 0px;
+}
+
+.islemag-template2 .entry-block.eb-small .entry-meta{
+	margin-top: 15px;
+}
+
+.islemag-template3 .entry-block.eb-small .entry-title {
+	margin-bottom: 0px;
+}
+
+.islemag-template3 .entry-block.eb-small .entry-meta{
+	margin-top: 15px;
+}
+
+.islemag-template4 .entry-block.eb-small .entry-title {
+	margin-bottom: 0px;
+}
+
+.islemag-template4 .entry-block.eb-small .entry-meta{
+	margin-top: 15px;
+}
+
+.islemag-template3 .entry-block .entry-media + .entry-title{
+	margin-bottom: 0;
+}
+
+#sidebar-ads-area-1, #sidebar-ads-area-2, #sidebar-ads-area-3,
+#sidebar-ads-area-4, #sidebar-ads-area-5{
+	margin-bottom: 35px;
+}
 
 @media (min-width: 1200px) {
 	.entry-block.eb-small .entry-title {

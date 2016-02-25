@@ -39,6 +39,19 @@ if ( $wp_query->have_posts() ) : ?>
 
             <h3 class="entry-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
 
+            <?php
+            if( function_exists ( 'cwppos_calc_overall_rating' ) ){
+              $rating = cwppos_calc_overall_rating($postid);
+              if( !empty($rating['option1']) ){ ?>
+                <label><?php esc_html_e( 'Rating:', 'islemag' ); ?></label>
+                <div class="star-ratings-css">
+                  <div class="star-ratings-css-top" style="width: <?php echo $rating['overall']; ?>%"><span><i class="fa fa-star"></i></span><span><i class="fa fa-star"></i></span><span><i class="fa fa-star"></i></span><span><i class="fa fa-star"></i></span><span><i class="fa fa-star"></i></span></div>
+                  <div class="star-ratings-css-bottom"><span><i class="fa fa-star"></i></span><span><i class="fa fa-star"></i></span><span><i class="fa fa-star"></i></span><span><i class="fa fa-star"></i></span><span><i class="fa fa-star"></i></span></div>
+                </div>
+            <?php
+              }
+            } ?>
+
             <div class="entry-meta">
               <span class="entry-overlay-date"><i class="fa fa-calendar"></i><?php echo get_the_date( 'j M' ); ?></span>
               <span class="entry-separator">/</span>
