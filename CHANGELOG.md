@@ -1,5 +1,30 @@
 
 
+### 1.0.2 - 25/02/2016
+
+ Changes: 
+
+
+ * #93 - add star rating to posts that have wppr
+ * #92 - added widget area before each section
+ * #91 - add widget area in header
+ * Merge pull request #95 from cristian-ungureanu/development
+
+Development
+ * Merge pull request #96 from cristian-ungureanu/development
+
+!!! change widget recomandation
+ * Merge pull request #97 from cristian-ungureanu/development
+
+!!! top banner fix
+ * Merge pull request #98 from cristian-ungureanu/development
+
+!!! fix css for comment form on responsive
+ * Merge pull request #100 from cristian-ungureanu/development
+
+!!! change theme version
+
+
 ### 1.0.1 - 10/02/2016
 
  Changes: 
