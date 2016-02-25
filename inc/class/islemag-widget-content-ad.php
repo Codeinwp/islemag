@@ -111,10 +111,10 @@ class islemag_content_ad extends WP_Widget {
         <?php
           echo sprintf('%s<br/>%s, %s, %s, %s',
             esc_html__( 'Recommended sizes:', 'islemag' ),
-            esc_html__( '300 x 250 px', 'islemag' ),
+            esc_html__( '728 x 90 px', 'islemag' ),
             esc_html__( '300 x 100 px', 'islemag' ),
-            esc_html__( '300 x 600 px', 'islemag' ),
-            esc_html__( '250 x 250 px', 'islemag' )
+            esc_html__( '468 x 60 px', 'islemag' ),
+            esc_html__( '234 x 60 px', 'islemag' )
           );
         ?>
       </p>
