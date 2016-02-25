@@ -1880,6 +1880,10 @@ blockquote {
     line-height: 100px;
 }
 
+.islemag-banner .islemag_content_ad{
+	margin-bottom: 0;
+}
+
 .islemag-small-banner{
 	display: inline-block;
 	width: 125px;
