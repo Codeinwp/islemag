@@ -7,7 +7,7 @@ class islemag_multiple_ads extends WP_Widget {
      **/
     public function __construct() {
         $widget_ops = array( 'classname' => 'islemag_multiple_ads' );
-        parent::__construct( 'islemag_multiple_ads-widget', 'Islemag - Multiple Advertisements widget', $widget_ops );
+        parent::__construct( 'islemag_multiple_ads-widget', 'Sidebar multiple advertisements', $widget_ops );
         add_action( 'admin_enqueue_scripts', array( $this, 'upload_scripts' ) );
     }
 
