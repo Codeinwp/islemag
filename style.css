@@ -1365,6 +1365,10 @@ label.input-desc {
 	height: 40px;
 }
 
+.form-group input{
+	max-width: 100%;
+}
+
 textarea.form-control {
     height: auto;
 		min-height: 120px;
@@ -1390,6 +1394,14 @@ textarea.form-control {
 .form-control::-webkit-input-placeholder {
 	color: #6a6a6a;
 }
+.input-desc{
+	width:83px;
+}
+
+.form-group textarea{
+	max-width: 100%;
+}
+
 
 .comment-content a {
 	word-wrap: break-word;
@@ -1403,6 +1415,16 @@ textarea.form-control {
 	padding-left: 10px;
 	padding-top: 10px;
 	padding-bottom: 25px;
+}
+
+@media (max-width: 767px){
+	.form-group .form-control{
+	    margin-left: 20px;
+	}
+
+	.form-group textarea{
+		margin:0;
+	}
 }
 /*--------------------------------------------------------------
 # Infinite scroll
