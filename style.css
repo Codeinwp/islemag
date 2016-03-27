@@ -4278,12 +4278,16 @@ ul > li:hover > a,
 
 /* Pirate forms widget*/
 .form_field_wrap {
-	padding: 0;
 	font-size: 14px;
 	border: none;
 	color: #7a7a7a;
+}
+
+#footer .form_field_wrap, .sidebar.islemag-content-right .form_field_wrap{
+	padding: 0;
 	width: 100%;
 }
+
 .form_field_wrap input{
  	background-color: rgba(0,0,0, 0.12);
   padding: 8px;
