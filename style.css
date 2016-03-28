@@ -2441,6 +2441,12 @@ text-transform: capitalize;
 .owl-carousel .owl-stage {
 	position: relative;
 	-ms-touch-action: pan-Y;
+	display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-flow: row wrap;
+    flex-flow: row wrap;
 }
 .owl-carousel .owl-stage:after {
 	content: ".";
@@ -2492,6 +2498,11 @@ text-transform: capitalize;
 	-ms-user-select: none;
 	user-select: none;
 	z-index: 1;
+    flex: 1 auto;
+}
+
+.blog-related-carousel.owl-carousel .owl-item {
+	border: 1px solid #eaeaea;
 }
 .owl-carousel .owl-item img {
 	display: block;
@@ -5180,6 +5191,10 @@ ul > li:hover > a,
 	padding:15px;
 	margin-bottom:30px;
 	border:1px solid #eaeaea;
+}
+
+.blog-related-carousel .entry-box {
+	border:none;
 }
 
 .bg-gray .entry-box  {
