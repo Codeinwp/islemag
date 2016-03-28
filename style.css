@@ -4,7 +4,7 @@ Theme URI: http://themeisle.com/themes/islemag/
 Author: Themeisle
 Author URI: http://themeisle.com
 Description: A modern and clean free WordPress theme for magazines, news and media websites, personal blogs, or photography. IsleMag is responsive, flat, minimalist, SEO friendly, Retina ready, built with Bootstrap, and has social links. The theme has Google AdSense banners, a featured slider, custom backgrounds, filtered categories, tags, boxed layout, and drop-down menu. IsleMag also offers well-structured content and posts, multiple sidebars and widgets. The theme is highly customizable and translation ready.
-Version: 1.0.2
+Version: 1.0.3
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: islemag
@@ -2441,6 +2441,12 @@ text-transform: capitalize;
 .owl-carousel .owl-stage {
 	position: relative;
 	-ms-touch-action: pan-Y;
+	display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-flow: row wrap;
+    flex-flow: row wrap;
 }
 .owl-carousel .owl-stage:after {
 	content: ".";
@@ -2492,6 +2498,11 @@ text-transform: capitalize;
 	-ms-user-select: none;
 	user-select: none;
 	z-index: 1;
+    flex: 1 auto;
+}
+
+.blog-related-carousel.owl-carousel .owl-item {
+	border: 1px solid #eaeaea;
 }
 .owl-carousel .owl-item img {
 	display: block;
@@ -4278,12 +4289,16 @@ ul > li:hover > a,
 
 /* Pirate forms widget*/
 .form_field_wrap {
-	padding: 0;
 	font-size: 14px;
 	border: none;
 	color: #7a7a7a;
+}
+
+#footer .form_field_wrap, .sidebar.islemag-content-right .form_field_wrap{
+	padding: 0;
 	width: 100%;
 }
+
 .form_field_wrap input{
  	background-color: rgba(0,0,0, 0.12);
   padding: 8px;
@@ -5176,6 +5191,10 @@ ul > li:hover > a,
 	padding:15px;
 	margin-bottom:30px;
 	border:1px solid #eaeaea;
+}
+
+.blog-related-carousel .entry-box {
+	border:none;
 }
 
 .bg-gray .entry-box  {
