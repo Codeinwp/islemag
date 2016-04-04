@@ -107,7 +107,7 @@ if ( post_password_required() ) {
 			'class_submit' 			=> 'btn btn-dark',
 			'fields' 						=> apply_filters( 'comment_form_default_fields', $fields ),
 			'comment_field' 		=> '<div class="form-group">
-																<label for="comment" class="input-desc">' . _x( 'Comment', 'islemag' ) . '</label>
+																<label for="comment" class="input-desc">' . _x( 'Comment', 'noun', 'islemag' ) . '</label>
 																<textarea class="form-control" id="comment" name="comment" aria-required="true" placeholder="'. esc_html__( 'Your Message', 'islemag' ).'"></textarea>
 															</div>',
 		);
