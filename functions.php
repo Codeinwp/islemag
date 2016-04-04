@@ -175,7 +175,7 @@ add_action( 'after_setup_theme', 'islemag_content_width', 0 );
 	) );
 
 	register_sidebars(5, array(
-	'name'          => __('Advertisments area %d'),
+	'name'          => __('Advertisments area %d', 'islemag'),
     'id'            => 'ads',          
 	'class'         => 'islemag-ads',
 	'before_widget' => '<div id="%1$s" class="widget %2$s">',
