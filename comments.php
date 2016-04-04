@@ -89,7 +89,7 @@ if ( post_password_required() ) {
 		'email' =>
 			'<div class="col-sm-4">
 			  <div class="form-group">
-				 <label for="email" class="input-desc">' . __( 'Email', 'domainreference' ) . ( $req ? '<span class="required">*</span>' : '' ) . '</label> '. 
+				 <label for="email" class="input-desc">' . __( 'Email', 'islemag' ) . ( $req ? '<span class="required">*</span>' : '' ) . '</label> '. 
 			  '<input id="email" class="form-control" placeholder="'. esc_html__( 'Your E-mail', 'islemag' ).'" name="email" type="text" value="' . esc_attr(  $commenter['comment_author_email'] ) .'" size="30"' . $aria_req . ' />
 			  </div>
 			 </div>',
@@ -97,7 +97,7 @@ if ( post_password_required() ) {
 		'url' =>
 			'<div class="col-sm-4">
 			  <div class="form-group">
-			   <label for="url" class="input-desc">' . __( 'Website', 'domainreference' ) . '</label>' .
+			   <label for="url" class="input-desc">' . __( 'Website', 'islemag' ) . '</label>' .
 			  '<input id="url" class="form-control" placeholder="'. esc_html__( 'Website', 'islemag' ).'" name="url" type="text" value="' . esc_attr( $commenter['comment_author_url'] ) .'" size="30" />
 			  </div>
 			 </div>',
