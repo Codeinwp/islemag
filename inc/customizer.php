@@ -139,13 +139,11 @@ function islemag_customize_register( $wp_customize ) {
 
 
 	$wp_customize->add_setting( 'islemag_social_icons', array(
-			'default' 							=> json_encode(
-																	array(
-																					array('icon_value' =>'fa-facebook-official' , 'link' => '#'),
-																					array('icon_value' =>'fa-google' , 'link' => '#'),
-																					array('icon_value' =>'fa-instagram' , 'link' => '#')
-																				)
-																	),
+			'default' 	=> json_encode( array(
+								array('icon_value' =>'fa-facebook-official' , 'link' => '#', 'id' => 'islemag_5702771a213bb'),
+                                array('icon_value' =>'fa-google' , 'link' => '#', 'id' => 'islemag_57027720213bc'),
+                                array('icon_value' =>'fa-instagram' , 'link' => '#', 'id' => 'islemag_57027722213bd')
+							) ),
 			'transport'							=> 'postMessage',
 			'sanitize_callback' 		=> 'islemag_sanitize_repeater'
 	) );
@@ -333,7 +331,7 @@ function islemag_customize_register( $wp_customize ) {
 						Visit us: <a href="#">Test.com</a><br />
             Email: <a href="mailto:test@test.com">test@test.com</a><br />
 						<br />
-            <abbr title="copyright">Your Company</abbr> ©
+            <abbr title="copyright">Your Company</abbr> &copy;
           </address>',
 			'sanitize_callback'			=> 'islemag_sanitize_html',
 			'transport'							=> 'postMessage'
@@ -346,17 +344,15 @@ function islemag_customize_register( $wp_customize ) {
 	) );
 
 	$wp_customize->add_setting( 'islemag_footer_social_icons', array(
-			'default' 							=> json_encode(
-																	array(
-																					array('icon_value' =>'fa-facebook' , 'link' => '#'),
-																					array('icon_value' =>'fa-twitter' , 'link' => '#'),
-																					array('icon_value' =>'fa-google-plus' , 'link' => '#'),
-																					array('icon_value' =>'fa-skype' , 'link' => '#'),
-																					array('icon_value' =>'fa-linkedin' , 'link' => '#')
-																				)
-																	),
-			'transport'							=> 'postMessage',
-			'sanitize_callback' 		=> 'islemag_sanitize_repeater'
+			'default' 			=> json_encode( array(
+										array('icon_value' =>'fa-facebook' , 'link' => '#', 'id' => 'islemag_57027801213be'),
+										array('icon_value' =>'fa-twitter' , 'link' => '#', 'id' => 'islemag_57027802213bf'),
+										array('icon_value' =>'fa-google-plus' , 'link' => '#', 'id' => 'islemag_57027803213c0'),
+										array('icon_value' =>'fa-skype' , 'link' => '#', 'id' => 'islemag_57027804213c1'),
+										array('icon_value' =>'fa-linkedin' , 'link' => '#', 'id' => 'islemag_57027805213c2')
+									) ),
+			'transport'			=> 'postMessage',
+			'sanitize_callback' => 'islemag_sanitize_repeater'
 	) );
 
 
@@ -397,11 +393,11 @@ function islemag_customize_register( $wp_customize ) {
 
 
 	$wp_customize->add_control( new Islemag_General_Repeater( $wp_customize, 'islemag_social_icons', array(
-			'label'   								=> esc_html__('Add new social icon','islemag'),
-			'section' 								=> 'islemag_header_content',
-			'priority'								=> 1,
-      'islemag_icon_control' 		=> true,
-      'islemag_link_control'		=> true
+			'label'					=> esc_html__('Add new social icon','islemag'),
+			'section'				=> 'islemag_header_content',
+			'priority'				=> 1,
+			'islemag_icon_control'	=> true,
+			'islemag_link_control'	=> true
 	) ) );
 
 	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'islemag_logo', array(
@@ -632,11 +628,11 @@ function islemag_customize_register( $wp_customize ) {
 	) );
 
 	$wp_customize->add_control( new Islemag_General_Repeater( $wp_customize, 'islemag_footer_social_icons', array(
-			'label'   								=> esc_html__('Add new social icon','islemag'),
-			'section' 								=> 'islemag_footer',
-			'priority'								=> 5,
-			'islemag_icon_control' 		=> true,
-			'islemag_link_control'		=> true
+			'label'					=> esc_html__('Add new social icon','islemag'),
+			'section'				=> 'islemag_footer',
+			'priority'				=> 5,
+			'islemag_icon_control'	=> true,
+			'islemag_link_control'	=> true
 	) ) );
 
 
