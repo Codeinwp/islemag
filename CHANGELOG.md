@@ -5,6 +5,19 @@
  Changes: 
 
 
+ * Merge pull request #111 from cristian-ungureanu/development
+
+!!! fix theme-check errors
+ * Merge pull request #112 from cristian-ungureanu/development
+
+Development
+
+
+### 1.0.4 - 04/04/2016
+
+ Changes: 
+
+
  * Merge pull request #109 from cristian-ungureanu/development
 
 Development
