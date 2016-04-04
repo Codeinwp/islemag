@@ -71,6 +71,7 @@ class Islemag_General_Repeater extends WP_Customize_Control {
                                         <span class="customize-control-title"><?php esc_html_e('Link','islemag')?></span>
                                         <input type="text" class="islemag_link_control" placeholder="<?php esc_html_e('Link','islemag'); ?>"/>
                                 <?php } ?>
+                            <input type="hidden" class="islemag_box_id">
                             <button type="button" class="islemag_general_control_remove_field button" style="display:none;"><?php esc_html_e('Delete field','islemag'); ?></button>
                             </div>
                         </div>
@@ -106,6 +107,7 @@ class Islemag_General_Repeater extends WP_Customize_Control {
                                                     <span class="customize-control-title"><?php esc_html_e('Link','islemag')?></span>
                                                     <input type="text" value="<?php if(!empty($icon->link)) echo esc_url($icon->link); ?>" class="islemag_link_control" placeholder="<?php esc_html_e('Link','islemag'); ?>"/>
                                         <?php } ?>
+                                    <input type="hidden" class="islemag_box_id" value="<?php if(!empty($icon->id)) echo esc_attr($icon->id); ?>">
                                     <button type="button" class="islemag_general_control_remove_field button" <?php if ($it == 0) echo 'style="display:none;"'; ?>><?php esc_html_e('Delete field','islemag'); ?></button>
                                     </div>
 
@@ -141,6 +143,7 @@ class Islemag_General_Repeater extends WP_Customize_Control {
                                             <span class="customize-control-title"><?php esc_html_e('Link','islemag')?></span>
                                             <input type="text" value="<?php if(!empty($icon->link)) echo esc_url($icon->link); ?>" class="islemag_link_control" placeholder="<?php esc_html_e('Link','islemag'); ?>"/>
                                         <?php } ?>
+                                        <input type="hidden" class="islemag_box_id" value="<?php if(!empty($icon->id)) echo esc_attr($icon->id); ?>">
                                         <button type="button" class="islemag_general_control_remove_field button" <?php
                                             if ($it == 0)
                                             echo 'style="display:none;"'; ?>><?php esc_html_e('Delete field','islemag'); ?></button>

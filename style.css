@@ -65,6 +65,10 @@ body {
 	margin: 0;
 }
 
+body.custom-background {
+	background-size: cover
+}
+
 article,
 aside,
 details,
