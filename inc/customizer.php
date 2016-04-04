@@ -321,20 +321,9 @@ function islemag_customize_register( $wp_customize ) {
 	) );
 
 	$wp_customize->add_setting( 'islemag_footer_text', array(
-			'default'								=>
-					'<p>
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus a efficitur orci, a dictum nunc.
-						Phasellus enim risus, vehicula in est a, lobortis convallis metus. Duis sed accumsan mi.
-						Suspendisse eget ultricies est, ac suscipit dui.
-					</p>
-					<address>
-						Visit us: <a href="#">Test.com</a><br />
-            Email: <a href="mailto:test@test.com">test@test.com</a><br />
-						<br />
-            <abbr title="copyright">Your Company</abbr> &copy;
-          </address>',
-			'sanitize_callback'			=> 'islemag_sanitize_html',
-			'transport'							=> 'postMessage'
+			'sanitize_callback' => 'islemag_sanitize_html',
+			'default'	=>	'<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus a efficitur orci, a dictum nunc.Phasellus enim risus, vehicula in est a, lobortis convallis metus. Duis sed accumsan mi.Suspendisse eget ultricies est, ac suscipit dui.</p><address>Visit us: <a href="#">Test.com</a><br />Email: <a href="mailto:test@test.com">test@test.com</a><br /><br /><abbr title="copyright">Your Company</abbr> &copy;</address>',
+			'transport' => 'postMessage'
 	) );
 
 	$wp_customize->add_setting( 'islemag_footer_socials_title', array(
