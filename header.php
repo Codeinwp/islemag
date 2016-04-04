@@ -29,9 +29,9 @@
                     <?php
                         $islemag_social_icons = get_theme_mod('islemag_social_icons',json_encode(
                             array(
-                                array('icon_value' =>'fa-facebook-official' , 'link' => '#'),
-                                array('icon_value' =>'fa-google' , 'link' => '#'),
-                                array('icon_value' =>'fa-instagram' , 'link' => '#')
+                                array('icon_value' =>'fa-facebook-official' , 'link' => '#', 'id' => 'islemag_5702771a213bb'),
+                                array('icon_value' =>'fa-google' , 'link' => '#', 'id' => 'islemag_57027720213bc'),
+                                array('icon_value' =>'fa-instagram' , 'link' => '#', 'id' => 'islemag_57027722213bd')
                             )
                         ));
 

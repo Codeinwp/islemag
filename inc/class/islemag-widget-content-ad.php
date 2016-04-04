@@ -7,7 +7,7 @@ class islemag_content_ad extends WP_Widget {
      **/
     public function __construct() {
         $widget_ops = array( 'classname' => 'islemag_content_ad' );
-        parent::__construct( 'islemag_content_ad-widget', 'Content advertisment widget', $widget_ops );
+        parent::__construct( 'islemag_content_ad-widget', 'Islemag - Content advertisment widget', $widget_ops );
         add_action( 'admin_enqueue_scripts', array($this, 'upload_scripts') );
     }
 

@@ -32,16 +32,15 @@
 															Visit us: <a href="#">Test.com</a><br />
 									            Email: <a href="mailto:test@test.com">test@test.com</a><br />
 														<br />
-									            <abbr title="copyright">Your Company</abbr> ©
+									            <abbr title="copyright">Your Company</abbr> &copy;
 									          </address>' );
 														$islemag_footer_socials_title = get_theme_mod( 'islemag_footer_socials_title', esc_html__( 'Find Us at:', 'islemag' ) );
-														$islemag_footer_social_icons = get_theme_mod( 'islemag_footer_social_icons',json_encode(
-															array(
-																			array('icon_value' =>'fa-facebook' , 'link' => '#'),
-																			array('icon_value' =>'fa-twitter' , 'link' => '#'),
-																			array('icon_value' =>'fa-google-plus' , 'link' => '#'),
-																			array('icon_value' =>'fa-skype' , 'link' => '#'),
-																			array('icon_value' =>'fa-linkedin' , 'link' => '#')
+														$islemag_footer_social_icons = get_theme_mod( 'islemag_footer_social_icons',json_encode( array(
+																array('icon_value' =>'fa-facebook' , 'link' => '#', 'id' => 'islemag_57027801213be'),
+																array('icon_value' =>'fa-twitter' , 'link' => '#', 'id' => 'islemag_57027802213bf'),
+																array('icon_value' =>'fa-google-plus' , 'link' => '#', 'id' => 'islemag_57027803213c0'),
+																array('icon_value' =>'fa-skype' , 'link' => '#', 'id' => 'islemag_57027804213c1'),
+																array('icon_value' =>'fa-linkedin' , 'link' => '#', 'id' => 'islemag_57027805213c2')
 																		)
 															) );
 
