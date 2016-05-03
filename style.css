@@ -2883,6 +2883,10 @@ styled buttons not container for vertical centered navs*/
 	padding: 0;
 }
 
+.home.blog #content{
+	padding: 15px 0px;
+}
+
 .entry-overlay-meta {
 	position: absolute;
 	left:0;
