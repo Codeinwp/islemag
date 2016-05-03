@@ -268,17 +268,16 @@ function islemag_strip_tags(input, allowed) {
 		} );
   } );
 	// Logo
-	wp.customize( "islemag_logo", function( value ) {
+	wp.customize( "custom_logo", function( value ) {
   	value.bind( function( to ) {
 			if( to != '' ) {
-				$( '.islemag_logo' ).removeClass( 'islemag_only_customizer' );
+				$( '.custom-logo-link' ).removeClass( 'islemag_only_customizer' );
 				$( '.header-logo-wrap' ).addClass( 'islemag_only_customizer' );
 			}
 			else {
-				$( '.islemag_logo' ).addClass( 'islemag_only_customizer' );
+				$( '.custom-logo-link' ).addClass( 'islemag_only_customizer' );
 				$( '.header-logo-wrap' ).removeClass( 'islemag_only_customizer' );
 			}
-	  	$(".islemag_logo img").attr( "src", to );
   	} );
   } );
 
