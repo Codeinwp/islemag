@@ -5442,6 +5442,7 @@ ul > li:hover > a,
 
 .about-author figure img{
 	border-radius: 50%;
+	margin: 0px;
 }
 
 .about-author h3 {
