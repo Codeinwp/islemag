@@ -14,6 +14,8 @@
  get_header();
 
 if( get_option( 'show_on_front' ) == 'posts'){
+	include( get_home_template() );
+} else {
 	$islemag_header_slider_category = esc_attr( get_theme_mod( 'islemag_header_slider_category', 'all' ) );
 	$islemag_header_slider_max_posts = esc_attr( get_theme_mod( 'islemag_header_slider_max_posts', '6' ) );
 
@@ -436,8 +438,5 @@ if( get_option( 'show_on_front' ) == 'posts'){
 		</div><!-- End .container -->
 	<?php
 	endif;
-
-} else {
-	include( get_page_template() );
 }?>
 <?php get_footer(); ?>
