@@ -68,13 +68,9 @@
                 <div class="col-md-3 col-sm-3 col-xs-12 navbar-brand">
                     <?php
                         global $wp_customize;
-                        $islemag_logo = get_theme_mod( 'islemag_logo' );
 
-                        if(!empty($islemag_logo)):
-
-                            echo '<a href="'.esc_url( home_url( '/' ) ).'" class="islemag_logo" title="'. esc_attr( get_bloginfo( 'title' ) ) .'">';
-                            echo '<img src="'.esc_url( $islemag_logo ).'" alt="'. esc_attr( get_bloginfo( 'title' ) ) .'">';
-                            echo '</a>';
+                        if ( function_exists( 'the_custom_logo' ) && has_custom_logo() ) :
+                            the_custom_logo();
                             echo '<div class="header-logo-wrap text-header islemag_only_customizer">';
                             echo '<h1 itemprop="headline" id="site-title" class="site-title"><a href="'.esc_url( home_url( '/' ) ).'" title="'.esc_attr( get_bloginfo( 'name', 'display' ) ).'" rel="home">'.get_bloginfo( 'name' ).'</a></h1>';
                             echo '<p itemprop="description" id="site-description" class="site-description">'.esc_attr( get_bloginfo( 'description' ) ).'</p>';
@@ -83,9 +79,9 @@
                         else:
 
                             if( isset( $wp_customize ) ):
-
-                                echo '<a href="'.esc_url( home_url( '/' ) ).'" class="islemag_logo islemag_only_customizer" title="'.esc_attr( get_bloginfo( 'title' ) ).'">';
-                                echo '<img src="" alt="'.esc_attr( get_bloginfo( 'title' ) ).'">';
+                                
+                                echo '<a href="'.esc_url( home_url( '/' ) ).'" class="custom-logo-link islemag_only_customizer" title="'.esc_attr( get_bloginfo( 'title' ) ).'">';
+                                echo '<img src="">';
                                 echo '</a>';
 
                             endif;
