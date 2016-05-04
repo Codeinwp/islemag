@@ -1,5 +1,15 @@
 
 
+### 1.0.5 - 04/05/2016
+
+ Changes: 
+
+
+ * Merge pull request #131 from cristian-ungureanu/development
+
+Development
+
+
 ### 1.0.4 - 04/04/2016
 
  Changes: 
