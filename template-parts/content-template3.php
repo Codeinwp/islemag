@@ -242,7 +242,8 @@ if ( $wp_query->have_posts() ) : ?>
         break;
       }
     endwhile;
-    wp_reset_postdata(); ?>
+     ?>
   </div> <!-- End .islemag-template3-posts -->
 </div> <!-- End .islemag-template3 -->
-<?php endif; ?>
+<?php endif;
+wp_reset_postdata(); ?>

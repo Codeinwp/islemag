@@ -64,9 +64,10 @@ if ( $wp_query->have_posts() ) : ?>
           </article> <!-- End .entry-overlay -->
         <?php
           endwhile;
-          wp_reset_postdata(); ?>
+        ?>
     </div> <!-- End .islemag-template1-posts -->
   </div> <!-- End .islemag-template1 -->
 <?php
   endif;
+  wp_reset_postdata();
 ?>

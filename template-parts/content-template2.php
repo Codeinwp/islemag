@@ -64,8 +64,9 @@ if ( $wp_query->have_posts() ) : ?>
         </div> <!-- End .col-sm-6 -->
     <?php
       endwhile;
-      wp_reset_postdata(); ?>
+     ?>
 
     </div> <!-- End .row -->
   </div> <!-- End .post-section -->
-<?php endif; ?>
+<?php endif; 
+wp_reset_postdata(); ?>

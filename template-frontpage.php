@@ -33,9 +33,8 @@ if ( $wp_query->have_posts() ) { ?>
 	get_template_part( 'template-parts/content', 'none' );
 
 }
-wp_reset_postdata();
+wp_reset_postdata(); ?>
 
-?>
 	<div class="container">
 		<div class="row">
 
@@ -426,5 +425,4 @@ wp_reset_postdata();
 		</div><!-- End .row -->
 	</div><!-- End .container -->
 <?php
-
 get_footer();
