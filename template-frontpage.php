@@ -15,7 +15,7 @@ $wp_query = new WP_Query( array(
 	'category_name'         =>  ( !empty( $islemag_header_slider_category ) && $islemag_header_slider_category != 'all' ? $islemag_header_slider_category : '' )
 ) );
 
-if ( $wp_query->have_posts() ) : ?>
+if ( $wp_query->have_posts() ) { ?>
 
 	<div class="islemag-top-container">
 		<div class="owl-carousel islemag-top-carousel rect-dots">
@@ -23,19 +23,19 @@ if ( $wp_query->have_posts() ) : ?>
 			while ( $wp_query->have_posts() ) : $wp_query->the_post();
 				get_template_part( 'template-parts/slider-posts', get_post_format() );
 			endwhile;
-			wp_reset_postdata(); ?>
+			 ?>
 		</div><!-- End .islemag-top-carousel -->
 	</div><!-- End .islemag-top-container -->
 
 <?php
-else :
+} else {
 
 	get_template_part( 'template-parts/content', 'none' );
 
-endif; ?>
+}
+wp_reset_postdata();
 
-<?php
-if ( have_posts() ) : ?>
+?>
 	<div class="container">
 		<div class="row">
 
@@ -426,6 +426,5 @@ if ( have_posts() ) : ?>
 		</div><!-- End .row -->
 	</div><!-- End .container -->
 <?php
-endif;
 
 get_footer();
