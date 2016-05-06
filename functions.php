@@ -301,7 +301,7 @@ function islemag_scripts() {
 
 	wp_enqueue_style( 'islemag-fontawesome', get_stylesheet_directory_uri().'/css/font-awesome.min.css',array(), '4.4.0');
 
-	if( is_front_page() ){
+	if( is_page_template('template-frontpage.php') ){
 		wp_enqueue_script( 'islemag-script-index', get_template_directory_uri() . '/js/script.index.js', array('jquery'), '1.0.0', true );
 	}
 
@@ -497,13 +497,14 @@ function islemag_requestpost() {
 					while ( $wp_query->have_posts() ) : $wp_query->the_post();
 						get_template_part( 'template-parts/slider-posts', get_post_format() );
 					endwhile;
-					wp_reset_postdata(); ?>
+					?>
 	        	</div><!-- End .islemag-top-carousel -->
 	        </div><!-- End .islemag-top-container -->
 		<?php
 		else :
 			get_template_part( 'template-parts/content', 'none' );
 		endif;
+		wp_reset_postdata();
 	}
 
 	if( $section == 'islemag_section1_category' ){
