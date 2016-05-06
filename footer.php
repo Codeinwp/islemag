@@ -18,63 +18,56 @@
                 <div class="container">
                     <div class="row">
 
-												<div class="col-md-3 col-sm-6">
-													<?php
-														global $wp_customize;
-														$islemag_footer_logo = get_theme_mod( 'islemag_footer_logo' );
-														$islemag_footer_link = get_theme_mod( 'islemag_footer_link', '#' );
-														$islemag_footer_text = get_theme_mod( 'islemag_footer_text', '<p>
-															Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus a efficitur orci, a dictum nunc.
-															Phasellus enim risus, vehicula in est a, lobortis convallis metus. Duis sed accumsan mi.
-															Suspendisse eget ultricies est, ac suscipit dui.
-														</p>
-														<address>
-															Visit us: <a href="#">Test.com</a><br />
-									            Email: <a href="mailto:test@test.com">test@test.com</a><br />
-														<br />
-									            <abbr title="copyright">Your Company</abbr> &copy;
-									          </address>' );
-														$islemag_footer_socials_title = get_theme_mod( 'islemag_footer_socials_title', esc_html__( 'Find Us at:', 'islemag' ) );
-														$islemag_footer_social_icons = get_theme_mod( 'islemag_footer_social_icons',json_encode( array(
-																array('icon_value' =>'fa-facebook' , 'link' => '#', 'id' => 'islemag_57027801213be'),
-																array('icon_value' =>'fa-twitter' , 'link' => '#', 'id' => 'islemag_57027802213bf'),
-																array('icon_value' =>'fa-google-plus' , 'link' => '#', 'id' => 'islemag_57027803213c0'),
-																array('icon_value' =>'fa-skype' , 'link' => '#', 'id' => 'islemag_57027804213c1'),
-																array('icon_value' =>'fa-linkedin' , 'link' => '#', 'id' => 'islemag_57027805213c2')
-																		)
-															) );
+						<div class="col-md-3 col-sm-6">
+							<?php
+								global $wp_customize;
+								$islemag_footer_logo = get_theme_mod( 'islemag_footer_logo' );
+								$islemag_footer_link = get_theme_mod( 'islemag_footer_link', '#' );
+								$islemag_footer_text = get_theme_mod( 'islemag_footer_text', '<p>
+									Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus a efficitur orci, a dictum nunc.
+									Phasellus enim risus, vehicula in est a, lobortis convallis metus. Duis sed accumsan mi.
+									Suspendisse eget ultricies est, ac suscipit dui. </p><address>Visit us: <a href="#">Test.com</a><br />Email: <a href="mailto:test@test.com">test@test.com</a><br /><br /><abbr title="copyright">Your Company</abbr> &copy;</address>' );
+								$islemag_footer_socials_title = get_theme_mod( 'islemag_footer_socials_title', esc_html__( 'Find Us at:', 'islemag' ) );
+								$islemag_footer_social_icons = get_theme_mod( 'islemag_footer_social_icons',json_encode( array(
+										array('icon_value' =>'fa-facebook' , 'link' => '#', 'id' => 'islemag_57027801213be'),
+										array('icon_value' =>'fa-twitter' , 'link' => '#', 'id' => 'islemag_57027802213bf'),
+										array('icon_value' =>'fa-google-plus' , 'link' => '#', 'id' => 'islemag_57027803213c0'),
+										array('icon_value' =>'fa-skype' , 'link' => '#', 'id' => 'islemag_57027804213c1'),
+										array('icon_value' =>'fa-linkedin' , 'link' => '#', 'id' => 'islemag_57027805213c2')
+										)
+								) );
 
-														if( !empty( $islemag_footer_logo ) ){
-															echo '<a class="islemag-footer-logo" href="'.( !empty( $islemag_footer_link ) ? esc_url( $islemag_footer_link ) : esc_url( home_url( '/' ) ) ).'">';
-															echo '<img src="'.esc_url( $islemag_footer_logo ).'" alt="'. esc_attr( get_bloginfo( 'title' ) ) .'">';
-															echo '</a>';
-														} else {
-															if( isset( $wp_customize ) ):
-																echo '<a class="islemag-footer-logo" href="">';
-																echo '<img src="" alt="'. esc_attr( get_bloginfo( 'title' ) ) .'">';
-																echo '</a>';
-															endif;
-														}
+								if( !empty( $islemag_footer_logo ) ){
+									echo '<a class="islemag-footer-logo" href="'.( !empty( $islemag_footer_link ) ? esc_url( $islemag_footer_link ) : esc_url( home_url( '/' ) ) ).'">';
+									echo '<img src="'.esc_url( $islemag_footer_logo ).'" alt="'. esc_attr( get_bloginfo( 'title' ) ) .'">';
+									echo '</a>';
+								} else {
+									if( isset( $wp_customize ) ):
+										echo '<a class="islemag-footer-logo" href="">';
+										echo '<img src="" alt="'. esc_attr( get_bloginfo( 'title' ) ) .'">';
+										echo '</a>';
+									endif;
+								}
 
-														if( !empty( $islemag_footer_text ) ){
-															echo '<div class="islemag-footer-content">'.$islemag_footer_text.'</div>';
-														} else {
-															if( isset( $wp_customize ) ):
-																echo '<div class="islemag-footer-content"></div>';
-															endif;
-														}
+								if( !empty( $islemag_footer_text ) ){
+									echo '<div class="islemag-footer-content">'.$islemag_footer_text.'</div>';
+								} else {
+									if( isset( $wp_customize ) ):
+										echo '<div class="islemag-footer-content"></div>';
+									endif;
+								}
 
-														if( !empty( $islemag_footer_socials_title ) ){
-															echo '<span class="social-icons-label">'.$islemag_footer_socials_title.'</span>';
-														} else {
-															if( isset( $wp_customize ) ):
-																echo '<span class="social-icons-label"></span>';
-															endif;
-														}
-													?>
-														<div class="footer-social-icons">
-														<?php
-															if( !empty( $islemag_footer_social_icons ) ){
+								if( !empty( $islemag_footer_socials_title ) ){
+									echo '<span class="social-icons-label">'.$islemag_footer_socials_title.'</span>';
+								} else {
+									if( isset( $wp_customize ) ):
+										echo '<span class="social-icons-label"></span>';
+									endif;
+								}
+							?>
+							<div class="footer-social-icons">
+							<?php
+									if( !empty( $islemag_footer_social_icons ) ){
 			                            $islemag_footer_social_icons_decode = json_decode( $islemag_footer_social_icons );
 			                            if( !empty( $islemag_footer_social_icons_decode ) ){
 			                                foreach( $islemag_footer_social_icons_decode as $icon ){
@@ -83,10 +76,9 @@
 			                                }
 			                            }
 			                        }
-														?>
-														</div>
-
-												</div>
+							?>
+							</div><!-- .footer-social-icons -->
+						</div><!-- .col-md-3.col-sm-6 -->
 
                         <?php if( is_active_sidebar( 'islemag-first-footer-area' ) ){ ?>
                                 <div itemscope itemtype="http://schema.org/WPSideBar" class="col-md-3 col-sm-6" id="sidebar-widgets-area-1" aria-label="<?php esc_html_e('Widgets Area 1','islemag'); ?>">
@@ -106,7 +98,7 @@
                                 </div>
                         <?php
                             	}
-												?>
+						?>
 
                     </div><!-- End .row -->
                 </div><!-- End .container -->
@@ -118,7 +110,7 @@
                             <?php
 
                                 $defaults = array(
-                                    'theme_location'  => 'footer',
+                                    'theme_location'  => 'islemag-footer',
                                     'fallback_cb'     => false,
                                     'items_wrap'      => '<ul class="footer-menu" id="%1$s" class="%2$s">%3$s</ul>',
                                     'depth'           => 0,
@@ -129,11 +121,11 @@
                             ?>
                         </div><!-- End .col-md-6 -->
                         <div class="col-md-6 col-md-pull-6 powerdby">
-													<?php
-														$sitename = esc_attr( get_bloginfo( 'title' ) );
-														$themelink = '<a href="//themeisle.com/themes/islemag/">Themeisle</a>';
-														$wplink = '<a href="//wordpress.org/">WordPress</a>';
-														printf( esc_html__( '%1$s is proudly powered by %2$s and %3$s.', 'islemag' ), ( !empty( $sitename ) ? $sitename : esc_html__( 'Islemag','islemag' ) ) , $themelink, $wplink );?>
+							<?php printf(
+								__( '%1$s powered by %2$s', 'islemag' ),
+								sprintf( '<a href="https://themeisle.com/themes/islemag/" rel="nofollow">%s</a>', esc_html__( 'Islemag', 'islemag' ) ),
+								sprintf( '<a href="http://wordpress.org/" rel="nofollow">%s</a>', esc_html__( 'WordPress', 'islemag' ) )
+							); ?>
                         </div><!-- End .col-md-6 -->
                     </div><!-- End .row -->
                 </div><!-- End .container -->
