@@ -485,7 +485,7 @@ function islemag_requestpost() {
 
 		$wp_query = new WP_Query( array(
 			'posts_per_page'        => $nb_of_posts,
-			'order'                 => 'ASC',
+			'order'                 => 'DESC',
 			'post_status'           => 'publish',
 			'category_name'         =>  ( !empty( $cat ) && $cat != 'all' ? $cat : '' )
 		));

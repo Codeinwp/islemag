@@ -2,7 +2,7 @@
 $wp_query = new WP_Query(
   array(
         'posts_per_page'      => $islemag_section_max_posts,
-        'order'               => 'ASC',
+        'order'               => 'DESC',
         'no_found_rows'       => true,
         'ignore_sticky_posts' => true,
         'post_status'         => 'publish',
