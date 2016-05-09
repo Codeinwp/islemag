@@ -10,7 +10,7 @@
 get_header(); ?>
 
 		<div id="primary" class="content-area">
-			<div class="islemag-content-left <?php if ( !is_active_sidebar( 'islemag-sidebar' ) ) { echo 'col-md-12'; } else { echo 'col-md-9'; } ?>">
+			<div class="islemag-content-left">
 				<main id="main" class="site-main" role="main">
 
 				<?php while ( have_posts() ) : the_post(); ?>

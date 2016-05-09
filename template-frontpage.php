@@ -38,7 +38,7 @@ wp_reset_postdata(); ?>
 	<div class="container">
 		<div class="row">
 
-			<div class="islemag-content-left <?php if ( !is_active_sidebar( 'islemag-sidebar' ) ) { echo 'col-md-12'; } else { echo 'col-md-9'; } ?>">
+			<div class="islemag-content-left">
 				<?php 
 				$colors = array( "red", "orange", "blue", "green", "purple", "pink", "light_red" ); 
     
