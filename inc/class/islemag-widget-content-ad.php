@@ -34,9 +34,9 @@ class islemag_content_ad extends WP_Widget {
       if( !empty( $instance['ad_type'] ) && $instance['ad_type'] == 'image' ){
         if( !empty( $instance[$url] ) ){
           if( !empty( $instance[$link] ) ){
-            echo '<a href="' . esc_url( $instance[$link] ) . '" target="'.( !empty( $instance['new_tab'] ) && $instance['new_tab'] == 'on' ? '_blank' : '' ).'"><img src="' . esc_url( $instance[$url] ) . '" alt="' . ( !empty( $instance[$title_alt] ) ? esc_attr( $instance[$title_alt] ) : '' ) . '"/></a>';
+            echo '<a href="' . esc_url( $instance[$link] ) . '" target="'.( !empty( $instance['new_tab'] ) && $instance['new_tab'] == 'on' ? '_blank' : '' ).'"><img src="' . esc_url( $instance[$url] ) . '" /></a>';
           } else {
-            echo '<img src="' . esc_url( $instance[$url] ) . '" alt="'.( !empty( $instance[$title_alt] ) ? esc_attr( $instance[$title_alt] ) : '' ).'"/>';
+            echo '<img src="' . esc_url( $instance[$url] ) . '" />';
           }
         }
       } else {
