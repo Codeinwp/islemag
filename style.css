@@ -2082,6 +2082,7 @@ blockquote {
 
 	.main-navigation .nav-menu li{
 		display: list-item;
+		width: 100%;
 	}
 
 	.main-navigation li a{
