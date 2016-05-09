@@ -678,19 +678,3 @@ function islemag_widget_style() {
 		</style>';
 	}
 }
-
-
-function islemag_add_inline_style() {
-    if ( !is_active_sidebar( 'islemag-sidebar' ) ) {
-
-		$custom_css = " 
-						.islemag-content-left {
-							margin-left: 0;
-							padding: 0 15px;
-						}";
-    }
-    if( !empty($custom_css) ){
-    	wp_add_inline_style( 'islemag-style', $custom_css );
-    }
-}
-add_action( 'wp_enqueue_scripts', 'islemag_add_inline_style' );

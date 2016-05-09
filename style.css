@@ -3643,31 +3643,6 @@ ul > li:hover > a,
   background-color: #009688;
 }
 
-.islemag-content-right {
-	width: 330px;
-    padding: 0 15px;
-    float: right;
-}
-
-.islemag-content-left {	
-    float: left;
-    width: 100%;
-    padding: 0 15px;
-    margin-left: -330px;
-    padding-left: 345px;
-    padding-right: 15px;
-}
-
-@media (max-width: 991px) {
-	.islemag-content-left {	
-		margin-left: 0;
-		padding: 0 15px;
-	}
-
-	.islemag-content-right {
-		width: 100%;
-	}
-}
 .islemag-content-right .tagcloud a:hover {
 	background-color: #009688;
 }
@@ -5777,9 +5752,4 @@ ul > li:hover > a,
     padding: 6px;
     vertical-align: top;
     font-size: 16px;
-}
-
-/* Plugin compatibility */
-.tptn_link{
-	margin-right: 10px;
 }
