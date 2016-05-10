@@ -4139,6 +4139,11 @@ ul > li:hover > a,
 	border-top:1px solid #eaeaea;
 }
 
+.islemag-footer-container{
+	display: table;
+	width: 100%;
+}
+
 .copyright {
 	margin-bottom:0;
 }
@@ -4249,6 +4254,18 @@ ul > li:hover > a,
 		margin:9.5px 0;
 	}
 
+	.powerdby{
+		display: table-cell;
+		vertical-align: middle;
+		float: none;
+	}
+
+	.islemag-footer-menu{
+		display: table-cell;
+		vertical-align: middle;
+		float: none;
+	}
+
 }
 
 /* Footer Inverse */
@@ -4323,9 +4340,7 @@ ul > li:hover > a,
 	background-color: #7a7a7a;
 }
 
-.powerdby{
-	line-height: 41px;
-}
+
 
 /* Pirate forms widget*/
 .form_field_wrap {

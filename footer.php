@@ -104,31 +104,29 @@
                 </div><!-- End .container -->
             </div><!-- End #footer-inner -->
             <div id="footer-bottom" class="no-bg">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-6 col-md-push-6">
-                            <?php
+                <div class="islemag-footer-container">
+                    <div class="col-md-8 col-md-push-4 islemag-footer-menu">
+                        <?php
 
-                                $defaults = array(
-                                    'theme_location'  => 'islemag-footer',
-                                    'fallback_cb'     => false,
-                                    'items_wrap'      => '<ul class="footer-menu" id="%1$s" class="%2$s">%3$s</ul>',
-                                    'depth'           => 0,
-                                );
+                            $defaults = array(
+                                'theme_location'  => 'islemag-footer',
+                                'fallback_cb'     => false,
+                                'items_wrap'      => '<ul class="footer-menu" id="%1$s" class="%2$s">%3$s</ul>',
+                                'depth'           => 1,
+                            );
 
-                                wp_nav_menu( $defaults );
+                            wp_nav_menu( $defaults );
 
-                            ?>
-                        </div><!-- End .col-md-6 -->
-                        <div class="col-md-6 col-md-pull-6 powerdby">
-							<?php printf(
-								__( '%1$s powered by %2$s', 'islemag' ),
-								sprintf( '<a href="https://themeisle.com/themes/islemag/" rel="nofollow">%s</a>', esc_html__( 'Islemag', 'islemag' ) ),
-								sprintf( '<a href="http://wordpress.org/" rel="nofollow">%s</a>', esc_html__( 'WordPress', 'islemag' ) )
-							); ?>
-                        </div><!-- End .col-md-6 -->
-                    </div><!-- End .row -->
-                </div><!-- End .container -->
+                        ?>
+                    </div><!-- End .col-md-6 -->
+                    <div class="col-md-4 col-md-pull-8 powerdby">
+						<?php printf(
+							__( '%1$s powered by %2$s', 'islemag' ),
+							sprintf( '<a href="https://themeisle.com/themes/islemag/" rel="nofollow">%s</a>', esc_html__( 'Islemag', 'islemag' ) ),
+							sprintf( '<a href="http://wordpress.org/" rel="nofollow">%s</a>', esc_html__( 'WordPress', 'islemag' ) )
+						); ?>
+                    </div><!-- End .col-md-6 -->
+                </div><!-- End .row -->
             </div><!-- End #footer-bottom -->
         </footer><!-- End #footer -->
 	</div><!-- #page -->
