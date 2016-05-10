@@ -95,12 +95,12 @@
                     ?>
                 </div>
             
-                <?php 
-                if( is_active_sidebar( 'islemag-header-ad' ) ){ 
-                    echo '<div class="col-md-9 col-sm-9 col-xs-12 islemag-banner">';
-                    dynamic_sidebar( 'islemag-header-ad' );
-                    echo '</div>';
-                } ?>
+                <div class="col-md-9 col-sm-9 col-xs-12 islemag-banner">
+                    <?php 
+                    if( is_active_sidebar( 'islemag-header-ad' ) ){ 
+                        dynamic_sidebar( 'islemag-header-ad' );
+                    } ?>
+                </div>
 
 
             </div>

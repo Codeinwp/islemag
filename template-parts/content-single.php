@@ -14,13 +14,30 @@
             <div class="col-md-12">
 
                 <article id="post-<?php echo $post_id; ?>" <?php post_class("entry single"); ?>>
-                  <?php if ( has_post_thumbnail() ) { ?>
+                  <?php 
+                  $islemag_single_post_hide_thumbnail = get_theme_mod('islemag_single_post_hide_thumbnail','1');
+                  if( !isset($islemag_single_post_hide_thumbnail) || $islemag_single_post_hide_thumbnail !='1'){
+                    if ( has_post_thumbnail() ) { ?>
                       <div class="entry-media">
-                          <figure>
-                                  <?php the_post_thumbnail(); ?>
-                          </figure>
+                        <figure>
+                          <?php the_post_thumbnail(); ?>
+                        </figure>
                       </div><!-- End .entry-media -->
-                  <?php } ?>
+                  <?php 
+                    } 
+                  } else {
+                    if (is_customize_preview()){ 
+                      if ( has_post_thumbnail() ) { ?>
+                        <div class="entry-media islemag_only_customizer">
+                          <figure>
+                            <?php the_post_thumbnail(); ?>
+                          </figure>
+                        </div><!-- End .entry-media -->
+                    <?php
+                      }
+                    }
+                  } ?>
+                  
                   <span class="entry-date"><?php echo get_the_date( 'd' ); ?><span><?php echo strtoupper( get_the_date( 'M' ) ); ?></span></span>
                   <?php
                     $id = get_the_ID();

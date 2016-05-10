@@ -306,6 +306,13 @@ function islemag_customize_register( $wp_customize ) {
 			'sanitize_callback'			=> 'sanitize_text_field'
 	) );
 
+	$wp_customize->add_setting( 'islemag_single_post_hide_thumbnail', array(
+			'default' => '1',
+			'transport' => 'postMessage',
+			'sanitize_callback'			=> 'sanitize_text_field'
+	) );
+	
+
 	$wp_customize->add_setting( 'islemag_footer_logo', array(
 			'sanitize_callback'			=> 'esc_url',
 			'transport'							=> 'postMessage'
@@ -579,6 +586,14 @@ function islemag_customize_register( $wp_customize ) {
 			'description' 						=> __( 'If you check this box, related posts will disappear from single page.','islemag' ),
 			'section' 								=> 'islemag_single_post',
 			'priority' 								=> 2,
+	) );
+
+	$wp_customize->add_control( 'islemag_single_post_hide_thumbnail', array(
+			'type' 										=> 'checkbox',
+			'label'										=> __( 'Hide post thumbnail on single page?', 'islemag' ),
+			'description' 						=> __( 'If you check this box, the thumbnail will disappear from single page.','islemag' ),
+			'section' 								=> 'islemag_single_post',
+			'priority' 								=> 3,
 	) );
 
 	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'islemag_footer_logo', array(
