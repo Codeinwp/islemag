@@ -10,7 +10,7 @@ $islemag_header_slider_max_posts = esc_attr( get_theme_mod( 'islemag_header_slid
 
 $wp_query = new WP_Query( array(
 	'posts_per_page'        => $islemag_header_slider_max_posts,
-	'order'                 => 'ASC',
+	'order'                 => 'DESC',
 	'post_status'           => 'publish',
 	'category_name'         =>  ( !empty( $islemag_header_slider_category ) && $islemag_header_slider_category != 'all' ? $islemag_header_slider_category : '' )
 ) );

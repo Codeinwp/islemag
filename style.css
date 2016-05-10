@@ -1867,15 +1867,28 @@ blockquote {
 	display: inline-block;
 }
 
+.header-logo-wrap h1{
+	margin: 0;
+}
+
+.header-content{
+    display: table;
+    width: 100%;
+    min-height: 100px;
+}
 .navbar-brand {
     text-align: center;
     position: relative;
-    float: left;
     padding: 0;
     font: 700 32px/1 'Raleway', Verdana, sans-serif;
     transition: color 0.3s ease;
     -webkit-transition: color 0.3s ease;
-    height: 100px;
+    height: auto;
+    min-height: 100px;
+    display: table-cell;
+    vertical-align: middle;
+    float: none;
+    padding: 0 15px;
 }
 
 .navbar-brand a:hover,
@@ -1903,8 +1916,9 @@ blockquote {
 }
 
 .islemag-banner{
-    line-height: 100px;
-}
+    display: table-cell;
+    vertical-align: middle;
+    float: none;}
 
 .islemag-banner .islemag_content_ad{
 	margin-bottom: 0;
@@ -2069,6 +2083,7 @@ blockquote {
 
 	.main-navigation .nav-menu li{
 		display: list-item;
+		width: 100%;
 	}
 
 	.main-navigation li a{

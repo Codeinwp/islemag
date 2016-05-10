@@ -848,6 +848,15 @@ function islemag_strip_tags(input, allowed) {
 		} );
 	} );
 
+	wp.customize( 'islemag_single_post_hide_thumbnail', function( value ) {
+		value.bind( function( to ) {
+				if ( '1' != to ) {
+					$('.post .entry-media').removeClass( 'islemag_only_customizer' );
+				} else {
+					$('.post .entry-media').addClass( 'islemag_only_customizer' );
+				}
+		} );
+	} );
 
 
   wp.customize( 'islemag_footer_logo' , function( value ){
