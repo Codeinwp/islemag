@@ -1879,7 +1879,6 @@ blockquote {
 .navbar-brand {
     text-align: center;
     position: relative;
-    padding: 0;
     font: 700 32px/1 'Raleway', Verdana, sans-serif;
     transition: color 0.3s ease;
     -webkit-transition: color 0.3s ease;
@@ -1888,7 +1887,7 @@ blockquote {
     display: table-cell;
     vertical-align: middle;
     float: none;
-    padding: 0 15px;
+    padding: 15px;
 }
 
 .navbar-brand a:hover,
@@ -2168,6 +2167,24 @@ blockquote {
 		border: none;
 	}
 
+	.main-navigation ul {
+		padding-left: 15px;
+	}
+
+	.main-navigation ul .toggled-on {
+		display: block;
+	}
+
+	.site-header-menu.toggled-on {
+		display: block;
+	}
+
+	.site-header-menu.toggled-on {
+		display: block;
+	}
+	.main-navigation ul .toggled-on {
+		display: block;
+	}
 }
 
 /* ============================================
