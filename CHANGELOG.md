@@ -1,5 +1,20 @@
 
 
+### 1.0.6 - 10/05/2016
+
+ Changes: 
+
+
+ * #143 - fixed sidebar issue
+ * Revert "#143 - fixed sidebar issue"
+
+This reverts commit 59f9673f2363ab1fb95b92d14c3abb57a0fc214c.
+ * #145 - added option to hide the thumbnail on single page
+ * Merge pull request #147 from cristian-ungureanu/development
+
+Development
+
+
 ### 1.0.5 - 04/05/2016
 
  Changes: 
