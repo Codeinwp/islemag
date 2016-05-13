@@ -1875,6 +1875,7 @@ blockquote {
     display: table;
     width: 100%;
     min-height: 100px;
+    padding: 15px;
 }
 .navbar-brand {
     text-align: center;
@@ -1887,7 +1888,6 @@ blockquote {
     display: table-cell;
     vertical-align: middle;
     float: none;
-    padding: 15px;
 }
 
 .navbar-brand a:hover,
