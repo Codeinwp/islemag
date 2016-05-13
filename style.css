@@ -346,7 +346,6 @@ acronym {
 
 mark,
 ins {
-	background: #fff9c0;
 	text-decoration: none;
 }
 
@@ -1350,7 +1349,8 @@ label.input-desc {
     font-family: 'Open Sans', Verdana;
     text-transform: uppercase;
     margin-bottom: 7px;
-		display: inline-block;
+	display: inline-block;
+	width: 100%;
 }
 
 .form-control {
@@ -1381,6 +1381,7 @@ textarea.form-control {
 
 .form-group .form-control {
     margin-bottom: 0;
+    width: 100%;
 }
 
 .form-control:focus {
@@ -1422,9 +1423,6 @@ textarea.form-control {
 }
 
 @media (max-width: 767px){
-	.form-group .form-control{
-	    margin-left: 20px;
-	}
 
 	.form-group textarea{
 		margin:0;
@@ -4408,10 +4406,6 @@ ul > li:hover > a,
 	width: 100%;
 }
 
-.construct{
-	display: inline-block;
-}
-
 .islemag-content-right .form_field_wrap input {
 	background-color: #fff;
 	border: 1px solid #eaeaea;
@@ -4557,6 +4551,7 @@ ul > li:hover > a,
 	.page-header.larger2x {
 		padding:50px 0;
 	}
+
 }
 
 @media (min-width:992px) {

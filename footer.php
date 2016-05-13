@@ -18,7 +18,7 @@
                 <div class="container">
                     <div class="row">
 
-						<div class="col-md-3 col-sm-6">
+						<div class="col-md-3 col-sm-12">
 							<?php
 								global $wp_customize;
 								$islemag_footer_logo = get_theme_mod( 'islemag_footer_logo' );
@@ -81,19 +81,19 @@
 						</div><!-- .col-md-3.col-sm-6 -->
 
                         <?php if( is_active_sidebar( 'islemag-first-footer-area' ) ){ ?>
-                                <div itemscope itemtype="http://schema.org/WPSideBar" class="col-md-3 col-sm-6" id="sidebar-widgets-area-1" aria-label="<?php esc_html_e('Widgets Area 1','islemag'); ?>">
+                                <div itemscope itemtype="http://schema.org/WPSideBar" class="col-md-3 col-sm-12" id="sidebar-widgets-area-1" aria-label="<?php esc_html_e('Widgets Area 1','islemag'); ?>">
                                     <?php dynamic_sidebar( 'islemag-first-footer-area' ); ?>
                                 </div>
                         <?php }
 
 								if( is_active_sidebar( 'islemag-second-footer-area' ) ){ ?>
-                                <div itemscope itemtype="http://schema.org/WPSideBar" role="complementary" id="sidebar-widgets-area-2" class="col-md-3 col-sm-6" aria-label="<?php esc_html_e('Widgets Area 2','islemag'); ?>">
+                                <div itemscope itemtype="http://schema.org/WPSideBar" role="complementary" id="sidebar-widgets-area-2" class="col-md-3 col-sm-12" aria-label="<?php esc_html_e('Widgets Area 2','islemag'); ?>">
                                     <?php dynamic_sidebar( 'islemag-second-footer-area' ); ?>
                                 </div>
                         <?php }
 
 								if( is_active_sidebar( 'islemag-third-footer-area' ) ){ ?>
-                                <div itemscope itemtype="http://schema.org/WPSideBar" role="complementary" id="sidebar-widgets-area-3" class="col-md-3 col-sm-6" aria-label="<?php esc_html_e('Widgets Area 3','islemag'); ?>">
+                                <div itemscope itemtype="http://schema.org/WPSideBar" role="complementary" id="sidebar-widgets-area-3" class="col-md-3 col-sm-12" aria-label="<?php esc_html_e('Widgets Area 3','islemag'); ?>">
                                    <?php dynamic_sidebar( 'islemag-third-footer-area' ); ?>
                                 </div>
                         <?php
