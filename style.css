@@ -3589,11 +3589,11 @@ styled buttons not container for vertical centered navs*/
 
 /* Category page */
 
-.category .page-header h1{
+.category .page-header h1, .search .page-header h1{
 	margin: 20px 0px 35px 0px;
 }
 
-.category .page-header {
+.category .page-header, .search .page-header {
 	padding: 0;
 }
 
@@ -4792,6 +4792,12 @@ ul > li:hover > a,
 .entry-footer {
 	border-top:1px solid #eaeaea;
 	border-bottom:1px solid #eaeaea;
+}
+
+.entry-footer span + span:before{
+	content: " | ";
+    padding: 0 10px;
+    color:#505050;
 }
 
 .bg-gray .entry-footer {

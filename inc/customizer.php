@@ -140,11 +140,6 @@ function islemag_customize_register( $wp_customize ) {
 
 
 	$wp_customize->add_setting( 'islemag_social_icons', array(
-			'default' 	=> json_encode( array(
-								array('icon_value' =>'fa-facebook-official' , 'link' => '#', 'id' => 'islemag_5702771a213bb'),
-                                array('icon_value' =>'fa-google' , 'link' => '#', 'id' => 'islemag_57027720213bc'),
-                                array('icon_value' =>'fa-instagram' , 'link' => '#', 'id' => 'islemag_57027722213bd')
-							) ),
 			'transport'							=> 'postMessage',
 			'sanitize_callback' 		=> 'islemag_sanitize_repeater'
 	) );
@@ -319,31 +314,21 @@ function islemag_customize_register( $wp_customize ) {
 	) );
 
 	$wp_customize->add_setting( 'islemag_footer_link', array(
-			'default'								=> '#',
 			'sanitize_callback'			=> 'esc_url',
 			'transport'							=> 'postMessage'
 	) );
 
 	$wp_customize->add_setting( 'islemag_footer_text', array(
 			'sanitize_callback' => 'islemag_sanitize_html',
-			'default'	=>	'<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus a efficitur orci, a dictum nunc.Phasellus enim risus, vehicula in est a, lobortis convallis metus. Duis sed accumsan mi.Suspendisse eget ultricies est, ac suscipit dui.</p><address>Visit us: <a href="#">Test.com</a><br />Email: <a href="mailto:test@test.com">test@test.com</a><br /><br /><abbr title="copyright">Your Company</abbr> &copy;</address>',
 			'transport' => 'postMessage'
 	) );
 
 	$wp_customize->add_setting( 'islemag_footer_socials_title', array(
-			'default'								=>  esc_html__( 'Find Us at:', 'islemag' ),
 			'sanitize_callback'			=> 'sanitize_text_field',
 			'transport'							=> 'postMessage'
 	) );
 
 	$wp_customize->add_setting( 'islemag_footer_social_icons', array(
-			'default' 			=> json_encode( array(
-										array('icon_value' =>'fa-facebook' , 'link' => '#', 'id' => 'islemag_57027801213be'),
-										array('icon_value' =>'fa-twitter' , 'link' => '#', 'id' => 'islemag_57027802213bf'),
-										array('icon_value' =>'fa-google-plus' , 'link' => '#', 'id' => 'islemag_57027803213c0'),
-										array('icon_value' =>'fa-skype' , 'link' => '#', 'id' => 'islemag_57027804213c1'),
-										array('icon_value' =>'fa-linkedin' , 'link' => '#', 'id' => 'islemag_57027805213c2')
-									) ),
 			'transport'			=> 'postMessage',
 			'sanitize_callback' => 'islemag_sanitize_repeater'
 	) );
