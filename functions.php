@@ -414,7 +414,6 @@ add_action(  'customize_controls_enqueue_scripts', 'islemag_customizer_script'  
  **/
 function islemag_get_excerpt(){
 	$excerpt = get_the_content();
-	$permalink = get_the_permalink();
 	$excerpt = preg_replace(" (\[.*?\])",'',$excerpt);
 	$excerpt = strip_shortcodes($excerpt);
 	$excerpt = strip_tags($excerpt);
