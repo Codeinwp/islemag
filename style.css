@@ -948,6 +948,12 @@ a:active {
 	color:#009688 !important;
 }
 
+@media screen and (min-width: 768px) {		
+	.main-navigation ul {		
+		display: block;		
+	}		
+}
+
 .site-main .comment-navigation,
 .site-main .posts-navigation,
 .site-main .post-navigation {
@@ -3579,6 +3585,16 @@ styled buttons not container for vertical centered navs*/
 	.islemag-banner {
 		display:none;
 	}
+}
+
+/* Category page */
+
+.category .page-header h1{
+	margin: 20px 0px 35px 0px;
+}
+
+.page-header {
+	padding: 0;
 }
 
 /* SIDEBAR */
