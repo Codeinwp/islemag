@@ -38,7 +38,7 @@ function islemag_customize_register( $wp_customize ) {
 	$wp_customize->add_panel( 'sections_panel', array(
 		'priority' => 40,
 		'capability' => 'edit_theme_options',
-		'title' => esc_html__( 'Sections', 'islemag' )
+		'title' => esc_html__( 'Frontpage sections', 'islemag' )
 	) );
 
 	/*******************************
