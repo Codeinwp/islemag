@@ -39,6 +39,7 @@ The exceptions to this license are as follows:
     Licensed under MIT License (https://github.com/lcdsantos/jQuery-Selectric/blob/master/LICENSE)
 
 * fontawesome
+    Created by Dave Gandy
     -> Font License
         Licensed under SIL OFL 1.1 (http://scripts.sil.org/OFL)
     -> Code License
