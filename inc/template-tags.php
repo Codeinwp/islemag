@@ -49,7 +49,7 @@ function islemag_entry_footer() {
 		/* translators: used between list items, there is a space after the comma */
 		$categories_list = get_the_category_list( esc_html__( ', ', 'islemag' ) );
 		if ( $categories_list && islemag_categorized_blog() ) {
-			printf( '<span class="cat-links">' . esc_html__( 'Posted in: %1$s / ', 'islemag' ) . '</span>', $categories_list ); // WPCS: XSS OK.
+			printf( '<span class="cat-links">' . esc_html__( 'Posted in: %1$s', 'islemag' ) . '</span>', $categories_list ); // WPCS: XSS OK.
 		}
 
 		/* translators: used between list items, there is a space after the comma */
@@ -61,7 +61,7 @@ function islemag_entry_footer() {
 
 	if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
 		echo '<span class="comments-link">';
-		comments_popup_link( esc_html__( 'Leave a comment', 'islemag' ), esc_html__( '1 Comment', 'islemag' ), esc_html__( '% Comments', 'islemag' ) );
+		comments_popup_link( esc_html__( 'Leave a comment', 'islemag' ), esc_html__( 'Comment', 'islemag' ), esc_html__( '% Comments', 'islemag' ) );
 		echo '</span>';
 	}
 
@@ -69,7 +69,7 @@ function islemag_entry_footer() {
 
 		sprintf(
 			/* translators: %s: Name of current post */
-			( !empty ( $tags_list ) || !empty ($categories_list ) ? esc_html__( ' / Edit %s', 'islemag' ) : esc_html__( 'Edit %s', 'islemag' ) ),
+			( !empty ( $tags_list ) || !empty ($categories_list ) ? esc_html__( 'Edit %s', 'islemag' ) : esc_html__( 'Edit %s', 'islemag' ) ),
 			the_title( '<span class="screen-reader-text">"', '"</span>', false )
 		),
 		'<span class="edit-link">',

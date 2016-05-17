@@ -82,6 +82,14 @@ class islemag_multiple_ads extends WP_Widget {
                     'scrolling' => array(),
                     'frameborder' => array(),
                     'allowtransparency' => array()
+                  ),
+                  'script' => array(
+                    'type' => array(),
+                    'src' => array(),
+                    'charset' => array(),
+                  ),
+                  'div' => array(
+                    'id' => array()
                   )
                 );
 
