@@ -8,7 +8,7 @@ Version: 1.0.6
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: islemag
-Tags: gray, white, light, responsive-layout, two-columns, three-columns, right-sidebar, custom-background, custom-colors, custom-header, custom-menu, featured-images, sticky-post, theme-options, threaded-comments, translation-ready
+Tags: gray, green, white, light, responsive-layout, two-columns, three-columns, right-sidebar, custom-background, custom-colors, custom-menu, featured-images, full-width-template, post-formats, sticky-post, theme-options, threaded-comments, translation-ready
 */
 
 /*--------------------------------------------------------------
@@ -346,7 +346,6 @@ acronym {
 
 mark,
 ins {
-	background: #fff9c0;
 	text-decoration: none;
 }
 
@@ -949,11 +948,10 @@ a:active {
 	color:#009688 !important;
 }
 
-
-@media screen and (min-width: 37.5em) {
-	.main-navigation ul {
-		display: block;
-	}
+@media screen and (min-width: 768px) {		
+	.main-navigation ul {		
+		display: block;		
+	}		
 }
 
 .site-main .comment-navigation,
@@ -1350,7 +1348,8 @@ label.input-desc {
     font-family: 'Open Sans', Verdana;
     text-transform: uppercase;
     margin-bottom: 7px;
-		display: inline-block;
+	display: inline-block;
+	width: 100%;
 }
 
 .form-control {
@@ -1381,6 +1380,7 @@ textarea.form-control {
 
 .form-group .form-control {
     margin-bottom: 0;
+    width: 100%;
 }
 
 .form-control:focus {
@@ -1422,9 +1422,6 @@ textarea.form-control {
 }
 
 @media (max-width: 767px){
-	.form-group .form-control{
-	    margin-left: 20px;
-	}
 
 	.form-group textarea{
 		margin:0;
@@ -1875,11 +1872,11 @@ blockquote {
     display: table;
     width: 100%;
     min-height: 100px;
+    padding: 15px;
 }
 .navbar-brand {
     text-align: center;
     position: relative;
-    padding: 0;
     font: 700 32px/1 'Raleway', Verdana, sans-serif;
     transition: color 0.3s ease;
     -webkit-transition: color 0.3s ease;
@@ -1888,7 +1885,6 @@ blockquote {
     display: table-cell;
     vertical-align: middle;
     float: none;
-    padding: 0 15px;
 }
 
 .navbar-brand a:hover,
@@ -2168,6 +2164,24 @@ blockquote {
 		border: none;
 	}
 
+	.main-navigation ul {
+		padding-left: 15px;
+	}
+
+	.main-navigation ul .toggled-on {
+		display: block;
+	}
+
+	.site-header-menu.toggled-on {
+		display: block;
+	}
+
+	.site-header-menu.toggled-on {
+		display: block;
+	}
+	.main-navigation ul .toggled-on {
+		display: block;
+	}
 }
 
 /* ============================================
@@ -3573,6 +3587,16 @@ styled buttons not container for vertical centered navs*/
 	}
 }
 
+/* Category page */
+
+.category .page-header h1, .search .page-header h1{
+	margin: 20px 0px 35px 0px;
+}
+
+.category .page-header, .search .page-header {
+	padding: 0;
+}
+
 /* SIDEBAR */
 
 .islemag_multiple_ads{
@@ -4122,6 +4146,11 @@ ul > li:hover > a,
 	border-top:1px solid #eaeaea;
 }
 
+.islemag-footer-container{
+	display: table;
+	width: 100%;
+}
+
 .copyright {
 	margin-bottom:0;
 }
@@ -4232,6 +4261,18 @@ ul > li:hover > a,
 		margin:9.5px 0;
 	}
 
+	.powerdby{
+		display: table-cell;
+		vertical-align: middle;
+		float: none;
+	}
+
+	.islemag-footer-menu{
+		display: table-cell;
+		vertical-align: middle;
+		float: none;
+	}
+
 }
 
 /* Footer Inverse */
@@ -4306,9 +4347,7 @@ ul > li:hover > a,
 	background-color: #7a7a7a;
 }
 
-.powerdby{
-	line-height: 41px;
-}
+
 
 /* Pirate forms widget*/
 .form_field_wrap {
@@ -4374,10 +4413,6 @@ ul > li:hover > a,
 	padding: 9px 16px;
 	height: 38px;
 	width: 100%;
-}
-
-.construct{
-	display: inline-block;
 }
 
 .islemag-content-right .form_field_wrap input {
@@ -4525,6 +4560,7 @@ ul > li:hover > a,
 	.page-header.larger2x {
 		padding:50px 0;
 	}
+
 }
 
 @media (min-width:992px) {
@@ -4756,6 +4792,12 @@ ul > li:hover > a,
 .entry-footer {
 	border-top:1px solid #eaeaea;
 	border-bottom:1px solid #eaeaea;
+}
+
+.entry-footer span + span:before{
+	content: " | ";
+    padding: 0 10px;
+    color:#505050;
 }
 
 .bg-gray .entry-footer {

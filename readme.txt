@@ -1,7 +1,7 @@
 === IsleMag ===
 
 Contributors: codeinwp
-Tags: gray, white, light, responsive-layout, two-columns, three-columns, right-sidebar, custom-background, custom-colors, custom-header, custom-menu, featured-images, sticky-post, theme-options, threaded-comments, translation-ready
+Tags: gray, green, white, light, responsive-layout, two-columns, three-columns, right-sidebar, custom-background, custom-colors, custom-menu, featured-images, full-width-template, post-formats, sticky-post, theme-options, threaded-comments, translation-ready
 
 Requires at least: 4.0
 Tested up to: 4.4
@@ -36,11 +36,14 @@ The exceptions to this license are as follows:
 
 * jQuery-Selectric
     Copyright (c) 2016 Leonardo Santos
-    Licensed under MIT (https://github.com/lcdsantos/jQuery-Selectric/blob/master/LICENSE)
+    Licensed under MIT License (https://github.com/lcdsantos/jQuery-Selectric/blob/master/LICENSE)
 
 * fontawesome
     Created by Dave Gandy
-    Licensed under SIL OFL 1.1 (http://scripts.sil.org/OFL)
+    -> Font License
+        Licensed under SIL OFL 1.1 (http://scripts.sil.org/OFL)
+    -> Code License
+        Licensed under MIT License (http://opensource.org/licenses/mit-license.html)
 
 * Images
 
