@@ -11,7 +11,7 @@
   <div class="container">
     <div class="row">
 
-      <section class="no-results not-found <?php if ( !is_active_sidebar( 'islemag-sidebar' ) ) { echo 'col-md-12'; } else { echo 'col-md-9'; } ?>">
+      <section class="no-results not-found col-md-9">
         <header class="page-header">
           <h1 class="page-title"><?php esc_html_e( 'Nothing Found', 'islemag' ); ?></h1>
         </header><!-- End .page-header -->

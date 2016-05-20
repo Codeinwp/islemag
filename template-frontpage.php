@@ -43,7 +43,7 @@ wp_reset_postdata(); ?>
 				$colors = array( "red", "orange", "blue", "green", "purple", "pink", "light_red" ); 
     
     			/* ---------Section 1--------- */
-				if ( is_active_sidebar( 'islemag-sidebar' ) && get_theme_mod( 'islemag_section1_fullwidth', false) == false ) { ?>
+				if ( get_theme_mod( 'islemag_section1_fullwidth', false) == false ) { ?>
 					<div class="islemag-section1">
 						<?php 
 						if( is_active_sidebar( 'islemag-ads' ) ){ ?>
@@ -79,7 +79,7 @@ wp_reset_postdata(); ?>
 
 
 				/* ---------Section 2--------- */
-				if ( is_active_sidebar( 'islemag-sidebar' ) && get_theme_mod( 'islemag_section2_fullwidth', false) == false ) { ?>
+				if ( get_theme_mod( 'islemag_section2_fullwidth', false) == false ) { ?>
 					<div class="islemag-section2">
 						<?php 
 						if( is_active_sidebar( 'ads-2' ) ){ ?>
@@ -116,7 +116,7 @@ wp_reset_postdata(); ?>
 
 
 				/* ---------Section 3--------- */
-				if ( is_active_sidebar( 'islemag-sidebar' ) && get_theme_mod( 'islemag_section3_fullwidth', false) == false ) { ?>
+				if ( get_theme_mod( 'islemag_section3_fullwidth', false) == false ) { ?>
 					<div class="islemag-section3">
 						<?php 
 						if( is_active_sidebar( 'ads-3' ) ){ ?>
@@ -152,7 +152,7 @@ wp_reset_postdata(); ?>
 
 
 				/* ---------Section 4--------- */
-				if ( is_active_sidebar( 'islemag-sidebar' ) && get_theme_mod( 'islemag_section4_fullwidth', false) == false ) { ?>
+				if ( get_theme_mod( 'islemag_section4_fullwidth', false) == false ) { ?>
 					<div class="islemag-section4">
 						<?php 
 						if( is_active_sidebar( 'ads-4' ) ){ ?>
@@ -189,7 +189,7 @@ wp_reset_postdata(); ?>
 
 
 				/* ---------Section 5--------- */
-				if ( is_active_sidebar( 'islemag-sidebar' ) && get_theme_mod( 'islemag_section5_fullwidth', false) == false ) { ?>
+				if ( get_theme_mod( 'islemag_section5_fullwidth', false) == false ) { ?>
 					<div class="islemag-section5">
 						<?php 
 						if( is_active_sidebar( 'ads-5' ) ){ ?>
@@ -233,8 +233,7 @@ wp_reset_postdata(); ?>
 				get_theme_mod( 'islemag_section2_fullwidth', false) == true ||  
 				get_theme_mod( 'islemag_section3_fullwidth', false) == true ||  
 				get_theme_mod( 'islemag_section4_fullwidth', false) == true ||  
-				get_theme_mod( 'islemag_section5_fullwidth', false) == true ||
-				!is_active_sidebar( 'islemag-sidebar' ) ) { ?>
+				get_theme_mod( 'islemag_section5_fullwidth', false) == true ) { ?>
 
 
 				<div class="col-md-12 islemag-fullwidth">
@@ -242,7 +241,7 @@ wp_reset_postdata(); ?>
 					$colors = array( "red", "orange", "blue", "green", "purple", "pink", "light_red" );
 
 					/* ---------Section 1--------- */
-					if ( !is_active_sidebar( 'islemag-sidebar' ) || get_theme_mod( 'islemag_section1_fullwidth', false) == true ) { ?>
+					if ( get_theme_mod( 'islemag_section1_fullwidth', false) == true ) { ?>
 						<div class="islemag-section1">
 							<?php 
 							if( is_active_sidebar( 'islemag-ads' ) ){ ?>
@@ -275,7 +274,7 @@ wp_reset_postdata(); ?>
 
 
 					/* ---------Section 2--------- */
-					if ( !is_active_sidebar( 'islemag-sidebar' ) || get_theme_mod( 'islemag_section2_fullwidth', false) == true ) { ?>
+					if ( get_theme_mod( 'islemag_section2_fullwidth', false) == true ) { ?>
 						<div class="islemag-section2">
 							<?php 
 							if( is_active_sidebar( 'islemag-ads-2' ) ){ ?>
@@ -311,7 +310,7 @@ wp_reset_postdata(); ?>
 
 
 					/* ---------Section 3--------- */
-					if ( !is_active_sidebar( 'islemag-sidebar' ) || get_theme_mod( 'islemag_section3_fullwidth', false) == true ) { ?>
+					if ( get_theme_mod( 'islemag_section3_fullwidth', false) == true ) { ?>
 						<div class="islemag-section3">
 							<?php 
 							if( is_active_sidebar( 'islemag-ads-3' ) ){ ?>
@@ -346,7 +345,7 @@ wp_reset_postdata(); ?>
 
 
 					/* ---------Section 4--------- */
-					if ( !is_active_sidebar( 'islemag-sidebar' ) || get_theme_mod( 'islemag_section4_fullwidth', false) == true ) { ?>
+					if ( get_theme_mod( 'islemag_section4_fullwidth', false) == true ) { ?>
 						<div class="islemag-section4">
 							<?php 
 							if( is_active_sidebar( 'islemag-ads-4' ) ){ ?>
@@ -383,7 +382,7 @@ wp_reset_postdata(); ?>
 
 
 					/* ---------Section 5--------- */
-					if ( !is_active_sidebar( 'islemag-sidebar' ) || get_theme_mod( 'islemag_section5_fullwidth', false) == true ) { ?>
+					if ( get_theme_mod( 'islemag_section5_fullwidth', false) == true ) { ?>
 						<div class="islemag-section5">
 							<?php 
 							if( is_active_sidebar( 'islemag-ads-5' ) ){ ?>
