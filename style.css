@@ -3652,6 +3652,12 @@ ul > li:hover > a,
 	color:#009866;
 }
 
+.tagcloud:after {
+	clear:both;
+	content:"";
+	display:block;
+}
+
 .tagcloud a {
 	display:block;
 	float:left;
