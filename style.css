@@ -1914,7 +1914,13 @@ blockquote {
 .islemag-banner{
     display: table-cell;
     vertical-align: middle;
-    float: none;}
+    float: none;
+	text-align: right;
+}
+
+.islemag-banner .widget{
+	margin:0;
+}
 
 .islemag-banner .islemag_content_ad{
 	margin-bottom: 0;
@@ -4741,10 +4747,55 @@ ul > li:hover > a,
 .entry-media,
 .entry-media figure {
 	position: relative;
+	text-align: center;
+}
+
+.blog .entry-media figure, .archive .entry-media figure, .search .entry-media figure{
+	background-color: rgba(24, 18, 19, 0.05);
+}
+
+.blog .entry, .archive .entry, .search .entry{
+	min-height:190px;
+}
+
+.islemag-top-carousel .entry-media figure {
+	height:400px;
+}
+
+.islemag-template1-posts .entry-media figure {
+	height:270px;
+}
+
+
+.islemag-template1-posts .entry-media figure a img{
+	max-height: 270px;
+}
+
+
+.islemag-template2 .entry-media figure, .islemag-template4 .entry-media figure, .islemag-template3 .entry-media.islemag-t3-small figure{
+	height: 110px;
+	width: 110px;
+}
+
+.islemag-template2  .entry-media figure a img, .islemag-template4  .entry-media figure a img, .islemag-template3 .entry-media.islemag-t3-small figure a img{
+	max-height: 110px;
+	width:auto;
+}
+
+.islemag-template3 .entry-media.islemag-big figure {
+	height:420px;
+}
+
+.islemag-template3 .entry-media.islemag-big figure a img {
+	max-height: 420px;
 }
 
 .entry-media a {
 	display: block;
+}
+.entry-media a img {
+	max-height: 430px;
+	width: auto;
 }
 
 .entry-media figure > a:after,

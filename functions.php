@@ -43,6 +43,8 @@ function islemag_setup() {
  	add_theme_support( 'post-thumbnails' );
 
 	add_image_size( 'islemag_main_slider', 400, 400, true );
+	add_image_size( 'islemag_template_one', 270, 270, true );
+	add_image_size( 'islemag_template_two', 110, 110, true );
 	add_image_size( 'islemag_sections_small_thumbnail', 110, 110, true );
 	add_image_size( 'islemag_section4_big_thumbnail', 420, 420, true );
 	add_image_size( 'islemag_author_avatar', 90, 90, true );
