@@ -509,7 +509,7 @@ input[type="submit"]:active {
 
 input[type="text"],
 input[type="email"],
-input[type="url"],``
+input[type="url"],
 input[type="password"],
 input[type="search"],
 textarea {
@@ -2129,7 +2129,6 @@ blockquote {
 			 font-weight: 400!important;
 			 font-variant: normal!important;
 			 text-transform: none!important;
-			 speak: none;
 			 line-height: 25px;
 			 -webkit-font-smoothing: antialiased;
 	 }

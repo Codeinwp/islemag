@@ -37,7 +37,7 @@ if( $wp_query->have_posts() ) :
                                             $thumb_meta = wp_get_attachment_metadata($thumb_id);
                                             if(!empty($thumb_id)) {
                                               if ( $thumb_meta['width'] / $thumb_meta['height'] > 1 || $thumb_meta['height'] / $thumb_meta['width'] > 1) {
-                                                $thumb = the_post_thumbnail( 'islemag_template_one' );
+                                                $thumb = the_post_thumbnail( 'islemag_sections_small_thumbnail' );
                                               } else {
                                                 $thumb = the_post_thumbnail( 'full' );
                                               }
@@ -88,15 +88,19 @@ if( $wp_query->have_posts() ) :
                                       <a href="<?php echo esc_url( get_category_link( $category[0]->cat_ID ) );?>" class="category-block" title="<?php esc_html_e( 'Category','islemag' ); ?> <?php echo esc_attr( $category[0]->cat_name ); ?>"><?php echo esc_attr( $category[0]->cat_name );?></a>
                                       <figure>
                                         <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-                                        <?php
-                                          if ( has_post_thumbnail() ) :
-                                            $thumb = wp_get_attachment_image_src( get_post_thumbnail_id( $wp_query->ID ), 'islemag_sections_small_thumbnail' );
-                                            $url = $thumb['0'];
-                                            echo '<img class="owl-lazy" data-src="' . esc_url( $url ) . '" />';
-                                          else :
-                                            echo '<img class="owl-lazy" data-src="' . get_template_directory_uri() . '/img/placeholder-image.png">';
-                                          endif;
-                                        ?>
+                                          <?php
+                                          $thumb_id = get_post_thumbnail_id( $postid );
+                                          $thumb_meta = wp_get_attachment_metadata($thumb_id);
+                                          if(!empty($thumb_id)) {
+                                            if ( $thumb_meta['width'] / $thumb_meta['height'] > 1 || $thumb_meta['height'] / $thumb_meta['width'] > 1) {
+                                              $thumb = the_post_thumbnail( 'islemag_sections_small_thumbnail' );
+                                            } else {
+                                              $thumb = the_post_thumbnail( 'full' );
+                                            }
+                                          } else {
+                                            echo '<img src="'.get_template_directory_uri().'/img/placeholder-image.png" />';
+                                          }
+                                          ?>
                                         </a>
                                       </figure> <!-- End figure -->
                                     </div> <!-- End .entry-media -->
