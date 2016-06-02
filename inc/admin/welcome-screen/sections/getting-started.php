@@ -10,7 +10,7 @@ $customizer_url = admin_url() . 'customize.php' ;
 
 	<div class="islemag-tab-pane-center">
 
-		<h1 class="islemag-welcome-title">Welcome to Islemag! <?php if( !empty($islemag['Version']) ): ?> <sup id="islemag-theme-version"><?php echo esc_attr( $islemag['Version'] ); ?> </sup><?php endif; ?></h1>
+		<h1 class="islemag-welcome-title">Welcome to IsleMag! <?php if( !empty($islemag['Version']) ): ?> <sup id="islemag-theme-version"><?php echo esc_attr( $islemag['Version'] ); ?> </sup><?php endif; ?></h1>
 
 		<p><?php printf( esc_html__( 'Our best free one page magazine WordPress theme, %s!','islemag'), 'IsleMag' ); ?></p>
 		<p><?php printf( esc_html__( 'We want to make sure you have the best experience using %s and that is why we gathered here all the necessary informations for you. We hope you will enjoy using %s, as much as we enjoy creating great products.', 'islemag' ), 'IsleMag', 'IsleMag' ); ?>
