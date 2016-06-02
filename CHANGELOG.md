@@ -1,4 +1,9 @@
 
+### 1.0.10 - 02/06/2016
+**Changes:** 
+- Added About IsleMag page in dashboard
+- Improved image sizes management
+
 ### 1.0.10 - 23/05/2016
 **Changes:** 
 - Development
