@@ -22,7 +22,7 @@
 						if( $islemag_thumb_meta['width'] / $islemag_thumb_meta['height'] > 1.5 ){
 							the_post_thumbnail('islemag_blog_post');
 						} else {
-							the_post_thumbnail();
+							the_post_thumbnail('islemag_blog_post_no_crop');
 						}
 					}
 				} else {

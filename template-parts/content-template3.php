@@ -43,7 +43,7 @@ if ( $wp_query->have_posts() ) : ?>
                             $thumb = wp_get_attachment_image_src( $thumb_id, 'islemag_section4_big_thumbnail' );
                             $url = $thumb['0'];
                           } else {
-                            $thumb = wp_get_attachment_image_src( $thumb_id, 'full' );
+                            $thumb = wp_get_attachment_image_src( $thumb_id, 'islemag_section4_big_thumbnail_no_crop' );
                             $url = $thumb['0'];
                           }
                           echo '<img class="owl-lazy" data-src="' . esc_url( $url ) . '" />';
@@ -104,7 +104,7 @@ if ( $wp_query->have_posts() ) : ?>
                     if ( $thumb_meta['width'] / $thumb_meta['height'] > 1 || $thumb_meta['height'] / $thumb_meta['width'] > 1 ) {
                       $thumb = the_post_thumbnail( 'islemag_sections_small_thumbnail' );
                     } else {
-                      $thumb = the_post_thumbnail( 'full' );
+                      $thumb = the_post_thumbnail( 'islemag_sections_small_thumbnail_no_crop' );
                     }
                   } else {
                     echo '<img src="'.get_template_directory_uri().'/img/placeholder-image.png" />';
@@ -161,7 +161,7 @@ if ( $wp_query->have_posts() ) : ?>
                   if ( $thumb_meta['width'] / $thumb_meta['height'] > 1 || $thumb_meta['height'] / $thumb_meta['width'] > 1) {
                     $thumb = the_post_thumbnail( 'islemag_sections_small_thumbnail' );
                   } else {
-                    $thumb = the_post_thumbnail( 'full' );
+                    $thumb = the_post_thumbnail( 'islemag_sections_small_thumbnail_no_crop' );
                   }
                 } else {
                   echo '<img src="'.get_template_directory_uri().'/img/placeholder-image.png" />';
@@ -217,7 +217,7 @@ if ( $wp_query->have_posts() ) : ?>
                   if ( $thumb_meta['width'] / $thumb_meta['height'] > 1 || $thumb_meta['height'] / $thumb_meta['width'] > 1) {
                     $thumb = the_post_thumbnail( 'islemag_sections_small_thumbnail' );
                   } else {
-                    $thumb = the_post_thumbnail( 'full' );
+                    $thumb = the_post_thumbnail( 'islemag_sections_small_thumbnail_no_crop' );
                   }
                 } else {
                   echo '<img src="'.get_template_directory_uri().'/img/placeholder-image.png" />';
