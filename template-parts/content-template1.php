@@ -33,10 +33,10 @@ if ( $wp_query->have_posts() ) : ?>
                     $thumb_meta = wp_get_attachment_metadata($thumb_id);
                     if(!empty($thumb_id)){
                       if($thumb_meta['width']/$thumb_meta['height'] > 1) {
-                        $thumb = wp_get_attachment_image_src( $thumb_id, 'islemag_template_one' );
+                        $thumb = wp_get_attachment_image_src( $thumb_id, 'islemag_section4_big_thumbnail' );
                         $url = $thumb['0'];
                       } else {
-                        $thumb = wp_get_attachment_image_src( $thumb_id, 'full' );
+                        $thumb = wp_get_attachment_image_src( $thumb_id, 'islemag_section4_big_thumbnail_no_crop' );
                         $url = $thumb['0'];
                       }
                       echo '<img class="owl-lazy" data-src="' . esc_url( $url ) . '" />';
