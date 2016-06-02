@@ -6,7 +6,7 @@
 
 <div id="actions_required" class="islemag-tab-pane">
 
-    <h1><?php esc_html_e( 'Keep up with Islemag\'s latest news' ,'islemag' ); ?></h1>
+    <h1><?php printf( esc_html__( 'Keep up with %s\'s latest news' ,'islemag' ), 'IsleMag' ); ?></h1>
 
     <!-- NEWS -->
     <hr />

@@ -12,8 +12,8 @@ $customizer_url = admin_url() . 'customize.php' ;
 
 		<h1 class="islemag-welcome-title">Welcome to Islemag! <?php if( !empty($islemag['Version']) ): ?> <sup id="islemag-theme-version"><?php echo esc_attr( $islemag['Version'] ); ?> </sup><?php endif; ?></h1>
 
-		<p><?php esc_html_e( 'Our best free one page magazine WordPress theme, Islemag!','islemag'); ?></p>
-		<p><?php esc_html_e( 'We want to make sure you have the best experience using Islemag and that is why we gathered here all the necessary informations for you. We hope you will enjoy using Islemag, as much as we enjoy creating great products.', 'islemag' ); ?>
+		<p><?php printf( esc_html__( 'Our best free one page magazine WordPress theme, %s!','islemag'), 'IsleMag' ); ?></p>
+		<p><?php printf( esc_html__( 'We want to make sure you have the best experience using %s and that is why we gathered here all the necessary informations for you. We hope you will enjoy using %s, as much as we enjoy creating great products.', 'islemag' ), 'IsleMag', 'IsleMag' ); ?>
 
 	</div>
 
@@ -51,8 +51,8 @@ $customizer_url = admin_url() . 'customize.php' ;
 
 		<hr />
 		
-		<h4><?php esc_html_e( 'Translate Islemag', 'islemag' ); ?></h4>
-		<p><?php esc_html_e( 'In the below documentation you will find an easy way to translate Islemag into your native language or any other language you need for you site.', 'islemag' ); ?></p>
+		<h4><?php printf( esc_html__( 'Translate %s', 'islemag' ), 'IsleMag' ); ?></h4>
+		<p><?php printf( esc_html__( 'In the below documentation you will find an easy way to translate %s into your native language or any other language you need for you site.', 'islemag' ), 'IsleMag' ); ?></p>
 		<p><a href="<?php echo esc_url( 'http://docs.themeisle.com/article/80-how-to-translate-islemag' ); ?>" class="button"><?php esc_html_e( 'View how to do this', 'islemag' ); ?></a></p>
 
 	</div>
@@ -62,12 +62,6 @@ $customizer_url = admin_url() . 'customize.php' ;
 		<h4><?php esc_html_e( 'Speed up your site', 'islemag' ); ?></h4>
 		<p><?php esc_html_e( 'If you find yourself in the situation where everything on your site is running very slow, you might consider having a look at the below documentation where you will find the most common issues causing this and possible solutions for each of the issues.', 'islemag' ); ?></p>
 		<p><a href="<?php echo esc_url( 'http://docs.themeisle.com/article/63-speed-up-your-wordpress-site/' ); ?>" class="button"><?php esc_html_e( 'View how to do this', 'islemag' ); ?></a></p>
-
-		<hr />
-
-		<h4><?php esc_html_e( 'Change the page template', 'islemag' ); ?></h4>
-		<p><?php esc_html_e( 'Islemag has three page templates available, two for the blog and one for full width pages. To make sure you take full advantage of those page templates, make sure you read the documentation.', 'islemag' ); ?></p>
-		<p><a href="<?php echo esc_url( 'http://docs.themeisle.com/article/32-how-to-change-the-page-template-in-wordpress' ); ?>" class="button"><?php esc_html_e( 'View how to do this', 'islemag' ); ?></a></p>
 
 		<hr />
 
@@ -84,8 +78,8 @@ $customizer_url = admin_url() . 'customize.php' ;
 	<div class="islemag-tab-pane-center">
 
 		<h1><?php esc_html_e( 'View full documentation', 'islemag' ); ?></h1>
-		<p><?php esc_html_e( 'Need more details? Please check our full documentation for detailed information on how to use Islemag.', 'islemag' ); ?></p>
-		<p><a href="<?php echo esc_url( 'http://docs.themeisle.com/search?query=islemag/' ); ?>" class="button button-primary"><?php esc_html_e( 'Read full documentation', 'islemag' ); ?></a></p>
+		<p><?php printf( esc_html__( 'Need more details? Please check our full documentation for detailed information on how to use %s.', 'islemag' ), 'IsleMag' ); ?></p>
+		<p><a href="<?php echo esc_url( 'http://docs.themeisle.com/article/315-islemag-documentation' ); ?>" class="button button-primary"><?php esc_html_e( 'Read full documentation', 'islemag' ); ?></a></p>
 
 	</div>
 

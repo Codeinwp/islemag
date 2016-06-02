@@ -61,8 +61,8 @@ class Islemag_Welcome {
 	public function islemag_welcome_admin_notice() {
 		?>
 			<div class="updated notice is-dismissible">
-				<p><?php echo sprintf( esc_html__( 'Welcome! Thank you for choosing Islemag! To fully take advantage of the best our theme can offer please make sure you visit our %swelcome page%s.', 'islemag' ), '<a href="' . esc_url( admin_url( 'themes.php?page=islemag-welcome' ) ) . '">', '</a>' ); ?></p>
-				<p><a href="<?php echo esc_url( admin_url( 'themes.php?page=islemag-welcome' ) ); ?>" class="button" style="text-decoration: none;"><?php _e( 'Get started with Islemag', 'islemag' ); ?></a></p>
+				<p><?php echo sprintf( esc_html__( 'Welcome! Thank you for choosing %s! To fully take advantage of the best our theme can offer please make sure you visit our %swelcome page%s.', 'islemag' ), 'IsleMag', '<a href="' . esc_url( admin_url( 'themes.php?page=islemag-welcome' ) ) . '">', '</a>' ); ?></p>
+				<p><a href="<?php echo esc_url( admin_url( 'themes.php?page=islemag-welcome' ) ); ?>" class="button" style="text-decoration: none;"><?php printf( __( 'Get started with %s', 'islemag' ), 'IsleMag' ); ?></a></p>
 			</div>
 		<?php
 	}
