@@ -1,4 +1,8 @@
 
+### 1.0.11 - 02/06/2016
+**Changes:** 
+- Update version
+
 ### 1.0.10 - 02/06/2016
 **Changes:** 
 - Added About IsleMag page in dashboard
