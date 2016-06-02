@@ -118,7 +118,7 @@
                       <h3 class="title-underblock custom"><?php echo esc_attr( 'Post Author:','islemag' ) ?> <a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>"><?php the_author(); ?></a></h3>
                       <?php
                           $author_id = get_the_author_meta( 'ID' );
-                          $profile_pic = get_avatar( $author_id, 'islemag_author_avatar' );
+                          $profile_pic = get_avatar( $author_id, 'islemag_sections_small_thumbnail' );
                           if( !empty( $profile_pic ) ){ ?>
                             <figure class="pull-left">
                                 <?php echo $profile_pic; ?>

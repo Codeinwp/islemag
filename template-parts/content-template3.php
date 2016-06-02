@@ -31,18 +31,25 @@ if ( $wp_query->have_posts() ) : ?>
             <div class="col-sm-6">
               <article class="entry entry-overlay entry-block <?php echo $colors[$choosed_color]; ?>">
                 <a href="<?php echo esc_url( get_category_link( $category[0]->cat_ID ) ); ?>" class="category-block" title="<?php esc_html_e( 'Category','islemag' ); ?> <?php echo esc_attr( $category[0]->cat_name ); ?>"><?php echo esc_attr( $category[0]->cat_name ); ?></a>
-                <div class="entry-media">
+                <div class="entry-media islemag-big">
 
                   <figure>
                       <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
                         <?php
-                        if ( has_post_thumbnail() ) :
-                          $thumb = wp_get_attachment_image_src( get_post_thumbnail_id( $wp_query->ID ), 'islemag_section4_big_thumbnail' );
-                          $url = $thumb['0'];
+                        $thumb_id = get_post_thumbnail_id( $wp_query->ID );
+                        $thumb_meta = wp_get_attachment_metadata($thumb_id);
+                        if(!empty($thumb_id)){
+                          if($thumb_meta['width']/$thumb_meta['height'] > 1) {
+                            $thumb = wp_get_attachment_image_src( $thumb_id, 'islemag_section4_big_thumbnail' );
+                            $url = $thumb['0'];
+                          } else {
+                            $thumb = wp_get_attachment_image_src( $thumb_id, 'islemag_section4_big_thumbnail_no_crop' );
+                            $url = $thumb['0'];
+                          }
                           echo '<img class="owl-lazy" data-src="' . esc_url( $url ) . '" />';
-                        else :
-                           echo '<img class="owl-lazy" data-src="' . get_template_directory_uri() . '/img/placeholder-image.png">';
-                        endif;
+                        } else {
+                          echo '<img class="owl-lazy" data-src="' . get_template_directory_uri() . '/img/placeholder-image.png" />';
+                        }
                         ?>
                       </a>
                   </figure> <!-- End figure -->
@@ -86,17 +93,21 @@ if ( $wp_query->have_posts() ) : ?>
         $choosed_color = array_rand( $colors, 1 ); ?>
         <div class="col-sm-6">
           <article class="entry entry-overlay entry-block eb-small <?php echo $colors[$choosed_color]; ?>">
-            <div class="entry-media">
+            <div class="entry-media islemag-t3-small">
               <a href="<?php echo esc_url( get_category_link( $category[0]->cat_ID ) ); ?>" class="category-block" title="<?php esc_html_e( 'Category','islemag' ); ?> <?php echo esc_attr( $category[0]->cat_name ); ?>"><?php echo esc_attr( $category[0]->cat_name ); ?></a>
               <figure>
                 <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
                   <?php
-                  if(has_post_thumbnail()){
-                      $thumb = wp_get_attachment_image_src( get_post_thumbnail_id( $wp_query->ID ), 'islemag_sections_small_thumbnail' );
-                      $url = $thumb['0'];
-                      echo '<img class="owl-lazy" data-src="' . esc_url( $url ) . '" />';
+                  $thumb_id = get_post_thumbnail_id( $postid );
+                  $thumb_meta = wp_get_attachment_metadata($thumb_id);
+                  if(!empty($thumb_id)) {
+                    if ( $thumb_meta['width'] / $thumb_meta['height'] > 1 || $thumb_meta['height'] / $thumb_meta['width'] > 1 ) {
+                      $thumb = the_post_thumbnail( 'islemag_sections_small_thumbnail' );
+                    } else {
+                      $thumb = the_post_thumbnail( 'islemag_sections_small_thumbnail_no_crop' );
+                    }
                   } else {
-                      echo '<img class="owl-lazy" data-src="' . get_template_directory_uri() . '/img/placeholder-image.png" />';
+                    echo '<img src="'.get_template_directory_uri().'/img/placeholder-image.png" />';
                   }
                   ?>
                 </a>
@@ -139,19 +150,23 @@ if ( $wp_query->have_posts() ) : ?>
       case ($postperpage - 1):
         $choosed_color = array_rand($colors, 1); ?>
         <article class="entry entry-overlay entry-block eb-small <?php echo $colors[$choosed_color]; ?>">
-          <div class="entry-media">
+          <div class="entry-media islemag-t3-small">
             <a href="<?php echo esc_url ( get_category_link( $category[0]->cat_ID ) ); ?>" class="category-block" title="<?php esc_html_e( 'Category','islemag' ); ?> <?php echo esc_attr( $category[0]->cat_name ); ?>"><?php echo esc_attr( $category[0]->cat_name ); ?></a>
             <figure>
               <a href="<?php the_permalink(); ?>" title="Ipsa quasi praesentium eos">
-                  <?php
-                      if(has_post_thumbnail()){
-                          $thumb = wp_get_attachment_image_src( get_post_thumbnail_id( $wp_query->ID ), 'islemag_sections_small_thumbnail' );
-                          $url = $thumb['0'];
-                          echo '<img class="owl-lazy" data-src="' . esc_url( $url ) . '" />';
-                      } else {
-                          echo '<img class="owl-lazy" data-src="' . get_template_directory_uri() . '/img/placeholder-image.png" />';
-                      }
-                  ?>
+                <?php
+                $thumb_id = get_post_thumbnail_id( $postid );
+                $thumb_meta = wp_get_attachment_metadata($thumb_id);
+                if(!empty($thumb_id)) {
+                  if ( $thumb_meta['width'] / $thumb_meta['height'] > 1 || $thumb_meta['height'] / $thumb_meta['width'] > 1) {
+                    $thumb = the_post_thumbnail( 'islemag_sections_small_thumbnail' );
+                  } else {
+                    $thumb = the_post_thumbnail( 'islemag_sections_small_thumbnail_no_crop' );
+                  }
+                } else {
+                  echo '<img src="'.get_template_directory_uri().'/img/placeholder-image.png" />';
+                }
+                ?>
               </a>
             </figure> <!-- End figure -->
           </div> <!-- End .entry-media -->
@@ -191,19 +206,23 @@ if ( $wp_query->have_posts() ) : ?>
       default:
         $choosed_color = array_rand($colors, 1); ?>
         <article class="entry entry-overlay entry-block eb-small <?php echo $colors[$choosed_color]; ?>">
-          <div class="entry-media">
+          <div class="entry-media islemag-t3-small">
             <a href="<?php echo esc_url( get_category_link( $category[0]->cat_ID ) );?>" class="category-block" title="<?php esc_html_e( 'Category','islemag' ); ?> <?php echo esc_attr( $category[0]->cat_name ); ?>"><?php echo esc_attr( $category[0]->cat_name ); ?></a>
             <figure>
               <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-                  <?php
-                      if(has_post_thumbnail()){
-                          $thumb = wp_get_attachment_image_src( get_post_thumbnail_id( $wp_query->ID ), 'islemag_sections_small_thumbnail' );
-                          $url = $thumb['0'];
-                          echo '<img class="owl-lazy" data-src="' . esc_url( $url ) . '" />';
-                      } else {
-                          echo '<img class="owl-lazy" data-src="'.get_template_directory_uri().'/img/placeholder-image.png" />';
-                      }
-                  ?>
+                <?php
+                $thumb_id = get_post_thumbnail_id( $postid );
+                $thumb_meta = wp_get_attachment_metadata($thumb_id);
+                if(!empty($thumb_id)) {
+                  if ( $thumb_meta['width'] / $thumb_meta['height'] > 1 || $thumb_meta['height'] / $thumb_meta['width'] > 1) {
+                    $thumb = the_post_thumbnail( 'islemag_sections_small_thumbnail' );
+                  } else {
+                    $thumb = the_post_thumbnail( 'islemag_sections_small_thumbnail_no_crop' );
+                  }
+                } else {
+                  echo '<img src="'.get_template_directory_uri().'/img/placeholder-image.png" />';
+                }
+                ?>
               </a>
             </figure> <!-- End figure -->
           </div> <!-- End .entry-media -->

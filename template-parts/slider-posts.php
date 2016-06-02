@@ -15,9 +15,17 @@ $choosed_color = array_rand($colors, 1);
 		<figure>
 			<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
 				<?php
-				if(has_post_thumbnail()){
-					$thumb = wp_get_attachment_image_src( get_post_thumbnail_id( $wp_query->ID ), 'islemag_main_slider' );
-					$url = $thumb['0'];
+
+				$thumb_id = get_post_thumbnail_id( $wp_query->ID );
+				$thumb_meta = wp_get_attachment_metadata($thumb_id);
+				if(!empty($thumb_id)){
+					if($thumb_meta['width']/$thumb_meta['height'] > 1) {
+						$thumb = wp_get_attachment_image_src( $thumb_id, 'islemag_section4_big_thumbnail' );
+						$url = $thumb['0'];
+					} else {
+						$thumb = wp_get_attachment_image_src( $thumb_id, 'islemag_section4_big_thumbnail_no_crop' );
+						$url = $thumb['0'];
+					}
 					echo '<img class="owl-lazy" data-src="' . esc_url( $url ) . '" />';
 				} else {
 					echo '<img class="owl-lazy" data-src="' . get_template_directory_uri() . '/img/placeholder-image.png" />';

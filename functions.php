@@ -42,12 +42,15 @@ function islemag_setup() {
 	 */
  	add_theme_support( 'post-thumbnails' );
 
-	add_image_size( 'islemag_main_slider', 400, 400, true );
 	add_image_size( 'islemag_sections_small_thumbnail', 110, 110, true );
+	add_image_size( 'islemag_sections_small_thumbnail_no_crop', 110, 110 );
+
 	add_image_size( 'islemag_section4_big_thumbnail', 420, 420, true );
-	add_image_size( 'islemag_author_avatar', 90, 90, true );
-	add_image_size( 'islemag_related_post', 348, 194, true );
+	add_image_size( 'islemag_section4_big_thumbnail_no_crop', 420, 420 );
+
+	add_image_size( 'islemag_related_post', 248, 138, true );
 	add_image_size( 'islemag_blog_post', 770, 430, true );
+	add_image_size( 'islemag_blog_post_no_crop', 770, 430 );
 
 	/* IAB SIZES */
 	add_image_size( 'islemag_leaderboard', 728, 90, true );
@@ -112,10 +115,44 @@ function islemag_setup() {
 		'flex-width'  => true,
 		'header-text' => array( 'site-title', 'site-description' ),
 	) );
+
+
+	/*******************************************/
+	/*************  Welcome screen *************/
+	/*******************************************/
+
+	if ( is_admin() ) {
+
+		global $islemag_required_actions;
+
+		/*
+		 * id - unique id; required
+		 * title
+		 * description
+		 * check - check for plugins (if installed)
+		 * plugin_slug - the plugin's slug (used for installing the plugin)
+		 *
+		 */
+		$islemag_required_actions = array(
+			array(
+				"id"            => 'islemag-req-ac-frontpage-latest-news',
+				"title"         => esc_html__( 'Switch "Front page displays" to "A static page"' ,'islemag' ),
+				"description"   => esc_html__( 'In order to have the one page look for your website, please go to Customize -> Static Front Page and switch "Front page displays" to "A static page". Then select the template "Frontpage" for that selected page.','islemag' ),
+				"check"         => islemag_is_not_latest_posts()
+			)
+		);
+
+		require get_template_directory() . '/inc/admin/welcome-screen/welcome-screen.php';
+	}
 }
+
 endif; // islemag_setup
 add_action( 'after_setup_theme', 'islemag_setup' );
 
+
+function islemag_is_not_latest_posts() {
+	return ('posts' == get_option( 'show_on_front' ) ? false : true);
+}
 
 /**
  * Add image size in image_size_names_choose for media uploader
