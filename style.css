@@ -1690,6 +1690,17 @@ ul,ol {
 	margin-left: 20px;
 }
 
+#content .entry-content img {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+#content .entry-content img.alignleft,
+#content .entry-content img.alignright {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
 p {
 	margin: 0 0 10px;
 }
