@@ -70,9 +70,8 @@ $customizer_url = admin_url() . 'customize.php' ;
 		<p><a href="<?php echo esc_url( 'http://www.codeinwp.com/blog/top-non-obvious-wordpress-plugins/' ); ?>" class="button" target="_blank"><?php esc_html_e( 'Read more', 'islemag' ); ?></a></p>
 
 		<hr>
-		<h4><?php esc_html_e( 'How to make IsleMag look like the demo', 'islemag' ); ?></h4>
-		<p><?php esc_html_e( 'We used some 3rd party plugins in our demo, watch this video to find out how to make your website look like our demo.', 'islemag' ); ?></p>
-		<p><a href="<?php echo esc_url( 'http://docs.themeisle.com/article/334-how-to-make-islemag-look-like-demo' ); ?>" class="button" target="_blank"><?php esc_html_e( 'Watch Video', 'islemag' ); ?></a></p>
+		<h4>How to make IsleMag look like the demo</h4>
+		<p><a href="<?php echo esc_url( 'http://docs.themeisle.com/article/334-how-to-make-islemag-look-like-demo' ); ?>" class="button" target="_blank"><?php esc_html_e( 'View how to do this', 'islemag' ); ?></a></p>
 
 	</div>
 
