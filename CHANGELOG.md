@@ -1,4 +1,10 @@
 
+### 1.0.12 - 22/08/2016
+**Changes:** 
+- Fixed spacing issues in posts and pages
+- Allow adsense code in widgets
+- Add link to documentation
+
 ### 1.0.11 - 02/06/2016
 **Changes:** 
 - Update version
