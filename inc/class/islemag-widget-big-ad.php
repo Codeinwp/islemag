@@ -97,6 +97,12 @@ class islemag_big_ad extends WP_Widget {
                   ),
                   'div' => array(
                     'id' => array()
+                  ),
+                  'ins' => array(
+                      'class' => array(),
+                      'style' => array(),
+                      'data-ad-client' => array(),
+                      'data-ad-slot' => array()
                   )
                 );
 
