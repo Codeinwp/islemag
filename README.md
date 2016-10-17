@@ -11,7 +11,7 @@ A modern and clean free WordPress theme for magazines, news and media websites, 
 
 **Tested up to:** 4.4
 
-**Tags:** `gray`, `green`, `white`, `light`, `responsive-layout`, `two-columns`, `three-columns`, `right-sidebar`, `custom-background`, `custom-colors`, `custom-menu`, `featured-images`, `full-width-template`, `post-formats`, `sticky-post`, `theme-options`, `threaded-comments`, `translation-ready`
+**Tags:** `two-columns`, `three-columns`, `right-sidebar`, `custom-background`, `custom-colors`, `custom-menu`, `featured-images`, `full-width-template`, `post-formats`, `sticky-post`, `theme-options`, `threaded-comments`, `translation-ready`, `portfolio`, `blog`
 
 ## Installation
 
