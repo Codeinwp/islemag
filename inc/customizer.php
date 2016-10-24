@@ -20,7 +20,7 @@ function islemag_customize_register( $wp_customize ) {
 	$wp_customize->remove_control( 'background_color' );
 	$wp_customize->get_control('custom_logo')->section = 'islemag_appearance_general';
 
-	require_once ( 'class/islemag-general-control.php');
+	require_once ( 'customizer-repeater/islemag-general-control.php');
 	require_once ( 'class/islemag-category-selector.php');
 
 
@@ -626,25 +626,16 @@ add_action( 'customize_register', 'islemag_customize_register' );
 **********************************/
 
 function islemag_sanitize_repeater( $input ) {
-		$input_decoded = json_decode( $input, true );
-		if( !empty( $input_decoded ) ) {
-			$icons_array = array('none' => 'none','500px' => 'fa-500px','amazon' => 'fa-amazon','android' => 'fa-android','behance' => 'fa-behance','behance-square' => 'fa-behance-square','bitbucket' => 'fa-bitbucket','bitbucket-square' => 'fa-bitbucket-square','american-express' => 'fa-cc-amex','diners-club' => 'fa-cc-diners-club','discover' => 'fa-cc-discover','jcb' => 'fa-cc-jcb','mastercard' => 'fa-cc-mastercard','paypal' => 'fa-cc-paypal','stripe' => 'fa-cc-stripe','visa' => 'fa-cc-visa','codepen' => 'fa-codepen','css3' => 'fa-css3','delicious' => 'fa-delicious','deviantart' => 'fa-deviantart','digg' => 'fa-digg','dribble' => 'fa-dribbble','dropbox' => 'fa-dropbox','drupal' => 'fa-drupal','facebook' => 'fa-facebook','facebook-official' => 'fa-facebook-official','facebook-square' => 'fa-facebook-square','flickr' => 'fa-flickr','foursquare' => 'fa-foursquare','git' => 'fa-git','git-square' => 'fa-git-square','github' => 'fa-github','github-alt' => 'fa-github-alt','github-square' => 'fa-github-square','google' => 'fa-google','google-plus' => 'fa-google-plus','google-plus-square' => 'fa-google-plus-square','html5' => 'fa-html5','instagram' => 'fa-instagram','joomla' => 'fa-joomla','jsfiddle' => 'fa-jsfiddle','linkedin' => 'fa-linkedin','linkedin-square' => 'fa-linkedin-square','opencart' => 'fa-opencart','openid' => 'fa-openid','paypal' => 'fa-paypal','pinterest' => 'fa-pinterest','pinterest-p' => 'fa-pinterest-p','pinterest-square' => 'fa-pinterest-square','rebel' => 'fa-rebel','reddit' => 'fa-reddit','reddit-square' => 'fa-reddit-square','share' => 'fa-share-alt','share-square' => 'fa-share-alt-square','skype' => 'fa-skype','slack' => 'fa-slack','soundcloud' => 'fa-soundcloud','spotify' => 'fa-spotify','stack-overflow' => 'fa-stack-overflow','steam' => 'fa-steam','steam-square' => 'fa-steam-square','tripadvisor' => 'fa-tripadvisor','tumblr' => 'fa-tumblr','tumblr-square' => 'fa-tumblr-square','twitch' => 'fa-twitch','twitter' => 'fa-twitter','twitter-square' => 'fa-twitter-square','vimeo' => 'fa-vimeo','vimeo-square' => 'fa-vimeo-square','vine' => 'fa-vine','whatsapp' => 'fa-whatsapp','wordpress' => 'fa-wordpress','yahoo' => 'fa-yahoo','youtube' => 'fa-youtube','youtube-play' => 'fa-youtube-play','youtube-squar' => 'fa-youtube-square');
-
-			foreach ($input_decoded as $iconk => $iconv) {
-				foreach ($iconv as $key => $value) {
-					if ( $key == 'icon_value' && !in_array( $value, $icons_array ) ){
-						$input_decoded [$iconk][$key] = 'none';
-					}
-					if( $key == 'link' ){
-						$input_decoded [$iconk][$key] = esc_url( $value );;
-					}
-				}
+	$input_decoded = json_decode($input,true);
+	if(!empty($input_decoded)) {
+		foreach ($input_decoded as $boxk => $box ){
+			foreach ($box as $key => $value){
+				$input_decoded[$boxk][$key] = wp_kses_post( force_balance_tags( $value ) );
 			}
-
-			$result =  json_encode( $input_decoded );
-			return $result;
 		}
-		return $input;
+		return json_encode($input_decoded);
+	}
+	return $input;
 }
 
 function islemag_sanitize_category_dropdown( $input ){
