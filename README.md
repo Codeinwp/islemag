@@ -31,7 +31,6 @@ The exceptions to this license are as follows:
 - [Font Awesome Iconpicker from repeater](https://github.com/itsjavi/fontawesome-iconpicker) - [License](https://github.com/itsjavi/fontawesome-iconpicker/blob/master/LICENSE)
 - [Bootstrap v3.3.5](http://getbootstrap.com) - [License](https://github.com/twbs/bootstrap#copyright-and-license)
 - [Owl Carousel](https://github.com/OwlCarousel2/OwlCarousel2) - [License](https://github.com/OwlCarousel2/OwlCarousel2/blob/develop/LICENSE)
-- [jQuery Selectric](https://github.com/lcdsantos/jQuery-Selectric) - [License](https://github.com/lcdsantos/jQuery-Selectric/blob/master/LICENSE)
 - [Font Awesome](https://github.com/FortAwesome/Font-Awesome) - [License](https://github.com/FortAwesome/Font-Awesome#license)
 - [My Stock Photos](http://mystock.photos/) - [License](http://mystock.photos/license/)
   - http://mystock.photos/bikes/
