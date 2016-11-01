@@ -375,13 +375,9 @@ require get_template_directory() . '/inc/jetpack.php';
  */
 function islemag_customizer_script() {
 
-	wp_enqueue_style( 'islemag-fontawesome_admin', get_stylesheet_directory_uri().'/css/font-awesome.min.css',array(), '1.0.0' );
-	
-	wp_enqueue_style( 'islemag-slectric-style', get_stylesheet_directory_uri().'/css/selectric.css',array(), '1.0.0' );
+	wp_enqueue_style( 'islemag-fontawesome_admin', get_stylesheet_directory_uri().'/css/font-awesome.min.css',array(), '4.6.3' );
 
-	wp_register_script( 'islemag_selectric', get_template_directory_uri() .'/js/jquery.selectric.min.js', array("jquery"), '1.0.0');
-
-	wp_enqueue_script( 'islemag_customizer_script', get_template_directory_uri() .'/js/islemag_customizer.js', array( 'jquery', 'jquery-ui-draggable', 'islemag_selectric' ), '1.0.1', true );
+	wp_enqueue_script( 'islemag_customizer_script', get_template_directory_uri() .'/js/islemag_customizer.js', array( 'jquery', 'jquery-ui-draggable' ), '1.0.1', true );
 
 	wp_enqueue_style( 'islemag_admin_stylesheet', get_stylesheet_directory_uri().'/css/admin-style.css','1.0.0' );
 
@@ -658,4 +654,68 @@ function islemag_widget_style() {
 
 		</style>';
 	}
+}
+
+
+function islemag_display_section($section_nb, $is_hidden = false){
+	$colors = array( "red", "orange", "blue", "green", "purple", "pink", "light_red" );
+	$template = 1;
+	$islemag_aria_label = '';
+	switch ($section_nb){
+		case 1:
+			$template = $section_nb;
+			$islemag_section_title = get_theme_mod( 'islemag_section1_title', esc_html__( 'Section 1', 'islemag' ) );
+			$islemag_aria_label = esc_html__('Ads Area 1','islemag');
+			break;
+		case 2:
+			$template = $section_nb;
+			$islemag_section_title = get_theme_mod( 'islemag_section2_title', esc_html__( 'Section 2', 'islemag' ) );
+			$islemag_aria_label = esc_html__('Ads Area 2','islemag');
+			break;
+		case 3:
+			$template = 1;
+			$islemag_section_title = get_theme_mod( 'islemag_section3_title', esc_html__( 'Section 3', 'islemag' ) );
+			$islemag_aria_label = esc_html__('Ads Area 3','islemag');
+			break;
+		case 4:
+			$postperpage = get_theme_mod( 'islemag_section4_posts_per_page', 6 );
+			$template = 3;
+			$islemag_section_title = get_theme_mod( 'islemag_section4_title', esc_html__( 'Section 4', 'islemag' ) );
+			$islemag_aria_label = esc_html__('Ads Area 4','islemag');
+			break;
+		case 5:
+			$template = 4;
+			$islemag_section_title = get_theme_mod( 'islemag_section5_title', esc_html__( 'Section 5', 'islemag' ) );
+			$islemag_aria_label = esc_html__('Ads Area 5','islemag');
+			break;
+	}
+	/*Do not delete these variables. Those are used in template files*/
+	$islemag_has_sidebar = ($section_nb === 1 ? is_active_sidebar( 'islemag-ads' ) : is_active_sidebar( 'islemag-ads-'.$section_nb ) );
+	$islemag_section = get_theme_mod( 'islemag_section'.$section_nb.'_fullwidth', false);
+	$islemag_section_category = esc_attr( get_theme_mod( 'islemag_section'.$section_nb.'_category', 'all' ) );
+	$islemag_section_max_posts = absint( get_theme_mod( 'islemag_section'.$section_nb.'_max_posts', 6 ) ); ?>
+	<div class="islemag-section<?php echo $section_nb; if($is_hidden === true){ echo ' islemag_only_customizer ';}?>">
+		<?php
+		if($islemag_has_sidebar){ ?>
+			<div itemscope itemtype="http://schema.org/WPAdBlock" id="sidebar-ads-area-<?php echo $section_nb; ?>" aria-label="<?php echo $islemag_aria_label; ?>">
+				<?php dynamic_sidebar( 'islemag-ads' ); ?>
+			</div>
+			<?php
+		}
+		$choose_color = array_rand( $colors, 1 );
+		if( !empty( $islemag_section_title ) ) { ?>
+			<h2 class="title-border title-bg-line <?php echo $colors[$choose_color];?> mb30">
+				<span><?php echo esc_attr( $islemag_section_title ); ?></span>
+			</h2>
+			<?php
+		} else {
+			if(is_customize_preview()){ ?>
+				<h2 class="title-border title-bg-line islemag_only_customizer <?php echo $colors[$choose_color];?> mb30"><span></span></h2>
+				<?php
+			}
+		}
+
+		include( locate_template( 'template-parts/content-template'.$template.'.php' ) ); ?>
+	</div>
+	<?php
 }

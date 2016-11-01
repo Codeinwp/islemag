@@ -9,7 +9,7 @@ A modern and clean free WordPress theme for magazines, news and media websites, 
 
 **Requires at least:** 4.0
 
-**Tested up to:** 4.4
+**Tested up to:** 4.6.1
 
 **Tags:** `two-columns`, `three-columns`, `right-sidebar`, `custom-background`, `custom-colors`, `custom-menu`, `featured-images`, `full-width-template`, `post-formats`, `sticky-post`, `theme-options`, `threaded-comments`, `translation-ready`, `portfolio`, `blog`
 
@@ -28,12 +28,11 @@ IsleMag WordPress theme is licensed under the GPL3.
 Unless otherwise specified, all the theme files, scripts and images are licensed under GNU General Public License.
 
 The exceptions to this license are as follows:
-
+- [Font Awesome Iconpicker from repeater](https://github.com/itsjavi/fontawesome-iconpicker) - [License](https://github.com/itsjavi/fontawesome-iconpicker/blob/master/LICENSE)
 - [Bootstrap v3.3.5](http://getbootstrap.com) - [License](https://github.com/twbs/bootstrap#copyright-and-license)
-- [Owl Carousel](https://github.com/OwlCarousel2/OwlCarousel2) - [Licence](https://github.com/OwlCarousel2/OwlCarousel2/blob/develop/LICENSE)
-- [jQuery Selectric](https://github.com/lcdsantos/jQuery-Selectric) - [Licence](https://github.com/lcdsantos/jQuery-Selectric/blob/master/LICENSE)
-- [Font Awesome](https://github.com/FortAwesome/Font-Awesome) - [Licence](https://github.com/FortAwesome/Font-Awesome#license)
-- [My Stock Photos](http://mystock.photos/) - [Licence](http://mystock.photos/license/)
+- [Owl Carousel](https://github.com/OwlCarousel2/OwlCarousel2) - [License](https://github.com/OwlCarousel2/OwlCarousel2/blob/develop/LICENSE)
+- [Font Awesome](https://github.com/FortAwesome/Font-Awesome) - [License](https://github.com/FortAwesome/Font-Awesome#license)
+- [My Stock Photos](http://mystock.photos/) - [License](http://mystock.photos/license/)
   - http://mystock.photos/bikes/
   - http://mystock.photos/red-leafs/
   - http://mystock.photos/tourists/
