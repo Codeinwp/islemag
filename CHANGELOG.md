@@ -1,4 +1,9 @@
 
+### 1.0.14 - 01/11/2016
+**Changes:** 
+- New option to disable each frontpage section
+- Redo the socials repeater box to better UI experience
+
 ### 1.0.12 - 22/08/2016
 **Changes:** 
 - Fixed spacing issues in posts and pages
