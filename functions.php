@@ -665,12 +665,12 @@ function islemag_display_section($section_nb, $is_hidden = false){
 		case 1:
 			$template = $section_nb;
 			$islemag_section_title = get_theme_mod( 'islemag_section1_title', esc_html__( 'Section 1', 'islemag' ) );
-			$islemag_aria_label = esc_html__('Ads Area 2','islemag');
+			$islemag_aria_label = esc_html__('Ads Area 1','islemag');
 			break;
 		case 2:
 			$template = $section_nb;
 			$islemag_section_title = get_theme_mod( 'islemag_section2_title', esc_html__( 'Section 2', 'islemag' ) );
-			$islemag_aria_label = esc_html__('Ads Area 1','islemag');
+			$islemag_aria_label = esc_html__('Ads Area 2','islemag');
 			break;
 		case 3:
 			$template = 1;
