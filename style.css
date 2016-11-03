@@ -3629,6 +3629,10 @@ styled buttons not container for vertical centered navs*/
 	text-align: center;
 }
 
+.site-header .islemag-ad-banner-content {
+	text-align: right;
+}
+
 .sidebar .widget {
 	margin-bottom:50px;
 }
