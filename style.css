@@ -1846,14 +1846,15 @@ blockquote {
 
 	.navbar-top .menu-toggle {
 		display: inline-block;
-    float: right;
-    border: none;
-    line-height: 38px;
-    padding: 0 13px;
-    color: #505050;
-    background: transparent;
-    font-size: 14px;
-    font: 600 13px/38px 'Open Sans', Verdana;
+		float: right;
+		border: none;
+		line-height: 38px;
+		padding: 0 13px;
+		color: #505050;
+		background: transparent;
+		font-size: 14px;
+		font: 600 13px/38px 'Open Sans', Verdana;
+		margin-top: -38px;
 	}
 
 	.navbar-top .navbar-left{
@@ -1862,6 +1863,7 @@ blockquote {
 
 	.navbar-top .navbar-right {
 		padding-right: 37px;
+		margin-top: 38px;
 	}
 }
 
