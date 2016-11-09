@@ -1,4 +1,9 @@
 
+### 1.0.15 - 09/11/2016
+**Changes:** 
+- Fixed social icons not working on mobile devices
+- Fixed header banner spacing issue
+
 ### 1.0.14 - 01/11/2016
 **Changes:** 
 - New option to disable each frontpage section
