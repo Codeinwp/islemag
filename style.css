@@ -4,7 +4,7 @@ Theme URI: http://themeisle.com/themes/islemag/
 Author: Themeisle
 Author URI: http://themeisle.com
 Description: A modern and clean free WordPress theme for tech magazines, news and newspaper media websites, personal fashion blogs, or photography, IsleMag is responsive, flat, minimalist, SEO friendly, Retina ready, built with Bootstrap, and has social links. Released in 2016, the theme has Google AdSense banners, a magazine homepage template, custom backgrounds, filtered categories, tags, boxed layout, and live customizer. IsleMag is WPML, Photo Gallery Grid,Contact Form 7,WP Product Review, SiteOrigin Page Builder, JetPack compatible, the theme is highly customizable and translation ready.
-Version: 1.0.14
+Version: 1.0.15
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: islemag
@@ -1846,14 +1846,15 @@ blockquote {
 
 	.navbar-top .menu-toggle {
 		display: inline-block;
-    float: right;
-    border: none;
-    line-height: 38px;
-    padding: 0 13px;
-    color: #505050;
-    background: transparent;
-    font-size: 14px;
-    font: 600 13px/38px 'Open Sans', Verdana;
+		float: right;
+		border: none;
+		line-height: 38px;
+		padding: 0 13px;
+		color: #505050;
+		background: transparent;
+		font-size: 14px;
+		font: 600 13px/38px 'Open Sans', Verdana;
+		margin-top: -38px;
 	}
 
 	.navbar-top .navbar-left{
@@ -1862,6 +1863,7 @@ blockquote {
 
 	.navbar-top .navbar-right {
 		padding-right: 37px;
+		margin-top: 38px;
 	}
 }
 
@@ -3627,6 +3629,10 @@ styled buttons not container for vertical centered navs*/
 
 .islemag-ad-banner-content{
 	text-align: center;
+}
+
+.site-header .islemag-ad-banner-content {
+	text-align: right;
 }
 
 .sidebar .widget {
