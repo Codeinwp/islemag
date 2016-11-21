@@ -87,9 +87,10 @@
 		?>
 	</div><!-- .entry-content -->
 
-	<footer class="entry-footer">
-		<?php islemag_entry_footer(); ?>
-	</footer><!-- .entry-footer -->
+	
+		<?php
+		islemag_content_footer(); ?>
+	
 
 
 </article>

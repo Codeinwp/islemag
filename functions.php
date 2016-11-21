@@ -369,6 +369,10 @@ require get_template_directory() . '/inc/customizer.php';
  */
 require get_template_directory() . '/inc/jetpack.php';
 
+/**
+ * Enables user customization via WordPress plugin API
+ */
+require get_template_directory() . '/inc/hooks.php';
 
 /**
  * Load customize controls js
@@ -420,24 +424,8 @@ function islemag_comment($comment, $args, $depth) {
 	<div id="div-comment-<?php comment_ID() ?>" class="comment-body">
 	<?php endif; ?>
 
-
-	<div class="comment-author vcard">
-		<?php if ( $args['avatar_size'] != 0 ) echo get_avatar( $comment, $args['avatar_size'] ); ?>
-		<?php printf( __( '<h4 class="media-heading">%s</h4><span class="comment-date">(%2$s - %3$s)</span>','islemag' ), get_comment_author_link(), get_comment_date(),  get_comment_time() ); ?><?php edit_comment_link( __( '(Edit)','islemag' ), '  ', '' ); ?>
-		<div class="reply pull-right reply-link"> <?php comment_reply_link( array_merge( $args, array( 'add_below' => $add_below, 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?> </div>
-	</div>
-
-
-	<?php if ( $comment->comment_approved == '0' ) : ?>
-		<em class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.', 'islemag' ); ?></em>
-		<br />
-	<?php endif; ?>
-
-
-
-	<div class="media-body">
-		<?php comment_text(); ?>
-	</div>
+	<?php
+	islemag_comment_content($args, $comment, $depth, $add_below);?>
 
 	<?php if ( 'div' != $args['style'] ) : ?>
 	</div>
@@ -704,7 +692,7 @@ function islemag_display_section($section_nb, $is_hidden = false){
 		}
 		$choose_color = array_rand( $colors, 1 );
 		if( !empty( $islemag_section_title ) ) { ?>
-			<h2 class="title-border title-bg-line <?php echo $colors[$choose_color];?> mb30">
+			<h2 class="title-border title-bg-line <?php echo apply_filters('line_color', $colors[$choose_color]);?> mb30">
 				<span><?php echo esc_attr( $islemag_section_title ); ?></span>
 			</h2>
 			<?php

@@ -37,9 +37,9 @@
                       }
                     }
                   } ?>
-                  
-                  <span class="entry-date"><?php echo get_the_date( 'd' ); ?><span><?php echo strtoupper( get_the_date( 'M' ) ); ?></span></span>
-                  <?php
+
+                    <?php
+                    islemag_entry_date();
                     $id = get_the_ID();
                     $format = get_post_format( $id );
                     switch ( $format ) {

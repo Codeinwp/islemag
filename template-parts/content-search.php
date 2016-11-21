@@ -31,9 +31,10 @@
 			</a>
 		</figure>
 	</div><!-- End .entry-media -->
-
-	<span class="entry-date"><?php echo get_the_date( 'd' ); ?><span><?php echo strtoupper(get_the_date( 'M' )); ?></span></span>
 	<?php
+	islemag_entry_date();
+
+
 		$id = get_the_ID();
 		$format = get_post_format( $id );
 		switch ( $format ) {
@@ -67,9 +68,8 @@
 		}
 		if( !empty( $icon_class ) ){ ?>
 			<span class="entry-format"><i class="fa <?php echo $icon_class; ?>"></i></span>
-	<?php
+			<?php
 		} ?>
-	<span class="entry-format"><i class="fa fa-file-image-o"></i></span>
 	<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
 
 	<div class="entry-content">
@@ -85,9 +85,9 @@
 		?>
 	</div><!-- .entry-content -->
 
-	<footer class="entry-footer">
-		<?php islemag_entry_footer(); ?>
-	</footer><!-- .entry-footer -->
+	<?php
+	islemag_content_footer(); ?>
+
 
 
 </article>

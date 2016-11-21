@@ -21,10 +21,16 @@
 </head>
 
 <body <?php body_class(); ?>>
-    <div id="wrapper" class="boxed">
+    <?php
+    $wrapper_class = apply_filters('wrapper_class', array('boxed')); ?>
+    <div id="wrapper" <?php if(!empty($wrapper_class)) { echo 'class="' . implode(' ', $wrapper_class ) . '"';}?>>
 
         <header id="header" class="site-header" role="banner">
-            <div class="navbar-top container-fluid">
+            <?php
+            $navbar_top_classes = apply_filters('navbar_top_classes', array('navbar-top','container-fluid')); ?>
+            <div <?php if(!empty($navbar_top_classes)) { echo 'class="' . implode(' ', $navbar_top_classes ) .'"';} ?>>
+                <?php
+                islemag_navbar_top_head(); ?>
                 <div class="navbar-left social-icons">
                     <?php
                         $islemag_social_icons = get_theme_mod('islemag_social_icons');
@@ -55,10 +61,13 @@
                 <div class="navbar-white top" id="header-search-form">
                   <?php get_search_form(); ?>
                 </div><!-- End #header-search-form -->
-
+                <?php
+                islemag_navbar_top_bottom();?>
             </div>
 
             <div class="header-content clearfix">
+                <?php
+                islemag_header_content_head(); ?>
                 <div class="col-md-3 col-sm-3 col-xs-12 navbar-brand">
                     <?php
                         global $wp_customize;
@@ -108,10 +117,12 @@
                         );
                     } ?>
                 </div>
-
-
+                <?php
+                islemag_header_content_bottom(); ?>
             </div>
 
+            <?php
+            islemag_main_nav_before(); ?>
             <?php $islemag_sticky_menu = get_theme_mod( 'islemag_sticky_menu', false ); ?>
             <div id="navbar" class="navbar <?php if( isset( $islemag_sticky_menu ) && $islemag_sticky_menu == false ) echo 'islemag-sticky'; ?>">
               <nav id="site-navigation" class="navigation main-navigation" role="navigation">
@@ -120,9 +131,12 @@
                 <?php wp_nav_menu( array( 'theme_location' => 'islemag-primary', 'menu_class' => 'nav-menu', 'menu_id' => 'primary-menu', 'depth' => 6 ) ); ?>
               </nav><!-- #site-navigation -->
             </div><!-- #navbar -->
-
+            <?php
+            islemag_main_nav_after(); ?>
 
 
         </header><!-- End #header -->
-
-			<div id="content" class="site-content">
+        <?php
+        $islemag_content_classes = apply_filters('content_classes', array('site-content'));
+        $islemag_content_ids = apply_filters('content_ids', array('content')); ?>
+        <div <?php if(!empty($islemag_content_ids)) { echo 'id="' . implode(' ', $islemag_content_ids ) . '"'; } ?> <?php if(!empty($islemag_content_classes)){ echo 'class="'. implode(' ', $islemag_content_classes ) .'"'; }?>>

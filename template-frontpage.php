@@ -50,7 +50,9 @@ if((bool)$islemag_header_slider_disable !== true ) {
 	<div class="container">
 		<div class="row">
 
-			<div class="islemag-content-left col-md-9">
+			<?php
+			$archive_content_classes = apply_filters('archive_content_classes',array('islemag-content-left','col-md-9')); ?>
+			<div <?php if(!empty($archive_content_classes)) { echo 'class="'. implode(' ', $archive_content_classes ) . '"'; } ?>>
 				<?php
 
 				/* ---------Section 1--------- */
