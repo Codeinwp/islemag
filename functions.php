@@ -692,7 +692,7 @@ function islemag_display_section($section_nb, $is_hidden = false){
 		}
 		$choose_color = array_rand( $colors, 1 );
 		if( !empty( $islemag_section_title ) ) { ?>
-			<h2 class="title-border title-bg-line <?php echo apply_filters('line_color', $colors[$choose_color]);?> mb30">
+			<h2 class="title-border title-bg-line <?php echo apply_filters('islemag_line_color', $colors[$choose_color]);?> mb30">
 				<span><?php echo esc_attr( $islemag_section_title ); ?></span>
 			</h2>
 			<?php

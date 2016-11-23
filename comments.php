@@ -107,7 +107,7 @@ if ( post_password_required() ) {
 															</div>',
 		);
 
-		comment_form( apply_filters('comments_args',$args) );
+		comment_form( apply_filters('islemag_comments_args',$args) );
 		?>
 
 	</div><!-- #comments -->

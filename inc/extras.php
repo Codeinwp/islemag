@@ -93,7 +93,7 @@ function islemag_comment_action($args, $comment, $depth, $add_below){ ?>
 add_action('islemag_comment_content','islemag_comment_action', 10, 5);
 
 function islemag_post_entry_date(){
-	$date_format = apply_filters('date_format','M'); ?>
+	$date_format = apply_filters('islemag_date_format','M'); ?>
 	<span class="entry-date"><?php echo get_the_date( 'd' ); ?><span><?php echo strtoupper(get_the_date( $date_format )); ?></span></span>
 	<?php
 }

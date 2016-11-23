@@ -11,7 +11,7 @@ get_header(); ?>
 <div class="container">
     <div class="row">
 	    <?php
-	    $archive_content_classes = apply_filters('archive_content_classes',array('islemag-content-left','col-md-9')); ?>
+	    $archive_content_classes = apply_filters('islemag_archive_content_classes',array('islemag-content-left','col-md-9')); ?>
 	    <div <?php if(!empty($archive_content_classes)) { echo 'class="'. implode(' ', $archive_content_classes ) . '"'; } ?>>
 
 

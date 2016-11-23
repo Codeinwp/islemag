@@ -22,12 +22,12 @@
 
 <body <?php body_class(); ?>>
     <?php
-    $wrapper_class = apply_filters('wrapper_class', array('boxed')); ?>
+    $wrapper_class = apply_filters('islemag_wrapper_class', array('boxed')); ?>
     <div id="wrapper" <?php if(!empty($wrapper_class)) { echo 'class="' . implode(' ', $wrapper_class ) . '"';}?>>
 
         <header id="header" class="site-header" role="banner">
             <?php
-            $navbar_top_classes = apply_filters('navbar_top_classes', array('navbar-top','container-fluid')); ?>
+            $navbar_top_classes = apply_filters('islemag_navbar_top_classes', array('navbar-top','container-fluid')); ?>
             <div <?php if(!empty($navbar_top_classes)) { echo 'class="' . implode(' ', $navbar_top_classes ) .'"';} ?>>
                 <?php
                 islemag_navbar_top_head(); ?>
@@ -137,6 +137,6 @@
 
         </header><!-- End #header -->
         <?php
-        $islemag_content_classes = apply_filters('content_classes', array('site-content'));
-        $islemag_content_ids = apply_filters('content_ids', array('content')); ?>
+        $islemag_content_classes = apply_filters('islemag_content_classes', array('site-content'));
+        $islemag_content_ids = apply_filters('islemag_content_ids', array('content')); ?>
         <div <?php if(!empty($islemag_content_ids)) { echo 'id="' . implode(' ', $islemag_content_ids ) . '"'; } ?> <?php if(!empty($islemag_content_classes)){ echo 'class="'. implode(' ', $islemag_content_classes ) .'"'; }?>>
