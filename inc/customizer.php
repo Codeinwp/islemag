@@ -25,6 +25,22 @@ function islemag_customize_register( $wp_customize ) {
 
 
 
+	require_once( 'class/islemag-info.php' );
+	$wp_customize->add_section('islemag_theme_info', array(
+		'title' => __( 'Theme info', 'islemag' ),
+		'priority' => 0,
+	) );
+
+	$wp_customize->add_setting('islemag_theme_info', array(
+		'capability'        => 'edit_theme_options',
+		'sanitize_callback' => 'sanitize_text_field',
+	) );
+
+	$wp_customize->add_control( new Islemag_Info( $wp_customize, 'islemag_theme_info', array(
+		'section' => 'islemag_theme_info',
+		'priority' => 10,
+	) ) );
+
 	/*******************************
 	 *********** Pannels ***********
 	 *******************************/

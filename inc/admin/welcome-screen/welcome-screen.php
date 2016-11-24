@@ -111,9 +111,6 @@ class Islemag_Welcome {
 	 */
 	public function islemag_welcome_scripts_for_customizer() {
 
-		wp_enqueue_style( 'islemag-welcome-screen-customizer-css', get_template_directory_uri() . '/inc/admin/welcome-screen/css/welcome_customizer.css' );
-		wp_enqueue_script( 'islemag-welcome-screen-customizer-js', get_template_directory_uri() . '/inc/admin/welcome-screen/js/welcome_customizer.js', array('jquery'), '20120206', true );
-
 		global $islemag_required_actions;
 
 		$nr_actions_required = 0;
@@ -133,12 +130,6 @@ class Islemag_Welcome {
 			endforeach;
 		endif;
 
-		wp_localize_script( 'islemag-welcome-screen-customizer-js', 'islemagWelcomeScreenCustomizerObject', array(
-			'nr_actions_required' => $nr_actions_required,
-			'aboutpage' => esc_url( admin_url( 'themes.php?page=islemag-welcome#actions_required' ) ),
-			'customizerpage' => esc_url( admin_url( 'customize.php#actions_required' ) ),
-			'themeinfo' => __('View Theme Info','islemag'),
-		) );
 	}
 
 	/**
