@@ -51,12 +51,6 @@ function islemag_footer() {
 }
 add_action( 'islemag_footer_content','islemag_footer' );
 
-
-function islemag_the_post_navigation() {
-	the_posts_navigation();
-}
-add_action( 'islemag_post_navigation','islemag_the_post_navigation' );
-
 function islemag_comments_heading() {
 	printf(
 		esc_html( _nx( 'One thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', get_comments_number(), 'comments title', 'islemag' ) ),

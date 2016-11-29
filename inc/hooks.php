@@ -67,13 +67,6 @@ function islemag_footer_content() {
 }
 
 /**
- *  Hook for posts navigation.
- */
-function islemag_post_navigation() {
-	do_action( 'islemag_post_navigation' );
-}
-
-/**
  *  Hook for comments title
  */
 function islemag_comments_title() {

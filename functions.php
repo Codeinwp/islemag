@@ -272,11 +272,11 @@ add_action( 'widgets_init', 'islemag_widgets_init' );
  */
 function islemag_scripts() {
 
-	wp_enqueue_style( 'islemag-bootstrap', get_stylesheet_directory_uri() . '/css/bootstrap.min.css',array(), '3.3.5' );
+	wp_enqueue_style( 'islemag-bootstrap', get_template_directory_uri() . '/css/bootstrap.min.css',array(), '3.3.5' );
 
 	wp_enqueue_style( 'islemag-style', get_stylesheet_uri() );
 
-	wp_enqueue_style( 'islemag-fontawesome', get_stylesheet_directory_uri() . '/css/font-awesome.min.css',array(), '4.4.0' );
+	wp_enqueue_style( 'islemag-fontawesome', get_template_directory_uri() . '/css/font-awesome.min.css',array(), '4.4.0' );
 
 	if ( is_page_template( 'template-frontpage.php' ) ) {
 		wp_enqueue_script( 'islemag-script-index', get_template_directory_uri() . '/js/script.index.js', array( 'jquery' ), '1.0.0', true );
@@ -377,11 +377,11 @@ require get_template_directory() . '/inc/hooks.php';
  */
 function islemag_customizer_script() {
 
-	wp_enqueue_style( 'islemag-fontawesome_admin', get_stylesheet_directory_uri() . '/css/font-awesome.min.css',array(), '4.6.3' );
+	wp_enqueue_style( 'islemag-fontawesome_admin', get_template_directory_uri() . '/css/font-awesome.min.css',array(), '4.6.3' );
 
 	wp_enqueue_script( 'islemag_customizer_script', get_template_directory_uri() . '/js/islemag_customizer.js', array( 'jquery', 'jquery-ui-draggable' ), '1.0.1', true );
 
-	wp_enqueue_style( 'islemag_admin_stylesheet', get_stylesheet_directory_uri() . '/css/admin-style.css','1.0.0' );
+	wp_enqueue_style( 'islemag_admin_stylesheet', get_template_directory_uri() . '/css/admin-style.css','1.0.0' );
 
 }
 add_action( 'customize_controls_enqueue_scripts', 'islemag_customizer_script' );
@@ -510,14 +510,14 @@ function islemag_style() {
 
 	echo '<style type="text/css">';
 
-	$islemag_title_color = esc_attr( get_theme_mod( 'islemag_title_color','#454545' ) );
+	$islemag_title_color = esc_attr( get_theme_mod( 'islemag_title_color',apply_filters( 'islemag_title_color_default_filter','#454545' ) ) );
 	if ( ! empty( $islemag_title_color ) ) {
 		echo '.title-border span { color: ' . $islemag_title_color . ' }';
 		echo '.post .entry-title, .post h1, .post h2, .post h3, .post h4, .post h5, .post h6, .post h1 a, .post h2 a, .post h3 a, .post h4 a, .post h5 a, .post h6 a { color: ' . $islemag_title_color . ' }';
 		echo '.page-header h1 { color: ' . $islemag_title_color . ' }';
 	}
 
-	$islemag_sidebar_textcolor = esc_attr( get_theme_mod( 'header_textcolor','#454545' ) );
+	$islemag_sidebar_textcolor = esc_attr( get_theme_mod( 'header_textcolor',apply_filters( 'islemag_header_textcolor_default_filter','#454545' ) ) );
 	if ( ! empty( $islemag_sidebar_textcolor ) ) {
 		echo '.sidebar .widget li a, .islemag-content-right, .islemag-content-right a, .post .entry-content, .post .entry-content p,
 		 .post .entry-cats, .post .entry-cats a, .post .entry-comments', '.post .entry-separator, .post .entry-footer a,
@@ -536,12 +536,12 @@ function islemag_style() {
 		echo '.islemag-top-container .entry-overlay-meta > a { color: ' . $islemag_top_slider_post_text_color . ' }';
 	}
 
-	$islemag_sections_post_title_color = esc_attr( get_theme_mod( 'islemag_sections_post_title_color','#454545' ) );
+	$islemag_sections_post_title_color = esc_attr( get_theme_mod( 'islemag_sections_post_title_color',apply_filters( 'islemag_sections_post_title_color_default_filter','#454545' ) ) );
 	if ( ! empty( $islemag_sections_post_title_color ) ) {
 		echo '.home.blog .islemag-content-left .entry-title a, .blog-related-carousel .entry-title a { color: ' . $islemag_sections_post_title_color . ' }';
 	}
 
-	$islemag_sections_post_text_color = esc_attr( get_theme_mod( 'islemag_sections_post_text_color','#454545' ) );
+	$islemag_sections_post_text_color = esc_attr( get_theme_mod( 'islemag_sections_post_text_color',apply_filters( 'islemag_sections_post_text_color_default_filter','#454545' ) ) );
 	if ( ! empty( $islemag_sections_post_text_color ) ) {
 		echo '.islemag-content-left .entry-meta, .islemag-content-left .blog-related-carousel .entry-content p,
 		.islemag-content-left .blog-related-carousel .entry-cats .entry-label, .islemag-content-left .blog-related-carousel .entry-cats a,

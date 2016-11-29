@@ -126,7 +126,7 @@ function islemag_customize_register( $wp_customize ) {
 	 */
 
 	 $wp_customize->add_setting( 'islemag_title_color', array(
-		 	'default' 							=> '#454545',
+		 	'default' 							=> apply_filters( 'islemag_title_color_default_filter','#454545' ),
 			'transport'							=> 'postMessage',
 		 	'sanitize_callback' 		=> 'sanitize_text_field',
 	 )	);
@@ -144,13 +144,13 @@ function islemag_customize_register( $wp_customize ) {
 	 )	);
 
 	 $wp_customize->add_setting( 'islemag_sections_post_title_color', array(
-		 'default' 							=> '#454545',
+		 'default' 							=> apply_filters( 'islemag_sections_post_title_color_default_filter','#454545' ),
 		 'transport'							=> 'postMessage',
 		 'sanitize_callback' 		=> 'sanitize_text_field',
 	 )	);
 
 	 $wp_customize->add_setting( 'islemag_sections_post_text_color', array(
-		 'default' 							=> '#454545',
+		 'default' 							=> apply_filters( 'islemag_sections_post_text_color_default_filter','#454545' ),
 		 'transport'							=> 'postMessage',
 		 'sanitize_callback' 		=> 'sanitize_text_field',
 	 )	);

@@ -35,7 +35,7 @@ get_header(); ?>
 
 			endwhile;
 
-				islemag_post_navigation(); ?>
+				echo apply_filters( 'islemag_post_navigation_filter', get_the_posts_navigation() ); ?>
 
 			<?php
 

@@ -51,7 +51,6 @@ The exceptions to this license are as follows:
 - islemag_footer_container_head
 - islemag_footer_container_bottom
 - islemag_footer_content
-- islemag_post_navigation
 - islemag_comments_title
 - islemag_comment_content
 - islemag_entry_footer
@@ -68,3 +67,7 @@ The exceptions to this license are as follows:
 - islemag_comments_args
 - islemag_sidebar_classes
 - islemag_date_format
+- islemag_title_color_default_filter
+- islemag_header_textcolor_default_filter
+- islemag_sections_post_title_color_default_filter
+- islemag_post_navigation_filter
