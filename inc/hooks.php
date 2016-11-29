@@ -98,3 +98,17 @@ function islemag_content_footer() {
 function islemag_entry_date() {
 	do_action( 'islemag_entry_date' );
 }
+
+/**
+ * At the top of the slider posts
+ */
+function islemag_top_slider_posts_trigger() {
+	do_action( 'islemag_top_slider_posts' );
+}
+
+/**
+ * At the bottom of the slider posts
+ */
+function islemag_bottom_slider_posts_trigger() {
+	do_action( 'islemag_bottom_slider_posts' );
+}
