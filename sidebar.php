@@ -28,7 +28,7 @@ $sidebar_classes = apply_filters( 'islemag_sidebar_classes',array( 'col-md-3', '
 			)
 		);
 
-		the_widget( 'islemag_multiple_ads',
+		the_widget( 'Islemag_Multiple_Ads',
 			array(
 				'widget_title' => __( 'Banner Widget Example', 'islemag' ),
 				'link_ad1' => ( current_user_can( 'edit_theme_options' ) ? admin_url( 'widgets.php' ) : '' ),
@@ -45,7 +45,7 @@ $sidebar_classes = apply_filters( 'islemag_sidebar_classes',array( 'col-md-3', '
 				'banner_type4' => 'image',
 			),
 			array(
-				'before_widget' => '<div class="widget islemag_multiple_ads">',
+				'before_widget' => '<div class="widget Islemag_Multiple_Ads">',
 				'after_widget'  => '</div>',
 				'before_title'  => '<h3 class="title-border dkgreen title-bg-line"><span>',
 				'after_title'   => '</span></h3>',

@@ -1,9 +1,9 @@
 jQuery( document ).ready(function() {
-  
+  'use strict';
   jQuery( 'body' ).on( 'change', '.islemag-big-ad-type',function(){
     var th = jQuery(this);
     if( th.is( ':checked' ) ){
-      if( th.val() == 'image' ){
+      if( th.val() === 'image' ){
         th.parent().parent().children('.islemag-big-ad-image').show();
         th.parent().parent().children('.islemag-big-ad-code').hide();
       } else {
@@ -17,7 +17,7 @@ jQuery( document ).ready(function() {
     var th = jQuery(this);
     if( th.is( ':checked' ) ){
 
-      if( th.val() == 'image' ){
+      if( th.val() === 'image' ){
         th.parent().next().show();
         th.parent().next().next().hide();
       } else {
@@ -29,17 +29,18 @@ jQuery( document ).ready(function() {
 
 
   //widget dropdown
-  jQuery( "body" ).on('click','.islemag-ad-widget-top',function(){
+  jQuery( 'body' ).on('click','.islemag-ad-widget-top',function(){
     jQuery(this).next().slideToggle();
   });
 
 });
 
 
-jQuery(document).ajaxSuccess(function(e, xhr, settings) {
+jQuery(document).ajaxSuccess(function() {
+  'use strict';
   var th = jQuery(this);
   if( th.is( ':checked' ) ){
-    if( th.val() == 'image' ){
+    if( th.val() === 'image' ){
       th.parent().parent().children('.islemag-big-ad-image').show();
       th.parent().parent().children('.islemag-big-ad-code').hide();
     } else {

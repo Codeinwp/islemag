@@ -23,7 +23,9 @@ function islemag_body_classes( $classes ) {
 }
 add_filter( 'body_class', 'islemag_body_classes' );
 
-
+/**
+ * Display footer function.
+ */
 function islemag_footer() {
 	?>
 	<div class="col-md-8 col-md-push-4 islemag-footer-menu">
@@ -51,22 +53,47 @@ function islemag_footer() {
 }
 add_action( 'islemag_footer_content','islemag_footer' );
 
-
+/**
+ * Display post navigation.
+ */
 function islemag_the_post_navigation() {
 	the_posts_navigation();
 }
 add_action( 'islemag_post_navigation','islemag_the_post_navigation' );
 
+/**
+ * Heading of comments.
+ */
 function islemag_comments_heading() {
-	printf(
-		esc_html( _nx( 'One thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', get_comments_number(), 'comments title', 'islemag' ) ),
-		number_format_i18n( get_comments_number() ),
-		'<span>' . get_the_title() . '</span>'
-	);
+	$comments_number = get_comments_number();
+	if ( 1 === $comments_number ) {
+		/* translators: %s: post title */
+		printf( _x( 'One thought on &ldquo;%s&rdquo;', 'comments title', 'islemag' ), get_the_title() );
+	} else {
+		printf(
+			/* translators: 1: number of comments, 2: post title */
+			_nx(
+				'%1$s thought on &ldquo;%2$s&rdquo;',
+				'%1$s thoughts on &ldquo;%2$s&rdquo;',
+				$comments_number,
+				'comments title',
+				'islemag'
+			),
+			number_format_i18n( $comments_number ),
+			'<span>' . get_the_title() . '</span>'
+		);
+	}
 }
 add_action( 'islemag_comments_title','islemag_comments_heading' );
 
-
+/**
+ * Comment action.
+ *
+ * @param string $args Comment arguments.
+ * @param object $comment Comment object.
+ * @param int    $depth Comments depth.
+ * @param string $add_below  Add bellow comments.
+ */
 function islemag_comment_action( $args, $comment, $depth, $add_below ) {
 	?>
 
@@ -95,6 +122,9 @@ function islemag_comment_action( $args, $comment, $depth, $add_below ) {
 }
 add_action( 'islemag_comment_content','islemag_comment_action', 10, 5 );
 
+/**
+ * Post entry date.
+ */
 function islemag_post_entry_date() {
 	$date_format = apply_filters( 'islemag_date_format','M' ); ?>
 	<span class="entry-date"><?php echo get_the_date( 'd' ); ?><span><?php echo strtoupper( get_the_date( $date_format ) ); ?></span></span>

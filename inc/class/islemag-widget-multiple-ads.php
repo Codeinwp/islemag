@@ -1,13 +1,22 @@
 <?php
+/**
+ * Islemag_Multiple_Ads class file
+ *
+ * @package WordPress
+ * @subpackage Islemag
+ */
 
-class islemag_multiple_ads extends WP_Widget {
+/**
+ * Class Islemag_Multiple_Ads
+ */
+class Islemag_Multiple_Ads extends WP_Widget {
 
 	 /**
 	  * Constructor
 	  **/
 	public function __construct() {
-		$widget_ops = array( 'classname' => 'islemag_multiple_ads' );
-		parent::__construct( 'islemag_multiple_ads-widget', 'Islemag - Sidebar multiple advertisements', $widget_ops );
+		$widget_ops = array( 'classname' => 'Islemag_Multiple_Ads' );
+		parent::__construct( 'Islemag_Multiple_Ads-widget', 'Islemag - Sidebar multiple advertisements', $widget_ops );
 		add_action( 'admin_enqueue_scripts', array( $this, 'upload_scripts' ) );
 	}
 
@@ -19,13 +28,18 @@ class islemag_multiple_ads extends WP_Widget {
 		wp_enqueue_script( 'upload_media_widget', get_template_directory_uri() . '/js/islemag-upload-media.js', array( 'jquery' ),'1.0.0', true );
 	}
 
-	function widget( $args, $instance ) {
-		extract( $args );
-		echo $before_widget;
+	/**
+	 * Outputs the content of the widget
+	 *
+	 * @param array $args     Widget arguments.
+	 * @param array $instance Widget instance.
+	 */
+	public function widget( $args, $instance ) {
+		echo $args['before_widget'];
 
 		$title = $instance['widget_title'];
 		if ( ! empty( $title ) ) {
-			echo $before_title . esc_html( $title ) . $after_title;
+			echo $args['before_title'] . esc_html( $title ) . $args['after_title'];
 		}
 
 		for ( $i = 1 ; $i < 7 ; $i++ ) {
@@ -35,7 +49,7 @@ class islemag_multiple_ads extends WP_Widget {
 			$type = 'banner_type' . $i;
 			$code = 'banner_code' . $i;
 
-			if ( ! empty( $instance[ $type ] ) && $instance[ $type ] == 'image' ) {
+			if ( ! empty( $instance[ $type ] ) && $instance[ $type ] === 'image' ) {
 				if ( ! empty( $instance[ $url ] ) ) {
 					if ( ! empty( $instance[ $link ] ) ) {
 						echo '<div class="islemag-small-banner"> <a href="' . esc_url( $instance[ $link ] ) . '" target="_blank" ><img src="' . esc_url( $instance[ $url ] ) . '" alt="' . ( ! empty( $instance[ $title_alt ] ) ? esc_attr( $instance[ $title_alt ] ) : '' ) . '"/></a></div>';
@@ -49,10 +63,16 @@ class islemag_multiple_ads extends WP_Widget {
 				}
 			}
 		}
-		echo $after_widget;
+		echo $args['after_widget'];
 	}
 
-	function update( $new_instance, $old_instance ) {
+	/**
+	 * Processing widget options on save
+	 *
+	 * @param array $new_instance The new options.
+	 * @param array $old_instance The previous options.
+	 */
+	public function update( $new_instance, $old_instance ) {
 
 		$instance = $old_instance;
 		$instance['widget_title'] = sanitize_text_field( $new_instance['widget_title'] );
@@ -111,8 +131,12 @@ class islemag_multiple_ads extends WP_Widget {
 	}
 
 
-
-	function form( $instance ) {
+	/**
+	 * Outputs the options form on admin
+	 *
+	 * @param array $instance The widget options.
+	 */
+	public function form( $instance ) {
 	?>
 	  <p>
 		<label for="<?php echo esc_attr( $this->get_field_id( 'widget_title' ) ); ?>"><?php _e( 'Title','islemag' ); ?></label><br/>
