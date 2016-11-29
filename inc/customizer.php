@@ -25,7 +25,7 @@ function islemag_customize_register( $wp_customize ) {
 
 	require_once( 'class/islemag-info.php' );
 	$wp_customize->add_section('islemag_theme_info', array(
-		'title' => __( 'Theme info', 'islemag' ),
+		'title' => __( 'View theme info', 'islemag' ),
 		'priority' => 0,
 	) );
 
