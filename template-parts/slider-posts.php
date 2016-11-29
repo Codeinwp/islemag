@@ -7,19 +7,19 @@
  * @package islemag
  */
 
-$colors = array("red", "orange", "blue", "green", "purple", "pink", "light_red");
-$choosed_color = array_rand($colors, 1);
+$colors = array( 'red', 'orange', 'blue', 'green', 'purple', 'pink', 'light_red' );
+$choosed_color = array_rand( $colors, 1 );
 ?>
-<article class="entry entry-overlay entry-block <?php echo $colors[$choosed_color];?>">
+<article class="entry entry-overlay entry-block <?php echo $colors[ $choosed_color ];?>">
 	<div class="entry-media">
 		<figure>
 			<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
 				<?php
 
 				$thumb_id = get_post_thumbnail_id( $wp_query->ID );
-				$thumb_meta = wp_get_attachment_metadata($thumb_id);
-				if(!empty($thumb_id)){
-					if($thumb_meta['width']/$thumb_meta['height'] > 1) {
+				$thumb_meta = wp_get_attachment_metadata( $thumb_id );
+				if ( ! empty( $thumb_id ) ) {
+					if ( $thumb_meta['width'] / $thumb_meta['height'] > 1 ) {
 						$thumb = wp_get_attachment_image_src( $thumb_id, 'islemag_section4_big_thumbnail' );
 						$url = $thumb['0'];
 					} else {

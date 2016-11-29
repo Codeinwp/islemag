@@ -6,102 +6,102 @@
 /**
  * Hook at the beginning of top bar.
  */
-function islemag_navbar_top_head(){
-	do_action('islemag_navbar_top_head');
+function islemag_navbar_top_head() {
+	do_action( 'islemag_navbar_top_head' );
 }
 
 /**
  * Hook at the end of top bar.
  */
-function islemag_navbar_top_bottom(){
-	do_action('islemag_navbar_top_bottom');
+function islemag_navbar_top_bottom() {
+	do_action( 'islemag_navbar_top_bottom' );
 }
 
 /**
  * Hook at the beginning of header.
  */
-function islemag_header_content_head(){
-	do_action('islemag_header_content_head');
+function islemag_header_content_head() {
+	do_action( 'islemag_header_content_head' );
 }
 
 /**
  * Hook at the end of header.
  */
-function islemag_header_content_bottom(){
-	do_action('islemag_header_content_bottom');
+function islemag_header_content_bottom() {
+	do_action( 'islemag_header_content_bottom' );
 }
 
 /**
  *  Hook before main navigation.
  */
-function islemag_main_nav_before(){
-	do_action('islemag_main_nav_before');
+function islemag_main_nav_before() {
+	do_action( 'islemag_main_nav_before' );
 }
 
 /**
  *  Hook after main navigation.
  */
-function islemag_main_nav_after(){
-	do_action('islemag_main_nav_after');
+function islemag_main_nav_after() {
+	do_action( 'islemag_main_nav_after' );
 }
 
 /**
  *  Hook at the beginning of footer container.
  */
-function islemag_footer_container_head(){
-	do_action('islemag_footer_container_head');
+function islemag_footer_container_head() {
+	do_action( 'islemag_footer_container_head' );
 }
 
 /**
  *  Hook at the end of footer container.
  */
-function islemag_footer_container_bottom(){
-	do_action('islemag_footer_container_bottom');
+function islemag_footer_container_bottom() {
+	do_action( 'islemag_footer_container_bottom' );
 }
 
 /**
  *  Hook for footer content.
  */
-function islemag_footer_content(){
-	do_action('islemag_footer_content');
+function islemag_footer_content() {
+	do_action( 'islemag_footer_content' );
 }
 
 /**
  *  Hook for posts navigation.
  */
-function islemag_post_navigation(){
-	do_action('islemag_post_navigation');
+function islemag_post_navigation() {
+	do_action( 'islemag_post_navigation' );
 }
 
 /**
  *  Hook for comments title
  */
-function islemag_comments_title(){
-	do_action('islemag_comments_title');
+function islemag_comments_title() {
+	do_action( 'islemag_comments_title' );
 }
 
 /**
  * Hook for comments content.
  *
- * @param array $args                     Comment arguments.
+ * @param array                 $args                     Comment arguments.
  * @param integer/string/object $comment  Author’s User ID (an integer or string), an E-mail Address (a string) or the comment object from the comment loop.
- * @param int $depth                      Depth of comments.
- * @param string $add_below               For the JavaScript addComment.moveForm() method parameters.
+ * @param int                   $depth                      Depth of comments.
+ * @param string                $add_below               For the JavaScript addComment.moveForm() method parameters.
  */
-function islemag_comment_content( $args, $comment, $depth, $add_below ){
-	do_action('islemag_comment_content', $args, $comment, $depth, $add_below);
+function islemag_comment_content( $args, $comment, $depth, $add_below ) {
+	do_action( 'islemag_comment_content', $args, $comment, $depth, $add_below );
 }
 
 /**
  * Hook for footer on content.php
  */
-function islemag_content_footer(){
-	do_action('islemag_entry_footer');
+function islemag_content_footer() {
+	do_action( 'islemag_entry_footer' );
 }
 
 /**
  * Hook for date format.
  */
-function islemag_entry_date(){
-	do_action('islemag_entry_date');
+function islemag_entry_date() {
+	do_action( 'islemag_entry_date' );
 }

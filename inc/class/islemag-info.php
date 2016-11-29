@@ -48,7 +48,7 @@ class Islemag_Info extends WP_Customize_Control {
 			),
 			array(
 				'name' => __( 'View theme info','islemag' ),
-				'link' => admin_url('themes.php?page=islemag-welcome'),
+				'link' => admin_url( 'themes.php?page=islemag-welcome' ),
 			),
 			array(
 				'name' => __( 'Leave a review','islemag' ),
