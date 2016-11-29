@@ -45,6 +45,7 @@ if ( ! function_exists( 'islemag_entry_footer' ) ) :
  */
 function islemag_entry_footer() {
 	// Hide category and tag text for pages.
+	echo '<footer class="entry-footer">';
 	if ( 'post' === get_post_type() ) {
 		/* translators: used between list items, there is a space after the comma */
 		$categories_list = get_the_category_list( esc_html__( ', ', 'islemag' ) );
@@ -75,8 +76,10 @@ function islemag_entry_footer() {
 		'<span class="edit-link">',
 		'</span>'
 	);
+	echo '</footer>';
 }
 endif;
+add_action('islemag_entry_footer','islemag_entry_footer');
 
 /**
  * Returns true if a blog has more than 1 category.

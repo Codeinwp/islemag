@@ -7,10 +7,9 @@
  * @package islemag
  */
 
+$sidebar_classes = apply_filters('islemag_sidebar_classes',array('col-md-3','sidebar','islemag-content-right')); ?>
 
-?>
-
-<aside class="col-md-3 sidebar islemag-content-right " role="complementary">
+<aside <?php if(!empty($sidebar_classes)) { echo 'class="'. implode(' ', $sidebar_classes ) . '"'; } ?> role="complementary">
 	<?php
 
 	if ( is_active_sidebar( 'islemag-sidebar' ) ) {

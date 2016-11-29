@@ -95,27 +95,13 @@
             </div><!-- End #footer-inner -->
             <div id="footer-bottom" class="no-bg">
                 <div class="islemag-footer-container">
-                    <div class="col-md-8 col-md-push-4 islemag-footer-menu">
-                        <?php
+                    <?php
+                    islemag_footer_container_head();
 
-                            $defaults = array(
-                                'theme_location'  => 'islemag-footer',
-                                'fallback_cb'     => false,
-                                'items_wrap'      => '<ul class="footer-menu" id="%1$s" class="%2$s">%3$s</ul>',
-                                'depth'           => 1,
-                            );
+                    islemag_footer_content();
 
-                            wp_nav_menu( $defaults );
+	                islemag_footer_container_bottom();?>
 
-                        ?>
-                    </div><!-- End .col-md-6 -->
-                    <div class="col-md-4 col-md-pull-8 powerdby">
-						<?php printf(
-							__( '%1$s powered by %2$s', 'islemag' ),
-							sprintf( '<a href="https://themeisle.com/themes/islemag/" rel="nofollow">%s</a>', esc_html__( 'Islemag', 'islemag' ) ),
-							sprintf( '<a href="http://wordpress.org/" rel="nofollow">%s</a>', esc_html__( 'WordPress', 'islemag' ) )
-						); ?>
-                    </div><!-- End .col-md-6 -->
                 </div><!-- End .row -->
             </div><!-- End #footer-bottom -->
         </footer><!-- End #footer -->
