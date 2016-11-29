@@ -23,15 +23,10 @@ if ( post_password_required() ) {
 	<div id="comments" class="comments-area">
 
 		<?php if ( have_comments() ) : ?>
-			<h2 class="">
+			<h2 class="comments-title">
 				<?php
-					printf(
-						esc_html( _nx( 'One thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', get_comments_number(), 'comments title', 'islemag' ) ),
-						number_format_i18n( get_comments_number() ),
-						'<span>' . get_the_title() . '</span>'
-					);
-				?>
-			</h3>
+				islemag_comments_title(); ?>
+			</h2>
 
 			<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) :?>
 			<nav id="comment-nav-above" class="navigation comment-navigation" role="navigation">
@@ -49,7 +44,7 @@ if ( post_password_required() ) {
 				<?php
 					wp_list_comments( array(
 						'callback'          => 'islemag_comment',
-						'avatar_size'       => 80
+						'avatar_size'       => 80,
 					) );
 				?>
 			</ul>
@@ -77,20 +72,20 @@ if ( post_password_required() ) {
 		$req = get_option( 'require_name_email' );
 		$aria_req = ( $req ? " aria-required='true'" : '' );
 
-		$fields =  array(
+		$fields = array(
 		'author' =>
 			'<div class="col-sm-4">
 			  <div class="form-group">
-				  <label for="author" class="input-desc">' . __( 'Name', 'islemag' ) . ( $req ? '<span class="required">*</span>' : '' ) .'</label> '.
-				 '<input id="author" class="form-control" placeholder="'. esc_html__( 'Name', 'islemag' ).'" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) .	'" size="30"' . $aria_req . ' />
+				  <label for="author" class="input-desc">' . __( 'Name', 'islemag' ) . ( $req ? '<span class="required">*</span>' : '' ) . '</label> ' .
+				 '<input id="author" class="form-control" placeholder="' . esc_html__( 'Name', 'islemag' ) . '" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30"' . $aria_req . ' />
 				 </div>
 				</div>',
 
 		'email' =>
 			'<div class="col-sm-4">
 			  <div class="form-group">
-				 <label for="email" class="input-desc">' . __( 'Email', 'islemag' ) . ( $req ? '<span class="required">*</span>' : '' ) . '</label> '. 
-			  '<input id="email" class="form-control" placeholder="'. esc_html__( 'Your E-mail', 'islemag' ).'" name="email" type="text" value="' . esc_attr(  $commenter['comment_author_email'] ) .'" size="30"' . $aria_req . ' />
+				 <label for="email" class="input-desc">' . __( 'Email', 'islemag' ) . ( $req ? '<span class="required">*</span>' : '' ) . '</label> ' .
+			  '<input id="email" class="form-control" placeholder="' . esc_html__( 'Your E-mail', 'islemag' ) . '" name="email" type="text" value="' . esc_attr( $commenter['comment_author_email'] ) . '" size="30"' . $aria_req . ' />
 			  </div>
 			 </div>',
 
@@ -98,7 +93,7 @@ if ( post_password_required() ) {
 			'<div class="col-sm-4">
 			  <div class="form-group">
 			   <label for="url" class="input-desc">' . __( 'Website', 'islemag' ) . '</label>' .
-			  '<input id="url" class="form-control" placeholder="'. esc_html__( 'Website', 'islemag' ).'" name="url" type="text" value="' . esc_attr( $commenter['comment_author_url'] ) .'" size="30" />
+			  '<input id="url" class="form-control" placeholder="' . esc_html__( 'Website', 'islemag' ) . '" name="url" type="text" value="' . esc_attr( $commenter['comment_author_url'] ) . '" size="30" />
 			  </div>
 			 </div>',
 		);
@@ -108,11 +103,11 @@ if ( post_password_required() ) {
 			'fields' 						=> apply_filters( 'comment_form_default_fields', $fields ),
 			'comment_field' 		=> '<div class="form-group">
 																<label for="comment" class="input-desc">' . _x( 'Comment', 'noun', 'islemag' ) . '</label>
-																<textarea class="form-control" id="comment" name="comment" aria-required="true" placeholder="'. esc_html__( 'Your Message', 'islemag' ).'"></textarea>
+																<textarea class="form-control" id="comment" name="comment" aria-required="true" placeholder="' . esc_html__( 'Your Message', 'islemag' ) . '"></textarea>
 															</div>',
 		);
 
-		comment_form( $args );
+		comment_form( apply_filters( 'islemag_comments_args',$args ) );
 		?>
 
 	</div><!-- #comments -->

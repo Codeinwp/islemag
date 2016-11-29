@@ -39,3 +39,39 @@ The exceptions to this license are as follows:
   - http://mystock.photos/skater/
   - http://mystock.photos/yellow-tent/
   - http://mystock.photos/green-window/
+  
+## Available hooks
+
+- islemag_navbar_top_head
+- islemag_navbar_top_bottom
+- islemag_header_content_head
+- islemag_header_content_bottom
+- islemag_main_nav_before
+- islemag_main_nav_after
+- islemag_footer_container_head
+- islemag_footer_container_bottom
+- islemag_footer_content
+- islemag_comments_title
+- islemag_comment_content
+- islemag_entry_footer
+- islemag_entry_date
+- islemag_top_slider_posts
+- islemag_bottom_slider_posts
+
+## Available filters
+
+- islemag_navbar_top_classes
+- islemag_wrapper_class
+- islemag_content_ids
+- islemag_line_color
+- islemag_archive_content_classes
+- islemag_content_classes
+- islemag_comments_args
+- islemag_sidebar_classes
+- islemag_date_format
+- islemag_title_color_default_filter
+- islemag_header_textcolor_default_filter
+- islemag_sections_post_title_color_default_filter
+- islemag_post_navigation_filter
+- islemag_slider_posts_colors
+- islemag_filter_article_title_on_slider_posts

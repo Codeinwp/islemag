@@ -1,0 +1,30 @@
+{
+  "name": "islemag",
+  "nicename": "Islemag",
+  "version": "1.0.2",
+  "description": "Islemag theme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Codeinwp/islemag.git"
+  },
+  "keywords": [
+    "wordpress-theme"
+  ],
+  "theme": {
+    "textdomain": "islemag"
+  },
+  "author": "ThemeIsle <friends@themeisle.com>",
+  "license": "GPL-2.0+",
+  "bugs": {
+    "url": "https://github.com/Codeinwp/islemag/issues"
+  },
+  "pot": {
+    "reportmsgidbugsto": "https://github.com/Codeinwp/islemag/issues",
+    "languageteam": "Themeisle Translate <friends@themeisle.com>",
+    "lasttranslator": "Themeisle Translate Team <friends@themeisle.com>"
+  },
+  "devDependencies": {
+    "grunt-theme-fleet": "codeinwp/grunt-theme-fleet",
+    "load-project-config": "~0.2.0"
+  }
+}
