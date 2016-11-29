@@ -74,3 +74,4 @@ The exceptions to this license are as follows:
 - islemag_sections_post_title_color_default_filter
 - islemag_post_navigation_filter
 - islemag_slider_posts_colors
+- islemag_filter_article_title_on_slider_posts
