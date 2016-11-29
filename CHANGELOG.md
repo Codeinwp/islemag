@@ -1,4 +1,10 @@
 
+### 1.1.0 - 29/11/2016
+**Changes:** 
+- Reorganize customize upsells
+- Added hooks and filters for better use with child themes
+- Added grunt
+
 ### 1.0.15 - 09/11/2016
 **Changes:** 
 - Fixed social icons not working on mobile devices
