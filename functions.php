@@ -1,6 +1,6 @@
 <?php
 /**
- * islemag functions and definitions.
+ * Islemag functions and definitions.
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
@@ -116,10 +116,9 @@ if ( ! function_exists( 'islemag_setup' ) ) :
 			'header-text' => array( 'site-title', 'site-description' ),
 		) );
 
-		/**
+		/*
+		 * Welcome screen
 		 */
-		/**
-		 ***********  Welcome screen */
 
 		if ( is_admin() ) {
 
@@ -149,7 +148,11 @@ if ( ! function_exists( 'islemag_setup' ) ) :
 endif; // islemag_setup
 add_action( 'after_setup_theme', 'islemag_setup' );
 
-
+/**
+ * Check what front page displays
+ *
+ * @return bool
+ */
 function islemag_is_not_latest_posts() {
 	return ('posts' == get_option( 'show_on_front' ) ? false : true);
 }
@@ -158,6 +161,10 @@ function islemag_is_not_latest_posts() {
  * Add image size in image_size_names_choose for media uploader
  */
 add_filter( 'image_size_names_choose', 'islemg_media_uploader_custom_sizes' );
+
+/**
+ * Add image size in image_size_names_choose for media uploader
+ */
 function islemg_media_uploader_custom_sizes( $sizes ) {
 	return array_merge( $sizes, array(
 		'islemag_ad_125' => esc_html__( 'Small Advertisement','islemag' ),
@@ -200,6 +207,12 @@ add_action( 'after_setup_theme', 'islemag_content_width', 0 );
 require_once( 'inc/class/islemag-widget-multiple-ads.php' );
 require_once( 'inc/class/islemag-widget-big-ad.php' );
 require_once( 'inc/class/islemag-widget-content-ad.php' );
+
+/**
+ * Register widget area.
+ *
+ * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
+ */
 function islemag_widgets_init() {
 	register_sidebar( array(
 		'name'          => esc_html__( 'Sidebar', 'islemag' ),
@@ -339,13 +352,13 @@ function islemag_fonts_url() {
 	return $fonts_url;
 }
 
+/**
+ * Enqueue fonts.
+ */
 function islemag_scripts_styles() {
 	wp_enqueue_style( 'islemag-fonts', islemag_fonts_url(), array(), null );
 }
 add_action( 'wp_enqueue_scripts', 'islemag_scripts_styles' );
-
-
-
 
 /**
  * Custom template tags for this theme.
@@ -407,25 +420,23 @@ function islemag_get_excerpt() {
  **/
 function islemag_comment( $comment, $args, $depth ) {
 	$GLOBALS['comment'] = $comment;
-	extract( $args, EXTR_SKIP );
-
-	if ( 'div' == $args['style'] ) {
-		$tag = 'div';
+	if ( 'div' === $args['style'] ) {
+		$tag       = 'div';
 		$add_below = 'comment';
 	} else {
-		$tag = 'li';
+		$tag       = 'li';
 		$add_below = 'div-comment';
 	}
 	?>
-	<<?php echo $tag ?> <?php comment_class( empty( $args['has_children'] ) ? '' : 'parent' ) ?> id="comment-<?php comment_ID() ?>">
-	<?php if ( 'div' != $args['style'] ) : ?>
+	<<?php echo $tag ?><?php comment_class( empty( $args['has_children'] ) ? '' : 'parent' ) ?> id="comment-<?php comment_ID() ?>">
+	<?php if ( 'div' !== $args['style'] ) : ?>
 		<div id="div-comment-<?php comment_ID() ?>" class="comment-body">
 	<?php endif; ?>
 
 	<?php
-	islemag_comment_content( $args, $comment, $depth, $add_below );?>
+	islemag_comment_content( $args, $comment, $depth, $add_below ); ?>
 
-	<?php if ( 'div' != $args['style'] ) : ?>
+	<?php if ( 'div' !== $args['style'] ) : ?>
 		</div>
 	<?php endif; ?>
 	<?php
@@ -438,6 +449,9 @@ add_action( 'wp_ajax_request_post', 'islemag_requestpost' );
 
 $islemag_section1_category = '';
 
+/**
+ * Ajax function for refresh purposes.
+ */
 function islemag_requestpost() {
 	$colors = array( 'red', 'orange', 'blue', 'green', 'purple', 'pink', 'light_red' );
 	$section = $_POST['section'];
@@ -504,8 +518,11 @@ function islemag_requestpost() {
 	die();
 }
 
-
 add_action( 'wp_head','islemag_style', 100 );
+
+/**
+ * Custom colors and styles function.
+ */
 function islemag_style() {
 
 	echo '<style type="text/css">';
@@ -555,14 +572,20 @@ function islemag_style() {
 }
 
 add_filter( 'comment_form_fields', 'islemag_move_comment_field_to_bottom' );
+
+/**
+ * Move comment field to bottom.
+ *
+ * @param array $fields Fields of comment form.
+ *
+ * @return mixed
+ */
 function islemag_move_comment_field_to_bottom( $fields ) {
 	$comment_field = $fields['comment'];
 	unset( $fields['comment'] );
 	$fields['comment'] = $comment_field;
 	return $fields;
 }
-
-
 
 // for the comment wrapping functions - ensures HTML does not break.
 $comment_open_div = 0;
@@ -573,11 +596,19 @@ $comment_open_div = 0;
  * @global int $comment_open_div
  */
 add_action( 'comment_form_before_fields', 'islemag_before_comment_fields' );
+
+/**
+ * Creates an opening div for a bootstrap row.
+ *
+ * @global int $comment_open_div
+ */
 function islemag_before_comment_fields() {
 	global $comment_open_div;
 	$comment_open_div = 1;
 	echo '<div class="row">';
 }
+
+add_action( 'comment_form_after_fields', 'islemag_after_comment_fields' );
 
 /**
  * Creates a closing div for a bootstrap row.
@@ -585,7 +616,6 @@ function islemag_before_comment_fields() {
  * @global int $comment_open_div
  * @return type
  */
-add_action( 'comment_form_after_fields', 'islemag_after_comment_fields' );
 function islemag_after_comment_fields() {
 	global $comment_open_div;
 	if ( $comment_open_div == 0 ) {
@@ -594,8 +624,11 @@ function islemag_after_comment_fields() {
 	echo '</div>';
 }
 
-
 add_action( 'admin_head', 'islemag_widget_style' );
+
+/**
+ * Widget style
+ */
 function islemag_widget_style() {
 	$screen = get_current_screen();
 	if ( $screen->base == 'widgets' ) {
@@ -643,7 +676,12 @@ function islemag_widget_style() {
 	}
 }
 
-
+/**
+ * Function to display a section.
+ *
+ * @param int  $section_nb Section number.
+ * @param bool $is_hidden Flag check if hidden.
+ */
 function islemag_display_section( $section_nb, $is_hidden = false ) {
 	$colors = array( 'red', 'orange', 'blue', 'green', 'purple', 'pink', 'light_red' );
 	$template = 1;

@@ -12,5 +12,6 @@ module.exports = function( grunt ) {
     config.files.js.push( '!inc/customizer-repeater/fontawesome-iconpicker.min.js' );
     config.files.js.push( '!js/owl.carousel.js' );
     config.files.js.push( '!js/owl.carousel.min.js' );
+    config.files.js.push( '!js/script.all.js' );
     loader( grunt, config ).init();
 };
