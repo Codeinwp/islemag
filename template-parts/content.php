@@ -73,7 +73,7 @@
 
 	<div class="entry-content">
 		<?php
-			$ismore = @strpos( $post->post_content, '<!--more-->' );
+			$ismore = strpos( $post->post_content, '<!--more-->' );
 		if ( $ismore ) : the_content( sprintf( esc_html__( 'Read more %s ...','islemag' ), '<span class="screen-reader-text">' . esc_html__( 'about ', 'islemag' ) . get_the_title() . '</span>' ) );
 			else : the_excerpt();
 			endif;

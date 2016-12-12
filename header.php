@@ -105,7 +105,7 @@
 						dynamic_sidebar( 'islemag-header-ad' );
 					} else {
 						the_widget(
-							'islemag_content_ad',
+							'Islemag_Content_Ad',
 							array(
 								'link_ad'  => ( current_user_can( 'edit_theme_options' ) ? admin_url( 'widgets.php' ) : '' ),
 								'image_uri_ad'   => get_template_directory_uri() . '/img/banner_placeholder.png',

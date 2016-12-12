@@ -1,6 +1,9 @@
 <?php
 /**
  * Define all the theme hooks.
+ *
+ * @package WordPress
+ * @subpackage Islemag
  */
 
 /**

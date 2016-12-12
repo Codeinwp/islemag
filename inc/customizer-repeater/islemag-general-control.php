@@ -1,15 +1,55 @@
 <?php
+/**
+ * Islemag_General_Repeater class file.
+ *
+ * @package WordPress
+ * @subpackage Islemag
+ */
+
 if ( ! class_exists( 'WP_Customize_Control' ) ) {
 	return null;
 }
 
+/**
+ * Class Islemag_General_Repeater
+ */
 class Islemag_General_Repeater extends WP_Customize_Control {
+
+	/**
+	 * Repeater id.
+	 *
+	 * @var string
+	 */
 	public $id;
+
+	/**
+	 * Box title.
+	 *
+	 * @var array|string|void
+	 */
 	private $boxtitle = array();
+
+	/**
+	 * Flag has icon control.
+	 *
+	 * @var bool|mixed
+	 */
 	private $customizer_repeater_icon_control = false;
+
+	/**
+	 * Flag has link control.
+	 *
+	 * @var bool|mixed
+	 */
 	private $customizer_repeater_link_control = false;
 
-	/*Class constructor*/
+	/**
+	 * Islemag_General_Repeater constructor.
+	 *
+	 * @param WP_Customize_Manager $manager WordPress manager.
+	 * @param string               $id Control id.
+	 * @param array                $args Arguments.
+	 */
 	public function __construct( $manager, $id, $args = array() ) {
 		parent::__construct( $manager, $id, $args );
 		/*Get options from customizer.php*/
@@ -27,7 +67,10 @@ class Islemag_General_Repeater extends WP_Customize_Control {
 			$this->id = $id;
 		}
 	}
-	/*Enqueue resources for the control*/
+
+	/**
+	 * Enqueue resources for the control
+	 */
 	public function enqueue() {
 		wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/css/font-awesome.min.css','4.6.3' );
 		wp_enqueue_style( 'customizer-repeater-admin-stylesheet', get_template_directory_uri() . '/css/admin-style.css','1.0.0' );
@@ -36,6 +79,10 @@ class Islemag_General_Repeater extends WP_Customize_Control {
 		wp_enqueue_script( 'customizer-repeater-fontawesome-iconpicker', get_template_directory_uri() . '/inc/customizer-repeater/js/fontawesome-iconpicker.min.js', array( 'jquery' ), '1.0.0', true );
 		wp_enqueue_style( 'customizer-repeater-fontawesome-iconpicker-script', get_template_directory_uri() . '/inc/customizer-repeater/css/fontawesome-iconpicker.min.css' );
 	}
+
+	/**
+	 * The function to render the controler
+	 */
 	public function render_content() {
 		/*Get default options*/
 		$this_default = json_decode( $this->setting->default );
@@ -80,7 +127,11 @@ class Islemag_General_Repeater extends WP_Customize_Control {
 		<?php
 	}
 
-
+	/**
+	 * Function to iterate through input and display repeater boxes.
+	 *
+	 * @param array $array Array to iterate through.
+	 */
 	private function iterate_array( $array = array() ) {
 		/*Counter that helps checking if the box is first and should have the delete button disabled*/
 		$it = 0;
@@ -88,7 +139,7 @@ class Islemag_General_Repeater extends WP_Customize_Control {
 			foreach ( $array as $icon ) {  ?>
 				<div class="islemag_general_control_repeater_container islemag_draggable">
 					<div class="islemag-customize-control-title">
-						<?php esc_html_e( $this->boxtitle ) ?>
+						<?php echo esc_html( $this->boxtitle ); ?>
 					</div>
 					<div class="islemag-box-content-hidden">
 						<?php
@@ -135,7 +186,7 @@ class Islemag_General_Repeater extends WP_Customize_Control {
 		} else { ?>
 			<div class="islemag_general_control_repeater_container">
 				<div class="islemag-customize-control-title">
-					<?php esc_html_e( $this->boxtitle ) ?>
+					<?php echo esc_html( $this->boxtitle ); ?>
 				</div>
 				<div class="islemag-box-content-hidden">
 					<?php
@@ -158,6 +209,13 @@ class Islemag_General_Repeater extends WP_Customize_Control {
 			<?php
 		}
 	}
+
+	/**
+	 * Function to display input field in control.
+	 *
+	 * @param array  $options Field options.
+	 * @param string $value Input value.
+	 */
 	private function input_control( $options, $value = '' ) {
 	?>
 		<span class="customize-control-title"><?php echo $options['label']; ?></span>
@@ -165,6 +223,12 @@ class Islemag_General_Repeater extends WP_Customize_Control {
 		<?php
 	}
 
+	/**
+	 * Function to display iconpicker in repeater.
+	 *
+	 * @param string $value Input value.
+	 * @param string $show Flag to display or not.
+	 */
 	private function icon_picker_control( $value = '', $show = '' ) {
 	?>
 		<div class="social-repeater-general-control-icon" <?php if ( $show === 'customizer_repeater_image' || $show === 'customizer_repeater_none' ) { echo 'style="display:none;"'; } ?>>
