@@ -24,6 +24,6 @@ jQuery(document).ready(function() {
    **/
   jQuery('.related-show-on-click').click(function(){
       jQuery('.islemag-cat-show-on-click').show();
-      jQuery(this).hide()
+      jQuery(this).hide();
   });
 });

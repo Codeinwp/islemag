@@ -1,6 +1,9 @@
 <?php
 /**
  * Template name: Full Width
+ *
+ * @package WordPress
+ * @subpackage Islemag
  */
 
 get_header(); ?>

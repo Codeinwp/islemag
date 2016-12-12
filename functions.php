@@ -102,9 +102,9 @@ if ( ! function_exists( 'islemag_setup' ) ) :
 
 		register_default_headers( array(
 			'wheel' => array(
-			'url'           => get_stylesheet_directory_uri() . '/img/banner.jpg',
-			'thumbnail_url' => get_stylesheet_directory_uri() . '/img/banner_th.jpg',
-			'description'   => __( 'Banner', 'islemag' ),
+				'url'           => get_stylesheet_directory_uri() . '/img/banner.jpg',
+				'thumbnail_url' => get_stylesheet_directory_uri() . '/img/banner_th.jpg',
+				'description'   => __( 'Banner', 'islemag' ),
 			),
 		) );
 
@@ -117,9 +117,9 @@ if ( ! function_exists( 'islemag_setup' ) ) :
 		) );
 
 		/**
-		*/
+		 */
 		/**
-		***********  Welcome screen */
+		 ***********  Welcome screen */
 
 		if ( is_admin() ) {
 
@@ -134,12 +134,12 @@ if ( ! function_exists( 'islemag_setup' ) ) :
 			 *
 			 */
 			$islemag_required_actions = array(
-			array(
-				'id'            => 'islemag-req-ac-frontpage-latest-news',
-				'title'         => esc_html__( 'Switch "Front page displays" to "A static page"' ,'islemag' ),
-				'description'   => esc_html__( 'In order to have the one page look for your website, please go to Customize -> Static Front Page and switch "Front page displays" to "A static page". Then select the template "Frontpage" for that selected page.','islemag' ),
-				'check'         => islemag_is_not_latest_posts(),
-			),
+				array(
+					'id'            => 'islemag-req-ac-frontpage-latest-news',
+					'title'         => esc_html__( 'Switch "Front page displays" to "A static page"' ,'islemag' ),
+					'description'   => esc_html__( 'In order to have the one page look for your website, please go to Customize -> Static Front Page and switch "Front page displays" to "A static page". Then select the template "Frontpage" for that selected page.','islemag' ),
+					'check'         => islemag_is_not_latest_posts(),
+				),
 			);
 
 			require get_template_directory() . '/inc/admin/welcome-screen/welcome-screen.php';
@@ -159,16 +159,16 @@ function islemag_is_not_latest_posts() {
  */
 add_filter( 'image_size_names_choose', 'islemg_media_uploader_custom_sizes' );
 function islemg_media_uploader_custom_sizes( $sizes ) {
-		return array_merge( $sizes, array(
-				'islemag_ad_125' => esc_html__( 'Small Advertisement','islemag' ),
-				'islemag_leaderboard' => esc_html__( 'Leaderboard', 'islemag' ),
-				'islemag_3_1_rectangle' => esc_html__( '3:1 Rectangle', 'islemag' ),
-				'islemag_medium_rectangle' => esc_html__( 'Medium Rectangle', 'islemag' ),
-				'islemag_half_page' => esc_html__( 'Half-page ad', 'islemag' ),
-				'islemag_square_pop_up' => esc_html__( 'Big Square', 'islemag' ),
-				'islemag_vertical_rectangle' => esc_html__( 'Vertical Rectangle', 'islemag' ),
-				'islemag_ad_125' => esc_html__( 'Small Square', 'islemag' ),
-		) );
+	return array_merge( $sizes, array(
+		'islemag_ad_125' => esc_html__( 'Small Advertisement','islemag' ),
+		'islemag_leaderboard' => esc_html__( 'Leaderboard', 'islemag' ),
+		'islemag_3_1_rectangle' => esc_html__( '3:1 Rectangle', 'islemag' ),
+		'islemag_medium_rectangle' => esc_html__( 'Medium Rectangle', 'islemag' ),
+		'islemag_half_page' => esc_html__( 'Half-page ad', 'islemag' ),
+		'islemag_square_pop_up' => esc_html__( 'Big Square', 'islemag' ),
+		'islemag_vertical_rectangle' => esc_html__( 'Vertical Rectangle', 'islemag' ),
+		'islemag_ad_125' => esc_html__( 'Small Square', 'islemag' ),
+	) );
 }
 
 add_image_size( 'islemag_leaderboard', 728, 90, true );
@@ -197,9 +197,9 @@ add_action( 'after_setup_theme', 'islemag_content_width', 0 );
  *
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
-	require_once( 'inc/class/islemag-widget-multiple-ads.php' );
-	require_once( 'inc/class/islemag-widget-big-ad.php' );
-	require_once( 'inc/class/islemag-widget-content-ad.php' );
+require_once( 'inc/class/islemag-widget-multiple-ads.php' );
+require_once( 'inc/class/islemag-widget-big-ad.php' );
+require_once( 'inc/class/islemag-widget-content-ad.php' );
 function islemag_widgets_init() {
 	register_sidebar( array(
 		'name'          => esc_html__( 'Sidebar', 'islemag' ),
@@ -248,19 +248,19 @@ function islemag_widgets_init() {
 
 		register_sidebar(
 			array(
-			'name'          => $name,
-			'id'            => $sidebar,
-			'before_widget'	=> '<div id="%1$s" class="widget %2$s">',
-			'after_widget'  => '</div>',
-			'before_title'	=> '<h3 class="widget-title">',
-			'after_title'	=> '</h3>',
+				'name'          => $name,
+				'id'            => $sidebar,
+				'before_widget'	=> '<div id="%1$s" class="widget %2$s">',
+				'after_widget'  => '</div>',
+				'before_title'	=> '<h3 class="widget-title">',
+				'after_title'	=> '</h3>',
 			)
 		);
 	}
 
-	register_widget( 'islemag_multiple_ads' );
-	register_widget( 'islemag_big_ad' );
-	register_widget( 'islemag_content_ad' );
+	register_widget( 'Islemag_Multiple_Ads' );
+	register_widget( 'Islemag_Big_Ad' );
+	register_widget( 'Islemag_Content_Ad' );
 	wp_enqueue_script( 'islemag-widget-js', get_template_directory_uri() . '/js/islemag-wigdet.js', array(), '1.0.0', true );
 
 }
@@ -416,19 +416,19 @@ function islemag_comment( $comment, $args, $depth ) {
 		$tag = 'li';
 		$add_below = 'div-comment';
 	}
-?>
+	?>
 	<<?php echo $tag ?> <?php comment_class( empty( $args['has_children'] ) ? '' : 'parent' ) ?> id="comment-<?php comment_ID() ?>">
 	<?php if ( 'div' != $args['style'] ) : ?>
-	<div id="div-comment-<?php comment_ID() ?>" class="comment-body">
+		<div id="div-comment-<?php comment_ID() ?>" class="comment-body">
 	<?php endif; ?>
 
 	<?php
 	islemag_comment_content( $args, $comment, $depth, $add_below );?>
 
 	<?php if ( 'div' != $args['style'] ) : ?>
-	</div>
+		</div>
 	<?php endif; ?>
-<?php
+	<?php
 }
 
 
@@ -454,16 +454,16 @@ function islemag_requestpost() {
 		));
 
 		if ( $wp_query->have_posts() ) : ?>
-	    	<div class="islemag-top-container">
-	    		<div class="owl-carousel islemag-top-carousel rect-dots">
-	    			<?php
+			<div class="islemag-top-container">
+				<div class="owl-carousel islemag-top-carousel rect-dots">
+					<?php
 					while ( $wp_query->have_posts() ) : $wp_query->the_post();
 						get_template_part( 'template-parts/slider-posts', get_post_format() );
 					endwhile;
 					?>
-	        	</div><!-- End .islemag-top-carousel -->
-	        </div><!-- End .islemag-top-container -->
-		<?php
+				</div><!-- End .islemag-top-carousel -->
+			</div><!-- End .islemag-top-container -->
+			<?php
 		else :
 			get_template_part( 'template-parts/content', 'none' );
 		endif;

@@ -1,8 +1,9 @@
 <?php
 /**
- * islemag Theme Customizer.
+ * Islemag Theme Customizer.
  *
- * @package islemag
+ * @package WordPress
+ * @subpackage Islemag
  */
 
 /**
@@ -461,11 +462,12 @@ add_action( 'customize_register', 'islemag_customize_register' );
 
 
 /**
-
- * ******************************
- * **** Sanitization Functions *****
- **********************************/
-
+ * Sanitize repeater
+ *
+ * @param object $input Json array.
+ *
+ * @return mixed|string|void
+ */
 function islemag_sanitize_repeater( $input ) {
 	$input_decoded = json_decode( $input,true );
 	if ( ! empty( $input_decoded ) ) {
@@ -479,6 +481,13 @@ function islemag_sanitize_repeater( $input ) {
 	return $input;
 }
 
+/**
+ * Sanitize dropdown.
+ *
+ * @param string $input Category slug.
+ *
+ * @return string
+ */
 function islemag_sanitize_category_dropdown( $input ) {
 	$cat = get_category_by_slug( $input );
 	if ( empty( $cat ) ) {
@@ -487,6 +496,13 @@ function islemag_sanitize_category_dropdown( $input ) {
 	return $input;
 }
 
+/**
+ * Sanitize banner.
+ *
+ * @param object $input Banner input.
+ *
+ * @return mixed|string
+ */
 function islemag_sanitize_banner( $input ) {
 	$input_decoded = json_decode( $input, true );
 
@@ -540,7 +556,13 @@ function islemag_sanitize_banner( $input ) {
 	return json_encode( $input_decoded );
 }
 
-
+/**
+ * Sanitize html input.
+ *
+ * @param string $input Control input.
+ *
+ * @return string
+ */
 function islemag_sanitize_html( $input ) {
 	$allowed_html = array(
 							'p' => array(
