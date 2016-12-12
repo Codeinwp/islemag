@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: IsleMag 1.1.0\n"
 "Report-Msgid-Bugs-To: https://github.com/Codeinwp/islemag/issues\n"
-"POT-Creation-Date: 2016-11-29 15:39:54+00:00\n"
+"POT-Creation-Date: 2016-12-12 15:35:40+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -86,134 +86,134 @@ msgstr ""
 msgid "Widgets Area 3"
 msgstr ""
 
-#: functions.php:67
+#: functions.php:66
 msgid "Top"
 msgstr ""
 
-#: functions.php:68
+#: functions.php:67
 msgid "Primary"
 msgstr ""
 
-#: functions.php:69 inc/customizer.php:120
+#: functions.php:68 inc/customizer.php:120
 msgid "Footer"
 msgstr ""
 
-#: functions.php:108
+#: functions.php:107
 msgid "Banner"
 msgstr ""
 
-#: functions.php:139
+#: functions.php:138
 msgid "Switch \"Front page displays\" to \"A static page\""
 msgstr ""
 
-#: functions.php:140
+#: functions.php:139
 msgid ""
 "In order to have the one page look for your website, please go to Customize "
 "-> Static Front Page and switch \"Front page displays\" to \"A static "
 "page\". Then select the template \"Frontpage\" for that selected page."
 msgstr ""
 
-#: functions.php:166
+#: functions.php:170
 msgid "Small Advertisement"
 msgstr ""
 
-#: functions.php:167
+#: functions.php:171
 msgid "Leaderboard"
 msgstr ""
 
-#: functions.php:168
+#: functions.php:172
 msgid "3:1 Rectangle"
 msgstr ""
 
-#: functions.php:169
+#: functions.php:173
 msgid "Medium Rectangle"
 msgstr ""
 
-#: functions.php:170
+#: functions.php:174
 msgid "Half-page ad"
 msgstr ""
 
-#: functions.php:171
+#: functions.php:175
 msgid "Big Square"
 msgstr ""
 
-#: functions.php:172
+#: functions.php:176
 msgid "Vertical Rectangle"
 msgstr ""
 
-#: functions.php:173
+#: functions.php:177
 msgid "Small Square"
 msgstr ""
 
-#: functions.php:212
+#: functions.php:218
 msgid "Sidebar"
 msgstr ""
 
-#: functions.php:222
+#: functions.php:228
 msgid "Header advertisment area"
 msgstr ""
 
-#: functions.php:230
+#: functions.php:236
 msgid "Advertisments area %d"
 msgstr ""
 
-#: functions.php:244
+#: functions.php:250
 msgid "Footer area 1"
 msgstr ""
 
-#: functions.php:247
+#: functions.php:253
 msgid "Footer area 2"
 msgstr ""
 
-#: functions.php:250
+#: functions.php:256
 msgid "Footer area 3"
 msgstr ""
 
-#: functions.php:299
+#: functions.php:304
 msgid "expand child menu"
 msgstr ""
 
-#: functions.php:300
+#: functions.php:305
 msgid "collapse child menu"
 msgstr ""
 
-#: functions.php:688 inc/customizer.php:85 inc/customizer.php:190
+#: functions.php:692 inc/customizer.php:85 inc/customizer.php:190
 msgid "Section 1"
 msgstr ""
 
-#: functions.php:689
+#: functions.php:693
 msgid "Ads Area 1"
 msgstr ""
 
-#: functions.php:693 inc/customizer.php:91 inc/customizer.php:193
+#: functions.php:697 inc/customizer.php:91 inc/customizer.php:193
 msgid "Section 2"
 msgstr ""
 
-#: functions.php:694
+#: functions.php:698
 msgid "Ads Area 2"
 msgstr ""
 
-#: functions.php:698 inc/customizer.php:97 inc/customizer.php:196
+#: functions.php:702 inc/customizer.php:97 inc/customizer.php:196
 msgid "Section 3"
 msgstr ""
 
-#: functions.php:699
+#: functions.php:703
 msgid "Ads Area 3"
 msgstr ""
 
-#: functions.php:704 inc/customizer.php:103 inc/customizer.php:199
+#: functions.php:708 inc/customizer.php:103 inc/customizer.php:199
 msgid "Section 4"
 msgstr ""
 
-#: functions.php:705
+#: functions.php:709
 msgid "Ads Area 4"
 msgstr ""
 
-#: functions.php:709 inc/customizer.php:109 inc/customizer.php:207
+#: functions.php:713 inc/customizer.php:109 inc/customizer.php:207
 msgid "Section 5"
 msgstr ""
 
-#: functions.php:710
+#: functions.php:714
 msgid "Ads Area 5"
 msgstr ""
 
@@ -856,17 +856,17 @@ msgstr ""
 msgid "WordPress"
 msgstr ""
 
-#: inc/extras.php:105
+#: inc/extras.php:97
 msgid ""
 "<h4 class=\"media-heading\">%s</h4><span class=\"comment-date\">(%2$s - "
 "%3$s)</span>"
 msgstr ""
 
-#: inc/extras.php:105
+#: inc/extras.php:97
 msgid "(Edit)"
 msgstr ""
 
-#: inc/extras.php:111
+#: inc/extras.php:103
 msgid "Your comment is awaiting moderation."
 msgstr ""
 
@@ -1049,30 +1049,30 @@ msgctxt "noun"
 msgid "Comment"
 msgstr ""
 
-#: functions.php:326
+#: functions.php:330
 #. Translators: If there are characters in your language that are not supported
 #. by Lora, translate this to 'off'. Do not translate into your own language.
 msgctxt "Lato font: on or off"
 msgid "on"
 msgstr ""
 
-#: functions.php:327
+#: functions.php:331
 msgctxt "Raleway font: on or off"
 msgid "on"
 msgstr ""
 
-#: functions.php:328
+#: functions.php:332
 msgctxt "Open Sans font: on or off"
 msgid "on"
 msgstr ""
 
-#: inc/extras.php:71
+#: inc/extras.php:63
 #. translators: %s: post title
 msgctxt "comments title"
 msgid "One thought on &ldquo;%s&rdquo;"
 msgstr ""
 
-#: inc/extras.php:75
+#: inc/extras.php:67
 #. translators: 1: number of comments, 2: post title
 msgctxt "comments title"
 msgid "%1$s thought on &ldquo;%2$s&rdquo;"
