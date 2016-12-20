@@ -2815,6 +2815,11 @@ styled buttons not container for vertical centered navs*/
 	transition: all 0.5s ease;
 }
 
+.islemag-top-carousel .owl-prev,
+.islemag-top-carousel .owl-next {
+	display:none;
+}
+
 .small-nav .owl-prev,
 .small-nav .owl-next {
 	width: 30px;
