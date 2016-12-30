@@ -1,6 +1,9 @@
 <?php
 /**
  * Template name: Frontpage
+ *
+ * @package WordPress
+ * @subpackage Islemag.
  */
 
 get_header();

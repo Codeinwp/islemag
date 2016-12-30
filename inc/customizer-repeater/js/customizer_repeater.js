@@ -47,42 +47,21 @@ function islemag_uniqid(prefix, more_entropy) {
     return retId;
 }
 
-var entityMap = {
-    "&": "&amp;",
-    "<": "&lt;",
-    ">": "&gt;",
-    '"': '&quot;',
-    "'": '&#39;',
-    "/": '&#x2F;'
-};
-
-
-function islemag_escapeHtml(string) {
-    'use strict';
-    //noinspection JSUnresolvedFunction
-    string = String(string).replace(new RegExp('\r?\n', 'g'), '<br />');
-    string = String(string).replace(/\\/g, '&#92;');
-    return String(string).replace(/[&<>"'\/]/g, function (s) {
-        return entityMap[s];
-    });
-
-}
-
 function islemag_refresh_general_control_values(){
     'use strict';
 
-    jQuery(".islemag_general_control_repeater").each(function(){
+    jQuery('.islemag_general_control_repeater').each(function(){
         var values = [];
         var th = jQuery(this);
-        th.find(".islemag_general_control_repeater_container").each(function(){
+        th.find('.islemag_general_control_repeater_container').each(function(){
             var icon_value = jQuery(this).find('.icp').val();
-            var link = jQuery(this).find(".islemag_link_control").val();
-            var id = jQuery(this).find(".islemag_box_id").val();
+            var link = jQuery(this).find('.islemag_link_control').val();
+            var id = jQuery(this).find('.islemag_box_id').val();
             if( link !== '' || icon_value !== '' ){
                 values.push({
-                    "icon_value" : icon_value,
-                    "link" : link,
-                    "id" : id
+                    'icon_value' : icon_value,
+                    'link' : link,
+                    'id' : id
                 });
             }
         });
@@ -105,21 +84,21 @@ jQuery(document).ready(function(){
         });
     });
 
-    jQuery(".islemag_general_control_new_field").on("click",function(){
+    jQuery('.islemag_general_control_new_field').on('click',function(){
 
         var th = jQuery(this).parent();
         var id = 'islemag_' + islemag_uniqid();
         if(typeof th !== 'undefined') {
 
-            var field = th.find(".islemag_general_control_repeater_container:first").clone();
+            var field = th.find('.islemag_general_control_repeater_container:first').clone();
             if(typeof field !== 'undefined'){
 
 
-                field.find(".islemag_general_control_remove_field").show();
+                field.find('.islemag_general_control_remove_field').show();
 
 
-                field.find(".islemag_box_id").val(id);
-                field.find(".islemag_link_control").val('');
+                field.find('.islemag_box_id').val(id);
+                field.find('.islemag_link_control').val('');
                 /* Empty control for icon */
                 field.find( '.icp' ).iconpicker().on( 'iconpickerUpdated', function() {
                     jQuery( this ).trigger( 'change' );
@@ -129,14 +108,14 @@ jQuery(document).ready(function(){
                 /*Remove value from icon field*/
                 field.find('.icp').val('');
 
-                th.find(".islemag_general_control_repeater_container:first").parent().append(field);
+                th.find('.islemag_general_control_repeater_container:first').parent().append(field);
                 islemag_refresh_general_control_values();
             }
         }
         return false;
     });
 
-    theme_conrols.on("click", ".islemag_general_control_remove_field",function(){
+    theme_conrols.on('click', '.islemag_general_control_remove_field',function(){
         if( typeof	jQuery(this).parent() !== 'undefined'){
             jQuery(this).parent().parent().remove();
             islemag_refresh_general_control_values();
@@ -158,8 +137,8 @@ jQuery(document).ready(function(){
     });
 
     /*Drag and drop to change icons order*/
-    jQuery(".islemag_general_control_droppable").sortable({
-        update: function( event, ui ) {
+    jQuery('.islemag_general_control_droppable').sortable({
+        update: function() {
             islemag_refresh_general_control_values();
         }
     });

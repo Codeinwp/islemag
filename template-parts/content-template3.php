@@ -1,4 +1,11 @@
 <?php
+/**
+ * Template for displaying Islemag frontpage section.
+ *
+ * @package WordPress
+ * @subpackage Islemag
+ */
+
 $wp_query = new WP_Query(
 	array(
 		  'posts_per_page'      => $islemag_section_max_posts,

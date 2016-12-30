@@ -1,14 +1,34 @@
 <?php
+/**
+ * Islemag_Banner_control class file.
+ *
+ * @package WordPress
+ * @subpackage Islemag
+ */
+
 if ( ! class_exists( 'WP_Customize_Control' ) ) {
 	return null;
 }
 
+/**
+ * Class Islemag_Banner_control
+ */
 class Islemag_Banner_control extends WP_Customize_Control {
 
+	/**
+	 * Islemag_Banner_control constructor.
+	 *
+	 * @param WP_Customize_Manager $manager WordPress manager.
+	 * @param string               $id Control id.
+	 * @param array                $args Control arguments.
+	 */
 	public function __construct( $manager, $id, $args = array() ) {
 		parent::__construct( $manager, $id, $args );
 	}
 
+	/**
+	 * Render the content on the theme customizer page
+	 */
 	public function render_content() {
 
 		$values = $this->value();

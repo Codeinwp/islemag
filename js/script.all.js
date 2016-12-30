@@ -1,3 +1,5 @@
+/* global screenReaderText */
+
 jQuery(document).ready(function() {
 
 	var islemag_sticky = jQuery('.islemag-sticky');
@@ -29,11 +31,11 @@ jQuery(document).ready(function() {
 
 	}
 
-	if( stickyMenu.disable_sticky != true ){
+	if( stickyMenu.disable_sticky !== true ){
 		stickyNav();
 	}
 	jQuery(window).scroll(function() {
-		if( stickyMenu.disable_sticky != true ){
+		if( stickyMenu.disable_sticky !== true ){
 			stickyNav();
 		}
 	});
@@ -54,8 +56,6 @@ jQuery(window).on('resize', function(){
 
 jQuery(document).ready(function() {
 
-
-
   //Search box
   var top_navbar = jQuery('.navbar-top').height();
   if( top_navbar > 38 ){
@@ -66,13 +66,8 @@ jQuery(document).ready(function() {
   }
 
   jQuery('.navbar-btn').click(function(){
-    jQuery('#header-search-form').fadeToggle( "fast", "linear" );
+    jQuery('#header-search-form').fadeToggle( 'fast', 'linear' );
   });
-
-
-
-
-
 
   /**
    * Provides helper functions to enhance the theme experience.
@@ -193,7 +188,7 @@ jQuery(document).ready(function() {
          * support for dropdown menus.
          */
         ( function() {
-        	var container, button, menu, links, subMenus;
+        	var container, button, menu;
 
         	container = document.getElementById( 'site-navigation' );
         	if ( ! container ) {

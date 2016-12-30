@@ -1,4 +1,11 @@
 <?php
+/**
+ * This file adds the Home Page to the theme.
+ *
+ * @package WordPress
+ * @subpackage Islemag
+ */
+
 get_header(); ?>
 <div class="container">
 	<div class="row">
