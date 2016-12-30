@@ -1,4 +1,9 @@
 
+### 1.1.1 - 30/12/2016
+**Changes:** 
+- Added grunt and fixed all generated errors
+- Update carousel library to fix issue with menu on mobile
+
 ### 1.1.0 - 29/11/2016
 **Changes:** 
 - Reorganize customize upsells
