@@ -2817,7 +2817,7 @@ styled buttons not container for vertical centered navs*/
 
 .islemag-top-carousel .owl-prev,
 .islemag-top-carousel .owl-next {
-	display:none;
+	display: none;
 }
 
 .small-nav .owl-prev,
@@ -4684,7 +4684,7 @@ ul > li:hover > a,
 	border: none;
 }
 
-.islemag-widget-title{
+.islemag-widget-title {
 	display: inline-block;
 	position: relative;
 	z-index: 1;
