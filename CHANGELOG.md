@@ -1,4 +1,9 @@
 
+### 1.1.2 - 13/01/2017
+**Changes:** 
+- Removed frontpage template and use the front-page.php file for the frontpage
+- Fixed small issue with child themes date in archive page
+
 ### 1.1.1 - 30/12/2016
 **Changes:** 
 - Added grunt and fixed all generated errors
