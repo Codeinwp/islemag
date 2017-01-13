@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: IsleMag 1.1.1\n"
 "Report-Msgid-Bugs-To: https://github.com/Codeinwp/islemag/issues\n"
-"POT-Creation-Date: 2017-01-03 10:36:36+00:00\n"
+"POT-Creation-Date: 2017-01-13 10:41:49+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -177,43 +177,43 @@ msgstr ""
 msgid "collapse child menu"
 msgstr ""
 
-#: functions.php:737 inc/customizer.php:85 inc/customizer.php:190
+#: functions.php:695 inc/customizer.php:85 inc/customizer.php:190
 msgid "Section 1"
 msgstr ""
 
-#: functions.php:738
+#: functions.php:696
 msgid "Ads Area 1"
 msgstr ""
 
-#: functions.php:742 inc/customizer.php:91 inc/customizer.php:193
+#: functions.php:700 inc/customizer.php:91 inc/customizer.php:193
 msgid "Section 2"
 msgstr ""
 
-#: functions.php:743
+#: functions.php:701
 msgid "Ads Area 2"
 msgstr ""
 
-#: functions.php:747 inc/customizer.php:97 inc/customizer.php:196
+#: functions.php:705 inc/customizer.php:97 inc/customizer.php:196
 msgid "Section 3"
 msgstr ""
 
-#: functions.php:748
+#: functions.php:706
 msgid "Ads Area 3"
 msgstr ""
 
-#: functions.php:753 inc/customizer.php:103 inc/customizer.php:199
+#: functions.php:711 inc/customizer.php:103 inc/customizer.php:199
 msgid "Section 4"
 msgstr ""
 
-#: functions.php:754
+#: functions.php:712
 msgid "Ads Area 4"
 msgstr ""
 
-#: functions.php:758 inc/customizer.php:109 inc/customizer.php:207
+#: functions.php:716 inc/customizer.php:109 inc/customizer.php:207
 msgid "Section 5"
 msgstr ""
 
-#: functions.php:759
+#: functions.php:717
 msgid "Ads Area 5"
 msgstr ""
 
