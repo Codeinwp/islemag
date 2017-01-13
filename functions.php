@@ -99,6 +99,7 @@ if ( ! function_exists( 'islemag_setup' ) ) :
 			'default-repeat'         => 'no-repeat',
 			'default-position-x'     => 'center',
 			'default-attachment'     => 'fixed',
+			'default-size'       => 'cover',
 
 		) );
 
