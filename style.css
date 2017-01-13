@@ -2817,7 +2817,7 @@ styled buttons not container for vertical centered navs*/
 
 .islemag-top-carousel .owl-prev,
 .islemag-top-carousel .owl-next {
-	display:none;
+	display: none;
 }
 
 .small-nav .owl-prev,
@@ -3792,7 +3792,7 @@ ul > li:hover > a,
 	border: none;
 }
 
-.title-border > span {
+.islemag-widget-title {
 	display: inline-block;
 	position: relative;
 	z-index: 1;
@@ -3800,7 +3800,7 @@ ul > li:hover > a,
 }
 
 .title-border.text-center > span,
-.text-center > .title-border > span {
+.text-center > .islemag-widget-title {
 	padding: 0 0.8em;
 	border-right: 4px solid transparent;
 	border-left: 4px solid transparent;
@@ -3818,7 +3818,7 @@ ul > li:hover > a,
 	padding: 0;
 }
 
-.title-bg-line > span,
+.islemag-widget-title,
 .title-bg > span {
 	padding: 0 0.8em;
 }
@@ -4684,7 +4684,7 @@ ul > li:hover > a,
 	border: none;
 }
 
-.title-border > span {
+.islemag-widget-title {
 	display: inline-block;
 	position: relative;
 	z-index: 1;
@@ -4692,7 +4692,7 @@ ul > li:hover > a,
 }
 
 .title-border.text-center > span,
-.text-center > .title-border > span {
+.text-center > .islemag-widget-title {
 	padding: 0 0.8em;
 	border-right: 4px solid transparent;
 	border-left: 4px solid transparent;
@@ -4710,7 +4710,7 @@ ul > li:hover > a,
 	padding: 0;
 }
 
-.title-bg-line > span,
+.islemag-widget-title,
 .title-bg > span {
 	padding: 0 0.8em;
 }
