@@ -95,9 +95,11 @@ if ( ! function_exists( 'islemag_setup' ) ) :
 		// Set up the WordPress core custom background feature.
 		add_theme_support( 'custom-background', array(
 			'default-image' => get_template_directory_uri() . '/img/islemag-background.jpg',
+			'default-preset'         => 'fill',
 			'default-repeat'         => 'no-repeat',
 			'default-position-x'     => 'center',
 			'default-attachment'     => 'fixed',
+			'default-size'       => 'cover',
 		) );
 
 		register_default_headers( array(
@@ -291,7 +293,7 @@ function islemag_scripts() {
 
 	wp_enqueue_style( 'islemag-fontawesome', get_template_directory_uri() . '/css/font-awesome.min.css',array(), '4.4.0' );
 
-	if ( is_page_template( 'template-frontpage.php' ) ) {
+	if ( 'page' == get_option( 'show_on_front' ) && is_front_page() ) {
 		wp_enqueue_script( 'islemag-script-index', get_template_directory_uri() . '/js/script.index.js', array( 'jquery' ), '1.0.0', true );
 	}
 
@@ -744,3 +746,17 @@ function islemag_display_section( $section_nb, $is_hidden = false ) {
 	</div>
 	<?php
 }
+
+/**
+ * Filter the front page template so it's bypassed entirely if the user selects
+ * to display blog posts on their homepage instead of a static page.
+ */
+function islemag_filter_front_page_template( $template ) {
+	$islemag_keep_old_fp_template = get_theme_mod( 'islemag_keep_old_fp_template' );
+	if ( ! $islemag_keep_old_fp_template ) {
+		return is_home() ? '' : $template;
+	} else {
+		return '';
+	}
+}
+add_filter( 'frontpage_template', 'islemag_filter_front_page_template' );
