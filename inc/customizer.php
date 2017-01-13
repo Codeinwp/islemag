@@ -21,6 +21,19 @@ function islemag_customize_register( $wp_customize ) {
 	$wp_customize->remove_control( 'background_color' );
 	$wp_customize->get_control( 'custom_logo' )->section = 'islemag_appearance_general';
 
+	/**
+	 * Option to get the frontpage settings to the old default template if a static frontpage is selected
+	 */
+	$wp_customize->add_setting( 'islemag_keep_old_fp_template', array(
+		'sanitize_callback' => 'sanitize_text_field',
+	));
+	$wp_customize->add_control( 'islemag_keep_old_fp_template', array(
+		'type' => 'checkbox',
+		'label' => esc_html__( 'Use a different custom template as frontpage?','islemag' ),
+		'section' => 'title_tagline',
+		'priority'    => 10,
+	));
+
 	require_once( 'customizer-repeater/islemag-general-control.php' );
 	require_once( 'class/islemag-category-selector.php' );
 
