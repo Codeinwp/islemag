@@ -94,13 +94,11 @@ if ( ! function_exists( 'islemag_setup' ) ) :
 
 		// Set up the WordPress core custom background feature.
 		add_theme_support( 'custom-background', array(
-			'default-image'          => get_template_directory_uri() . '/img/islemag-background.jpg',
-			'default-preset'         => 'fill',
+			'default-image' => get_template_directory_uri() . '/img/islemag-background.jpg',
 			'default-repeat'         => 'no-repeat',
 			'default-position-x'     => 'center',
 			'default-attachment'     => 'fixed',
 			'default-size'       => 'cover',
-
 		) );
 
 		register_default_headers( array(
@@ -223,7 +221,7 @@ function islemag_widgets_init() {
 		'description'   => '',
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</div>',
-		'before_title'  => '<h3 class="title-border dkgreen title-bg-line"><span class="islemag-widget-title">',
+		'before_title'  => '<h3 class="title-border dkgreen title-bg-line"><span>',
 		'after_title'   => '</span></h3>',
 	) );
 
@@ -387,7 +385,6 @@ require get_template_directory() . '/inc/jetpack.php';
  * Enables user customization via WordPress plugin API
  */
 require get_template_directory() . '/inc/hooks.php';
-
 
 /**
  * Load customize controls js

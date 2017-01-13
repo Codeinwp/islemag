@@ -23,7 +23,7 @@ $sidebar_classes = apply_filters( 'islemag_sidebar_classes',array( 'col-md-3', '
 			array(
 				'before_widget' => '<div id="text-3" class="widget widget_text">',
 				'after_widget'  => '</div>',
-				'before_title'  => '<h3 class="title-border dkgreen title-bg-line"><span class="islemag-widget-title">',
+				'before_title'  => '<h3 class="title-border dkgreen title-bg-line"><span>',
 				'after_title'   => '</span></h3>',
 			)
 		);
@@ -47,7 +47,7 @@ $sidebar_classes = apply_filters( 'islemag_sidebar_classes',array( 'col-md-3', '
 			array(
 				'before_widget' => '<div class="widget islemag_multiple_ads">',
 				'after_widget'  => '</div>',
-				'before_title'  => '<h3 class="title-border dkgreen title-bg-line"><span class="islemag-widget-title">',
+				'before_title'  => '<h3 class="title-border dkgreen title-bg-line"><span>',
 				'after_title'   => '</span></h3>',
 			)
 		);
