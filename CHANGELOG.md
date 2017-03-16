@@ -1,4 +1,8 @@
 
+### 1.1.3 - 16/03/2017
+**Changes:** 
+- Fixed error with mobile menu not working when the Sticky menu option is disabled
+
 ### 1.1.2 - 13/01/2017
 **Changes:** 
 - Removed frontpage template and use the front-page.php file for the frontpage
