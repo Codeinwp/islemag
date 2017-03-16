@@ -31,11 +31,11 @@ jQuery(document).ready(function() {
 
 	}
 
-	if( stickyMenu.disable_sticky !== true ){
+	if( ! stickyMenu.disable_sticky ){
 		stickyNav();
 	}
 	jQuery(window).scroll(function() {
-		if( stickyMenu.disable_sticky !== true ){
+		if( ! stickyMenu.disable_sticky ){
 			stickyNav();
 		}
 	});
