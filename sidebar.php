@@ -18,6 +18,7 @@ $sidebar_classes = apply_filters( 'islemag_sidebar_classes',array( 'col-md-3', '
 		the_widget( 'WP_Widget_Text',
 			array(
 				'title'  => __( 'Example Widget', 'islemag' ),
+				/* translators: Widgets area editing link */
 				'text'   => sprintf( __( 'This is an example widget to show how the Sidebar looks by default. You can add custom widgets from the %1$swidgets screen%1$s in the admin. If custom widgets is added than this will be replaced by those widgets.', 'islemag' ), current_user_can( 'edit_theme_options' ) ? '<a href="' . admin_url( 'widgets.php' ) . '">' : '', current_user_can( 'edit_theme_options' ) ? '</a>' : '' ),
 			),
 			array(
@@ -51,5 +52,6 @@ $sidebar_classes = apply_filters( 'islemag_sidebar_classes',array( 'col-md-3', '
 				'after_title'   => '</span></h3>',
 			)
 		);
-	} ?>
+	}// End if().
+	?>
 </aside><!-- #secondary -->

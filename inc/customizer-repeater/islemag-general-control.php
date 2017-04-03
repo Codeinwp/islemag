@@ -143,7 +143,16 @@ class Islemag_General_Repeater extends WP_Customize_Control {
 					</div>
 					<div class="islemag-box-content-hidden">
 						<?php
-						$choice = $image_url = $icon_value = $title = $subtitle = $text = $link = $shortcode = $repeater = $color = '';
+						$choice = '';
+						$image_url = '';
+						$icon_value = '';
+						$title = '';
+						$subtitle = '';
+						$text = '';
+						$link = '';
+						$shortcode = '';
+						$repeater = '';
+						$color = '';
 						if ( ! empty( $icon->id ) ) {
 							$id = $icon->id;
 						}
@@ -182,7 +191,7 @@ class Islemag_General_Repeater extends WP_Customize_Control {
 
 				<?php
 				$it++;
-			}
+			}// End foreach().
 		} else { ?>
 			<div class="islemag_general_control_repeater_container">
 				<div class="islemag-customize-control-title">
@@ -207,7 +216,7 @@ class Islemag_General_Repeater extends WP_Customize_Control {
 				</div>
 			</div>
 			<?php
-		}
+		}// End if().
 	}
 
 	/**

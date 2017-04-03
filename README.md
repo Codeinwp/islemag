@@ -40,6 +40,19 @@ The exceptions to this license are as follows:
   - http://mystock.photos/yellow-tent/
   - http://mystock.photos/green-window/
   
+  Images used for demo preview:
+  
+      * https://unsplash.com/photos/ZvvYXz72yZI   
+      * https://unsplash.com/photos/SYx3UCHZJlo
+      * https://unsplash.com/photos/kGSapVfg8Kw
+      * https://unsplash.com/photos/LNOJuUSJZqM
+      * https://unsplash.com/photos/L-2p8fapOA8
+      * https://unsplash.com/photos/w7oxd0tzWWs
+      * https://unsplash.com/photos/85aZoyT_U1I
+      * https://unsplash.com/photos/dBWvUqBoOU8
+      * https://unsplash.com/photos/VBBL6X4Lf3w
+      * https://unsplash.com/?photo=9MiP0C3QqZ4
+  
 ## Available hooks
 
 - islemag_navbar_top_head
