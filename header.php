@@ -113,7 +113,7 @@
 							'Islemag_Content_Ad',
 							array(
 								'link_ad'  => ( current_user_can( 'edit_theme_options' ) ? admin_url( 'widgets.php' ) : '' ),
-								'image_uri_ad'   => get_template_directory_uri() . '/img/banner_placeholder.png',
+								'image_uri_ad'   => apply_filters( 'islemag_default_top_banner_filter', get_template_directory_uri() . '/img/banner_placeholder.png' ),
 								'ad_type' => 'image',
 							),
 							array(
