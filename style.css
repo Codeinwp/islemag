@@ -3792,7 +3792,7 @@ ul > li:hover > a,
 	border: none;
 }
 
-.title-border > span {
+.title-border > span, .title-border > a {
 	display: inline-block;
 	position: relative;
 	z-index: 1;
@@ -3800,7 +3800,9 @@ ul > li:hover > a,
 }
 
 .title-border.text-center > span,
-.text-center > .title-border > span {
+.text-center > .title-border > span,
+.title-border.text-center > a,
+.text-center > .title-border > a {
 	padding: 0 0.8em;
 	border-right: 4px solid transparent;
 	border-left: 4px solid transparent;
@@ -4711,7 +4713,9 @@ ul > li:hover > a,
 }
 
 .title-bg-line > span,
-.title-bg > span {
+.title-bg > span,
+.title-bg-line > a span,
+.title-bg > a span {
 	padding: 0 0.8em;
 }
 
