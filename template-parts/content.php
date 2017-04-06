@@ -15,19 +15,31 @@
 		<figure>
 			<a href="<?php the_permalink(); ?>">
 				<?php
+
+				$pid = get_the_ID();
+
+				$islemag_image_size = 'islemag_blog_post_no_crop';
+
 				$islemag_thumbnail_id = get_post_thumbnail_id();
+
 				if ( $islemag_thumbnail_id ) {
 					$islemag_thumb_meta = wp_get_attachment_metadata( $islemag_thumbnail_id );
 					if ( $islemag_thumb_meta['width'] > 250 && $islemag_thumb_meta['height'] > 250 ) {
 						if ( $islemag_thumb_meta['width'] / $islemag_thumb_meta['height'] > 1.5 ) {
-							the_post_thumbnail( 'islemag_blog_post' );
-						} else {
-							the_post_thumbnail( 'islemag_blog_post_no_crop' );
+							$islemag_image_size = 'islemag_blog_post';
 						}
 					}
+				}
+
+				$post_thumbnail_url = get_the_post_thumbnail( $pid, $islemag_image_size );
+				$post_thumbnail = apply_filters( 'islemag_get_prev_img', $post_thumbnail_url );
+
+				if ( ! empty( $post_thumbnail ) ) {
+					echo $post_thumbnail;
 				} else {
 					echo '<img src="' . get_template_directory_uri() . '/img/blogpost-placeholder.jpg" />';
-				} ?>
+				}
+				?>
 			</a>
 		</figure>
 	</div><!-- End .entry-media -->
@@ -74,6 +86,7 @@
 	<div class="entry-content">
 		<?php
 			$ismore = strpos( $post->post_content, '<!--more-->' );
+		/* translators: About title of the post */
 		if ( $ismore ) : the_content( sprintf( esc_html__( 'Read more %s ...','islemag' ), '<span class="screen-reader-text">' . esc_html__( 'about ', 'islemag' ) . get_the_title() . '</span>' ) );
 			else : the_excerpt();
 			endif;

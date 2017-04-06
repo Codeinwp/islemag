@@ -1,6 +1,6 @@
 <?php
 /**
- * Islemag_Banner_control class file.
+ * Islemag_Banner_Control class file.
  *
  * @package WordPress
  * @subpackage Islemag
@@ -11,12 +11,12 @@ if ( ! class_exists( 'WP_Customize_Control' ) ) {
 }
 
 /**
- * Class Islemag_Banner_control
+ * Class Islemag_Banner_Control
  */
-class Islemag_Banner_control extends WP_Customize_Control {
+class Islemag_Banner_Control extends WP_Customize_Control {
 
 	/**
-	 * Islemag_Banner_control constructor.
+	 * Islemag_Banner_Control constructor.
 	 *
 	 * @param WP_Customize_Manager $manager WordPress manager.
 	 * @param string               $id Control id.
@@ -100,6 +100,6 @@ class Islemag_Banner_control extends WP_Customize_Control {
 				</div>
 
 			<?php
-		}
+		}// End if().
 	}
 }

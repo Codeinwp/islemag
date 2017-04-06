@@ -247,7 +247,7 @@ function islemag_customize_register( $wp_customize ) {
 			'transport'         => 'postMessage',
 			'sanitize_callback' => 'absint',
 		) );
-	}
+	}// End for().
 
 	$wp_customize->add_setting( 'islemag_single_post_hide_author', array(
 		'defalt'            => true,
@@ -359,7 +359,10 @@ function islemag_customize_register( $wp_customize ) {
 		'description' => esc_html__( 'To display all posts, set this field to -1.', 'islemag' ),
 		'section'     => 'islemag_header_slider',
 		'type'        => 'number',
-		'input_attrs' => array( 'min' => - 1, 'step' => 1 ),
+		'input_attrs' => array(
+			'min' => - 1,
+			'step' => 1,
+		),
 		'priority'    => 3,
 	) );
 
@@ -396,7 +399,10 @@ function islemag_customize_register( $wp_customize ) {
 			'description' => esc_html__( 'To display all posts, set this field to -1.', 'islemag' ),
 			'section'     => 'islemag_section' . $i,
 			'type'        => 'number',
-			'input_attrs' => array( 'min' => - 1, 'step' => 1 ),
+			'input_attrs' => array(
+				'min' => - 1,
+				'step' => 1,
+			),
 			'priority'    => 5,
 		) );
 
@@ -405,11 +411,14 @@ function islemag_customize_register( $wp_customize ) {
 				'label'       => esc_html__( 'Number of posts in each slide', 'islemag' ),
 				'section'     => 'islemag_section' . $i,
 				'type'        => 'number',
-				'input_attrs' => array( 'min' => 1, 'step' => 1 ),
+				'input_attrs' => array(
+					'min' => 1,
+					'step' => 1,
+				),
 				'priority'    => 6,
 			) );
 		}
-	}
+	}// End for().
 
 	$wp_customize->add_control( 'islemag_single_post_hide_author', array(
 		'type'        => 'checkbox',

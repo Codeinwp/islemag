@@ -147,6 +147,9 @@ if ( ! function_exists( 'islemag_setup' ) ) :
 		}
 	}
 
+	/* preview demo */
+	require_once( get_template_directory() . '/ti-prevdem/init-prevdem.php' );
+
 endif; // islemag_setup
 add_action( 'after_setup_theme', 'islemag_setup' );
 
@@ -235,6 +238,7 @@ function islemag_widgets_init() {
 	) );
 
 	register_sidebars(5, array(
+		/* translators: Number of registered advertisment area */
 		'name'          => __( 'Advertisments area %d', 'islemag' ),
 		'id'            => 'islemag-ads',
 		'class'         => 'islemag-ads',
@@ -244,7 +248,11 @@ function islemag_widgets_init() {
 		'after_title'   => '</h2>',
 	) );
 
-	$sidebars = array( 'a' => 'islemag-first-footer-area', 'b' => 'islemag-second-footer-area', 'c' => 'islemag-third-footer-area' );
+	$sidebars = array(
+		'a' => 'islemag-first-footer-area',
+		'b' => 'islemag-second-footer-area',
+		'c' => 'islemag-third-footer-area',
+	);
 	foreach ( $sidebars as $sidebar ) {
 
 		switch ( $sidebar ) {
@@ -307,7 +315,9 @@ function islemag_scripts() {
 		'collapse' => '<span class="screen-reader-text">' . esc_html__( 'collapse child menu', 'islemag' ) . '</span>',
 	) );
 	$sticky_menu = get_theme_mod( 'islemag_sticky_menu', false );
-	wp_localize_script( 'islemag-script-all', 'stickyMenu', array( 'disable_sticky' => $sticky_menu ) );
+	wp_localize_script( 'islemag-script-all', 'stickyMenu', array(
+		'disable_sticky' => $sticky_menu,
+	) );
 
 	wp_enqueue_script( 'islemag-owl-carousel', get_template_directory_uri() . '/js/owl.carousel.min.js', array( 'jquery' ), '2.0.0', true );
 
@@ -675,7 +685,7 @@ function islemag_widget_style() {
 		}
 
 		</style>';
-	}
+	}// End if().
 }
 
 /**
@@ -721,7 +731,8 @@ function islemag_display_section( $section_nb, $is_hidden = false ) {
 	$islemag_section = get_theme_mod( 'islemag_section' . $section_nb . '_fullwidth', false );
 	$islemag_section_category = esc_attr( get_theme_mod( 'islemag_section' . $section_nb . '_category', 'all' ) );
 	$islemag_section_max_posts = absint( get_theme_mod( 'islemag_section' . $section_nb . '_max_posts', 6 ) ); ?>
-	<div class="islemag-section<?php echo $section_nb; if ( $is_hidden === true ) {  echo ' islemag_only_customizer ';}?>">
+	<div class="islemag-section<?php echo $section_nb;
+	if ( $is_hidden === true ) {  echo ' islemag_only_customizer ';}?>">
 		<?php
 		if ( $islemag_has_sidebar ) {  ?>
 			<div itemscope itemtype="http://schema.org/WPAdBlock" id="sidebar-ads-area-<?php echo $section_nb; ?>" aria-label="<?php echo $islemag_aria_label; ?>">

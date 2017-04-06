@@ -25,11 +25,13 @@ if ( ! function_exists( 'islemag_posted_on' ) ) :
 		);
 
 			$posted_on = sprintf(
+				/* translators: Posted date */
 				esc_html_x( 'Posted on %s', 'post date', 'islemag' ),
 				'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
 			);
 
 			$byline = sprintf(
+				/* translators: Author link */
 				esc_html_x( 'by %s', 'post author', 'islemag' ),
 				'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
 			);
@@ -50,12 +52,14 @@ if ( ! function_exists( 'islemag_entry_footer' ) ) :
 			/* translators: used between list items, there is a space after the comma */
 			$categories_list = get_the_category_list( esc_html__( ', ', 'islemag' ) );
 			if ( $categories_list && islemag_categorized_blog() ) {
+				/* translators: Categories list */
 				printf( '<span class="cat-links">' . esc_html__( 'Posted in: %1$s', 'islemag' ) . '</span>', $categories_list ); // WPCS: XSS OK.
 			}
 
 			/* translators: used between list items, there is a space after the comma */
 			$tags_list = get_the_tag_list( '', esc_html__( ', ', 'islemag' ) );
 			if ( ! empty( $tags_list ) ) {
+				/* translators: tags list */
 				printf( '<span class="tags-links">' . esc_html__( 'Tagged: %1$s', 'islemag' ) . '</span>', $tags_list ); // WPCS: XSS OK.
 			}
 		}
@@ -87,7 +91,8 @@ add_action( 'islemag_entry_footer','islemag_entry_footer' );
  * @return bool
  */
 function islemag_categorized_blog() {
-	if ( false === ( $all_the_cool_cats = get_transient( 'islemag_categories' ) ) ) {
+	$all_the_cool_cats = get_transient( 'islemag_categories' );
+	if ( $all_the_cool_cats === false ) {
 		// Create an array of all the categories that are attached to posts.
 		$all_the_cool_cats = get_categories( array(
 			'fields'     => 'ids',

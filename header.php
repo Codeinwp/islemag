@@ -55,7 +55,12 @@
 							<nav id="top-navigation" class="navigation top-navigation" role="navigation">
 								<button class="menu-toggle"><?php _e( 'Menu', 'islemag' ); ?></button>
 								<a class="screen-reader-text skip-link" href="#content" title="<?php esc_attr_e( 'Skip to content', 'islemag' ); ?>"><?php _e( 'Skip to content', 'islemag' ); ?></a>
-								<?php wp_nav_menu( array( 'theme_location' => 'islemag-header', 'menu_class' => 'nav-menu', 'menu_id' => 'primary-menu', 'depth' => 1 ) ); ?>
+								<?php wp_nav_menu( array(
+									'theme_location' => 'islemag-header',
+									'menu_class' => 'nav-menu',
+									'menu_id' => 'primary-menu',
+									'depth' => 1,
+								) ); ?>
 							</nav><!-- #site-navigation -->
 						</div><!-- #navbar -->
 				</div>
@@ -108,7 +113,7 @@
 							'Islemag_Content_Ad',
 							array(
 								'link_ad'  => ( current_user_can( 'edit_theme_options' ) ? admin_url( 'widgets.php' ) : '' ),
-								'image_uri_ad'   => get_template_directory_uri() . '/img/banner_placeholder.png',
+								'image_uri_ad'   => apply_filters( 'islemag_default_top_banner_filter', get_template_directory_uri() . '/img/banner_placeholder.png' ),
 								'ad_type' => 'image',
 							),
 							array(
@@ -129,7 +134,12 @@
 			  <nav id="site-navigation" class="navigation main-navigation" role="navigation">
 				<button class="menu-toggle"><?php _e( 'Menu', 'islemag' ); ?></button>
 				<a class="screen-reader-text skip-link" href="#content" title="<?php esc_attr_e( 'Skip to content', 'islemag' ); ?>"><?php _e( 'Skip to content', 'islemag' ); ?></a>
-				<?php wp_nav_menu( array( 'theme_location' => 'islemag-primary', 'menu_class' => 'nav-menu', 'menu_id' => 'primary-menu', 'depth' => 6 ) ); ?>
+				<?php wp_nav_menu( array(
+					'theme_location' => 'islemag-primary',
+					'menu_class' => 'nav-menu',
+					'menu_id' => 'primary-menu',
+					'depth' => 6,
+				) ); ?>
 			  </nav><!-- #site-navigation -->
 			</div><!-- #navbar -->
 			<?php

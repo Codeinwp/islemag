@@ -90,7 +90,7 @@ if ( (bool) $islemag_header_slider_disable !== true ) {
 
 
 			<?php
-			if (  $islemag_section1_fullwidth == true ||
+			if ( $islemag_section1_fullwidth == true ||
 			      $islemag_section2_fullwidth == true ||
 			      $islemag_section3_fullwidth == true ||
 			      $islemag_section4_fullwidth == true ||
@@ -129,7 +129,8 @@ if ( (bool) $islemag_header_slider_disable !== true ) {
 				if ( is_customize_preview() ) {
 					echo '<div class="col-md-12 islemag-fullwidth"></div>';
 				}
-			} ?>
+			}// End if().
+	?>
 		</div><!-- End .row -->
 	</div><!-- End .container -->
 <?php

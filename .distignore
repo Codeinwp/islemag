@@ -9,4 +9,5 @@ phpcs.xml
 node_modules
 logs
 package.json
+bin
 npm-debug.log

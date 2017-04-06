@@ -44,6 +44,7 @@ function islemag_footer() {
 	</div><!-- End .col-md-6 -->
 	<div class="col-md-4 col-md-pull-8 powerdby">
 		<?php printf(
+			/* translators: 1 - Theme name , 2 - WordPress link */
 			__( '%1$s powered by %2$s', 'islemag' ),
 			sprintf( '<a href="https://themeisle.com/themes/islemag/" rel="nofollow">%s</a>', esc_html__( 'Islemag', 'islemag' ) ),
 			sprintf( '<a href="http://wordpress.org/" rel="nofollow">%s</a>', esc_html__( 'WordPress', 'islemag' ) )
@@ -94,8 +95,12 @@ function islemag_comment_action( $args, $comment, $depth, $add_below ) {
 		if ( $args['avatar_size'] != 0 ) {
 			echo get_avatar( $comment, $args['avatar_size'] );
 		} ?>
-		<?php printf( __( '<h4 class="media-heading">%s</h4><span class="comment-date">(%2$s - %3$s)</span>','islemag' ), get_comment_author_link(), get_comment_date(),  get_comment_time() ); ?><?php edit_comment_link( __( '(Edit)','islemag' ), '  ', '' ); ?>
-		<div class="reply pull-right reply-link"> <?php comment_reply_link( array_merge( $args, array( 'add_below' => $add_below, 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?> </div>
+		<?php /* translators: 1- comment author link, 2 - comment date, 3 - comment time */ printf( __( '<h4 class="media-heading">%1$s</h4><span class="comment-date">(%2$s - %3$s)</span>','islemag' ), get_comment_author_link(), get_comment_date(),  get_comment_time() ); ?><?php edit_comment_link( __( '(Edit)','islemag' ), '  ', '' ); ?>
+		<div class="reply pull-right reply-link"> <?php comment_reply_link( array_merge( $args, array(
+			'add_below' => $add_below,
+			'depth' => $depth,
+			'max_depth' => $args['max_depth'],
+		) ) ); ?> </div>
 	</div>
 
 
