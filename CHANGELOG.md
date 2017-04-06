@@ -1,4 +1,10 @@
 
+### 1.1.4 - 06/04/2017
+**Changes:** 
+- Added images for demo preview
+- New filters for child themes usage
+- Fixed issue with widgets line when links are used
+
 ### 1.1.3 - 16/03/2017
 **Changes:** 
 - Fixed error with mobile menu not working when the Sticky menu option is disabled
