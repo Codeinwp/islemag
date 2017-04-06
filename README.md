@@ -88,3 +88,5 @@ The exceptions to this license are as follows:
 - islemag_post_navigation_filter
 - islemag_slider_posts_colors
 - islemag_filter_article_title_on_slider_posts
+- islemag_default_top_banner_filter
+- islemag_default_sidebar_banner_filter
