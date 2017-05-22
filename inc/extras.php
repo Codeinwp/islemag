@@ -7,13 +7,15 @@
  * @package islemag
  */
 
-/**
- * Adds custom classes to the array of body classes.
- *
- * @param array $classes Classes for the body element.
- * @return array
- */
+
 if ( ! function_exists( 'islemag_body_classes' ) ) {
+
+	/**
+	 * Adds custom classes to the array of body classes.
+	 *
+	 * @param array $classes Classes for the body element.
+	 * @return array
+	 */
 	function islemag_body_classes( $classes ) {
 		// Adds a class of group-blog to blogs with more than 1 published author.
 		if ( is_multi_author() ) {
@@ -25,10 +27,11 @@ if ( ! function_exists( 'islemag_body_classes' ) ) {
 }
 add_filter( 'body_class', 'islemag_body_classes' );
 
-/**
- * Display footer function.
- */
+
 if ( ! function_exists( 'islemag_footer' ) ) {
+	/**
+	 * Display footer function.
+	 */
 	function islemag_footer() {
 		?>
 		<div class="col-md-8 col-md-push-4 islemag-footer-menu">
@@ -47,7 +50,7 @@ if ( ! function_exists( 'islemag_footer' ) ) {
 		</div><!-- End .col-md-6 -->
 		<div class="col-md-4 col-md-pull-8 powerdby">
 			<?php printf(
-			/* translators: 1 - Theme name , 2 - WordPress link */
+				/* translators: 1 - Theme name , 2 - WordPress link */
 				__( '%1$s powered by %2$s', 'islemag' ),
 				sprintf( '<a href="https://themeisle.com/themes/islemag/" rel="nofollow">%s</a>', esc_html__( 'Islemag', 'islemag' ) ),
 				sprintf( '<a href="http://wordpress.org/" rel="nofollow">%s</a>', esc_html__( 'WordPress', 'islemag' ) )
@@ -58,10 +61,11 @@ if ( ! function_exists( 'islemag_footer' ) ) {
 }
 add_action( 'islemag_footer_content','islemag_footer' );
 
-/**
- * Heading of comments.
- */
+
 if ( ! function_exists( 'islemag_comments_heading' ) ) {
+	/**
+	 * Heading of comments.
+	 */
 	function islemag_comments_heading() {
 		$comments_number = get_comments_number();
 		if ( 1 === $comments_number ) {
@@ -69,7 +73,7 @@ if ( ! function_exists( 'islemag_comments_heading' ) ) {
 			printf( _x( 'One thought on &ldquo;%s&rdquo;', 'comments title', 'islemag' ), get_the_title() );
 		} else {
 			printf(
-			/* translators: 1: number of comments, 2: post title */
+				/* translators: 1: number of comments, 2: post title */
 				_nx(
 					'%1$s thought on &ldquo;%2$s&rdquo;',
 					'%1$s thoughts on &ldquo;%2$s&rdquo;',
@@ -85,15 +89,16 @@ if ( ! function_exists( 'islemag_comments_heading' ) ) {
 }
 add_action( 'islemag_comments_title','islemag_comments_heading' );
 
-/**
- * Comment action.
- *
- * @param string $args Comment arguments.
- * @param object $comment Comment object.
- * @param int    $depth Comments depth.
- * @param string $add_below  Add bellow comments.
- */
+
 if ( ! function_exists( 'islemag_comment_action' ) ) {
+	/**
+	 * Comment action.
+	 *
+	 * @param string $args Comment arguments.
+	 * @param object $comment Comment object.
+	 * @param int    $depth Comments depth.
+	 * @param string $add_below  Add bellow comments.
+	 */
 	function islemag_comment_action( $args, $comment, $depth, $add_below ) {
 		?>
 
@@ -108,7 +113,7 @@ if ( ! function_exists( 'islemag_comment_action' ) ) {
 					'add_below' => $add_below,
 					'depth'     => $depth,
 					'max_depth' => $args['max_depth'],
-				) ) ); ?> </div>
+			) ) ); ?> </div>
 		</div>
 
 
@@ -124,13 +129,16 @@ if ( ! function_exists( 'islemag_comment_action' ) ) {
 
 		<?php
 	}
-}
+}// End if().
 add_action( 'islemag_comment_content','islemag_comment_action', 10, 5 );
 
 /**
  * Post entry date.
  */
 if ( ! function_exists( 'islemag_post_entry_date' ) ) {
+	/**
+	 * Post entry date.
+	 */
 	function islemag_post_entry_date() {
 		$date_format = apply_filters( 'islemag_date_format', 'M' ); ?>
 		<span class="entry-date"><?php echo get_the_date( 'd' ); ?>

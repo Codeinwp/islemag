@@ -642,11 +642,11 @@ add_action( 'admin_head', 'islemag_widget_style' );
  * Widget style
  */
 function islemag_widget_style() {
-    if( !function_exists('get_current_screen' ) ){
-        return;
-    }
+	if ( ! function_exists( 'get_current_screen' ) ) {
+		return;
+	}
 	$screen = get_current_screen();
-	if ( !empty( $screen ) && $screen->base === 'widgets' ) {
+	if ( ! empty( $screen ) && $screen->base === 'widgets' ) {
 		echo '
 		<style type="text/css">
 		.islemag-ad-widget-top{
@@ -780,6 +780,6 @@ add_filter( 'frontpage_template', 'islemag_filter_front_page_template' );
  * Check https://wordpress.stackexchange.com/questions/173526/why-is-wp-kses-not-keeping-style-attributes-as-expected
  */
 add_filter( 'safe_style_css', function( $styles ) {
-    $styles[] = 'display';
-    return $styles;
+	$styles[] = 'display';
+	return $styles;
 } );

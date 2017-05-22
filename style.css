@@ -2511,6 +2511,8 @@ text-transform: capitalize;
 	display: flex;
 	position: relative;
 
+	-webkit-box-direction: normal;
+	-webkit-box-orient: horizontal;
 	-webkit-flex-flow: row wrap;
 	-ms-flex-flow: row wrap;
 	flex-flow: row wrap;
@@ -3792,7 +3794,8 @@ ul > li:hover > a,
 	border: none;
 }
 
-.title-border > span, .title-border > a {
+.title-border > span,
+.title-border > a {
 	display: inline-block;
 	position: relative;
 	z-index: 1;

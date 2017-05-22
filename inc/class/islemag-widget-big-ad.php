@@ -116,7 +116,7 @@ class Islemag_Big_Ad extends WP_Widget {
 					'type' => array(),
 					'src' => array(),
 					'charset' => array(),
-                    'async' => array(),
+					'async' => array(),
 				  ),
 				  'div' => array(
 					'id' => array(),
@@ -126,7 +126,7 @@ class Islemag_Big_Ad extends WP_Widget {
 					  'style' => array(),
 					  'data-ad-client' => array(),
 					  'data-ad-slot' => array(),
-                      'data-ad-format' => array(),
+					  'data-ad-format' => array(),
 				  ),
 				);
 

@@ -2,9 +2,9 @@
 # This file is distributed under the GNU General Public License v2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: IsleMag 1.1.1\n"
+"Project-Id-Version: IsleMag 1.1.5\n"
 "Report-Msgid-Bugs-To: https://github.com/Codeinwp/islemag/issues\n"
-"POT-Creation-Date: 2017-01-13 10:53:01+00:00\n"
+"POT-Creation-Date: 2017-05-22 10:18:51+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -94,7 +94,7 @@ msgstr ""
 msgid "Primary"
 msgstr ""
 
-#: functions.php:68 inc/customizer.php:120
+#: functions.php:68 inc/customizer.php:133
 msgid "Footer"
 msgstr ""
 
@@ -113,115 +113,116 @@ msgid ""
 "page\". Then select the template \"Frontpage\" for that selected page."
 msgstr ""
 
-#: functions.php:172
+#: functions.php:175
 msgid "Small Advertisement"
 msgstr ""
 
-#: functions.php:173
+#: functions.php:176
 msgid "Leaderboard"
 msgstr ""
 
-#: functions.php:174
+#: functions.php:177
 msgid "3:1 Rectangle"
 msgstr ""
 
-#: functions.php:175
+#: functions.php:178
 msgid "Medium Rectangle"
 msgstr ""
 
-#: functions.php:176
+#: functions.php:179
 msgid "Half-page ad"
 msgstr ""
 
-#: functions.php:177
+#: functions.php:180
 msgid "Big Square"
 msgstr ""
 
-#: functions.php:178
+#: functions.php:181
 msgid "Vertical Rectangle"
 msgstr ""
 
-#: functions.php:179
+#: functions.php:182
 msgid "Small Square"
 msgstr ""
 
-#: functions.php:220
+#: functions.php:223
 msgid "Sidebar"
 msgstr ""
 
-#: functions.php:230
+#: functions.php:233
 msgid "Header advertisment area"
 msgstr ""
 
-#: functions.php:238
+#: functions.php:242
+#. translators: Number of registered advertisment area
 msgid "Advertisments area %d"
 msgstr ""
 
-#: functions.php:252
+#: functions.php:260
 msgid "Footer area 1"
 msgstr ""
 
-#: functions.php:255
+#: functions.php:263
 msgid "Footer area 2"
 msgstr ""
 
-#: functions.php:258
+#: functions.php:266
 msgid "Footer area 3"
 msgstr ""
 
-#: functions.php:306
+#: functions.php:314
 msgid "expand child menu"
 msgstr ""
 
-#: functions.php:307
+#: functions.php:315
 msgid "collapse child menu"
 msgstr ""
 
-#: functions.php:695 inc/customizer.php:85 inc/customizer.php:190
+#: functions.php:707 inc/customizer.php:98 inc/customizer.php:203
 msgid "Section 1"
 msgstr ""
 
-#: functions.php:696
+#: functions.php:708
 msgid "Ads Area 1"
 msgstr ""
 
-#: functions.php:700 inc/customizer.php:91 inc/customizer.php:193
+#: functions.php:712 inc/customizer.php:104 inc/customizer.php:206
 msgid "Section 2"
 msgstr ""
 
-#: functions.php:701
+#: functions.php:713
 msgid "Ads Area 2"
 msgstr ""
 
-#: functions.php:705 inc/customizer.php:97 inc/customizer.php:196
+#: functions.php:717 inc/customizer.php:110 inc/customizer.php:209
 msgid "Section 3"
 msgstr ""
 
-#: functions.php:706
+#: functions.php:718
 msgid "Ads Area 3"
 msgstr ""
 
-#: functions.php:711 inc/customizer.php:103 inc/customizer.php:199
+#: functions.php:723 inc/customizer.php:116 inc/customizer.php:212
 msgid "Section 4"
 msgstr ""
 
-#: functions.php:712
+#: functions.php:724
 msgid "Ads Area 4"
 msgstr ""
 
-#: functions.php:716 inc/customizer.php:109 inc/customizer.php:207
+#: functions.php:728 inc/customizer.php:122 inc/customizer.php:220
 msgid "Section 5"
 msgstr ""
 
-#: functions.php:717
+#: functions.php:729
 msgid "Ads Area 5"
 msgstr ""
 
-#: header.php:56 header.php:130
+#: header.php:56 header.php:135
 msgid "Menu"
 msgstr ""
 
-#: header.php:57 header.php:131
+#: header.php:57 header.php:136
 msgid "Skip to content"
 msgstr ""
 
@@ -412,7 +413,6 @@ msgstr ""
 
 #: inc/admin/welcome-screen/sections/getting-started.php:171
 #: inc/admin/welcome-screen/sections/getting-started.php:252
-#: inc/class/class-tgm-plugin-activation.php:2715
 msgid "Install"
 msgstr ""
 
@@ -510,352 +510,6 @@ msgstr ""
 msgid "Changelog"
 msgstr ""
 
-#: inc/class/class-tgm-plugin-activation.php:325
-msgid "Install Required Plugins"
-msgstr ""
-
-#: inc/class/class-tgm-plugin-activation.php:326
-msgid "Install Plugins"
-msgstr ""
-
-#: inc/class/class-tgm-plugin-activation.php:328
-#. translators: %s: plugin name.
-msgid "Installing Plugin: %s"
-msgstr ""
-
-#: inc/class/class-tgm-plugin-activation.php:330
-#. translators: %s: plugin name.
-msgid "Updating Plugin: %s"
-msgstr ""
-
-#: inc/class/class-tgm-plugin-activation.php:331
-msgid "Something went wrong with the plugin API."
-msgstr ""
-
-#: inc/class/class-tgm-plugin-activation.php:368
-#. translators: 1: plugin name(s).
-msgid "Begin installing plugin"
-msgid_plural "Begin installing plugins"
-msgstr[0] ""
-msgstr[1] ""
-
-#: inc/class/class-tgm-plugin-activation.php:373
-msgid "Begin updating plugin"
-msgid_plural "Begin updating plugins"
-msgstr[0] ""
-msgstr[1] ""
-
-#: inc/class/class-tgm-plugin-activation.php:378
-msgid "Begin activating plugin"
-msgid_plural "Begin activating plugins"
-msgstr[0] ""
-msgstr[1] ""
-
-#: inc/class/class-tgm-plugin-activation.php:383
-msgid "Return to Required Plugins Installer"
-msgstr ""
-
-#: inc/class/class-tgm-plugin-activation.php:384
-#: inc/class/class-tgm-plugin-activation.php:825
-#: inc/class/class-tgm-plugin-activation.php:2531
-#: inc/class/class-tgm-plugin-activation.php:3578
-msgid "Return to the Dashboard"
-msgstr ""
-
-#: inc/class/class-tgm-plugin-activation.php:385
-#: inc/class/class-tgm-plugin-activation.php:3157
-msgid "Plugin activated successfully."
-msgstr ""
-
-#: inc/class/class-tgm-plugin-activation.php:386
-#: inc/class/class-tgm-plugin-activation.php:2950
-msgid "The following plugin was activated successfully:"
-msgstr ""
-
-#: inc/class/class-tgm-plugin-activation.php:388
-#. translators: 1: plugin name.
-msgid "No action taken. Plugin %1$s was already active."
-msgstr ""
-
-#: inc/class/class-tgm-plugin-activation.php:390
-#. translators: 1: plugin name.
-msgid ""
-"Plugin not activated. A higher version of %s is needed for this theme. "
-"Please update the plugin."
-msgstr ""
-
-#: inc/class/class-tgm-plugin-activation.php:392
-#. translators: 1: dashboard link.
-msgid "All plugins installed and activated successfully. %1$s"
-msgstr ""
-
-#: inc/class/class-tgm-plugin-activation.php:393
-msgid "Dismiss this notice"
-msgstr ""
-
-#: inc/class/class-tgm-plugin-activation.php:394
-msgid ""
-"There are one or more required or recommended plugins to install, update or "
-"activate."
-msgstr ""
-
-#: inc/class/class-tgm-plugin-activation.php:395
-msgid "Please contact the administrator of this site for help."
-msgstr ""
-
-#: inc/class/class-tgm-plugin-activation.php:520
-msgid "This plugin needs to be updated to be compatible with your theme."
-msgstr ""
-
-#: inc/class/class-tgm-plugin-activation.php:521
-msgid "Update Required"
-msgstr ""
-
-#: inc/class/class-tgm-plugin-activation.php:932
-msgid ""
-"The remote plugin package does not contain a folder with the desired slug "
-"and renaming did not work."
-msgstr ""
-
-#: inc/class/class-tgm-plugin-activation.php:932
-#: inc/class/class-tgm-plugin-activation.php:935
-msgid ""
-"Please contact the plugin provider and ask them to package their plugin "
-"according to the WordPress guidelines."
-msgstr ""
-
-#: inc/class/class-tgm-plugin-activation.php:935
-msgid ""
-"The remote plugin package consists of more than one file, but the files are "
-"not packaged in a folder."
-msgstr ""
-
-#: inc/class/class-tgm-plugin-activation.php:1980
-#. translators: %s: version number
-msgid "TGMPA v%s"
-msgstr ""
-
-#: inc/class/class-tgm-plugin-activation.php:2271
-msgid "Required"
-msgstr ""
-
-#: inc/class/class-tgm-plugin-activation.php:2274
-msgid "Recommended"
-msgstr ""
-
-#: inc/class/class-tgm-plugin-activation.php:2290
-msgid "WordPress Repository"
-msgstr ""
-
-#: inc/class/class-tgm-plugin-activation.php:2293
-msgid "External Source"
-msgstr ""
-
-#: inc/class/class-tgm-plugin-activation.php:2296
-msgid "Pre-Packaged"
-msgstr ""
-
-#: inc/class/class-tgm-plugin-activation.php:2313
-msgid "Not Installed"
-msgstr ""
-
-#: inc/class/class-tgm-plugin-activation.php:2317
-msgid "Installed But Not Activated"
-msgstr ""
-
-#: inc/class/class-tgm-plugin-activation.php:2319
-msgid "Active"
-msgstr ""
-
-#: inc/class/class-tgm-plugin-activation.php:2325
-msgid "Required Update not Available"
-msgstr ""
-
-#: inc/class/class-tgm-plugin-activation.php:2328
-msgid "Requires Update"
-msgstr ""
-
-#: inc/class/class-tgm-plugin-activation.php:2331
-msgid "Update recommended"
-msgstr ""
-
-#: inc/class/class-tgm-plugin-activation.php:2390
-#. translators: 1: number of plugins.
-msgid "To Install <span class=\"count\">(%s)</span>"
-msgid_plural "To Install <span class=\"count\">(%s)</span>"
-msgstr[0] ""
-msgstr[1] ""
-
-#: inc/class/class-tgm-plugin-activation.php:2394
-#. translators: 1: number of plugins.
-msgid "Update Available <span class=\"count\">(%s)</span>"
-msgid_plural "Update Available <span class=\"count\">(%s)</span>"
-msgstr[0] ""
-msgstr[1] ""
-
-#: inc/class/class-tgm-plugin-activation.php:2398
-#. translators: 1: number of plugins.
-msgid "To Activate <span class=\"count\">(%s)</span>"
-msgid_plural "To Activate <span class=\"count\">(%s)</span>"
-msgstr[0] ""
-msgstr[1] ""
-
-#: inc/class/class-tgm-plugin-activation.php:2488
-msgid "Installed version:"
-msgstr ""
-
-#: inc/class/class-tgm-plugin-activation.php:2496
-msgid "Minimum required version:"
-msgstr ""
-
-#: inc/class/class-tgm-plugin-activation.php:2508
-msgid "Available version:"
-msgstr ""
-
-#: inc/class/class-tgm-plugin-activation.php:2531
-msgid "No plugins to install, update or activate."
-msgstr ""
-
-#: inc/class/class-tgm-plugin-activation.php:2545
-msgid "Plugin"
-msgstr ""
-
-#: inc/class/class-tgm-plugin-activation.php:2546
-msgid "Source"
-msgstr ""
-
-#: inc/class/class-tgm-plugin-activation.php:2547
-msgid "Type"
-msgstr ""
-
-#: inc/class/class-tgm-plugin-activation.php:2551
-msgid "Version"
-msgstr ""
-
-#: inc/class/class-tgm-plugin-activation.php:2552
-msgid "Status"
-msgstr ""
-
-#: inc/class/class-tgm-plugin-activation.php:2601
-#. translators: %2$s: plugin name in screen reader markup
-msgid "Install %2$s"
-msgstr ""
-
-#: inc/class/class-tgm-plugin-activation.php:2606
-#. translators: %2$s: plugin name in screen reader markup
-msgid "Update %2$s"
-msgstr ""
-
-#: inc/class/class-tgm-plugin-activation.php:2612
-#. translators: %2$s: plugin name in screen reader markup
-msgid "Activate %2$s"
-msgstr ""
-
-#: inc/class/class-tgm-plugin-activation.php:2682
-msgid "Upgrade message from the plugin author:"
-msgstr ""
-
-#: inc/class/class-tgm-plugin-activation.php:2721
-msgid "Update"
-msgstr ""
-
-#: inc/class/class-tgm-plugin-activation.php:2724
-msgid "Activate"
-msgstr ""
-
-#: inc/class/class-tgm-plugin-activation.php:2755
-msgid "No plugins were selected to be installed. No action taken."
-msgstr ""
-
-#: inc/class/class-tgm-plugin-activation.php:2757
-msgid "No plugins were selected to be updated. No action taken."
-msgstr ""
-
-#: inc/class/class-tgm-plugin-activation.php:2798
-msgid "No plugins are available to be installed at this time."
-msgstr ""
-
-#: inc/class/class-tgm-plugin-activation.php:2800
-msgid "No plugins are available to be updated at this time."
-msgstr ""
-
-#: inc/class/class-tgm-plugin-activation.php:2906
-msgid "No plugins were selected to be activated. No action taken."
-msgstr ""
-
-#: inc/class/class-tgm-plugin-activation.php:2932
-msgid "No plugins are available to be activated at this time."
-msgstr ""
-
-#: inc/class/class-tgm-plugin-activation.php:3156
-msgid "Plugin activation failed."
-msgstr ""
-
-#: inc/class/class-tgm-plugin-activation.php:3496
-#. translators: 1: plugin name, 2: action number 3: total number of actions.
-msgid "Updating Plugin %1$s (%2$d/%3$d)"
-msgstr ""
-
-#: inc/class/class-tgm-plugin-activation.php:3499
-#. translators: 1: plugin name, 2: error message.
-msgid "An error occurred while installing %1$s: <strong>%2$s</strong>."
-msgstr ""
-
-#: inc/class/class-tgm-plugin-activation.php:3501
-#. translators: 1: plugin name.
-msgid "The installation of %1$s failed."
-msgstr ""
-
-#: inc/class/class-tgm-plugin-activation.php:3505
-msgid ""
-"The installation and activation process is starting. This process may take "
-"a while on some hosts, so please be patient."
-msgstr ""
-
-#: inc/class/class-tgm-plugin-activation.php:3507
-#. translators: 1: plugin name.
-msgid "%1$s installed and activated successfully."
-msgstr ""
-
-#: inc/class/class-tgm-plugin-activation.php:3507
-#: inc/class/class-tgm-plugin-activation.php:3515
-msgid "Show Details"
-msgstr ""
-
-#: inc/class/class-tgm-plugin-activation.php:3507
-#: inc/class/class-tgm-plugin-activation.php:3515
-msgid "Hide Details"
-msgstr ""
-
-#: inc/class/class-tgm-plugin-activation.php:3508
-msgid "All installations and activations have been completed."
-msgstr ""
-
-#: inc/class/class-tgm-plugin-activation.php:3510
-#. translators: 1: plugin name, 2: action number 3: total number of actions.
-msgid "Installing and Activating Plugin %1$s (%2$d/%3$d)"
-msgstr ""
-
-#: inc/class/class-tgm-plugin-activation.php:3513
-msgid ""
-"The installation process is starting. This process may take a while on some "
-"hosts, so please be patient."
-msgstr ""
-
-#: inc/class/class-tgm-plugin-activation.php:3515
-#. translators: 1: plugin name.
-msgid "%1$s installed successfully."
-msgstr ""
-
-#: inc/class/class-tgm-plugin-activation.php:3516
-msgid "All installations have been completed."
-msgstr ""
-
-#: inc/class/class-tgm-plugin-activation.php:3518
-#. translators: 1: plugin name, 2: action number 3: total number of actions.
-msgid "Installing Plugin %1$s (%2$d/%3$d)"
-msgstr ""
-
 #: inc/class/islemag-banner-control.php:43
 #: inc/class/islemag-banner-control.php:74
 msgid "Banner type"
@@ -865,17 +519,17 @@ msgstr ""
 #: inc/class/islemag-banner-control.php:59
 #: inc/class/islemag-banner-control.php:75
 #: inc/class/islemag-banner-control.php:90
-#: inc/class/islemag-widget-big-ad.php:177
-#: inc/class/islemag-widget-content-ad.php:158
-#: inc/class/islemag-widget-multiple-ads.php:172
+#: inc/class/islemag-widget-big-ad.php:184
+#: inc/class/islemag-widget-content-ad.php:163
+#: inc/class/islemag-widget-multiple-ads.php:181
 msgid "Image"
 msgstr ""
 
 #: inc/class/islemag-banner-control.php:45
 #: inc/class/islemag-banner-control.php:76
-#: inc/class/islemag-widget-big-ad.php:178
-#: inc/class/islemag-widget-content-ad.php:159
-#: inc/class/islemag-widget-multiple-ads.php:173
+#: inc/class/islemag-widget-big-ad.php:186
+#: inc/class/islemag-widget-content-ad.php:165
+#: inc/class/islemag-widget-multiple-ads.php:183
 msgid "Code"
 msgstr ""
 
@@ -911,9 +565,9 @@ msgstr ""
 
 #: inc/class/islemag-banner-control.php:55
 #: inc/class/islemag-banner-control.php:86
-#: inc/class/islemag-widget-big-ad.php:196
-#: inc/class/islemag-widget-content-ad.php:177
-#: inc/class/islemag-widget-multiple-ads.php:187
+#: inc/class/islemag-widget-big-ad.php:207
+#: inc/class/islemag-widget-content-ad.php:186
+#: inc/class/islemag-widget-multiple-ads.php:199
 msgid "Text"
 msgstr ""
 
@@ -926,11 +580,11 @@ msgstr ""
 #: inc/class/islemag-banner-control.php:65
 #: inc/class/islemag-banner-control.php:95
 #: inc/class/islemag-banner-control.php:96
-#: inc/class/islemag-widget-big-ad.php:186
-#: inc/class/islemag-widget-content-ad.php:167
-#: inc/class/islemag-widget-multiple-ads.php:177
-#: inc/customizer-repeater/islemag-general-control.php:165
-#: inc/customizer-repeater/islemag-general-control.php:199
+#: inc/class/islemag-widget-big-ad.php:195
+#: inc/class/islemag-widget-content-ad.php:174
+#: inc/class/islemag-widget-multiple-ads.php:187
+#: inc/customizer-repeater/islemag-general-control.php:174
+#: inc/customizer-repeater/islemag-general-control.php:208
 msgid "Link"
 msgstr ""
 
@@ -951,7 +605,7 @@ msgstr ""
 msgid "Demo"
 msgstr ""
 
-#: inc/class/islemag-info.php:50 inc/customizer.php:29
+#: inc/class/islemag-info.php:50 inc/customizer.php:42
 msgid "View theme info"
 msgstr ""
 
@@ -959,78 +613,78 @@ msgstr ""
 msgid "Leave a review"
 msgstr ""
 
-#: inc/class/islemag-widget-big-ad.php:149
-#: inc/class/islemag-widget-multiple-ads.php:142 inc/customizer.php:370
+#: inc/class/islemag-widget-big-ad.php:153
+#: inc/class/islemag-widget-multiple-ads.php:147 inc/customizer.php:386
 msgid "Title"
 msgstr ""
 
-#: inc/class/islemag-widget-big-ad.php:159
-#: inc/class/islemag-widget-content-ad.php:144
-#: inc/class/islemag-widget-multiple-ads.php:162
+#: inc/class/islemag-widget-big-ad.php:164
+#: inc/class/islemag-widget-content-ad.php:148
+#: inc/class/islemag-widget-multiple-ads.php:168
 msgid "Advertisement "
 msgstr ""
 
-#: inc/class/islemag-widget-big-ad.php:163
-#: inc/class/islemag-widget-content-ad.php:148
+#: inc/class/islemag-widget-big-ad.php:168
+#: inc/class/islemag-widget-content-ad.php:152
 msgid "Recommended sizes:"
 msgstr ""
 
-#: inc/class/islemag-widget-big-ad.php:164
+#: inc/class/islemag-widget-big-ad.php:169
 msgid "300 x 250 px"
 msgstr ""
 
-#: inc/class/islemag-widget-big-ad.php:165
-#: inc/class/islemag-widget-content-ad.php:150
+#: inc/class/islemag-widget-big-ad.php:170
+#: inc/class/islemag-widget-content-ad.php:154
 msgid "300 x 100 px"
 msgstr ""
 
-#: inc/class/islemag-widget-big-ad.php:166
+#: inc/class/islemag-widget-big-ad.php:171
 msgid "300 x 600 px"
 msgstr ""
 
-#: inc/class/islemag-widget-big-ad.php:167
+#: inc/class/islemag-widget-big-ad.php:172
 msgid "250 x 250 px"
 msgstr ""
 
-#: inc/class/islemag-widget-big-ad.php:172
-#: inc/class/islemag-widget-multiple-ads.php:167
+#: inc/class/islemag-widget-big-ad.php:177
+#: inc/class/islemag-widget-multiple-ads.php:174
 msgid "Alt Title"
 msgstr ""
 
-#: inc/class/islemag-widget-big-ad.php:184
-#: inc/class/islemag-widget-content-ad.php:165
+#: inc/class/islemag-widget-big-ad.php:193
+#: inc/class/islemag-widget-content-ad.php:172
 msgid "Open in new tab"
 msgstr ""
 
-#: inc/class/islemag-widget-big-ad.php:189
-#: inc/class/islemag-widget-content-ad.php:170
-#: inc/class/islemag-widget-multiple-ads.php:180
+#: inc/class/islemag-widget-big-ad.php:199
+#: inc/class/islemag-widget-content-ad.php:178
+#: inc/class/islemag-widget-multiple-ads.php:191
 msgid "Image:"
 msgstr ""
 
-#: inc/class/islemag-widget-big-ad.php:195
-#: inc/class/islemag-widget-content-ad.php:176
-#: inc/class/islemag-widget-multiple-ads.php:186
+#: inc/class/islemag-widget-big-ad.php:206
+#: inc/class/islemag-widget-content-ad.php:185
+#: inc/class/islemag-widget-multiple-ads.php:198
 msgid "Code:"
 msgstr ""
 
-#: inc/class/islemag-widget-content-ad.php:149
+#: inc/class/islemag-widget-content-ad.php:153
 msgid "728 x 90 px"
 msgstr ""
 
-#: inc/class/islemag-widget-content-ad.php:151
+#: inc/class/islemag-widget-content-ad.php:155
 msgid "468 x 60 px"
 msgstr ""
 
-#: inc/class/islemag-widget-content-ad.php:152
+#: inc/class/islemag-widget-content-ad.php:156
 msgid "234 x 60 px"
 msgstr ""
 
-#: inc/class/islemag-widget-multiple-ads.php:145
+#: inc/class/islemag-widget-multiple-ads.php:151
 msgid "Recommended size: 125 x 125 px"
 msgstr ""
 
-#: inc/customizer-repeater/islemag-general-control.php:56 inc/extras.php:48
+#: inc/customizer-repeater/islemag-general-control.php:56 inc/extras.php:55
 msgid "Islemag"
 msgstr ""
 
@@ -1038,12 +692,12 @@ msgstr ""
 msgid "Add new field"
 msgstr ""
 
-#: inc/customizer-repeater/islemag-general-control.php:177
-#: inc/customizer-repeater/islemag-general-control.php:205
+#: inc/customizer-repeater/islemag-general-control.php:186
+#: inc/customizer-repeater/islemag-general-control.php:214
 msgid "Delete field"
 msgstr ""
 
-#: inc/customizer-repeater/islemag-general-control.php:236
+#: inc/customizer-repeater/islemag-general-control.php:245
 msgid "Icon"
 msgstr ""
 
@@ -1051,67 +705,71 @@ msgstr ""
 msgid "Text color"
 msgstr ""
 
-#: inc/customizer.php:51
+#: inc/customizer.php:32
+msgid "Use a different custom template as frontpage?"
+msgstr ""
+
+#: inc/customizer.php:64
 msgid "Header"
 msgstr ""
 
-#: inc/customizer.php:57
+#: inc/customizer.php:70
 msgid "Frontpage sections"
 msgstr ""
 
-#: inc/customizer.php:66
+#: inc/customizer.php:79
 msgid "Header top bar"
 msgstr ""
 
-#: inc/customizer.php:72
+#: inc/customizer.php:85
 msgid "Header content"
 msgstr ""
 
-#: inc/customizer.php:73
+#: inc/customizer.php:86
 msgid "Islemag header content"
 msgstr ""
 
-#: inc/customizer.php:79
+#: inc/customizer.php:92
 msgid "Header slider"
 msgstr ""
 
-#: inc/customizer.php:115
+#: inc/customizer.php:128
 msgid "Single post settings"
 msgstr ""
 
-#: inc/customizer.php:287
+#: inc/customizer.php:300
 msgid "Title color"
 msgstr ""
 
-#: inc/customizer.php:293
+#: inc/customizer.php:306
 msgid "Top slider's posts title color"
 msgstr ""
 
-#: inc/customizer.php:299
+#: inc/customizer.php:312
 msgid "Top slider's posts text color"
 msgstr ""
 
-#: inc/customizer.php:305
+#: inc/customizer.php:318
 msgid "Section's posts title color"
 msgstr ""
 
-#: inc/customizer.php:311
+#: inc/customizer.php:324
 msgid "Section's posts text color"
 msgstr ""
 
-#: inc/customizer.php:317 inc/customizer.php:453
+#: inc/customizer.php:330 inc/customizer.php:475
 msgid "Add new social icon"
 msgstr ""
 
-#: inc/customizer.php:326
+#: inc/customizer.php:339
 msgid "Disable sticky menu"
 msgstr ""
 
-#: inc/customizer.php:333 inc/customizer.php:356
+#: inc/customizer.php:346 inc/customizer.php:372
 msgid "Disable section"
 msgstr ""
 
-#: inc/customizer.php:339 inc/customizer.php:376
+#: inc/customizer.php:352 inc/customizer.php:392
 #: template-parts/content-template3.php:40
 #: template-parts/content-template3.php:104
 #: template-parts/content-template3.php:161
@@ -1121,133 +779,138 @@ msgstr ""
 msgid "Category"
 msgstr ""
 
-#: inc/customizer.php:345 inc/customizer.php:382
+#: inc/customizer.php:358 inc/customizer.php:398
 msgid "Number of posts in this section"
 msgstr ""
 
-#: inc/customizer.php:346 inc/customizer.php:383
+#: inc/customizer.php:359 inc/customizer.php:399
 msgid "To display all posts, set this field to -1."
 msgstr ""
 
-#: inc/customizer.php:363
+#: inc/customizer.php:379
 msgid "Full width section"
 msgstr ""
 
-#: inc/customizer.php:364
+#: inc/customizer.php:380
 msgid ""
 "If you check this box and you have a sidebar, the section will be displayed "
 "after the sidebar"
 msgstr ""
 
-#: inc/customizer.php:392
+#: inc/customizer.php:411
 msgid "Number of posts in each slide"
 msgstr ""
 
-#: inc/customizer.php:403
+#: inc/customizer.php:425
 msgid "Hide author's description?"
 msgstr ""
 
-#: inc/customizer.php:404
+#: inc/customizer.php:426
 msgid ""
 "If you check this box, the author's description will disappear from single "
 "page."
 msgstr ""
 
-#: inc/customizer.php:411
+#: inc/customizer.php:433
 msgid "Hide related posts?"
 msgstr ""
 
-#: inc/customizer.php:412
+#: inc/customizer.php:434
 msgid "If you check this box, related posts will disappear from single page."
 msgstr ""
 
-#: inc/customizer.php:419
+#: inc/customizer.php:441
 msgid "Hide post thumbnail on single page?"
 msgstr ""
 
-#: inc/customizer.php:420
+#: inc/customizer.php:442
 msgid "If you check this box, the thumbnail will disappear from single page."
 msgstr ""
 
-#: inc/customizer.php:426
+#: inc/customizer.php:448
 msgid "Footer logo"
 msgstr ""
 
-#: inc/customizer.php:432
+#: inc/customizer.php:454
 msgid "Footer logo link"
 msgstr ""
 
-#: inc/customizer.php:433
+#: inc/customizer.php:455
 msgid "If not set, the footer logo will point to homepage url."
 msgstr ""
 
-#: inc/customizer.php:439
+#: inc/customizer.php:461
 msgid ""
 "Allowed HTML tags: <p>, <br>, <em>, <strong>, <ul>, <li>, <a>, <button>, "
 "<address>, <abbr>"
 msgstr ""
 
-#: inc/customizer.php:441
+#: inc/customizer.php:463
 msgid "Footer content"
 msgstr ""
 
-#: inc/customizer.php:447
+#: inc/customizer.php:469
 msgid "Socials title"
 msgstr ""
 
-#: inc/extras.php:47
+#: inc/extras.php:54
+#. translators: 1 - Theme name , 2 - WordPress link
 msgid "%1$s powered by %2$s"
 msgstr ""
 
-#: inc/extras.php:49
+#: inc/extras.php:56
 msgid "WordPress"
 msgstr ""
 
-#: inc/extras.php:97
+#: inc/extras.php:111
+#. translators: 1- comment author link, 2 - comment date, 3 - comment time
 msgid ""
-"<h4 class=\"media-heading\">%s</h4><span class=\"comment-date\">(%2$s - "
+"<h4 class=\"media-heading\">%1$s</h4><span class=\"comment-date\">(%2$s - "
 "%3$s)</span>"
 msgstr ""
 
-#: inc/extras.php:97
+#: inc/extras.php:111
 msgid "(Edit)"
 msgstr ""
 
-#: inc/extras.php:103
+#: inc/extras.php:121
 msgid "Your comment is awaiting moderation."
 msgstr ""
 
-#: inc/template-tags.php:51 inc/template-tags.php:57
+#: inc/template-tags.php:53 inc/template-tags.php:60
 #. translators: used between list items, there is a space after the comma
 msgid ", "
 msgstr ""
 
-#: inc/template-tags.php:53
+#: inc/template-tags.php:56
+#. translators: Categories list
 msgid "Posted in: %1$s"
 msgstr ""
 
-#: inc/template-tags.php:59
+#: inc/template-tags.php:63
+#. translators: tags list
 msgid "Tagged: %1$s"
 msgstr ""
 
-#: inc/template-tags.php:65
+#: inc/template-tags.php:69
 msgid "Leave a comment"
 msgstr ""
 
-#: inc/template-tags.php:65
+#: inc/template-tags.php:69
 msgid "Comment"
 msgstr ""
 
-#: inc/template-tags.php:65
+#: inc/template-tags.php:69
 msgid "% Comments"
 msgstr ""
 
-#: inc/template-tags.php:73 template-parts/content-page.php:32
+#: inc/template-tags.php:77 template-parts/content-page.php:32
 #. translators: %s: Name of current post
 msgid "Edit %s"
 msgstr ""
 
 #: search.php:23
+#. translators: Search query
 msgid "Search Results for: %s"
 msgstr ""
 
@@ -1255,14 +918,15 @@ msgstr ""
 msgid "Example Widget"
 msgstr ""
 
-#: sidebar.php:21
+#: sidebar.php:22
+#. translators: Widgets area editing link
 msgid ""
 "This is an example widget to show how the Sidebar looks by default. You can "
 "add custom widgets from the %1$swidgets screen%1$s in the admin. If custom "
 "widgets is added than this will be replaced by those widgets."
 msgstr ""
 
-#: sidebar.php:33
+#: sidebar.php:34
 msgid "Banner Widget Example"
 msgstr ""
 
@@ -1270,24 +934,25 @@ msgstr ""
 msgid "Nothing Found"
 msgstr ""
 
-#: template-parts/content-none.php:23
+#: template-parts/content-none.php:25
+#. translators: Add new post link
 msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
 msgstr ""
 
-#: template-parts/content-none.php:28
+#: template-parts/content-none.php:34
 msgid ""
 "Sorry, but nothing matched your search terms. Please try again with some "
 "different keywords."
 msgstr ""
 
-#: template-parts/content-none.php:34
+#: template-parts/content-none.php:40
 msgid ""
 "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
 "searching can help."
 msgstr ""
 
 #: template-parts/content-page.php:21 template-parts/content-search.php:82
-#: template-parts/content-single.php:84 template-parts/content.php:84
+#: template-parts/content-single.php:84 template-parts/content.php:97
 msgid "Pages:"
 msgstr ""
 
@@ -1319,11 +984,11 @@ msgstr ""
 msgid "Related Posts"
 msgstr ""
 
-#: template-parts/content-single.php:217
+#: template-parts/content-single.php:221
 msgid "Show more categories"
 msgstr ""
 
-#: template-parts/content-single.php:232
+#: template-parts/content-single.php:236
 msgid "Read More"
 msgstr ""
 
@@ -1347,11 +1012,12 @@ msgstr ""
 msgid "Posted By"
 msgstr ""
 
-#: template-parts/content.php:77
+#: template-parts/content.php:90
+#. translators: About title of the post
 msgid "Read more %s ..."
 msgstr ""
 
-#: template-parts/content.php:77
+#: template-parts/content.php:90
 msgid "about "
 msgstr ""
 
@@ -1384,10 +1050,6 @@ msgid "http://themeisle.com"
 msgstr ""
 
 #. Template Name of the plugin/theme
-msgid "Frontpage"
-msgstr ""
-
-#. Template Name of the plugin/theme
 msgid "Full Width"
 msgstr ""
 
@@ -1396,55 +1058,30 @@ msgctxt "noun"
 msgid "Comment"
 msgstr ""
 
-#: functions.php:332
+#: functions.php:342
 #. Translators: If there are characters in your language that are not supported
 #. by Lora, translate this to 'off'. Do not translate into your own language.
 msgctxt "Lato font: on or off"
 msgid "on"
 msgstr ""
 
-#: functions.php:333
+#: functions.php:343
 msgctxt "Raleway font: on or off"
 msgid "on"
 msgstr ""
 
-#: functions.php:334
+#: functions.php:344
 msgctxt "Open Sans font: on or off"
 msgid "on"
 msgstr ""
 
-#: inc/class/class-tgm-plugin-activation.php:1119
-#: inc/class/class-tgm-plugin-activation.php:2946
-msgctxt "plugin A *and* plugin B"
-msgid "and"
-msgstr ""
-
-#: inc/class/class-tgm-plugin-activation.php:2340
-#. translators: 1: install status, 2: update status
-msgctxt "Install/Update Status"
-msgid "%1$s, %2$s"
-msgstr ""
-
-#: inc/class/class-tgm-plugin-activation.php:2386
-#. translators: 1: number of plugins.
-msgctxt "plugins"
-msgid "All <span class=\"count\">(%s)</span>"
-msgid_plural "All <span class=\"count\">(%s)</span>"
-msgstr[0] ""
-msgstr[1] ""
-
-#: inc/class/class-tgm-plugin-activation.php:2480
-msgctxt "as in: \"version nr unknown\""
-msgid "unknown"
-msgstr ""
-
-#: inc/extras.php:63
+#: inc/extras.php:73
 #. translators: %s: post title
 msgctxt "comments title"
 msgid "One thought on &ldquo;%s&rdquo;"
 msgstr ""
 
-#: inc/extras.php:67
+#: inc/extras.php:77
 #. translators: 1: number of comments, 2: post title
 msgctxt "comments title"
 msgid "%1$s thought on &ldquo;%2$s&rdquo;"
@@ -1452,12 +1089,14 @@ msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
 msgstr[0] ""
 msgstr[1] ""
 
-#: inc/template-tags.php:28
+#: inc/template-tags.php:29
+#. translators: Posted date
 msgctxt "post date"
 msgid "Posted on %s"
 msgstr ""
 
-#: inc/template-tags.php:33
+#: inc/template-tags.php:35
+#. translators: Author link
 msgctxt "post author"
 msgid "by %s"
 msgstr ""
