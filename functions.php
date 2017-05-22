@@ -779,7 +779,9 @@ add_filter( 'frontpage_template', 'islemag_filter_front_page_template' );
  * This is because wp_kses strips style tag if it has display element.
  * Check https://wordpress.stackexchange.com/questions/173526/why-is-wp-kses-not-keeping-style-attributes-as-expected
  */
-add_filter( 'safe_style_css', function( $styles ) {
-	$styles[] = 'display';
-	return $styles;
-} );
+
+function islemag_safe_style( $styles ) {
+    $styles[] = 'display';
+    return $styles;
+}
+add_filter( 'safe_style_css', 'islemag_safe_style' );
