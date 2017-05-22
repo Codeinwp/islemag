@@ -642,8 +642,11 @@ add_action( 'admin_head', 'islemag_widget_style' );
  * Widget style
  */
 function islemag_widget_style() {
+    if( !function_exists('get_current_screen' ) ){
+        return;
+    }
 	$screen = get_current_screen();
-	if ( $screen->base == 'widgets' ) {
+	if ( !empty( $screen ) && $screen->base === 'widgets' ) {
 		echo '
 		<style type="text/css">
 		.islemag-ad-widget-top{
@@ -771,3 +774,12 @@ function islemag_filter_front_page_template( $template ) {
 	}
 }
 add_filter( 'frontpage_template', 'islemag_filter_front_page_template' );
+
+/**
+ * This is because wp_kses strips style tag if it has display element.
+ * Check https://wordpress.stackexchange.com/questions/173526/why-is-wp-kses-not-keeping-style-attributes-as-expected
+ */
+add_filter( 'safe_style_css', function( $styles ) {
+    $styles[] = 'display';
+    return $styles;
+} );

@@ -79,43 +79,45 @@ class Islemag_Multiple_Ads extends WP_Widget {
 		$instance = $old_instance;
 		$instance['widget_title'] = sanitize_text_field( $new_instance['widget_title'] );
 		$allowed_html = array(
-				  'a' => array(
-					'href' => array(),
-					'class' => array(),
-					'id' => array(),
-					'target' => array(),
-				  ),
-				  'img' => array(
-					'src' => array(),
-					'alt' => array(),
-					'title' => array(),
-					'width' => array(),
-					'height' => array(),
-				  ),
-				  'iframe' => array(
-					'src' => array(),
-					'width' => array(),
-					'height' => array(),
-					'seamless' => array(),
-					'scrolling' => array(),
-					'frameborder' => array(),
-					'allowtransparency' => array(),
-				  ),
-				  'script' => array(
-					'type' => array(),
-					'src' => array(),
-					'charset' => array(),
-				  ),
-				  'div' => array(
-					'id' => array(),
-				  ),
-				  'ins' => array(
-					  'class' => array(),
-					  'style' => array(),
-					  'data-ad-client' => array(),
-					  'data-ad-slot' => array(),
-				  ),
-				);
+            'a' => array(
+                'href' => array(),
+                'class' => array(),
+                'id' => array(),
+                'target' => array(),
+            ),
+            'img' => array(
+                'src' => array(),
+                'alt' => array(),
+                'title' => array(),
+                'width' => array(),
+                'height' => array(),
+            ),
+            'iframe' => array(
+                'src' => array(),
+                'width' => array(),
+                'height' => array(),
+                'seamless' => array(),
+                'scrolling' => array(),
+                'frameborder' => array(),
+                'allowtransparency' => array(),
+            ),
+            'script' => array(
+                'type' => array(),
+                'src' => array(),
+                'charset' => array(),
+                'async' => array(),
+            ),
+            'div' => array(
+                'id' => array(),
+            ),
+            'ins' => array(
+                'class' => array(),
+                'style' => array(),
+                'data-ad-client' => array(),
+                'data-ad-slot' => array(),
+                'data-ad-format' => array(),
+            ),
+        );
 
 		for ( $i = 1; $i <= 6; $i++ ) {
 			$instance[ 'title_ad' . $i ] = sanitize_text_field( $new_instance[ 'title_ad' . $i ] );
@@ -124,6 +126,7 @@ class Islemag_Multiple_Ads extends WP_Widget {
 
 			$instance[ 'banner_type' . $i ] = strip_tags( $new_instance[ 'banner_type' . $i ] );
 
+			var_dump($new_instance[ 'banner_code' . $i ]);
 			$string = force_balance_tags( $new_instance[ 'banner_code' . $i ] );
 			$input_santized = wp_kses( $string, $allowed_html );
 			$instance[ 'banner_code' . $i ] = $input_santized ;
