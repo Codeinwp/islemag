@@ -123,10 +123,7 @@ class Islemag_Multiple_Ads extends WP_Widget {
 			$instance[ 'title_ad' . $i ] = sanitize_text_field( $new_instance[ 'title_ad' . $i ] );
 			$instance[ 'link_ad' . $i ] = esc_url_raw( $new_instance[ 'link_ad' . $i ] );
 			$instance[ 'image_uri_ad' . $i ] = esc_url_raw( $new_instance[ 'image_uri_ad' . $i ] );
-
 			$instance[ 'banner_type' . $i ] = strip_tags( $new_instance[ 'banner_type' . $i ] );
-
-			var_dump( $new_instance[ 'banner_code' . $i ] );
 			$string = force_balance_tags( $new_instance[ 'banner_code' . $i ] );
 			$input_santized = wp_kses( $string, $allowed_html );
 			$instance[ 'banner_code' . $i ] = $input_santized ;
