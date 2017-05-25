@@ -3,6 +3,7 @@
   "nicename": "Islemag",
   "version": "1.0.2",
   "description": "Islemag theme",
+  "category": "themes",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Codeinwp/islemag.git"
