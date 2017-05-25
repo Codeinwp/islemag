@@ -1,4 +1,9 @@
 
+### 1.1.5 - 25/05/2017
+**Changes:** 
+- Make functions in extras.php changeable from a child theme
+- Fixed issues with AdSense code not working in widgets
+
 ### 1.1.4 - 06/04/2017
 **Changes:** 
 - Added images for demo preview
