@@ -81,20 +81,20 @@ class Islemag_Content_Ad extends WP_Widget {
 		$instance['image_uri_ad'] = esc_url_raw( $new_instance['image_uri_ad'] );
 
 		$allowed_html = array(
-				  'a' => array(
+				'a' => array(
 					'href' => array(),
 					'class' => array(),
 					'id' => array(),
 					'target' => array(),
-				  ),
-				  'img' => array(
+				),
+				'img' => array(
 					'src' => array(),
 					'alt' => array(),
 					'title' => array(),
 					'width' => array(),
 					'height' => array(),
-				  ),
-				  'iframe' => array(
+				),
+				'iframe' => array(
 					'src' => array(),
 					'width' => array(),
 					'height' => array(),
@@ -102,22 +102,24 @@ class Islemag_Content_Ad extends WP_Widget {
 					'scrolling' => array(),
 					'frameborder' => array(),
 					'allowtransparency' => array(),
-				  ),
-				  'script' => array(
+				),
+				'script' => array(
 					'type' => array(),
 					'src' => array(),
 					'charset' => array(),
-				  ),
-				  'div' => array(
+					'async' => array(),
+				),
+				'div' => array(
 					'id' => array(),
-				  ),
-				  'ins' => array(
-					  'class' => array(),
-					  'style' => array(),
-					  'data-ad-client' => array(),
-					  'data-ad-slot' => array(),
-				  ),
-				);
+				),
+				'ins' => array(
+					'class' => array(),
+					'style' => array(),
+					'data-ad-client' => array(),
+					'data-ad-slot' => array(),
+					'data-ad-format' => array(),
+				),
+			);
 
 		$string = force_balance_tags( $new_instance['banner_code'] );
 		$input_santized = wp_kses( $string, $allowed_html );
