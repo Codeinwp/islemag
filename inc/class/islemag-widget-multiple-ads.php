@@ -37,9 +37,9 @@ class Islemag_Multiple_Ads extends WP_Widget {
 	 * @param array $instance Widget instance.
 	 */
 	public function widget( $args, $instance ) {
-	    if( empty($instance) ){
+	    if ( empty( $instance ) ) {
 	        return;
-        }
+		}
 		echo $args['before_widget'];
 		$title = $instance['widget_title'];
 		if ( ! empty( $title ) ) {

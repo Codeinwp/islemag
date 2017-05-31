@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: IsleMag 1.1.5\n"
 "Report-Msgid-Bugs-To: https://github.com/Codeinwp/islemag/issues\n"
-"POT-Creation-Date: 2017-05-22 12:12:17+00:00\n"
+"POT-Creation-Date: 2017-05-31 11:20:05+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -521,7 +521,7 @@ msgstr ""
 #: inc/class/islemag-banner-control.php:90
 #: inc/class/islemag-widget-big-ad.php:184
 #: inc/class/islemag-widget-content-ad.php:163
-#: inc/class/islemag-widget-multiple-ads.php:178
+#: inc/class/islemag-widget-multiple-ads.php:180
 msgid "Image"
 msgstr ""
 
@@ -529,7 +529,7 @@ msgstr ""
 #: inc/class/islemag-banner-control.php:76
 #: inc/class/islemag-widget-big-ad.php:186
 #: inc/class/islemag-widget-content-ad.php:165
-#: inc/class/islemag-widget-multiple-ads.php:180
+#: inc/class/islemag-widget-multiple-ads.php:182
 msgid "Code"
 msgstr ""
 
@@ -567,7 +567,7 @@ msgstr ""
 #: inc/class/islemag-banner-control.php:86
 #: inc/class/islemag-widget-big-ad.php:207
 #: inc/class/islemag-widget-content-ad.php:186
-#: inc/class/islemag-widget-multiple-ads.php:196
+#: inc/class/islemag-widget-multiple-ads.php:198
 msgid "Text"
 msgstr ""
 
@@ -582,7 +582,7 @@ msgstr ""
 #: inc/class/islemag-banner-control.php:96
 #: inc/class/islemag-widget-big-ad.php:195
 #: inc/class/islemag-widget-content-ad.php:174
-#: inc/class/islemag-widget-multiple-ads.php:184
+#: inc/class/islemag-widget-multiple-ads.php:186
 #: inc/customizer-repeater/islemag-general-control.php:174
 #: inc/customizer-repeater/islemag-general-control.php:208
 msgid "Link"
@@ -614,13 +614,13 @@ msgid "Leave a review"
 msgstr ""
 
 #: inc/class/islemag-widget-big-ad.php:153
-#: inc/class/islemag-widget-multiple-ads.php:144 inc/customizer.php:386
+#: inc/class/islemag-widget-multiple-ads.php:146 inc/customizer.php:386
 msgid "Title"
 msgstr ""
 
 #: inc/class/islemag-widget-big-ad.php:164
 #: inc/class/islemag-widget-content-ad.php:148
-#: inc/class/islemag-widget-multiple-ads.php:165
+#: inc/class/islemag-widget-multiple-ads.php:167
 msgid "Advertisement "
 msgstr ""
 
@@ -647,7 +647,7 @@ msgid "250 x 250 px"
 msgstr ""
 
 #: inc/class/islemag-widget-big-ad.php:177
-#: inc/class/islemag-widget-multiple-ads.php:171
+#: inc/class/islemag-widget-multiple-ads.php:173
 msgid "Alt Title"
 msgstr ""
 
@@ -658,13 +658,13 @@ msgstr ""
 
 #: inc/class/islemag-widget-big-ad.php:199
 #: inc/class/islemag-widget-content-ad.php:178
-#: inc/class/islemag-widget-multiple-ads.php:188
+#: inc/class/islemag-widget-multiple-ads.php:190
 msgid "Image:"
 msgstr ""
 
 #: inc/class/islemag-widget-big-ad.php:206
 #: inc/class/islemag-widget-content-ad.php:185
-#: inc/class/islemag-widget-multiple-ads.php:195
+#: inc/class/islemag-widget-multiple-ads.php:197
 msgid "Code:"
 msgstr ""
 
@@ -680,7 +680,7 @@ msgstr ""
 msgid "234 x 60 px"
 msgstr ""
 
-#: inc/class/islemag-widget-multiple-ads.php:148
+#: inc/class/islemag-widget-multiple-ads.php:150
 msgid "Recommended size: 125 x 125 px"
 msgstr ""
 
