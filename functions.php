@@ -739,7 +739,7 @@ function islemag_display_section( $section_nb, $is_hidden = false ) {
 		<?php
 		if ( $islemag_has_sidebar ) {  ?>
 			<div itemscope itemtype="http://schema.org/WPAdBlock" id="sidebar-ads-area-<?php echo $section_nb; ?>" aria-label="<?php echo $islemag_aria_label; ?>">
-				<?php dynamic_sidebar( 'islemag-ads' ); ?>
+				<?php ($section_nb === 1 ?  dynamic_sidebar( 'islemag-ads' ) : dynamic_sidebar( 'islemag-ads-' . $section_nb ) ); ?>
 			</div>
 			<?php
 		}
