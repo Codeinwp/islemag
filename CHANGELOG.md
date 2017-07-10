@@ -1,4 +1,8 @@
 
+### 1.1.6 - 10/07/2017
+**Changes:** 
+- Fixed issue with Advertisement areas
+
 ### 1.1.5 - 25/05/2017
 **Changes:** 
 - Make functions in extras.php changeable from a child theme
