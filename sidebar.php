@@ -9,13 +9,19 @@
 
 $sidebar_classes = apply_filters( 'islemag_sidebar_classes',array( 'col-md-3', 'sidebar', 'islemag-content-right' ) ); ?>
 
-<aside <?php if ( ! empty( $sidebar_classes ) ) { echo 'class="' . implode( ' ', $sidebar_classes ) . '"'; } ?> role="complementary">
+<aside 
+<?php
+if ( ! empty( $sidebar_classes ) ) {
+	echo 'class="' . implode( ' ', $sidebar_classes ) . '"'; }
+?>
+ role="complementary">
 	<?php
 
 	if ( is_active_sidebar( 'islemag-sidebar' ) ) {
 		dynamic_sidebar( 'islemag-sidebar' );
 	} else {
-		the_widget( 'WP_Widget_Text',
+		the_widget(
+			'WP_Widget_Text',
 			array(
 				'title'  => __( 'Example Widget', 'islemag' ),
 				/* translators: Widgets area editing link */
@@ -29,7 +35,8 @@ $sidebar_classes = apply_filters( 'islemag_sidebar_classes',array( 'col-md-3', '
 			)
 		);
 
-		the_widget( 'Islemag_Multiple_Ads',
+		the_widget(
+			'Islemag_Multiple_Ads',
 			array(
 				'widget_title' => __( 'Banner Widget Example', 'islemag' ),
 				'link_ad1' => ( current_user_can( 'edit_theme_options' ) ? admin_url( 'widgets.php' ) : '' ),

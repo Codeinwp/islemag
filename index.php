@@ -16,12 +16,18 @@ get_header(); ?>
 <div class="container">
 	<div class="row">
 		<?php
-		$archive_content_classes = apply_filters( 'islemag_archive_content_classes', array( 'islemag-content-left', 'col-md-9' ) ); ?>
-		<div <?php if ( ! empty( $archive_content_classes ) ) {
-			echo 'class="' . implode( ' ', $archive_content_classes ) . '"';} ?>>
+		$archive_content_classes = apply_filters( 'islemag_archive_content_classes', array( 'islemag-content-left', 'col-md-9' ) );
+		?>
+		<div 
+		<?php
+		if ( ! empty( $archive_content_classes ) ) {
+			echo 'class="' . implode( ' ', $archive_content_classes ) . '"';}
+			?>
+			>
 			<?php
 			if ( have_posts() ) :
-				while ( have_posts() ) : the_post();
+				while ( have_posts() ) :
+					the_post();
 					get_template_part( 'template-parts/content', get_post_format() );
 				endwhile;
 				echo apply_filters( 'islemag_post_navigation_filter', get_the_posts_navigation() );

@@ -49,12 +49,14 @@ if ( ! function_exists( 'islemag_footer' ) ) {
 			?>
 		</div><!-- End .col-md-6 -->
 		<div class="col-md-4 col-md-pull-8 powerdby">
-			<?php printf(
+			<?php
+			printf(
 				/* translators: 1 - Theme name , 2 - WordPress link */
 				__( '%1$s powered by %2$s', 'islemag' ),
 				sprintf( '<a href="https://themeisle.com/themes/islemag/" rel="nofollow">%s</a>', esc_html__( 'Islemag', 'islemag' ) ),
 				sprintf( '<a href="http://wordpress.org/" rel="nofollow">%s</a>', esc_html__( 'WordPress', 'islemag' ) )
-			); ?>
+			);
+			?>
 		</div><!-- End .col-md-6 -->
 		<?php
 	}
@@ -106,14 +108,26 @@ if ( ! function_exists( 'islemag_comment_action' ) ) {
 			<?php
 			if ( $args['avatar_size'] != 0 ) {
 				echo get_avatar( $comment, $args['avatar_size'] );
-			} ?>
-			<?php /* translators: 1- comment author link, 2 - comment date, 3 - comment time */
-			printf( __( '<h4 class="media-heading">%1$s</h4><span class="comment-date">(%2$s - %3$s)</span>', 'islemag' ), get_comment_author_link(), get_comment_date(), get_comment_time() ); ?><?php edit_comment_link( __( '(Edit)', 'islemag' ), '  ', '' ); ?>
-			<div class="reply pull-right reply-link"> <?php comment_reply_link( array_merge( $args, array(
-					'add_below' => $add_below,
-					'depth'     => $depth,
-					'max_depth' => $args['max_depth'],
-			) ) ); ?> </div>
+			}
+			?>
+			<?php
+			/* translators: 1- comment author link, 2 - comment date, 3 - comment time */
+			printf( __( '<h4 class="media-heading">%1$s</h4><span class="comment-date">(%2$s - %3$s)</span>', 'islemag' ), get_comment_author_link(), get_comment_date(), get_comment_time() );
+			?>
+			<?php edit_comment_link( __( '(Edit)', 'islemag' ), '  ', '' ); ?>
+			<div class="reply pull-right reply-link"> 
+			<?php
+			comment_reply_link(
+				array_merge(
+					$args, array(
+						'add_below' => $add_below,
+						'depth'     => $depth,
+						'max_depth' => $args['max_depth'],
+					)
+				)
+			);
+			?>
+			 </div>
 		</div>
 
 
@@ -140,7 +154,8 @@ if ( ! function_exists( 'islemag_post_entry_date' ) ) {
 	 * Post entry date.
 	 */
 	function islemag_post_entry_date() {
-		$date_format = apply_filters( 'islemag_date_format', 'M' ); ?>
+		$date_format = apply_filters( 'islemag_date_format', 'M' );
+		?>
 		<span class="entry-date"><?php echo get_the_date( 'd' ); ?>
 			<span><?php echo strtoupper( get_the_date( $date_format ) ); ?></span></span>
 		<?php

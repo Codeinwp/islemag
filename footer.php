@@ -71,19 +71,23 @@
 							</div><!-- .footer-social-icons -->
 						</div><!-- .col-md-3.col-sm-6 -->
 
-						<?php if ( is_active_sidebar( 'islemag-first-footer-area' ) ) {  ?>
+						<?php if ( is_active_sidebar( 'islemag-first-footer-area' ) ) { ?>
 								<div itemscope itemtype="http://schema.org/WPSideBar" class="col-md-3 col-sm-12" id="sidebar-widgets-area-1" aria-label="<?php esc_html_e( 'Widgets Area 1','islemag' ); ?>">
 									<?php dynamic_sidebar( 'islemag-first-footer-area' ); ?>
 								</div>
-						<?php }
+						<?php
+}
 
-if ( is_active_sidebar( 'islemag-second-footer-area' ) ) {  ?>
+if ( is_active_sidebar( 'islemag-second-footer-area' ) ) {
+?>
 								<div itemscope itemtype="http://schema.org/WPSideBar" role="complementary" id="sidebar-widgets-area-2" class="col-md-3 col-sm-12" aria-label="<?php esc_html_e( 'Widgets Area 2','islemag' ); ?>">
 									<?php dynamic_sidebar( 'islemag-second-footer-area' ); ?>
 								</div>
-						<?php }
+						<?php
+}
 
-if ( is_active_sidebar( 'islemag-third-footer-area' ) ) {  ?>
+if ( is_active_sidebar( 'islemag-third-footer-area' ) ) {
+?>
 								<div itemscope itemtype="http://schema.org/WPSideBar" role="complementary" id="sidebar-widgets-area-3" class="col-md-3 col-sm-12" aria-label="<?php esc_html_e( 'Widgets Area 3','islemag' ); ?>">
 									<?php dynamic_sidebar( 'islemag-third-footer-area' ); ?>
 								</div>
@@ -101,7 +105,8 @@ if ( is_active_sidebar( 'islemag-third-footer-area' ) ) {  ?>
 
 					islemag_footer_content();
 
-	                islemag_footer_container_bottom();?>
+					islemag_footer_container_bottom();
+					?>
 
 				</div><!-- End .row -->
 			</div><!-- End #footer-bottom -->

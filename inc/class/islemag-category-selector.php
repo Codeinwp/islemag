@@ -34,7 +34,7 @@ class IseleMagCategorySelector extends WP_Customize_Control {
 ?>
 	<span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
 	<select <?php $this->link(); ?>>
-		<option value="all"><?php esc_html_e( 'All', 'islemag' );?></option>
+		<option value="all"><?php esc_html_e( 'All', 'islemag' ); ?></option>
 		<?php
 		foreach ( $categories as $cat ) {
 			if ( $cat->count > 0 ) {

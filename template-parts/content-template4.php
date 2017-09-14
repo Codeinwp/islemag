@@ -13,8 +13,8 @@ $wp_query = new WP_Query(
 		'no_found_rows'       => true,
 		'ignore_sticky_posts' => true,
 		'post_status'         => 'publish',
-		'category_name' 	    => ( ! empty( $islemag_section_category ) && $islemag_section_category != 'all' ? $islemag_section_category : ''),
-		)
+		'category_name'         => ( ! empty( $islemag_section_category ) && $islemag_section_category != 'all' ? $islemag_section_category : ''),
+	)
 );
 
 if ( $wp_query->have_posts() ) :
@@ -24,19 +24,21 @@ if ( $wp_query->have_posts() ) :
 	<?php
 	  $counter = 0;
 
-	while ( $wp_query->have_posts() ) : $wp_query->the_post();
+	while ( $wp_query->have_posts() ) :
+		$wp_query->the_post();
 		$case = $counter % 2;
 		$category = get_the_category();
 		$postid = get_the_ID();
 
 		switch ( $case ) {
 			case 0:
-				$choosed_color = array_rand( $colors, 1 ); ?>
+				$choosed_color = array_rand( $colors, 1 );
+				?>
 								  <div class="entry-wrapper">
 									<article class="entry entry-overlay entry-block eb-small <?php echo $colors[ $choosed_color ]; ?>">
 
 									  <div class="entry-media">
-										<a href="<?php echo esc_url( get_category_link( $category[0]->cat_ID ) );?>" class="category-block" title="<?php esc_html_e( 'Category','islemag' ); ?> <?php echo esc_attr( $category[0]->cat_name ); ?>"><?php echo esc_attr( $category[0]->cat_name ); ?></a>
+										<a href="<?php echo esc_url( get_category_link( $category[0]->cat_ID ) ); ?>" class="category-block" title="<?php esc_html_e( 'Category','islemag' ); ?> <?php echo esc_attr( $category[0]->cat_name ); ?>"><?php echo esc_attr( $category[0]->cat_name ); ?></a>
 										<figure>
 										  <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
 											<?php
@@ -60,7 +62,8 @@ if ( $wp_query->have_posts() ) :
 										<?php
 										if ( function_exists( 'cwppos_calc_overall_rating' ) ) {
 											$rating = cwppos_calc_overall_rating( $postid );
-											if ( ! empty( $rating['option1'] ) ) {  ?>
+											if ( ! empty( $rating['option1'] ) ) {
+											?>
 												<label><?php esc_html_e( 'Rating:', 'islemag' ); ?></label>
 												<div class="star-ratings-css">
 												  <div class="star-ratings-css-top" style="width: <?php echo $rating['overall']; ?>%"><span><i class="fa fa-star"></i></span><span><i class="fa fa-star"></i></span><span><i class="fa fa-star"></i></span><span><i class="fa fa-star"></i></span><span><i class="fa fa-star"></i></span></div>
@@ -68,7 +71,8 @@ if ( $wp_query->have_posts() ) :
 												</div>
 											<?php
 											}
-										} ?>
+										}
+										?>
 									  <div class="entry-meta">
 										<span class="entry-overlay-date"><i class="fa fa-calendar"></i><?php echo get_the_date( 'j M' ); ?></span>
 										<span class="entry-separator">/</span>
@@ -80,19 +84,21 @@ if ( $wp_query->have_posts() ) :
 
 									</article> <!-- End .entry-overlay -->
 								<?php
-								if ( $wp_query->current_post + 1 == $wp_query->post_count ) {  ?>
+								if ( $wp_query->current_post + 1 == $wp_query->post_count ) {
+								?>
 								</div> <!-- End .entry-wrapper -->
 								<?php
 								} else {
 									$counter++;
 								}
-								break;
+				break;
 
 			case 1:
-				$choosed_color = array_rand( $colors, 1 ); ?>
+				$choosed_color = array_rand( $colors, 1 );
+				?>
 								  <article class="entry entry-overlay entry-block eb-small <?php echo $colors[ $choosed_color ]; ?>">
 									<div class="entry-media">
-									  <a href="<?php echo esc_url( get_category_link( $category[0]->cat_ID ) );?>" class="category-block" title="<?php esc_html_e( 'Category','islemag' ); ?> <?php echo esc_attr( $category[0]->cat_name ); ?>"><?php echo esc_attr( $category[0]->cat_name );?></a>
+									  <a href="<?php echo esc_url( get_category_link( $category[0]->cat_ID ) ); ?>" class="category-block" title="<?php esc_html_e( 'Category','islemag' ); ?> <?php echo esc_attr( $category[0]->cat_name ); ?>"><?php echo esc_attr( $category[0]->cat_name ); ?></a>
 									  <figure>
 										<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
 											<?php
@@ -116,7 +122,8 @@ if ( $wp_query->have_posts() ) :
 									<?php
 									if ( function_exists( 'cwppos_calc_overall_rating' ) ) {
 										$rating = cwppos_calc_overall_rating( $postid );
-										if ( ! empty( $rating['option1'] ) ) {  ?>
+										if ( ! empty( $rating['option1'] ) ) {
+										?>
 											<label><?php esc_html_e( 'Rating:', 'islemag' ); ?></label>
 											<div class="star-ratings-css">
 											  <div class="star-ratings-css-top" style="width: <?php echo $rating['overall']; ?>%"><span><i class="fa fa-star"></i></span><span><i class="fa fa-star"></i></span><span><i class="fa fa-star"></i></span><span><i class="fa fa-star"></i></span><span><i class="fa fa-star"></i></span></div>
@@ -124,7 +131,8 @@ if ( $wp_query->have_posts() ) :
 											</div>
 										<?php
 										}
-									} ?>
+									}
+									?>
 									<div class="entry-meta">
 									  <span class="entry-overlay-date"><i class="fa fa-calendar"></i><?php echo get_the_date( 'j M' ); ?></span>
 									  <span class="entry-separator">/</span>

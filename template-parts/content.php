@@ -77,32 +77,39 @@
 			$icon_class = 'fa-headphones';
 			break;
 	}
-	if ( ! empty( $icon_class ) ) {  ?>
+	if ( ! empty( $icon_class ) ) {
+	?>
 			<span class="entry-format"><i class="fa <?php echo $icon_class; ?>"></i></span>
 	<?php
-	} ?>
+	}
+	?>
 	<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
 
 	<div class="entry-content">
 		<?php
 			$ismore = strpos( $post->post_content, '<!--more-->' );
-		/* translators: About title of the post */
-		if ( $ismore ) : the_content( sprintf( esc_html__( 'Read more %s ...','islemag' ), '<span class="screen-reader-text">' . esc_html__( 'about ', 'islemag' ) . get_the_title() . '</span>' ) );
-			else : the_excerpt();
+		if ( $ismore ) :
+			/* translators: About title of the post */
+			the_content( sprintf( esc_html__( 'Read more %s ...','islemag' ), '<span class="screen-reader-text">' . esc_html__( 'about ', 'islemag' ) . get_the_title() . '</span>' ) );
+			else :
+				the_excerpt();
 			endif;
 		?>
 
 		<?php
-			wp_link_pages( array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'islemag' ),
-				'after'  => '</div>',
-			) );
+			wp_link_pages(
+				array(
+					'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'islemag' ),
+					'after'  => '</div>',
+				)
+			);
 		?>
 	</div><!-- .entry-content -->
 
 	
 		<?php
-		islemag_content_footer(); ?>
+		islemag_content_footer();
+		?>
 	
 
 

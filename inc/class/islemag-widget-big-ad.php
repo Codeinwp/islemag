@@ -90,45 +90,45 @@ class Islemag_Big_Ad extends WP_Widget {
 		$instance['image_uri_ad'] = esc_url_raw( $new_instance['image_uri_ad'] );
 
 		$allowed_html = array(
-				  'a' => array(
-					'href' => array(),
-					'class' => array(),
-					'id' => array(),
-					'target' => array(),
-				  ),
-				  'img' => array(
-					'src' => array(),
-					'alt' => array(),
-					'title' => array(),
-					'width' => array(),
-					'height' => array(),
-				  ),
-				  'iframe' => array(
-					'src' => array(),
-					'width' => array(),
-					'height' => array(),
-					'seamless' => array(),
-					'scrolling' => array(),
-					'frameborder' => array(),
-					'allowtransparency' => array(),
-				  ),
-				  'script' => array(
-					'type' => array(),
-					'src' => array(),
-					'charset' => array(),
-					'async' => array(),
-				  ),
-				  'div' => array(
-					'id' => array(),
-				  ),
-				  'ins' => array(
-					  'class' => array(),
-					  'style' => array(),
-					  'data-ad-client' => array(),
-					  'data-ad-slot' => array(),
-					  'data-ad-format' => array(),
-				  ),
-				);
+			'a' => array(
+				'href' => array(),
+				'class' => array(),
+				'id' => array(),
+				'target' => array(),
+			),
+			'img' => array(
+				'src' => array(),
+				'alt' => array(),
+				'title' => array(),
+				'width' => array(),
+				'height' => array(),
+			),
+			'iframe' => array(
+				'src' => array(),
+				'width' => array(),
+				'height' => array(),
+				'seamless' => array(),
+				'scrolling' => array(),
+				'frameborder' => array(),
+				'allowtransparency' => array(),
+			),
+			'script' => array(
+				'type' => array(),
+				'src' => array(),
+				'charset' => array(),
+				'async' => array(),
+			),
+			'div' => array(
+				'id' => array(),
+			),
+			'ins' => array(
+				'class' => array(),
+				'style' => array(),
+				'data-ad-client' => array(),
+				'data-ad-slot' => array(),
+				'data-ad-format' => array(),
+			),
+		);
 
 		$string = force_balance_tags( $new_instance['banner_code'] );
 		$input_santized = wp_kses( $string, $allowed_html );
@@ -151,8 +151,13 @@ class Islemag_Big_Ad extends WP_Widget {
 
 	  <p>
 		<label for="<?php echo esc_attr( $this->get_field_id( 'widget_title' ) ); ?>"><?php _e( 'Title', 'islemag' ); ?></label><br/>
-		<input type="text" name="<?php echo esc_attr( $this->get_field_name( 'widget_title' ) ); ?>" id="<?php echo esc_attr( $this->get_field_id( 'widget_title' ) ); ?>" value="<?php if ( ! empty( $instance['widget_title'] ) ) :  echo esc_attr( $instance['widget_title'] );
-endif; ?>" class="widefat" />
+		<input type="text" name="<?php echo esc_attr( $this->get_field_name( 'widget_title' ) ); ?>" id="<?php echo esc_attr( $this->get_field_id( 'widget_title' ) ); ?>" value="
+											<?php
+											if ( ! empty( $instance['widget_title'] ) ) :
+												echo esc_attr( $instance['widget_title'] );
+endif;
+?>
+" class="widefat" />
 	  </p>
 
 		<?php
@@ -161,10 +166,11 @@ endif; ?>" class="widefat" />
 		$url = 'image_uri_ad';
 		$code = 'banner_code';
 		?>
-	  <h3><?php esc_html_e( 'Advertisement ', 'islemag' );?></h3>
+	  <h3><?php esc_html_e( 'Advertisement ', 'islemag' ); ?></h3>
 	  <p class="description">
 		<?php
-		  echo sprintf('%s<br/>%s, %s, %s, %s',
+		  echo sprintf(
+			  '%s<br/>%s, %s, %s, %s',
 			  esc_html__( 'Recommended sizes:', 'islemag' ),
 			  esc_html__( '300 x 250 px', 'islemag' ),
 			  esc_html__( '300 x 100 px', 'islemag' ),
@@ -175,37 +181,82 @@ endif; ?>" class="widefat" />
 	  </p>
 		<p>
 			<label for="<?php echo esc_attr( $this->get_field_id( $title_alt ) ); ?>"><?php _e( 'Alt Title','islemag' ); ?></label><br/>
-			<input type="text" name="<?php echo esc_attr( $this->get_field_name( $title_alt ) ); ?>" id="<?php echo esc_attr( $this->get_field_id( $title_alt ) ); ?>" value="<?php if ( ! empty( $instance[ $title_alt ] ) ) :  echo esc_attr( $instance[ $title_alt ] );
-endif; ?>" class="widefat" />
+			<input type="text" name="<?php echo esc_attr( $this->get_field_name( $title_alt ) ); ?>" id="<?php echo esc_attr( $this->get_field_id( $title_alt ) ); ?>" value="
+												<?php
+												if ( ! empty( $instance[ $title_alt ] ) ) :
+													echo esc_attr( $instance[ $title_alt ] );
+endif;
+?>
+" class="widefat" />
 		</p>
 
 	  <p>
-		<input type="radio" name="<?php echo esc_attr( $this->get_field_name( 'ad_type' ) ); ?>" value="image" class="islemag-big-ad-type" <?php if ( ! empty( $instance['ad_type'] ) ) :  checked( $instance['ad_type'], 'image' );
-endif; ?>/> <?php esc_html_e( 'Image', 'islemag' ); ?>
-		<input type="radio" name="<?php echo esc_attr( $this->get_field_name( 'ad_type' ) ); ?>" value="code" class="islemag-big-ad-type" <?php if ( ! empty( $instance['ad_type'] ) ) :  checked( $instance['ad_type'], 'code' );
-endif; ?>/> <?php esc_html_e( 'Code', 'islemag' ); ?>
+		<input type="radio" name="<?php echo esc_attr( $this->get_field_name( 'ad_type' ) ); ?>" value="image" class="islemag-big-ad-type" 
+												<?php
+												if ( ! empty( $instance['ad_type'] ) ) :
+													checked( $instance['ad_type'], 'image' );
+endif;
+?>
+/> <?php esc_html_e( 'Image', 'islemag' ); ?>
+		<input type="radio" name="<?php echo esc_attr( $this->get_field_name( 'ad_type' ) ); ?>" value="code" class="islemag-big-ad-type" 
+												<?php
+												if ( ! empty( $instance['ad_type'] ) ) :
+													checked( $instance['ad_type'], 'code' );
+endif;
+?>
+/> <?php esc_html_e( 'Code', 'islemag' ); ?>
 	  </p>
 
-		<p class="islemag-big-ad-image" style="<?php if ( $instance['ad_type'] == 'code' ) { echo 'display:none'; } ?>">
+		<p class="islemag-big-ad-image" style="
+		<?php
+		if ( $instance['ad_type'] == 'code' ) {
+			echo 'display:none'; }
+?>
+">
 		<input type="hidden" name="<?php echo esc_attr( $this->get_field_name( 'new_tab' ) ); ?>" value="0" />
-		<input type="checkbox" <?php if ( ! empty( $instance['new_tab'] ) ) :  checked( $instance['new_tab'], 'on' );
-endif; ?> id="<?php echo esc_attr( $this->get_field_id( 'new_tab' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'new_tab' ) ); ?>" />
+		<input type="checkbox" 
+		<?php
+		if ( ! empty( $instance['new_tab'] ) ) :
+			checked( $instance['new_tab'], 'on' );
+endif;
+?>
+ id="<?php echo esc_attr( $this->get_field_id( 'new_tab' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'new_tab' ) ); ?>" />
 		<label for="<?php echo esc_attr( $this->get_field_id( 'new_tab' ) ); ?>"><?php _e( 'Open in new tab', 'islemag' ); ?></label> <br/>
 
 		<label for="<?php echo esc_attr( $this->get_field_id( $link ) ); ?>"><?php _e( 'Link', 'islemag' ); ?></label><br/>
-		<input type="text" name="<?php echo esc_attr( $this->get_field_name( $link ) ); ?>" id="<?php echo esc_attr( $this->get_field_id( $link ) ); ?>" value="<?php if ( ! empty( $instance[ $link ] ) ) :  echo esc_attr( $instance[ $link ] );
-endif; ?>" class="widefat" />
+		<input type="text" name="<?php echo esc_attr( $this->get_field_name( $link ) ); ?>" id="<?php echo esc_attr( $this->get_field_id( $link ) ); ?>" value="
+											<?php
+											if ( ! empty( $instance[ $link ] ) ) :
+												echo esc_attr( $instance[ $link ] );
+endif;
+?>
+" class="widefat" />
 
 		<label for="<?php echo esc_attr( $this->get_field_name( $url ) ); ?>"><?php _e( 'Image:','islemag' ); ?></label>
-		<input name="<?php echo esc_attr( $this->get_field_name( $url ) ); ?>" id="<?php echo esc_attr( $this->get_field_id( $url ) ); ?>" class="widefat custom_media_url" type="text" size="36"  value="<?php if ( ! empty( $instance[ $url ] ) ) :  echo esc_url( $instance[ $url ] );
-endif; ?>" />
+		<input name="<?php echo esc_attr( $this->get_field_name( $url ) ); ?>" id="<?php echo esc_attr( $this->get_field_id( $url ) ); ?>" class="widefat custom_media_url" type="text" size="36"  value="
+								<?php
+								if ( ! empty( $instance[ $url ] ) ) :
+									echo esc_url( $instance[ $url ] );
+endif;
+?>
+" />
 		<input class="upload_image_button" type="button" value="Upload Image" id="" />
 	  </p>
 
-	  <p class="islemag-big-ad-code" style="<?php if ( $instance['ad_type'] == 'image' ) { echo 'display:none'; } ?>">
+	  <p class="islemag-big-ad-code" style="
+		<?php
+		if ( $instance['ad_type'] == 'image' ) {
+			echo 'display:none'; }
+?>
+">
 		<label for="<?php echo esc_attr( $this->get_field_name( $code ) ); ?>"><?php _e( 'Code:','islemag' ); ?></label><br/>
-		<textarea name="<?php echo esc_attr( $this->get_field_name( $code ) ); ?>" placeholder="<?php esc_html_e( 'Text', 'islemag' ); ?>"><?php if ( ! empty( $instance[ $code ] ) ) :  echo $instance[ $code ];
-endif; ?></textarea>
+		<textarea name="<?php echo esc_attr( $this->get_field_name( $code ) ); ?>" placeholder="<?php esc_html_e( 'Text', 'islemag' ); ?>">
+									<?php
+									if ( ! empty( $instance[ $code ] ) ) :
+										echo $instance[ $code ];
+endif;
+?>
+</textarea>
 	  </p>
 <?php
 	}
