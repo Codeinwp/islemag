@@ -16,16 +16,17 @@ $islemag_section3_fullwidth = get_theme_mod( 'islemag_section3_fullwidth', false
 $islemag_section4_fullwidth = get_theme_mod( 'islemag_section4_fullwidth', false );
 $islemag_section5_fullwidth = get_theme_mod( 'islemag_section5_fullwidth', false );
 $islemag_header_slider_disable = (bool) get_theme_mod( 'islemag_header_slider_disable', false );
+$islemag_header_slider_random = (bool) get_theme_mod( 'islemag_header_slider_random', false );
 $islemag_section1_disable = (bool) get_theme_mod( 'islemag_section1_disable', false );
 $islemag_section2_disable = (bool) get_theme_mod( 'islemag_section2_disable', false );
 $islemag_section3_disable = (bool) get_theme_mod( 'islemag_section3_disable', false );
 $islemag_section4_disable = (bool) get_theme_mod( 'islemag_section4_disable', false );
 $islemag_section5_disable = (bool) get_theme_mod( 'islemag_section5_disable', false );
 
-
 $wp_query = new WP_Query(
 	array(
 		'posts_per_page'        => $islemag_header_slider_max_posts,
+		'orderby'               => ( (bool) $islemag_header_slider_random == false ? 'date' : 'rand'),
 		'order'                 => 'DESC',
 		'post_status'           => 'publish',
 		'category_name'         => ( ! empty( $islemag_header_slider_category ) && $islemag_header_slider_category != 'all' ? $islemag_header_slider_category : '' ),

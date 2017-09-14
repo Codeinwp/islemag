@@ -245,6 +245,13 @@ function islemag_customize_register( $wp_customize ) {
 	);
 
 	$wp_customize->add_setting(
+		'islemag_header_slider_random', array(
+			'defalt'            => false,
+			'sanitize_callback' => 'sanitize_text_field',
+		)
+	);
+
+	$wp_customize->add_setting(
 		'islemag_header_slider_max_posts', array(
 			'default'           => 6,
 			'transport'         => 'postMessage',
@@ -471,6 +478,15 @@ function islemag_customize_register( $wp_customize ) {
 	);
 
 	$wp_customize->add_control(
+		'islemag_header_slider_random', array(
+			'type'     => 'checkbox',
+			'label'    => __( 'Display randomly the posts', 'islemag' ),
+			'section'  => 'islemag_header_slider',
+			'priority' => 3,
+		)
+	);
+
+	$wp_customize->add_control(
 		'islemag_header_slider_max_posts', array(
 			'label'       => esc_html__( 'Number of posts in this section', 'islemag' ),
 			'description' => esc_html__( 'To display all posts, set this field to -1.', 'islemag' ),
@@ -480,7 +496,7 @@ function islemag_customize_register( $wp_customize ) {
 				'min' => - 1,
 				'step' => 1,
 			),
-			'priority'    => 3,
+			'priority'    => 4,
 		)
 	);
 
