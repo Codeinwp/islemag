@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: IsleMag 1.1.6\n"
 "Report-Msgid-Bugs-To: https://github.com/Codeinwp/islemag/issues\n"
-"POT-Creation-Date: 2017-09-14 10:39:19+00:00\n"
+"POT-Creation-Date: 2017-09-14 11:16:36+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -976,19 +976,19 @@ msgstr ""
 msgid "by"
 msgstr ""
 
-#: template-parts/content-single.php:132
+#: template-parts/content-single.php:133
 msgid "Post Author:"
 msgstr ""
 
-#: template-parts/content-single.php:156
+#: template-parts/content-single.php:157
 msgid "Related Posts"
 msgstr ""
 
-#: template-parts/content-single.php:253
+#: template-parts/content-single.php:254
 msgid "Show more categories"
 msgstr ""
 
-#: template-parts/content-single.php:268
+#: template-parts/content-single.php:269
 msgid "Read More"
 msgstr ""
 
