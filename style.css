@@ -1913,7 +1913,8 @@ blockquote {
 	display: inline-block;
 }
 
-.header-logo-wrap h1 {
+.header-logo-wrap h1,
+.header-logo-wrap .site-title {
 	margin: 0;
 }
 
