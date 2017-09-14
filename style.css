@@ -4991,6 +4991,11 @@ ul > li:hover > a,
 	color: #888;
 }
 
+.entry-footer .date.updated,
+.entry-footer .vcard.author {
+	display: none;
+}
+
 .entry-date {
 	display: block;
 	position: absolute;

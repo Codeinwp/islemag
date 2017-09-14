@@ -120,16 +120,17 @@
 					<a href="#" class="entry-comments"><?php comments_number( esc_html__( 'No Responses','islemag' ), esc_html__( 'One Response','islemag' ), esc_html__( '% Responses','islemag' ) ); ?></a>
 					<span class="entry-separator">/</span>
 					<?php esc_html_e( 'by','islemag' ); ?> <a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>" class="entry-author"><?php the_author(); ?></a>
+                      <time class="date updated published" datetime="<?php echo esc_html( get_the_date( DATE_W3C ) ); ?>"><?php echo esc_html( get_the_time( get_option( 'date_format' ) ) ); ?></time>
 				  </footer>
 
 					<?php $islemag_single_post_hide_author = get_theme_mod( 'islemag_single_post_hide_author' ); ?>
-				  <div class="about-author clearfix 
+				  <div class="about-author author vcard clearfix
 					<?php
 					if ( $islemag_single_post_hide_author == true ) {
 						echo 'islemag_hide';}
 ?>
 ">
-					  <h3 class="title-underblock custom"><?php echo esc_attr__( 'Post Author:','islemag' ); ?> <a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>"><?php the_author(); ?></a></h3>
+					  <h3 class="title-underblock custom"><?php echo esc_attr__( 'Post Author:','islemag' ); ?> <a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>" class="fn"><?php the_author(); ?></a></h3>
 						<?php
 						  $author_id = get_the_author_meta( 'ID' );
 						  $profile_pic = get_avatar( $author_id, 'islemag_sections_small_thumbnail' );
@@ -143,7 +144,7 @@
 						?>
 					  <div class="author-content">
 							<?php echo get_the_author_meta( 'description', $author_id ); ?>
-					  </div><!-- End .athor-content -->
+					  </div><!-- End .author-content -->
 				  </div><!-- End .about-author -->
 				</article>
 
