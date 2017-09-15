@@ -2,9 +2,9 @@
 # This file is distributed under the GNU General Public License v2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: IsleMag 1.1.5\n"
+"Project-Id-Version: IsleMag 1.1.6\n"
 "Report-Msgid-Bugs-To: https://github.com/Codeinwp/islemag/issues\n"
-"POT-Creation-Date: 2017-05-31 11:20:05+00:00\n"
+"POT-Creation-Date: 2017-09-14 13:24:45+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -38,39 +38,39 @@ msgid ""
 "links below or a search?"
 msgstr ""
 
-#: comments.php:33 comments.php:54
+#: comments.php:32 comments.php:61
 msgid "Comment navigation"
 msgstr ""
 
-#: comments.php:36 comments.php:57
+#: comments.php:35 comments.php:64
 msgid "Older Comments"
 msgstr ""
 
-#: comments.php:37 comments.php:58
+#: comments.php:36 comments.php:65
 msgid "Newer Comments"
 msgstr ""
 
-#: comments.php:67
+#: comments.php:74
 msgid "Comments are closed."
 msgstr ""
 
-#: comments.php:79 comments.php:80
+#: comments.php:86 comments.php:87
 msgid "Name"
 msgstr ""
 
-#: comments.php:87
+#: comments.php:94
 msgid "Email"
 msgstr ""
 
-#: comments.php:88
+#: comments.php:95
 msgid "Your E-mail"
 msgstr ""
 
-#: comments.php:95 comments.php:96
+#: comments.php:102 comments.php:103
 msgid "Website"
 msgstr ""
 
-#: comments.php:106
+#: comments.php:111
 msgid "Your Message"
 msgstr ""
 
@@ -78,151 +78,151 @@ msgstr ""
 msgid "Widgets Area 1"
 msgstr ""
 
-#: footer.php:81
+#: footer.php:83
 msgid "Widgets Area 2"
 msgstr ""
 
-#: footer.php:87
+#: footer.php:91
 msgid "Widgets Area 3"
 msgstr ""
 
-#: functions.php:66
+#: functions.php:67
 msgid "Top"
 msgstr ""
 
-#: functions.php:67
+#: functions.php:68
 msgid "Primary"
 msgstr ""
 
-#: functions.php:68 inc/customizer.php:133
+#: functions.php:69 inc/customizer.php:168
 msgid "Footer"
 msgstr ""
 
-#: functions.php:109
+#: functions.php:118
 msgid "Banner"
 msgstr ""
 
-#: functions.php:140
+#: functions.php:152
 msgid "Switch \"Front page displays\" to \"A static page\""
 msgstr ""
 
-#: functions.php:141
+#: functions.php:153
 msgid ""
 "In order to have the one page look for your website, please go to Customize "
 "-> Static Front Page and switch \"Front page displays\" to \"A static "
 "page\". Then select the template \"Frontpage\" for that selected page."
 msgstr ""
 
-#: functions.php:175
+#: functions.php:188
 msgid "Small Advertisement"
 msgstr ""
 
-#: functions.php:176
+#: functions.php:189
 msgid "Leaderboard"
 msgstr ""
 
-#: functions.php:177
+#: functions.php:190
 msgid "3:1 Rectangle"
 msgstr ""
 
-#: functions.php:178
+#: functions.php:191
 msgid "Medium Rectangle"
 msgstr ""
 
-#: functions.php:179
+#: functions.php:192
 msgid "Half-page ad"
 msgstr ""
 
-#: functions.php:180
+#: functions.php:193
 msgid "Big Square"
 msgstr ""
 
-#: functions.php:181
+#: functions.php:194
 msgid "Vertical Rectangle"
 msgstr ""
 
-#: functions.php:182
+#: functions.php:195
 msgid "Small Square"
 msgstr ""
 
-#: functions.php:223
+#: functions.php:238
 msgid "Sidebar"
 msgstr ""
 
-#: functions.php:233
+#: functions.php:250
 msgid "Header advertisment area"
 msgstr ""
 
-#: functions.php:242
+#: functions.php:261
 #. translators: Number of registered advertisment area
 msgid "Advertisments area %d"
 msgstr ""
 
-#: functions.php:260
+#: functions.php:280
 msgid "Footer area 1"
 msgstr ""
 
-#: functions.php:263
+#: functions.php:283
 msgid "Footer area 2"
 msgstr ""
 
-#: functions.php:266
+#: functions.php:286
 msgid "Footer area 3"
 msgstr ""
 
-#: functions.php:314
+#: functions.php:335
 msgid "expand child menu"
 msgstr ""
 
-#: functions.php:315
+#: functions.php:336
 msgid "collapse child menu"
 msgstr ""
 
-#: functions.php:707 inc/customizer.php:98 inc/customizer.php:203
+#: functions.php:736 inc/customizer.php:121 inc/customizer.php:266
 msgid "Section 1"
 msgstr ""
 
-#: functions.php:708
+#: functions.php:737
 msgid "Ads Area 1"
 msgstr ""
 
-#: functions.php:712 inc/customizer.php:104 inc/customizer.php:206
+#: functions.php:741 inc/customizer.php:129 inc/customizer.php:269
 msgid "Section 2"
 msgstr ""
 
-#: functions.php:713
+#: functions.php:742
 msgid "Ads Area 2"
 msgstr ""
 
-#: functions.php:717 inc/customizer.php:110 inc/customizer.php:209
+#: functions.php:746 inc/customizer.php:137 inc/customizer.php:272
 msgid "Section 3"
 msgstr ""
 
-#: functions.php:718
+#: functions.php:747
 msgid "Ads Area 3"
 msgstr ""
 
-#: functions.php:723 inc/customizer.php:116 inc/customizer.php:212
+#: functions.php:752 inc/customizer.php:145 inc/customizer.php:275
 msgid "Section 4"
 msgstr ""
 
-#: functions.php:724
+#: functions.php:753
 msgid "Ads Area 4"
 msgstr ""
 
-#: functions.php:728 inc/customizer.php:122 inc/customizer.php:220
+#: functions.php:757 inc/customizer.php:153 inc/customizer.php:285
 msgid "Section 5"
 msgstr ""
 
-#: functions.php:729
+#: functions.php:758
 msgid "Ads Area 5"
 msgstr ""
 
-#: header.php:56 header.php:135
+#: header.php:69 header.php:174
 msgid "Menu"
 msgstr ""
 
-#: header.php:57 header.php:136
+#: header.php:70 header.php:175
 msgid "Skip to content"
 msgstr ""
 
@@ -511,85 +511,85 @@ msgid "Changelog"
 msgstr ""
 
 #: inc/class/islemag-banner-control.php:43
-#: inc/class/islemag-banner-control.php:74
+#: inc/class/islemag-banner-control.php:100
 msgid "Banner type"
 msgstr ""
 
 #: inc/class/islemag-banner-control.php:44
-#: inc/class/islemag-banner-control.php:59
-#: inc/class/islemag-banner-control.php:75
-#: inc/class/islemag-banner-control.php:90
-#: inc/class/islemag-widget-big-ad.php:184
-#: inc/class/islemag-widget-content-ad.php:163
-#: inc/class/islemag-widget-multiple-ads.php:180
+#: inc/class/islemag-banner-control.php:74
+#: inc/class/islemag-banner-control.php:101
+#: inc/class/islemag-banner-control.php:116
+#: inc/class/islemag-widget-big-ad.php:200
+#: inc/class/islemag-widget-content-ad.php:169
+#: inc/class/islemag-widget-multiple-ads.php:200
 msgid "Image"
 msgstr ""
 
 #: inc/class/islemag-banner-control.php:45
-#: inc/class/islemag-banner-control.php:76
-#: inc/class/islemag-widget-big-ad.php:186
-#: inc/class/islemag-widget-content-ad.php:165
-#: inc/class/islemag-widget-multiple-ads.php:182
+#: inc/class/islemag-banner-control.php:102
+#: inc/class/islemag-widget-big-ad.php:207
+#: inc/class/islemag-widget-content-ad.php:176
+#: inc/class/islemag-widget-multiple-ads.php:207
 msgid "Code"
 msgstr ""
 
 #: inc/class/islemag-banner-control.php:47
-#: inc/class/islemag-banner-control.php:78
+#: inc/class/islemag-banner-control.php:104
 msgid "Banner position"
 msgstr ""
 
 #: inc/class/islemag-banner-control.php:48
-#: inc/class/islemag-banner-control.php:79
+#: inc/class/islemag-banner-control.php:105
 msgid "Left"
 msgstr ""
 
 #: inc/class/islemag-banner-control.php:49
-#: inc/class/islemag-banner-control.php:80
+#: inc/class/islemag-banner-control.php:106
 msgid "Center"
 msgstr ""
 
 #: inc/class/islemag-banner-control.php:50
-#: inc/class/islemag-banner-control.php:81
+#: inc/class/islemag-banner-control.php:107
 msgid "Right"
 msgstr ""
 
-#: inc/class/islemag-banner-control.php:53
-#: inc/class/islemag-banner-control.php:84
+#: inc/class/islemag-banner-control.php:58
+#: inc/class/islemag-banner-control.php:110
 msgid "Banner Code"
 msgstr ""
 
-#: inc/class/islemag-banner-control.php:54
-#: inc/class/islemag-banner-control.php:60
+#: inc/class/islemag-banner-control.php:59
+#: inc/class/islemag-banner-control.php:75
 msgid "Recommended size: 728px x 90px"
 msgstr ""
 
-#: inc/class/islemag-banner-control.php:55
-#: inc/class/islemag-banner-control.php:86
-#: inc/class/islemag-widget-big-ad.php:207
-#: inc/class/islemag-widget-content-ad.php:186
-#: inc/class/islemag-widget-multiple-ads.php:198
+#: inc/class/islemag-banner-control.php:60
+#: inc/class/islemag-banner-control.php:112
+#: inc/class/islemag-widget-big-ad.php:253
+#: inc/class/islemag-widget-content-ad.php:222
+#: inc/class/islemag-widget-multiple-ads.php:243
 msgid "Text"
 msgstr ""
 
-#: inc/class/islemag-banner-control.php:62
-#: inc/class/islemag-banner-control.php:93
+#: inc/class/islemag-banner-control.php:82
+#: inc/class/islemag-banner-control.php:119
 msgid "Upload Image"
 msgstr ""
 
-#: inc/class/islemag-banner-control.php:64
-#: inc/class/islemag-banner-control.php:65
-#: inc/class/islemag-banner-control.php:95
-#: inc/class/islemag-banner-control.php:96
-#: inc/class/islemag-widget-big-ad.php:195
-#: inc/class/islemag-widget-content-ad.php:174
-#: inc/class/islemag-widget-multiple-ads.php:186
-#: inc/customizer-repeater/islemag-general-control.php:174
-#: inc/customizer-repeater/islemag-general-control.php:208
+#: inc/class/islemag-banner-control.php:84
+#: inc/class/islemag-banner-control.php:90
+#: inc/class/islemag-banner-control.php:121
+#: inc/class/islemag-banner-control.php:122
+#: inc/class/islemag-widget-big-ad.php:226
+#: inc/class/islemag-widget-content-ad.php:195
+#: inc/class/islemag-widget-multiple-ads.php:216
+#: inc/customizer-repeater/islemag-general-control.php:180
+#: inc/customizer-repeater/islemag-general-control.php:226
 msgid "Link"
 msgstr ""
 
-#: inc/class/islemag-banner-control.php:85
-#: inc/class/islemag-banner-control.php:91
+#: inc/class/islemag-banner-control.php:111
+#: inc/class/islemag-banner-control.php:117
 msgid "Recomanded size: 728px x 90px"
 msgstr ""
 
@@ -605,7 +605,7 @@ msgstr ""
 msgid "Demo"
 msgstr ""
 
-#: inc/class/islemag-info.php:50 inc/customizer.php:42
+#: inc/class/islemag-info.php:50 inc/customizer.php:47
 msgid "View theme info"
 msgstr ""
 
@@ -614,90 +614,90 @@ msgid "Leave a review"
 msgstr ""
 
 #: inc/class/islemag-widget-big-ad.php:153
-#: inc/class/islemag-widget-multiple-ads.php:146 inc/customizer.php:386
+#: inc/class/islemag-widget-multiple-ads.php:146 inc/customizer.php:525
 msgid "Title"
 msgstr ""
 
-#: inc/class/islemag-widget-big-ad.php:164
+#: inc/class/islemag-widget-big-ad.php:169
 #: inc/class/islemag-widget-content-ad.php:148
-#: inc/class/islemag-widget-multiple-ads.php:167
+#: inc/class/islemag-widget-multiple-ads.php:175
 msgid "Advertisement "
 msgstr ""
 
-#: inc/class/islemag-widget-big-ad.php:168
-#: inc/class/islemag-widget-content-ad.php:152
+#: inc/class/islemag-widget-big-ad.php:174
+#: inc/class/islemag-widget-content-ad.php:153
 msgid "Recommended sizes:"
 msgstr ""
 
-#: inc/class/islemag-widget-big-ad.php:169
+#: inc/class/islemag-widget-big-ad.php:175
 msgid "300 x 250 px"
 msgstr ""
 
-#: inc/class/islemag-widget-big-ad.php:170
-#: inc/class/islemag-widget-content-ad.php:154
+#: inc/class/islemag-widget-big-ad.php:176
+#: inc/class/islemag-widget-content-ad.php:155
 msgid "300 x 100 px"
 msgstr ""
 
-#: inc/class/islemag-widget-big-ad.php:171
+#: inc/class/islemag-widget-big-ad.php:177
 msgid "300 x 600 px"
 msgstr ""
 
-#: inc/class/islemag-widget-big-ad.php:172
+#: inc/class/islemag-widget-big-ad.php:178
 msgid "250 x 250 px"
 msgstr ""
 
-#: inc/class/islemag-widget-big-ad.php:177
-#: inc/class/islemag-widget-multiple-ads.php:173
+#: inc/class/islemag-widget-big-ad.php:183
+#: inc/class/islemag-widget-multiple-ads.php:183
 msgid "Alt Title"
 msgstr ""
 
-#: inc/class/islemag-widget-big-ad.php:193
-#: inc/class/islemag-widget-content-ad.php:172
+#: inc/class/islemag-widget-big-ad.php:224
+#: inc/class/islemag-widget-content-ad.php:193
 msgid "Open in new tab"
 msgstr ""
 
-#: inc/class/islemag-widget-big-ad.php:199
-#: inc/class/islemag-widget-content-ad.php:178
-#: inc/class/islemag-widget-multiple-ads.php:190
+#: inc/class/islemag-widget-big-ad.php:235
+#: inc/class/islemag-widget-content-ad.php:204
+#: inc/class/islemag-widget-multiple-ads.php:225
 msgid "Image:"
 msgstr ""
 
-#: inc/class/islemag-widget-big-ad.php:206
-#: inc/class/islemag-widget-content-ad.php:185
-#: inc/class/islemag-widget-multiple-ads.php:197
+#: inc/class/islemag-widget-big-ad.php:252
+#: inc/class/islemag-widget-content-ad.php:221
+#: inc/class/islemag-widget-multiple-ads.php:242
 msgid "Code:"
 msgstr ""
 
-#: inc/class/islemag-widget-content-ad.php:153
+#: inc/class/islemag-widget-content-ad.php:154
 msgid "728 x 90 px"
 msgstr ""
 
-#: inc/class/islemag-widget-content-ad.php:155
+#: inc/class/islemag-widget-content-ad.php:156
 msgid "468 x 60 px"
 msgstr ""
 
-#: inc/class/islemag-widget-content-ad.php:156
+#: inc/class/islemag-widget-content-ad.php:157
 msgid "234 x 60 px"
 msgstr ""
 
-#: inc/class/islemag-widget-multiple-ads.php:150
+#: inc/class/islemag-widget-multiple-ads.php:155
 msgid "Recommended size: 125 x 125 px"
 msgstr ""
 
-#: inc/customizer-repeater/islemag-general-control.php:56 inc/extras.php:55
+#: inc/customizer-repeater/islemag-general-control.php:56 inc/extras.php:56
 msgid "Islemag"
 msgstr ""
 
-#: inc/customizer-repeater/islemag-general-control.php:125
+#: inc/customizer-repeater/islemag-general-control.php:129
 msgid "Add new field"
 msgstr ""
 
-#: inc/customizer-repeater/islemag-general-control.php:186
-#: inc/customizer-repeater/islemag-general-control.php:214
+#: inc/customizer-repeater/islemag-general-control.php:202
+#: inc/customizer-repeater/islemag-general-control.php:234
 msgid "Delete field"
 msgstr ""
 
-#: inc/customizer-repeater/islemag-general-control.php:245
+#: inc/customizer-repeater/islemag-general-control.php:270
 msgid "Icon"
 msgstr ""
 
@@ -705,220 +705,224 @@ msgstr ""
 msgid "Text color"
 msgstr ""
 
-#: inc/customizer.php:32
+#: inc/customizer.php:35
 msgid "Use a different custom template as frontpage?"
 msgstr ""
 
-#: inc/customizer.php:64
+#: inc/customizer.php:77
 msgid "Header"
 msgstr ""
 
-#: inc/customizer.php:70
+#: inc/customizer.php:85
 msgid "Frontpage sections"
 msgstr ""
 
-#: inc/customizer.php:79
+#: inc/customizer.php:96
 msgid "Header top bar"
 msgstr ""
 
-#: inc/customizer.php:85
+#: inc/customizer.php:104
 msgid "Header content"
 msgstr ""
 
-#: inc/customizer.php:86
+#: inc/customizer.php:105
 msgid "Islemag header content"
 msgstr ""
 
-#: inc/customizer.php:92
+#: inc/customizer.php:113
 msgid "Header slider"
 msgstr ""
 
-#: inc/customizer.php:128
+#: inc/customizer.php:161
 msgid "Single post settings"
 msgstr ""
 
-#: inc/customizer.php:300
+#: inc/customizer.php:393
 msgid "Title color"
 msgstr ""
 
-#: inc/customizer.php:306
+#: inc/customizer.php:403
 msgid "Top slider's posts title color"
 msgstr ""
 
-#: inc/customizer.php:312
+#: inc/customizer.php:413
 msgid "Top slider's posts text color"
 msgstr ""
 
-#: inc/customizer.php:318
+#: inc/customizer.php:423
 msgid "Section's posts title color"
 msgstr ""
 
-#: inc/customizer.php:324
+#: inc/customizer.php:433
 msgid "Section's posts text color"
 msgstr ""
 
-#: inc/customizer.php:330 inc/customizer.php:475
+#: inc/customizer.php:443 inc/customizer.php:641
 msgid "Add new social icon"
 msgstr ""
 
-#: inc/customizer.php:339
+#: inc/customizer.php:455
 msgid "Disable sticky menu"
 msgstr ""
 
-#: inc/customizer.php:346 inc/customizer.php:372
+#: inc/customizer.php:464 inc/customizer.php:507
 msgid "Disable section"
 msgstr ""
 
-#: inc/customizer.php:352 inc/customizer.php:392
-#: template-parts/content-template3.php:40
-#: template-parts/content-template3.php:104
-#: template-parts/content-template3.php:161
-#: template-parts/content-template3.php:217
-#: template-parts/content-template4.php:39
-#: template-parts/content-template4.php:95
+#: inc/customizer.php:473 inc/customizer.php:534
+#: template-parts/content-template3.php:42
+#: template-parts/content-template3.php:110
+#: template-parts/content-template3.php:171
+#: template-parts/content-template3.php:230
+#: template-parts/content-template4.php:41
+#: template-parts/content-template4.php:101
 msgid "Category"
 msgstr ""
 
-#: inc/customizer.php:358 inc/customizer.php:398
+#: inc/customizer.php:483
+msgid "Display randomly the posts"
+msgstr ""
+
+#: inc/customizer.php:491 inc/customizer.php:543
 msgid "Number of posts in this section"
 msgstr ""
 
-#: inc/customizer.php:359 inc/customizer.php:399
+#: inc/customizer.php:492 inc/customizer.php:544
 msgid "To display all posts, set this field to -1."
 msgstr ""
 
-#: inc/customizer.php:379
+#: inc/customizer.php:516
 msgid "Full width section"
 msgstr ""
 
-#: inc/customizer.php:380
+#: inc/customizer.php:517
 msgid ""
 "If you check this box and you have a sidebar, the section will be displayed "
 "after the sidebar"
 msgstr ""
 
-#: inc/customizer.php:411
+#: inc/customizer.php:558
 msgid "Number of posts in each slide"
 msgstr ""
 
-#: inc/customizer.php:425
+#: inc/customizer.php:574
 msgid "Hide author's description?"
 msgstr ""
 
-#: inc/customizer.php:426
+#: inc/customizer.php:575
 msgid ""
 "If you check this box, the author's description will disappear from single "
 "page."
 msgstr ""
 
-#: inc/customizer.php:433
+#: inc/customizer.php:584
 msgid "Hide related posts?"
 msgstr ""
 
-#: inc/customizer.php:434
+#: inc/customizer.php:585
 msgid "If you check this box, related posts will disappear from single page."
 msgstr ""
 
-#: inc/customizer.php:441
+#: inc/customizer.php:594
 msgid "Hide post thumbnail on single page?"
 msgstr ""
 
-#: inc/customizer.php:442
+#: inc/customizer.php:595
 msgid "If you check this box, the thumbnail will disappear from single page."
 msgstr ""
 
-#: inc/customizer.php:448
+#: inc/customizer.php:604
 msgid "Footer logo"
 msgstr ""
 
-#: inc/customizer.php:454
+#: inc/customizer.php:613
 msgid "Footer logo link"
 msgstr ""
 
-#: inc/customizer.php:455
+#: inc/customizer.php:614
 msgid "If not set, the footer logo will point to homepage url."
 msgstr ""
 
-#: inc/customizer.php:461
+#: inc/customizer.php:622
 msgid ""
 "Allowed HTML tags: <p>, <br>, <em>, <strong>, <ul>, <li>, <a>, <button>, "
 "<address>, <abbr>"
 msgstr ""
 
-#: inc/customizer.php:463
+#: inc/customizer.php:624
 msgid "Footer content"
 msgstr ""
 
-#: inc/customizer.php:469
+#: inc/customizer.php:632
 msgid "Socials title"
 msgstr ""
 
-#: inc/extras.php:54
+#: inc/extras.php:55
 #. translators: 1 - Theme name , 2 - WordPress link
 msgid "%1$s powered by %2$s"
 msgstr ""
 
-#: inc/extras.php:56
+#: inc/extras.php:57
 msgid "WordPress"
 msgstr ""
 
-#: inc/extras.php:111
+#: inc/extras.php:115
 #. translators: 1- comment author link, 2 - comment date, 3 - comment time
 msgid ""
 "<h4 class=\"media-heading\">%1$s</h4><span class=\"comment-date\">(%2$s - "
 "%3$s)</span>"
 msgstr ""
 
-#: inc/extras.php:111
+#: inc/extras.php:117
 msgid "(Edit)"
 msgstr ""
 
-#: inc/extras.php:121
+#: inc/extras.php:135
 msgid "Your comment is awaiting moderation."
 msgstr ""
 
-#: inc/template-tags.php:53 inc/template-tags.php:60
+#: inc/template-tags.php:54 inc/template-tags.php:61
 #. translators: used between list items, there is a space after the comma
 msgid ", "
 msgstr ""
 
-#: inc/template-tags.php:56
+#: inc/template-tags.php:57
 #. translators: Categories list
 msgid "Posted in: %1$s"
 msgstr ""
 
-#: inc/template-tags.php:63
+#: inc/template-tags.php:64
 #. translators: tags list
 msgid "Tagged: %1$s"
 msgstr ""
 
-#: inc/template-tags.php:69
+#: inc/template-tags.php:70
 msgid "Leave a comment"
 msgstr ""
 
-#: inc/template-tags.php:69
+#: inc/template-tags.php:70
 msgid "Comment"
 msgstr ""
 
-#: inc/template-tags.php:69
+#: inc/template-tags.php:70
 msgid "% Comments"
 msgstr ""
 
-#: inc/template-tags.php:77 template-parts/content-page.php:32
+#: inc/template-tags.php:78 template-parts/content-page.php:34
 #. translators: %s: Name of current post
 msgid "Edit %s"
 msgstr ""
 
-#: search.php:23
+#: search.php:30
 #. translators: Search query
 msgid "Search Results for: %s"
 msgstr ""
 
-#: sidebar.php:20
+#: sidebar.php:26
 msgid "Example Widget"
 msgstr ""
 
-#: sidebar.php:22
+#: sidebar.php:28
 #. translators: Widgets area editing link
 msgid ""
 "This is an example widget to show how the Sidebar looks by default. You can "
@@ -926,7 +930,7 @@ msgid ""
 "widgets is added than this will be replaced by those widgets."
 msgstr ""
 
-#: sidebar.php:34
+#: sidebar.php:41
 msgid "Banner Widget Example"
 msgstr ""
 
@@ -934,90 +938,90 @@ msgstr ""
 msgid "Nothing Found"
 msgstr ""
 
-#: template-parts/content-none.php:25
+#: template-parts/content-none.php:28
 #. translators: Add new post link
 msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
 msgstr ""
 
-#: template-parts/content-none.php:34
+#: template-parts/content-none.php:41
 msgid ""
 "Sorry, but nothing matched your search terms. Please try again with some "
 "different keywords."
 msgstr ""
 
-#: template-parts/content-none.php:40
+#: template-parts/content-none.php:48
 msgid ""
 "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
 "searching can help."
 msgstr ""
 
-#: template-parts/content-page.php:21 template-parts/content-search.php:82
-#: template-parts/content-single.php:84 template-parts/content.php:97
+#: template-parts/content-page.php:22 template-parts/content-search.php:86
+#: template-parts/content-single.php:90 template-parts/content.php:102
 msgid "Pages:"
 msgstr ""
 
-#: template-parts/content-single.php:95
+#: template-parts/content-single.php:103
 msgid "Categories:"
 msgstr ""
 
-#: template-parts/content-single.php:111
+#: template-parts/content-single.php:120
 msgid "No Responses"
 msgstr ""
 
-#: template-parts/content-single.php:111
+#: template-parts/content-single.php:120
 msgid "One Response"
 msgstr ""
 
-#: template-parts/content-single.php:111
+#: template-parts/content-single.php:120
 msgid "% Responses"
 msgstr ""
 
-#: template-parts/content-single.php:113
+#: template-parts/content-single.php:122
 msgid "by"
 msgstr ""
 
-#: template-parts/content-single.php:118
+#: template-parts/content-single.php:133
 msgid "Post Author:"
 msgstr ""
 
-#: template-parts/content-single.php:135
+#: template-parts/content-single.php:157
 msgid "Related Posts"
 msgstr ""
 
-#: template-parts/content-single.php:221
+#: template-parts/content-single.php:254
 msgid "Show more categories"
 msgstr ""
 
-#: template-parts/content-single.php:236
+#: template-parts/content-single.php:269
 msgid "Read More"
 msgstr ""
 
-#: template-parts/content-template1.php:70
-#: template-parts/content-template2.php:59
-#: template-parts/content-template3.php:77
-#: template-parts/content-template3.php:128
-#: template-parts/content-template3.php:186
-#: template-parts/content-template3.php:242
-#: template-parts/content-template4.php:64
-#: template-parts/content-template4.php:120
+#: template-parts/content-template1.php:72
+#: template-parts/content-template2.php:61
+#: template-parts/content-template3.php:80
+#: template-parts/content-template3.php:135
+#: template-parts/content-template3.php:197
+#: template-parts/content-template3.php:256
+#: template-parts/content-template4.php:67
+#: template-parts/content-template4.php:127
 msgid "Rating:"
 msgstr ""
 
-#: template-parts/content-template2.php:73
-#: template-parts/content-template3.php:141
-#: template-parts/content-template3.php:199
-#: template-parts/content-template3.php:255
-#: template-parts/content-template4.php:77
-#: template-parts/content-template4.php:133
+#: template-parts/content-template2.php:76
+#: template-parts/content-template3.php:149
+#: template-parts/content-template3.php:211
+#: template-parts/content-template3.php:270
+#: template-parts/content-template4.php:81
+#: template-parts/content-template4.php:141
 msgid "Posted By"
 msgstr ""
 
-#: template-parts/content.php:90
+#: template-parts/content.php:93
 #. translators: About title of the post
 msgid "Read more %s ..."
 msgstr ""
 
-#: template-parts/content.php:90
+#: template-parts/content.php:93
 msgid "about "
 msgstr ""
 
@@ -1053,35 +1057,35 @@ msgstr ""
 msgid "Full Width"
 msgstr ""
 
-#: comments.php:105
+#: comments.php:111
 msgctxt "noun"
 msgid "Comment"
 msgstr ""
 
-#: functions.php:342
+#: functions.php:366
 #. Translators: If there are characters in your language that are not supported
 #. by Lora, translate this to 'off'. Do not translate into your own language.
 msgctxt "Lato font: on or off"
 msgid "on"
 msgstr ""
 
-#: functions.php:343
+#: functions.php:367
 msgctxt "Raleway font: on or off"
 msgid "on"
 msgstr ""
 
-#: functions.php:344
+#: functions.php:368
 msgctxt "Open Sans font: on or off"
 msgid "on"
 msgstr ""
 
-#: inc/extras.php:73
+#: inc/extras.php:75
 #. translators: %s: post title
 msgctxt "comments title"
 msgid "One thought on &ldquo;%s&rdquo;"
 msgstr ""
 
-#: inc/extras.php:77
+#: inc/extras.php:79
 #. translators: 1: number of comments, 2: post title
 msgctxt "comments title"
 msgid "%1$s thought on &ldquo;%2$s&rdquo;"
@@ -1089,13 +1093,13 @@ msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
 msgstr[0] ""
 msgstr[1] ""
 
-#: inc/template-tags.php:29
+#: inc/template-tags.php:30
 #. translators: Posted date
 msgctxt "post date"
 msgid "Posted on %s"
 msgstr ""
 
-#: inc/template-tags.php:35
+#: inc/template-tags.php:36
 #. translators: Author link
 msgctxt "post author"
 msgid "by %s"

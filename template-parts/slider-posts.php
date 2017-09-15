@@ -10,7 +10,7 @@
 $colors = array( 'red', 'orange', 'blue', 'green', 'purple', 'pink', 'light_red' );
 $choosed_color = array_rand( $colors, 1 );
 ?>
-<article class="entry entry-overlay entry-block <?php echo apply_filters( 'islemag_slider_posts_colors',$colors[ $choosed_color ] );?>">
+<article class="entry entry-overlay entry-block <?php echo apply_filters( 'islemag_slider_posts_colors',$colors[ $choosed_color ] ); ?>">
 	<?php islemag_top_slider_posts_trigger(); ?>
 	<div class="entry-media">
 		<figure>

@@ -8,13 +8,13 @@
 
 $wp_query = new WP_Query(
 	array(
-		  'posts_per_page'        => $islemag_section_max_posts,
-		  'order'                 => 'DESC',
-		  'post_status'           => 'publish',
-		  'ignore_sticky_posts'   => true,
-		  'no_found_rows'       => true,
-		  'category_name'         => ( ! empty( $islemag_section_category ) && $islemag_section_category != 'all' ? $islemag_section_category : ''),
-	  )
+		'posts_per_page'        => $islemag_section_max_posts,
+		'order'                 => 'DESC',
+		'post_status'           => 'publish',
+		'ignore_sticky_posts'   => true,
+		'no_found_rows'       => true,
+		'category_name'         => ( ! empty( $islemag_section_category ) && $islemag_section_category != 'all' ? $islemag_section_category : ''),
+	)
 );
 
 if ( $wp_query->have_posts() ) : ?>
@@ -23,7 +23,8 @@ if ( $wp_query->have_posts() ) : ?>
 	<div class="owl-carousel islemag-template1-posts smaller-nav no-radius">
 		<?php
 
-		while ( $wp_query->have_posts() ) : $wp_query->the_post();
+		while ( $wp_query->have_posts() ) :
+			$wp_query->the_post();
 
 			$choosed_color = array_rand( $colors, 1 );
 			$category = get_the_category();
@@ -31,7 +32,7 @@ if ( $wp_query->have_posts() ) : ?>
 		?>
 
 		  <article class="entry entry-overlay entry-block <?php echo $colors[ $choosed_color ]; ?>">
-			<a href="<?php echo esc_url( get_category_link( $category[0]->cat_ID ) );?>" class="category-block" title="Category <?php echo esc_attr( $category[0]->cat_name ); ?>"><?php echo esc_attr( $category[0]->cat_name ); ?></a>
+			<a href="<?php echo esc_url( get_category_link( $category[0]->cat_ID ) ); ?>" class="category-block" title="Category <?php echo esc_attr( $category[0]->cat_name ); ?>"><?php echo esc_attr( $category[0]->cat_name ); ?></a>
 			<div class="entry-media">
 			  <figure>
 				<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
@@ -66,7 +67,8 @@ if ( $wp_query->have_posts() ) : ?>
 			<?php
 			if ( function_exists( 'cwppos_calc_overall_rating' ) ) {
 				$rating = cwppos_calc_overall_rating( $postid );
-				if ( ! empty( $rating['option1'] ) ) {  ?>
+				if ( ! empty( $rating['option1'] ) ) {
+				?>
 					<label><?php esc_html_e( 'Rating:', 'islemag' ); ?></label>
 					<div class="star-ratings-css">
 					  <div class="star-ratings-css-top" style="width: <?php echo $rating['overall']; ?>%"><span><i class="fa fa-star"></i></span><span><i class="fa fa-star"></i></span><span><i class="fa fa-star"></i></span><span><i class="fa fa-star"></i></span><span><i class="fa fa-star"></i></span></div>
@@ -74,7 +76,8 @@ if ( $wp_query->have_posts() ) : ?>
 					</div>
 				<?php
 				}
-			} ?>
+			}
+			?>
 		  </article> <!-- End .entry-overlay -->
 		<?php
 		  endwhile;
