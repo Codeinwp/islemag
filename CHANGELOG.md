@@ -1,4 +1,9 @@
 
+### 1.1.7 - 15/09/2017
+**Changes:** 
+- Fixed SEO issues: H1 tag for single pages titles and Site title and tagline corresponding tags
+- New option for randomizing the posts from the Slider
+
 ### 1.1.6 - 10/07/2017
 **Changes:** 
 - Fixed issue with Advertisement areas
