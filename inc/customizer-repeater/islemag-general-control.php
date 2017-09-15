@@ -183,24 +183,18 @@ class Islemag_General_Repeater extends WP_Customize_Control {
 								), $link
 							);
 						}
-						?>
 
-						<input type="hidden" class="islemag_box_id" value="
-						<?php
+						echo '<input type="hidden" class="islemag_box_id" value="';
 						if ( ! empty( $id ) ) {
 							echo esc_attr( $id );
 						}
-?>
-">
-						<button type="button" class="social-repeater-general-control-remove-field button" 
-						<?php
+						echo '">';
+						echo '<button type="button" class="social-repeater-general-control-remove-field button"';
 						if ( $it == 0 ) {
 							echo 'style="display:none;"';
 						}
-?>
->
-							<?php esc_html_e( 'Delete field', 'islemag' ); ?>
-						</button>
+						echo '>' . esc_html__( 'Delete field', 'islemag' ) . '</button>';
+						?>
 
 					</div>
 				</div>
@@ -259,26 +253,21 @@ class Islemag_General_Repeater extends WP_Customize_Control {
 	 * @param string $show Flag to display or not.
 	 */
 	private function icon_picker_control( $value = '', $show = '' ) {
-	?>
-		<div class="social-repeater-general-control-icon" 
-		<?php
+
+		echo '<div class="social-repeater-general-control-icon"';
 		if ( $show === 'customizer_repeater_image' || $show === 'customizer_repeater_none' ) {
-			echo 'style="display:none;"'; }
-?>
->
-			<span class="customize-control-title">
-				<?php esc_html_e( 'Icon','islemag' ); ?>
-			</span>
-			<div class="input-group icp-container">
-				<input data-placement="bottomRight" class="icp icp-auto" value="
-				<?php
-				if ( ! empty( $value ) ) {
-					echo esc_attr( $value );}
-?>
-" type="text">
-				<span class="input-group-addon"></span>
-			</div>
-		</div>
-		<?php
+			echo 'style="display:none;"';
+		}
+		echo '>';
+			echo '<span class="customize-control-title">' . esc_html__( 'Icon','islemag' ) . '</span>';
+			echo '<div class="input-group icp-container">';
+				echo '<input data-placement="bottomRight" class="icp icp-auto" value="';
+		if ( ! empty( $value ) ) {
+			echo esc_attr( $value );
+		}
+				echo '" type="text">';
+				echo '<span class="input-group-addon"></span>';
+			echo '</div>';
+		echo '</div>';
 	}
 }
