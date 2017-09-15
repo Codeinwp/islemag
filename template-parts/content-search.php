@@ -27,7 +27,8 @@
 					}
 				} else {
 					echo '<img src="' . get_template_directory_uri() . '/img/blogpost-placeholder.jpg" />';
-				} ?>
+				}
+				?>
 			</a>
 		</figure>
 	</div><!-- End .entry-media -->
@@ -66,10 +67,12 @@
 			$icon_class = 'fa-headphones';
 			break;
 	}
-	if ( ! empty( $icon_class ) ) {  ?>
+	if ( ! empty( $icon_class ) ) {
+	?>
 			<span class="entry-format"><i class="fa <?php echo $icon_class; ?>"></i></span>
 			<?php
-	} ?>
+	}
+	?>
 	<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
 
 	<div class="entry-content">
@@ -78,15 +81,18 @@
 		?>
 
 		<?php
-			wp_link_pages( array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'islemag' ),
-				'after'  => '</div>',
-			) );
+			wp_link_pages(
+				array(
+					'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'islemag' ),
+					'after'  => '</div>',
+				)
+			);
 		?>
 	</div><!-- .entry-content -->
 
 	<?php
-	islemag_content_footer(); ?>
+	islemag_content_footer();
+	?>
 
 
 

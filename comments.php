@@ -24,11 +24,10 @@ if ( post_password_required() ) {
 
 		<?php if ( have_comments() ) : ?>
 			<h2 class="comments-title">
-				<?php
-				islemag_comments_title(); ?>
+				<?php islemag_comments_title(); ?>
 			</h2>
 
-			<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) :?>
+			<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : ?>
 			<nav id="comment-nav-above" class="navigation comment-navigation" role="navigation">
 				<h2 class="screen-reader-text"><?php esc_html_e( 'Comment navigation', 'islemag' ); ?></h2>
 				<div class="nav-links">
@@ -38,18 +37,26 @@ if ( post_password_required() ) {
 
 				</div><!-- .nav-links -->
 			</nav><!-- #comment-nav-above -->
-			<?php endif; // Check for comment navigation. ?>
+			<?php
+			endif;
+			// Check for comment navigation.
+			?>
 
 			<ul class="comments-list media-list">
 				<?php
-					wp_list_comments( array(
-						'callback'          => 'islemag_comment',
-						'avatar_size'       => 80,
-					) );
+					wp_list_comments(
+						array(
+							'callback'          => 'islemag_comment',
+							'avatar_size'       => 80,
+						)
+					);
 				?>
 			</ul>
 
-			<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // Are there comments to navigate through? ?>
+			<?php
+			// Are there comments to navigate through?
+			if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) :
+				?>
 			<nav id="comment-nav-below" class="navigation comment-navigation" role="navigation">
 				<h2 class="screen-reader-text"><?php esc_html_e( 'Comment navigation', 'islemag' ); ?></h2>
 				<div class="nav-links">
@@ -73,7 +80,7 @@ if ( post_password_required() ) {
 		$aria_req = ( $req ? " aria-required='true'" : '' );
 
 		$fields = array(
-		'author' =>
+			'author' =>
 			'<div class="col-sm-4">
 			  <div class="form-group">
 				  <label for="author" class="input-desc">' . __( 'Name', 'islemag' ) . ( $req ? '<span class="required">*</span>' : '' ) . '</label> ' .
@@ -81,7 +88,7 @@ if ( post_password_required() ) {
 				 </div>
 				</div>',
 
-		'email' =>
+			'email' =>
 			'<div class="col-sm-4">
 			  <div class="form-group">
 				 <label for="email" class="input-desc">' . __( 'Email', 'islemag' ) . ( $req ? '<span class="required">*</span>' : '' ) . '</label> ' .
@@ -89,7 +96,7 @@ if ( post_password_required() ) {
 			  </div>
 			 </div>',
 
-		'url' =>
+			'url' =>
 			'<div class="col-sm-4">
 			  <div class="form-group">
 			   <label for="url" class="input-desc">' . __( 'Website', 'islemag' ) . '</label>' .
@@ -99,12 +106,9 @@ if ( post_password_required() ) {
 		);
 
 		$args = array(
-			'class_submit' 			=> 'btn btn-dark',
-			'fields' 						=> apply_filters( 'comment_form_default_fields', $fields ),
-			'comment_field' 		=> '<div class="form-group">
-																<label for="comment" class="input-desc">' . _x( 'Comment', 'noun', 'islemag' ) . '</label>
-																<textarea class="form-control" id="comment" name="comment" aria-required="true" placeholder="' . esc_html__( 'Your Message', 'islemag' ) . '"></textarea>
-															</div>',
+			'class_submit' => 'btn btn-dark',
+			'fields' => apply_filters( 'comment_form_default_fields', $fields ),
+			'comment_field' => '<div class="form-group"><label for="comment" class="input-desc">' . _x( 'Comment', 'noun', 'islemag' ) . '</label><textarea class="form-control" id="comment" name="comment" aria-required="true" placeholder="' . esc_html__( 'Your Message', 'islemag' ) . '"></textarea></div>',
 		);
 
 		comment_form( apply_filters( 'islemag_comments_args',$args ) );

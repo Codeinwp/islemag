@@ -49,26 +49,53 @@ class Islemag_Banner_Control extends WP_Customize_Control {
 				  <input type="radio" class="islemag-banner-position" name="banner_position" value="center" <?php checked( $json['position'], 'center', true ); ?>> <?php esc_html_e( 'Center', 'islemag' ); ?>
 				  <input type="radio" class="islemag-banner-position" name="banner_position" value="right" <?php checked( $json['position'], 'right', true ); ?>> <?php esc_html_e( 'Right', 'islemag' ); ?>
 
-				  <div class="islemag-banner-choice-code"  <?php if ( ! empty( $json['choice'] ) && $json['choice'] != 'code' ) {  echo 'style="display:none"'; } ?>>
-					<span class="customize-control-title"> <?php esc_html_e( 'Banner Code', 'islemag' ); ?> </span>
-					<span class="description customize-control-description"><?php esc_html_e( 'Recommended size: 728px x 90px', 'islemag' ); ?></span>
-					<textarea placeholder="<?php esc_html_e( 'Text', 'islemag' ); ?>" class="islemag-banner-settings-text-control" ><?php if ( $json['choice'] == 'code' && ! empty( $json['code'] ) ) { echo $json['code'];} ?></textarea>
-				  </div>
+					<?php
+					echo '<div class="islemag-banner-choice-code"';
+					if ( ! empty( $json['choice'] ) && $json['choice'] != 'code' ) {
+						echo 'style="display:none"';
+					}
+					echo '>';
 
-				  <div class="islemag-banner-choice-image"  <?php if ( ! empty( $json['choice'] ) && $json['choice'] != 'image' ) {  echo 'style="display:none"'; } ?>>
+					echo '<span class="customize-control-title">' . esc_html__( 'Banner Code', 'islemag' ) . '</span>';
+					echo '<span class="description customize-control-description">' . esc_html__( 'Recommended size: 728px x 90px', 'islemag' ) . '</span>';
+					echo '<textarea placeholder="' . esc_html__( 'Text', 'islemag' ) . '" class="islemag-banner-settings-text-control" >';
+					if ( $json['choice'] == 'code' && ! empty( $json['code'] ) ) {
+						echo $json['code'];
+					}
+					echo '</textarea>';
+
+					echo '</div>';
+
+					echo '<div class="islemag-banner-choice-image"';
+					if ( ! empty( $json['choice'] ) && $json['choice'] != 'image' ) {
+						echo 'style="display:none"';
+					}
+					echo '>';
+					?>
 					<span class="customize-control-title"> <?php esc_html_e( 'Image', 'islemag' ); ?> </span>
 					<span class="description customize-control-description"><?php esc_html_e( 'Recommended size: 728px x 90px', 'islemag' ); ?></span>
-					<input type="text" class="widefat custom_media_url" value="<?php if ( ! empty( $json['image_url'] ) ) { echo esc_attr( $json['image_url'] ); } ?>">
-					<input type="button" class="button button-primary custom-media-button-islemag" value="<?php esc_html_e( 'Upload Image', 'islemag' ); ?>" />
+					<?php
+					echo '<input type="text" class="widefat custom_media_url" value="';
+					if ( ! empty( $json['image_url'] ) ) {
+						echo esc_attr( $json['image_url'] );
+					}
+					echo '">';
+					echo '<input type="button" class="button button-primary custom-media-button-islemag" value="' . esc_html_e( 'Upload Image', 'islemag' ) . '" />';
 
-					<span class="customize-control-title"> <?php esc_html_e( 'Link', 'islemag' ); ?> </span>
-					<input type="text" value="<?php if ( ! empty( $json['banner_link'] ) ) { echo esc_attr( $json['banner_link'] );} ?>" class="islemag-banner-link" placeholder="<?php esc_html_e( 'Link', 'islemag' ); ?> "/>
+					echo '<span class="customize-control-title">' . esc_html_e( 'Link', 'islemag' ) . '</span>';
+					echo '<input type="text" value="';
+					if ( ! empty( $json['banner_link'] ) ) {
+						echo esc_attr( $json['banner_link'] );
+					}
+					echo '" class="islemag-banner-link" placeholder="' . esc_html__( 'Link', 'islemag' ) . ' "/>';
+					?>
 				  </div>
 
 				  <input type="hidden" id="islemag-banner-colector" <?php $this->link(); ?> class="islemag-banner-colector" value="<?php echo esc_textarea( $this->value() ); ?>" />
 			  </div>
 		<?php
-		} else { ?>
+		} else {
+		?>
 				<div class="islemag-banner-settings-container">
 
 				<span class="customize-control-title"> <?php esc_html_e( 'Banner type', 'islemag' ); ?> </span>

@@ -10,21 +10,29 @@
 get_header(); ?>
 <div class="container">
 	<div class="row">
-	    <?php
-	    $archive_content_classes = apply_filters( 'islemag_archive_content_classes',array( 'islemag-content-left', 'col-md-9' ) ); ?>
-	    <div <?php if ( ! empty( $archive_content_classes ) ) { echo 'class="' . implode( ' ', $archive_content_classes ) . '"'; } ?>>
+		<?php
+		$archive_content_classes = apply_filters( 'islemag_archive_content_classes',array( 'islemag-content-left', 'col-md-9' ) );
+		?>
+		<div 
+		<?php
+		if ( ! empty( $archive_content_classes ) ) {
+			echo 'class="' . implode( ' ', $archive_content_classes ) . '"'; }
+?>
+>
 
 
 		<?php
 
-		if ( have_posts() ) : ?>
+		if ( have_posts() ) :
+		?>
 
 				<header class="page-header">
 					<h1 class="page-title"><?php /* translators: Search query */ printf( esc_html__( 'Search Results for: %s', 'islemag' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
 				</header><!-- .page-header -->
 
 				<?php
-				while ( have_posts() ) : the_post();
+				while ( have_posts() ) :
+					the_post();
 
 						/**
 					 * Run the loop for the search to output the results.
@@ -35,7 +43,8 @@ get_header(); ?>
 
 			endwhile;
 
-				echo apply_filters( 'islemag_post_navigation_filter', get_the_posts_navigation() ); ?>
+				echo apply_filters( 'islemag_post_navigation_filter', get_the_posts_navigation() );
+				?>
 
 			<?php
 
@@ -43,7 +52,8 @@ get_header(); ?>
 
 		get_template_part( 'template-parts/content', 'none' );
 
-	endif; ?>
+	endif;
+	?>
 
 		</div>
 	<?php get_sidebar(); ?>

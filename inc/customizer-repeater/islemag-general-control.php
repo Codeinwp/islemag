@@ -100,14 +100,16 @@ class Islemag_General_Repeater extends WP_Customize_Control {
 			<?php
 			if ( ( count( $json ) == 1 && '' === $json[0] ) || empty( $json ) ) {
 				if ( ! empty( $this_default ) ) {
-					$this->iterate_array( $this_default ); ?>
+					$this->iterate_array( $this_default );
+					?>
 					<input type="hidden"
 						   id="customizer-repeater-<?php echo $this->id; ?>-colector" <?php $this->link(); ?>
 						   class="customizer-repeater-colector"
 						   value="<?php echo esc_textarea( json_encode( $this_default ) ); ?>"/>
 					<?php
 				} else {
-					$this->iterate_array(); ?>
+					$this->iterate_array();
+					?>
 
 					<input type="hidden"
 						   id="customizer-repeater-<?php echo $this->id; ?>-colector" <?php $this->link(); ?>
@@ -115,11 +117,13 @@ class Islemag_General_Repeater extends WP_Customize_Control {
 					<?php
 				}
 			} else {
-				$this->iterate_array( $json ); ?>
+				$this->iterate_array( $json );
+				?>
 				<input type="hidden" id="customizer-repeater-<?php echo $this->id; ?>-colector" <?php $this->link(); ?>
 					   class="islemag_repeater_colector" value="<?php echo esc_textarea( $this->value() ); ?>"/>
 				<?php
-			} ?>
+			}
+			?>
 		</div>
 		<button type="button" class="button add_field islemag_general_control_new_field">
 			<?php esc_html_e( 'Add new field', 'islemag' ); ?>
@@ -136,7 +140,8 @@ class Islemag_General_Repeater extends WP_Customize_Control {
 		/*Counter that helps checking if the box is first and should have the delete button disabled*/
 		$it = 0;
 		if ( ! empty( $array ) ) {
-			foreach ( $array as $icon ) {  ?>
+			foreach ( $array as $icon ) {
+			?>
 				<div class="islemag_general_control_repeater_container islemag_draggable">
 					<div class="islemag-customize-control-title">
 						<?php echo esc_html( $this->boxtitle ); ?>
@@ -170,21 +175,26 @@ class Islemag_General_Repeater extends WP_Customize_Control {
 						}
 
 						if ( $this->customizer_repeater_link_control ) {
-							$this->input_control(array(
-								'label' => __( 'Link','islemag' ),
-								'class' => 'islemag_link_control',
-								'sanitize_callback' => 'esc_url',
-							), $link);
-						} ?>
+							$this->input_control(
+								array(
+									'label' => __( 'Link','islemag' ),
+									'class' => 'islemag_link_control',
+									'sanitize_callback' => 'esc_url',
+								), $link
+							);
+						}
 
-						<input type="hidden" class="islemag_box_id" value="<?php if ( ! empty( $id ) ) {
+						echo '<input type="hidden" class="islemag_box_id" value="';
+						if ( ! empty( $id ) ) {
 							echo esc_attr( $id );
-} ?>">
-						<button type="button" class="social-repeater-general-control-remove-field button" <?php if ( $it == 0 ) {
+						}
+						echo '">';
+						echo '<button type="button" class="social-repeater-general-control-remove-field button"';
+						if ( $it == 0 ) {
 							echo 'style="display:none;"';
-} ?>>
-							<?php esc_html_e( 'Delete field', 'islemag' ); ?>
-						</button>
+						}
+						echo '>' . esc_html__( 'Delete field', 'islemag' ) . '</button>';
+						?>
 
 					</div>
 				</div>
@@ -192,7 +202,8 @@ class Islemag_General_Repeater extends WP_Customize_Control {
 				<?php
 				$it++;
 			}// End foreach().
-		} else { ?>
+		} else {
+		?>
 			<div class="islemag_general_control_repeater_container">
 				<div class="islemag-customize-control-title">
 					<?php echo esc_html( $this->boxtitle ); ?>
@@ -204,11 +215,14 @@ class Islemag_General_Repeater extends WP_Customize_Control {
 					}
 
 					if ( $this->customizer_repeater_link_control == true ) {
-						$this->input_control( array(
-							'label' => __( 'Link', 'islemag' ),
-							'class' => 'islemag_link_control',
-						) );
-					} ?>
+						$this->input_control(
+							array(
+								'label' => __( 'Link', 'islemag' ),
+								'class' => 'islemag_link_control',
+							)
+						);
+					}
+					?>
 					<input type="hidden" class="islemag_box_id">
 					<button type="button" class="social-repeater-general-control-remove-field button" style="display:none;">
 						<?php esc_html_e( 'Delete field', 'islemag' ); ?>
@@ -228,7 +242,7 @@ class Islemag_General_Repeater extends WP_Customize_Control {
 	private function input_control( $options, $value = '' ) {
 	?>
 		<span class="customize-control-title"><?php echo $options['label']; ?></span>
-		<input type="text" value="<?php echo ( ! empty( $options['sanitize_callback'] ) ?  call_user_func_array( $options['sanitize_callback'], array( $value ) ) : esc_attr( $value ) ); ?>" class="<?php echo esc_attr( $options['class'] ); ?>" placeholder="<?php echo $options['label']; ?>"/>
+		<input type="text" value="<?php echo ( ! empty( $options['sanitize_callback'] ) ? call_user_func_array( $options['sanitize_callback'], array( $value ) ) : esc_attr( $value ) ); ?>" class="<?php echo esc_attr( $options['class'] ); ?>" placeholder="<?php echo $options['label']; ?>"/>
 		<?php
 	}
 
@@ -239,16 +253,21 @@ class Islemag_General_Repeater extends WP_Customize_Control {
 	 * @param string $show Flag to display or not.
 	 */
 	private function icon_picker_control( $value = '', $show = '' ) {
-	?>
-		<div class="social-repeater-general-control-icon" <?php if ( $show === 'customizer_repeater_image' || $show === 'customizer_repeater_none' ) { echo 'style="display:none;"'; } ?>>
-			<span class="customize-control-title">
-				<?php esc_html_e( 'Icon','islemag' ); ?>
-			</span>
-			<div class="input-group icp-container">
-				<input data-placement="bottomRight" class="icp icp-auto" value="<?php if ( ! empty( $value ) ) { echo esc_attr( $value );} ?>" type="text">
-				<span class="input-group-addon"></span>
-			</div>
-		</div>
-		<?php
+
+		echo '<div class="social-repeater-general-control-icon"';
+		if ( $show === 'customizer_repeater_image' || $show === 'customizer_repeater_none' ) {
+			echo 'style="display:none;"';
+		}
+		echo '>';
+			echo '<span class="customize-control-title">' . esc_html__( 'Icon','islemag' ) . '</span>';
+			echo '<div class="input-group icp-container">';
+				echo '<input data-placement="bottomRight" class="icp icp-auto" value="';
+		if ( ! empty( $value ) ) {
+			echo esc_attr( $value );
+		}
+				echo '" type="text">';
+				echo '<span class="input-group-addon"></span>';
+			echo '</div>';
+		echo '</div>';
 	}
 }
