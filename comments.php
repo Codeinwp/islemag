@@ -81,7 +81,7 @@ if ( post_password_required() ) {
 
 		$fields = array(
 			'author' =>
-			'<div class="col-sm-4">
+			'<div class="row"><div class="col-sm-4">
 			  <div class="form-group">
 				  <label for="author" class="input-desc">' . __( 'Name', 'islemag' ) . ( $req ? '<span class="required">*</span>' : '' ) . '</label> ' .
 				 '<input id="author" class="form-control" placeholder="' . esc_html__( 'Name', 'islemag' ) . '" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30"' . $aria_req . ' />
@@ -102,7 +102,7 @@ if ( post_password_required() ) {
 			   <label for="url" class="input-desc">' . __( 'Website', 'islemag' ) . '</label>' .
 			  '<input id="url" class="form-control" placeholder="' . esc_html__( 'Website', 'islemag' ) . '" name="url" type="text" value="' . esc_attr( $commenter['comment_author_url'] ) . '" size="30" />
 			  </div>
-			 </div>',
+			 </div></div>',
 		);
 
 		$args = array(
