@@ -26,7 +26,6 @@
 		?>
 	</div><!-- .entry-content -->
 
-	
 	<?php
 		edit_post_link(
 			sprintf(

@@ -21,11 +21,11 @@
 						<div class="col-md-3 col-sm-12">
 							<?php
 								global $wp_customize;
-								$islemag_footer_logo = get_theme_mod( 'islemag_footer_logo' );
-								$islemag_footer_link = get_theme_mod( 'islemag_footer_link' );
-								$islemag_footer_text = get_theme_mod( 'islemag_footer_text' );
+								$islemag_footer_logo          = get_theme_mod( 'islemag_footer_logo' );
+								$islemag_footer_link          = get_theme_mod( 'islemag_footer_link' );
+								$islemag_footer_text          = get_theme_mod( 'islemag_footer_text' );
 								$islemag_footer_socials_title = get_theme_mod( 'islemag_footer_socials_title' );
-								$islemag_footer_social_icons = get_theme_mod( 'islemag_footer_social_icons' );
+								$islemag_footer_social_icons  = get_theme_mod( 'islemag_footer_social_icons' );
 
 							if ( ! empty( $islemag_footer_logo ) ) {
 								echo '<a class="islemag-footer-logo" href="' . ( ! empty( $islemag_footer_link ) ? esc_url( $islemag_footer_link ) : esc_url( home_url( '/' ) ) ) . '">';
@@ -72,7 +72,7 @@
 						</div><!-- .col-md-3.col-sm-6 -->
 
 						<?php if ( is_active_sidebar( 'islemag-first-footer-area' ) ) { ?>
-								<div itemscope itemtype="http://schema.org/WPSideBar" class="col-md-3 col-sm-12" id="sidebar-widgets-area-1" aria-label="<?php esc_html_e( 'Widgets Area 1','islemag' ); ?>">
+								<div itemscope itemtype="http://schema.org/WPSideBar" class="col-md-3 col-sm-12" id="sidebar-widgets-area-1" aria-label="<?php esc_html_e( 'Widgets Area 1', 'islemag' ); ?>">
 									<?php dynamic_sidebar( 'islemag-first-footer-area' ); ?>
 								</div>
 						<?php
@@ -80,7 +80,7 @@
 
 if ( is_active_sidebar( 'islemag-second-footer-area' ) ) {
 ?>
-								<div itemscope itemtype="http://schema.org/WPSideBar" role="complementary" id="sidebar-widgets-area-2" class="col-md-3 col-sm-12" aria-label="<?php esc_html_e( 'Widgets Area 2','islemag' ); ?>">
+								<div itemscope itemtype="http://schema.org/WPSideBar" role="complementary" id="sidebar-widgets-area-2" class="col-md-3 col-sm-12" aria-label="<?php esc_html_e( 'Widgets Area 2', 'islemag' ); ?>">
 									<?php dynamic_sidebar( 'islemag-second-footer-area' ); ?>
 								</div>
 						<?php
@@ -88,7 +88,7 @@ if ( is_active_sidebar( 'islemag-second-footer-area' ) ) {
 
 if ( is_active_sidebar( 'islemag-third-footer-area' ) ) {
 ?>
-								<div itemscope itemtype="http://schema.org/WPSideBar" role="complementary" id="sidebar-widgets-area-3" class="col-md-3 col-sm-12" aria-label="<?php esc_html_e( 'Widgets Area 3','islemag' ); ?>">
+								<div itemscope itemtype="http://schema.org/WPSideBar" role="complementary" id="sidebar-widgets-area-3" class="col-md-3 col-sm-12" aria-label="<?php esc_html_e( 'Widgets Area 3', 'islemag' ); ?>">
 									<?php dynamic_sidebar( 'islemag-third-footer-area' ); ?>
 								</div>
 						<?php

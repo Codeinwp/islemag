@@ -61,7 +61,7 @@ if ( ! function_exists( 'islemag_footer' ) ) {
 		<?php
 	}
 }
-add_action( 'islemag_footer_content','islemag_footer' );
+add_action( 'islemag_footer_content', 'islemag_footer' );
 
 
 if ( ! function_exists( 'islemag_comments_heading' ) ) {
@@ -89,7 +89,7 @@ if ( ! function_exists( 'islemag_comments_heading' ) ) {
 		}
 	}
 }
-add_action( 'islemag_comments_title','islemag_comments_heading' );
+add_action( 'islemag_comments_title', 'islemag_comments_heading' );
 
 
 if ( ! function_exists( 'islemag_comment_action' ) ) {
@@ -116,18 +116,18 @@ if ( ! function_exists( 'islemag_comment_action' ) ) {
 			?>
 			<?php edit_comment_link( __( '(Edit)', 'islemag' ), '  ', '' ); ?>
 			<div class="reply pull-right reply-link"> 
-			<?php
-			comment_reply_link(
-				array_merge(
-					$args, array(
-						'add_below' => $add_below,
-						'depth'     => $depth,
-						'max_depth' => $args['max_depth'],
+				<?php
+				comment_reply_link(
+					array_merge(
+						$args, array(
+							'add_below' => $add_below,
+							'depth'     => $depth,
+							'max_depth' => $args['max_depth'],
+						)
 					)
-				)
-			);
-			?>
-			 </div>
+				);
+				?>
+			</div>
 		</div>
 
 
@@ -144,7 +144,7 @@ if ( ! function_exists( 'islemag_comment_action' ) ) {
 		<?php
 	}
 }// End if().
-add_action( 'islemag_comment_content','islemag_comment_action', 10, 5 );
+add_action( 'islemag_comment_content', 'islemag_comment_action', 10, 5 );
 
 /**
  * Post entry date.

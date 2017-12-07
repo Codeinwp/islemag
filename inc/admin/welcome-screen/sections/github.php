@@ -11,9 +11,9 @@
 	<hr/>
 
 	<div class="islemag-tab-pane-half islemag-tab-pane-first-half">
-		<p><strong><?php esc_html_e( 'Found a bug? Want to contribute with a fix or create a new feature?','islemag'); ?></strong></p>
+		<p><strong><?php esc_html_e( 'Found a bug? Want to contribute with a fix or create a new feature?', 'islemag' ); ?></strong></p>
 
-		<p><?php esc_html_e( 'GitHub is the place to go!','islemag' ); ?></p>
+		<p><?php esc_html_e( 'GitHub is the place to go!', 'islemag' ); ?></p>
 
 		<p>
 			<a href="<?php echo esc_url( 'https://github.com/Codeinwp/islemag' ); ?>" class="github-button button button-primary"><?php printf( esc_html__( '%s on GitHub', 'islemag' ), 'IsleMag' ); ?></a>
@@ -35,7 +35,7 @@
 	<div>
 		<h4><?php printf( esc_html__( 'Are you enjoying %s?', 'islemag' ), 'IsleMag' ); ?></h4>
 
-		<p class="review-link"><?php echo sprintf( esc_html__( 'Rate our theme on %sWordPress.org%s. We\'d really appreciate it!', 'islemag' ), '<a href="https://wordpress.org/support/view/theme-reviews/islemag#postform/">', '</a>' ); ?></p>
+		<p class="review-link"><?php echo sprintf( esc_html__( 'Rate our theme on %1$sWordPress.org%2$s. We\'d really appreciate it!', 'islemag' ), '<a href="https://wordpress.org/support/view/theme-reviews/islemag#postform/">', '</a>' ); ?></p>
 
 		<p><span class="dashicons dashicons-star-filled"></span><span class="dashicons dashicons-star-filled"></span><span class="dashicons dashicons-star-filled"></span><span class="dashicons dashicons-star-filled"></span><span class="dashicons dashicons-star-filled"></span></p>
 	</div>

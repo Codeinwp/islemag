@@ -36,7 +36,7 @@
 	islemag_entry_date();
 
 
-		$id = get_the_ID();
+		$id     = get_the_ID();
 		$format = get_post_format( $id );
 	switch ( $format ) {
 		case 'aside':

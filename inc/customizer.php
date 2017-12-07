@@ -31,10 +31,10 @@ function islemag_customize_register( $wp_customize ) {
 	);
 	$wp_customize->add_control(
 		'islemag_keep_old_fp_template', array(
-			'type' => 'checkbox',
-			'label' => esc_html__( 'Use a different custom template as frontpage?','islemag' ),
-			'section' => 'title_tagline',
-			'priority'    => 10,
+			'type'     => 'checkbox',
+			'label'    => esc_html__( 'Use a different custom template as frontpage?', 'islemag' ),
+			'section'  => 'title_tagline',
+			'priority' => 10,
 		)
 	);
 
@@ -493,7 +493,7 @@ function islemag_customize_register( $wp_customize ) {
 			'section'     => 'islemag_header_slider',
 			'type'        => 'number',
 			'input_attrs' => array(
-				'min' => - 1,
+				'min'  => - 1,
 				'step' => 1,
 			),
 			'priority'    => 4,
@@ -545,7 +545,7 @@ function islemag_customize_register( $wp_customize ) {
 				'section'     => 'islemag_section' . $i,
 				'type'        => 'number',
 				'input_attrs' => array(
-					'min' => - 1,
+					'min'  => - 1,
 					'step' => 1,
 				),
 				'priority'    => 5,
@@ -559,7 +559,7 @@ function islemag_customize_register( $wp_customize ) {
 					'section'     => 'islemag_section' . $i,
 					'type'        => 'number',
 					'input_attrs' => array(
-						'min' => 1,
+						'min'  => 1,
 						'step' => 1,
 					),
 					'priority'    => 6,

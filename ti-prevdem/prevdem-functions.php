@@ -20,7 +20,7 @@ function islemag_get_prevdem_img_src( $i = 0 ) {
 	$path = apply_filters( 'islemag_prevdem_home_filter', get_template_directory() . '/ti-prevdem/img/' );
 	// Build or re-build the global dem img array
 	if ( ! isset( $GLOBALS['prevdem_img'] ) || empty( $GLOBALS['prevdem_img'] ) ) {
-		$imgs = array();
+		$imgs       = array();
 		$candidates = array();
 		if ( is_dir( $path ) ) {
 			$imgs = scandir( $path );
@@ -49,12 +49,12 @@ function islemag_get_prevdem_img_src( $i = 0 ) {
 	// unset all sizes of the img found and update the global
 	$new_candidates = $candidates;
 	foreach ( $candidates as $_key => $_img ) {
-		if ( substr( $_img , 0, strlen( "{$img_name}" ) ) === "{$img_name}" ) {
+		if ( substr( $_img, 0, strlen( "{$img_name}" ) ) === "{$img_name}" ) {
 			unset( $new_candidates[ $_key ] );
 		}
 	}
 	$GLOBALS['prevdem_img'] = $new_candidates;
-	return apply_filters( 'islemag_prevdem_home_uri_filter',get_template_directory_uri() . '/ti-prevdem/img/' ) . $img_name;
+	return apply_filters( 'islemag_prevdem_home_uri_filter', get_template_directory_uri() . '/ti-prevdem/img/' ) . $img_name;
 }
 /**
  * Filter thumbnail image

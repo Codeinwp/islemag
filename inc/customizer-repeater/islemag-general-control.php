@@ -53,7 +53,7 @@ class Islemag_General_Repeater extends WP_Customize_Control {
 	public function __construct( $manager, $id, $args = array() ) {
 		parent::__construct( $manager, $id, $args );
 		/*Get options from customizer.php*/
-		$this->boxtitle   = __( 'Islemag','islemag' );
+		$this->boxtitle = __( 'Islemag', 'islemag' );
 
 		if ( ! empty( $args['islemag_icon_control'] ) ) {
 			$this->customizer_repeater_icon_control = $args['islemag_icon_control'];
@@ -72,8 +72,8 @@ class Islemag_General_Repeater extends WP_Customize_Control {
 	 * Enqueue resources for the control
 	 */
 	public function enqueue() {
-		wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/css/font-awesome.min.css','4.6.3' );
-		wp_enqueue_style( 'customizer-repeater-admin-stylesheet', get_template_directory_uri() . '/css/admin-style.css','1.0.0' );
+		wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/css/font-awesome.min.css', '4.6.3' );
+		wp_enqueue_style( 'customizer-repeater-admin-stylesheet', get_template_directory_uri() . '/css/admin-style.css', '1.0.0' );
 
 		wp_enqueue_script( 'customizer-repeater-script', get_template_directory_uri() . '/inc/customizer-repeater/js/customizer_repeater.js', array( 'jquery', 'jquery-ui-draggable' ), '1.0.1', true );
 		wp_enqueue_script( 'customizer-repeater-fontawesome-iconpicker', get_template_directory_uri() . '/inc/customizer-repeater/js/fontawesome-iconpicker.min.js', array( 'jquery' ), '1.0.0', true );
@@ -94,7 +94,6 @@ class Islemag_General_Repeater extends WP_Customize_Control {
 			$json = array( $values );
 		} ?>
 
-		
 		<span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
 		<div class="islemag_general_control_repeater islemag_general_control_droppable">
 			<?php
@@ -103,24 +102,24 @@ class Islemag_General_Repeater extends WP_Customize_Control {
 					$this->iterate_array( $this_default );
 					?>
 					<input type="hidden"
-						   id="customizer-repeater-<?php echo $this->id; ?>-colector" <?php $this->link(); ?>
-						   class="customizer-repeater-colector"
-						   value="<?php echo esc_textarea( json_encode( $this_default ) ); ?>"/>
+						id="customizer-repeater-<?php echo $this->id; ?>-colector" <?php $this->link(); ?>
+						class="customizer-repeater-colector"
+						value="<?php echo esc_textarea( json_encode( $this_default ) ); ?>"/>
 					<?php
 				} else {
 					$this->iterate_array();
 					?>
 
 					<input type="hidden"
-						   id="customizer-repeater-<?php echo $this->id; ?>-colector" <?php $this->link(); ?>
-						   class="islemag_repeater_colector"/>
+						id="customizer-repeater-<?php echo $this->id; ?>-colector" <?php $this->link(); ?>
+						class="islemag_repeater_colector"/>
 					<?php
 				}
 			} else {
 				$this->iterate_array( $json );
 				?>
 				<input type="hidden" id="customizer-repeater-<?php echo $this->id; ?>-colector" <?php $this->link(); ?>
-					   class="islemag_repeater_colector" value="<?php echo esc_textarea( $this->value() ); ?>"/>
+					class="islemag_repeater_colector" value="<?php echo esc_textarea( $this->value() ); ?>"/>
 				<?php
 			}
 			?>
@@ -148,16 +147,16 @@ class Islemag_General_Repeater extends WP_Customize_Control {
 					</div>
 					<div class="islemag-box-content-hidden">
 						<?php
-						$choice = '';
-						$image_url = '';
+						$choice     = '';
+						$image_url  = '';
 						$icon_value = '';
-						$title = '';
-						$subtitle = '';
-						$text = '';
-						$link = '';
-						$shortcode = '';
-						$repeater = '';
-						$color = '';
+						$title      = '';
+						$subtitle   = '';
+						$text       = '';
+						$link       = '';
+						$shortcode  = '';
+						$repeater   = '';
+						$color      = '';
 						if ( ! empty( $icon->id ) ) {
 							$id = $icon->id;
 						}
@@ -177,8 +176,8 @@ class Islemag_General_Repeater extends WP_Customize_Control {
 						if ( $this->customizer_repeater_link_control ) {
 							$this->input_control(
 								array(
-									'label' => __( 'Link','islemag' ),
-									'class' => 'islemag_link_control',
+									'label'             => __( 'Link', 'islemag' ),
+									'class'             => 'islemag_link_control',
 									'sanitize_callback' => 'esc_url',
 								), $link
 							);
@@ -259,7 +258,7 @@ class Islemag_General_Repeater extends WP_Customize_Control {
 			echo 'style="display:none;"';
 		}
 		echo '>';
-			echo '<span class="customize-control-title">' . esc_html__( 'Icon','islemag' ) . '</span>';
+			echo '<span class="customize-control-title">' . esc_html__( 'Icon', 'islemag' ) . '</span>';
 			echo '<div class="input-group icp-container">';
 				echo '<input data-placement="bottomRight" class="icp icp-auto" value="';
 		if ( ! empty( $value ) ) {

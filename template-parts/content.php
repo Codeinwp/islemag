@@ -32,7 +32,7 @@
 				}
 
 				$post_thumbnail_url = get_the_post_thumbnail( $pid, $islemag_image_size );
-				$post_thumbnail = apply_filters( 'islemag_get_prev_img', $post_thumbnail_url );
+				$post_thumbnail     = apply_filters( 'islemag_get_prev_img', $post_thumbnail_url );
 
 				if ( ! empty( $post_thumbnail ) ) {
 					echo $post_thumbnail;
@@ -46,7 +46,7 @@
 	<?php
 	islemag_entry_date();
 
-		$id = get_the_ID();
+		$id     = get_the_ID();
 		$format = get_post_format( $id );
 	switch ( $format ) {
 		case 'aside':
@@ -90,7 +90,7 @@
 			$ismore = strpos( $post->post_content, '<!--more-->' );
 		if ( $ismore ) :
 			/* translators: About title of the post */
-			the_content( sprintf( esc_html__( 'Read more %s ...','islemag' ), '<span class="screen-reader-text">' . esc_html__( 'about ', 'islemag' ) . get_the_title() . '</span>' ) );
+			the_content( sprintf( esc_html__( 'Read more %s ...', 'islemag' ), '<span class="screen-reader-text">' . esc_html__( 'about ', 'islemag' ) . get_the_title() . '</span>' ) );
 			else :
 				the_excerpt();
 			endif;
@@ -106,11 +106,8 @@
 		?>
 	</div><!-- .entry-content -->
 
-	
-		<?php
-		islemag_content_footer();
-		?>
-	
-
+	<?php
+	islemag_content_footer();
+	?>
 
 </article>
