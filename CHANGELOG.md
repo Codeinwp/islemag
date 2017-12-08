@@ -1,4 +1,10 @@
 
+### 1.1.8 - 08/12/2017
+**Changes:** 
+- New option to change the copyright text
+- Added some missing translations functions
+- Fixed compatibility issue with WP Product Review Lite
+
 ### 1.1.7 - 15/09/2017
 **Changes:** 
 - Fixed SEO issues: H1 tag for single pages titles and Site title and tagline corresponding tags
