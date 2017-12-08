@@ -356,9 +356,13 @@ function islemag_customize_register( $wp_customize ) {
 
 	$wp_customize->add_setting(
 		'islemag_footer_copyright', array(
-			'default'           => 'Islemag powered by WordPress',
+			'default'           => sprintf(
+				/* translators: 1 - Theme name , 2 - WordPress link */
+				__( '%1$s powered by %2$s', 'islemag' ),
+				sprintf( '<a href="https://themeisle.com/themes/islemag/" rel="nofollow">%s</a>', esc_html__( 'Islemag', 'islemag' ) ),
+				sprintf( '<a href="http://wordpress.org/" rel="nofollow">%s</a>', esc_html__( 'WordPress', 'islemag' ) )
+			),
 			'sanitize_callback' => 'islemag_sanitize_html',
-			'transport'         => 'postMessage',
 		)
 	);
 
@@ -618,10 +622,9 @@ function islemag_customize_register( $wp_customize ) {
 
 	$wp_customize->add_control(
 		'islemag_footer_copyright', array(
-			'label'       => esc_html__( 'Footer copyright', 'islemag' ),
-			'description' => esc_html__( 'Change footer copyright', 'islemag' ),
-			'section'     => 'islemag_footer',
-			'priority'    => 2,
+			'label'    => esc_html__( 'Footer copyright', 'islemag' ),
+			'section'  => 'islemag_footer',
+			'priority' => 2,
 		)
 	);
 

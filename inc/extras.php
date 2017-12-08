@@ -50,8 +50,17 @@ if ( ! function_exists( 'islemag_footer' ) ) {
 		</div><!-- End .col-md-6 -->
 		<div class="col-md-4 col-md-pull-8 powerdby">
 			<?php
-				$islemag_copyright = get_theme_mod( 'islemag_footer_copyright', 'Islemag powered by WordPress' );
+				$islemag_copyright = get_theme_mod(
+					'islemag_footer_copyright', sprintf(
+						/* translators: 1 - Theme name , 2 - WordPress link */
+						__( '%1$s powered by %2$s', 'islemag' ),
+						sprintf( '<a href="https://themeisle.com/themes/islemag/" rel="nofollow">%s</a>', esc_html__( 'Islemag', 'islemag' ) ),
+						sprintf( '<a href="http://wordpress.org/" rel="nofollow">%s</a>', esc_html__( 'WordPress', 'islemag' ) )
+					)
+				);
+			if ( ! empty( $islemag_copyright ) ) {
 				echo wp_kses_post( $islemag_copyright );
+			}
 			?>
 		</div><!-- End .col-md-6 -->
 		<?php
