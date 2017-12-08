@@ -168,7 +168,7 @@ if ( $wp_query->have_posts() ) : ?>
 									class="fa fa-calendar"></i><?php echo get_the_date( 'j M' ); ?></span>
 						<span class="entry-separator">/</span>
 						<a href="<?php the_permalink(); ?>"
-							class="entry-comments"><?php comments_number( '0 Comments', '1 Comment', '% Comments' ); ?></a>
+							class="entry-comments"><?php comments_number( esc_html__( '0 Comments', 'islemag' ), esc_html__( '1 Comment', 'islemag' ), esc_html__( '% Comments', 'islemag' ) ); ?></a>
 						<div>
 							<?php esc_html_e( 'Posted By', 'islemag' ); ?><a
 									href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>"
@@ -243,7 +243,7 @@ if ( $wp_query->have_posts() ) : ?>
 									class="fa fa-calendar"></i><?php echo get_the_date( 'j M' ); ?></span>
 						<span class="entry-separator">/</span>
 						<a href="<?php the_permalink(); ?>"
-							class="entry-comments"><?php comments_number( '0 Comments', '1 Comment', '% Comments' ); ?></a>
+							class="entry-comments"><?php comments_number( esc_html__( '0 Comments', 'islemag' ), esc_html__( '1 Comment', 'islemag' ), esc_html__( '% Comments', 'islemag' ) ); ?></a>
 						<div>
 							<?php esc_html_e( 'Posted By', 'islemag' ); ?><a
 									href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>"
@@ -315,7 +315,7 @@ if ( $wp_query->have_posts() ) : ?>
 									class="fa fa-calendar"></i><?php echo get_the_date( 'j M' ); ?></span>
 						<span class="entry-separator">/</span>
 						<a href="<?php the_permalink(); ?>"
-							class="entry-comments"><?php comments_number( '0 Comments', '1 Comment', '% Comments' ); ?></a>
+							class="entry-comments"><?php comments_number( esc_html__( '0 Comments', 'islemag' ), esc_html__( '1 Comment', 'islemag' ), esc_html__( '% Comments', 'islemag' ) ); ?></a>
 						<div>
 							<?php esc_html_e( 'Posted By', 'islemag' ); ?><a
 									href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>"
