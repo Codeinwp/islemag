@@ -64,22 +64,22 @@
 				<button type="button" class="navbar-btn"><i class="fa fa-search"></i></button>
 
 				<div class="navbar-right">
-				  <div id="navbar" class="navbar">
-							<nav id="top-navigation" class="navigation top-navigation" role="navigation">
-								<button class="menu-toggle"><?php _e( 'Menu', 'islemag' ); ?></button>
-								<a class="screen-reader-text skip-link" href="#content" title="<?php esc_attr_e( 'Skip to content', 'islemag' ); ?>"><?php _e( 'Skip to content', 'islemag' ); ?></a>
-								<?php
-								wp_nav_menu(
-									array(
-										'theme_location' => 'islemag-header',
-										'menu_class' => 'nav-menu',
-										'menu_id' => 'primary-menu',
-										'depth' => 1,
-									)
-								);
-									?>
-							</nav><!-- #site-navigation -->
-						</div><!-- #navbar -->
+					<div id="navbar" class="navbar">
+						<nav id="top-navigation" class="navigation top-navigation" role="navigation">
+							<button class="menu-toggle"><?php _e( 'Menu', 'islemag' ); ?></button>
+							<a class="screen-reader-text skip-link" href="#content" title="<?php esc_attr_e( 'Skip to content', 'islemag' ); ?>"><?php _e( 'Skip to content', 'islemag' ); ?></a>
+							<?php
+							wp_nav_menu(
+								array(
+									'theme_location' => 'islemag-header',
+									'menu_class'     => 'nav-menu',
+									'menu_id'        => 'primary-menu',
+									'depth'          => 1,
+								)
+							);
+								?>
+						</nav><!-- #site-navigation -->
+					</div><!-- #navbar -->
 				</div>
 				<div class="navbar-white top" id="header-search-form">
 					<?php get_search_form(); ?>
@@ -134,7 +134,7 @@
 						endif;
 					?>
 				</div>
-			
+
 				<div class="col-md-9 col-sm-9 col-xs-12 islemag-banner">
 					<?php
 					if ( is_active_sidebar( 'islemag-header-ad' ) ) {
@@ -143,9 +143,9 @@
 						the_widget(
 							'Islemag_Content_Ad',
 							array(
-								'link_ad'  => ( current_user_can( 'edit_theme_options' ) ? admin_url( 'widgets.php' ) : '' ),
-								'image_uri_ad'   => apply_filters( 'islemag_default_top_banner_filter', get_template_directory_uri() . '/img/banner_placeholder.png' ),
-								'ad_type' => 'image',
+								'link_ad'      => ( current_user_can( 'edit_theme_options' ) ? admin_url( 'widgets.php' ) : '' ),
+								'image_uri_ad' => apply_filters( 'islemag_default_top_banner_filter', get_template_directory_uri() . '/img/banner_placeholder.png' ),
+								'ad_type'      => 'image',
 							),
 							array(
 								'before_widget' => '<div id="islemag_content_ad-widget-2" class="widget islemag_content_ad">',
@@ -170,20 +170,20 @@
 				echo 'islemag-sticky';}
 ?>
 ">
-			  <nav id="site-navigation" class="navigation main-navigation" role="navigation">
-				<button class="menu-toggle"><?php _e( 'Menu', 'islemag' ); ?></button>
-				<a class="screen-reader-text skip-link" href="#content" title="<?php esc_attr_e( 'Skip to content', 'islemag' ); ?>"><?php _e( 'Skip to content', 'islemag' ); ?></a>
-				<?php
-				wp_nav_menu(
-					array(
-						'theme_location' => 'islemag-primary',
-						'menu_class' => 'nav-menu',
-						'menu_id' => 'primary-menu',
-						'depth' => 6,
-					)
-				);
-					?>
-			  </nav><!-- #site-navigation -->
+				<nav id="site-navigation" class="navigation main-navigation" role="navigation">
+					<button class="menu-toggle"><?php _e( 'Menu', 'islemag' ); ?></button>
+					<a class="screen-reader-text skip-link" href="#content" title="<?php esc_attr_e( 'Skip to content', 'islemag' ); ?>"><?php _e( 'Skip to content', 'islemag' ); ?></a>
+					<?php
+					wp_nav_menu(
+						array(
+							'theme_location' => 'islemag-primary',
+							'menu_class'     => 'nav-menu',
+							'menu_id'        => 'primary-menu',
+							'depth'          => 6,
+						)
+					);
+						?>
+				</nav><!-- #site-navigation -->
 			</div><!-- #navbar -->
 			<?php
 			islemag_main_nav_after();
@@ -193,7 +193,7 @@
 		</header><!-- End #header -->
 		<?php
 		$islemag_content_classes = apply_filters( 'islemag_content_classes', array( 'site-content' ) );
-		$islemag_content_ids = apply_filters( 'islemag_content_ids', array( 'content' ) );
+		$islemag_content_ids     = apply_filters( 'islemag_content_ids', array( 'content' ) );
 		?>
 		<div 
 		<?php
