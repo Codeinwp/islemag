@@ -11,7 +11,7 @@ get_header(); ?>
 <div class="container">
 	<div class="row">
 		<?php
-		$archive_content_classes = apply_filters( 'islemag_archive_content_classes',array( 'islemag-content-left', 'col-md-9' ) );
+		$archive_content_classes = apply_filters( 'islemag_archive_content_classes', array( 'islemag-content-left', 'col-md-9' ) );
 		?>
 		<div 
 		<?php
@@ -46,7 +46,6 @@ get_header(); ?>
 			?>
 		</div><!-- End .islemag-content-left -->
 		<?php get_sidebar(); ?>
-	
 	</div><!-- End .row -->
 </div><!-- End .container -->
 
