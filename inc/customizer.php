@@ -31,10 +31,10 @@ function islemag_customize_register( $wp_customize ) {
 	);
 	$wp_customize->add_control(
 		'islemag_keep_old_fp_template', array(
-			'type' => 'checkbox',
-			'label' => esc_html__( 'Use a different custom template as frontpage?','islemag' ),
-			'section' => 'title_tagline',
-			'priority'    => 10,
+			'type'     => 'checkbox',
+			'label'    => esc_html__( 'Use a different custom template as frontpage?', 'islemag' ),
+			'section'  => 'title_tagline',
+			'priority' => 10,
 		)
 	);
 
@@ -355,6 +355,18 @@ function islemag_customize_register( $wp_customize ) {
 	);
 
 	$wp_customize->add_setting(
+		'islemag_footer_copyright', array(
+			'default'           => sprintf(
+				/* translators: 1 - Theme name , 2 - WordPress link */
+				__( '%1$s powered by %2$s', 'islemag' ),
+				sprintf( '<a href="https://themeisle.com/themes/islemag/" rel="nofollow">%s</a>', esc_html__( 'Islemag', 'islemag' ) ),
+				sprintf( '<a href="http://wordpress.org/" rel="nofollow">%s</a>', esc_html__( 'WordPress', 'islemag' ) )
+			),
+			'sanitize_callback' => 'islemag_sanitize_html',
+		)
+	);
+
+	$wp_customize->add_setting(
 		'islemag_footer_link', array(
 			'sanitize_callback' => 'esc_url',
 			'transport'         => 'postMessage',
@@ -493,7 +505,7 @@ function islemag_customize_register( $wp_customize ) {
 			'section'     => 'islemag_header_slider',
 			'type'        => 'number',
 			'input_attrs' => array(
-				'min' => - 1,
+				'min'  => - 1,
 				'step' => 1,
 			),
 			'priority'    => 4,
@@ -545,7 +557,7 @@ function islemag_customize_register( $wp_customize ) {
 				'section'     => 'islemag_section' . $i,
 				'type'        => 'number',
 				'input_attrs' => array(
-					'min' => - 1,
+					'min'  => - 1,
 					'step' => 1,
 				),
 				'priority'    => 5,
@@ -559,7 +571,7 @@ function islemag_customize_register( $wp_customize ) {
 					'section'     => 'islemag_section' . $i,
 					'type'        => 'number',
 					'input_attrs' => array(
-						'min' => 1,
+						'min'  => 1,
 						'step' => 1,
 					),
 					'priority'    => 6,
@@ -609,11 +621,19 @@ function islemag_customize_register( $wp_customize ) {
 	);
 
 	$wp_customize->add_control(
+		'islemag_footer_copyright', array(
+			'label'    => esc_html__( 'Footer copyright', 'islemag' ),
+			'section'  => 'islemag_footer',
+			'priority' => 2,
+		)
+	);
+
+	$wp_customize->add_control(
 		'islemag_footer_link', array(
 			'label'       => esc_html__( 'Footer logo link', 'islemag' ),
 			'description' => esc_html__( 'If not set, the footer logo will point to homepage url.', 'islemag' ),
 			'section'     => 'islemag_footer',
-			'priority'    => 2,
+			'priority'    => 3,
 		)
 	);
 
@@ -623,7 +643,7 @@ function islemag_customize_register( $wp_customize ) {
 			'type'        => 'textarea',
 			'label'       => esc_html__( 'Footer content', 'islemag' ),
 			'section'     => 'islemag_footer',
-			'priority'    => 3,
+			'priority'    => 4,
 		)
 	);
 
@@ -631,7 +651,7 @@ function islemag_customize_register( $wp_customize ) {
 		'islemag_footer_socials_title', array(
 			'label'    => esc_html__( 'Socials title', 'islemag' ),
 			'section'  => 'islemag_footer',
-			'priority' => 4,
+			'priority' => 5,
 		)
 	);
 
@@ -640,7 +660,7 @@ function islemag_customize_register( $wp_customize ) {
 			$wp_customize, 'islemag_footer_social_icons', array(
 				'label'                => esc_html__( 'Add new social icon', 'islemag' ),
 				'section'              => 'islemag_footer',
-				'priority'             => 5,
+				'priority'             => 6,
 				'islemag_icon_control' => true,
 				'islemag_link_control' => true,
 			)

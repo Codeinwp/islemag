@@ -3,17 +3,21 @@
  * Getting started template
  */
 
-$customizer_url = admin_url() . 'customize.php' ;
+$customizer_url = admin_url() . 'customize.php';
 ?>
 
 <div id="getting_started" class="islemag-tab-pane active">
 
 	<div class="islemag-tab-pane-center">
 
-		<h1 class="islemag-welcome-title">Welcome to IsleMag! <?php if( !empty($islemag['Version']) ): ?> <sup id="islemag-theme-version"><?php echo esc_attr( $islemag['Version'] ); ?> </sup><?php endif; ?></h1>
+		<h1 class="islemag-welcome-title">Welcome to IsleMag! 
+		<?php
+		if ( ! empty( $islemag['Version'] ) ) :
+?>
+ <sup id="islemag-theme-version"><?php echo esc_attr( $islemag['Version'] ); ?> </sup><?php endif; ?></h1>
 
-		<p><?php printf( esc_html__( 'Our best free one page magazine WordPress theme, %s!','islemag'), 'IsleMag' ); ?></p>
-		<p><?php printf( esc_html__( 'We want to make sure you have the best experience using %s and that is why we gathered here all the necessary informations for you. We hope you will enjoy using %s, as much as we enjoy creating great products.', 'islemag' ), 'IsleMag', 'IsleMag' ); ?>
+		<p><?php printf( esc_html__( 'Our best free one page magazine WordPress theme, %s!', 'islemag' ), 'IsleMag' ); ?></p>
+		<p><?php printf( esc_html__( 'We want to make sure you have the best experience using %1$s and that is why we gathered here all the necessary informations for you. We hope you will enjoy using %2$s, as much as we enjoy creating great products.', 'islemag' ), 'IsleMag', 'IsleMag' ); ?>
 
 	</div>
 
@@ -23,7 +27,7 @@ $customizer_url = admin_url() . 'customize.php' ;
 
 		<h1><?php esc_html_e( 'Getting started', 'islemag' ); ?></h1>
 
-		<h4><?php esc_html_e( 'Customize everything in a single place.' ,'islemag' ); ?></h4>
+		<h4><?php esc_html_e( 'Customize everything in a single place.', 'islemag' ); ?></h4>
 		<p><?php esc_html_e( 'Using the WordPress Customizer you can easily customize every aspect of the theme.', 'islemag' ); ?></p>
 		<p><a href="<?php echo esc_url( $customizer_url ); ?>" class="button button-primary"><?php esc_html_e( 'Go to Customizer', 'islemag' ); ?></a></p>
 
@@ -104,13 +108,13 @@ $customizer_url = admin_url() . 'customize.php' ;
 				<p><span class="islemag-w-activated button"><?php esc_html_e( 'Already activated', 'islemag' ); ?></span></p>
 
 			<?php
-		}
-		else { ?>
+} else {
+		?>
 
 				<p><a href="<?php echo esc_url( wp_nonce_url( self_admin_url( 'update.php?action=install-plugin&plugin=siteorigin-panels' ), 'install-plugin_siteorigin-panels' ) ); ?>" class="button button-primary"><?php esc_html_e( 'Install Page Builder by SiteOrigin', 'islemag' ); ?></a></p>
 
 			<?php
-		}
+}
 
 		?>
 
@@ -125,13 +129,13 @@ $customizer_url = admin_url() . 'customize.php' ;
 				<p><span class="islemag-w-activated button"><?php esc_html_e( 'Already activated', 'islemag' ); ?></span></p>
 
 			<?php
-		}
-		else { ?>
+} else {
+		?>
 
 				<p><a href="<?php echo esc_url( wp_nonce_url( self_admin_url( 'update.php?action=install-plugin&plugin=wp-product-review' ), 'install-plugin_wp-product-review' ) ); ?>" class="button button-primary"><?php esc_html_e( 'Install WP Product Review', 'islemag' ); ?></a></p>
 
 			<?php
-		}
+}
 
 		?>
 
@@ -146,13 +150,13 @@ $customizer_url = admin_url() . 'customize.php' ;
 			<p><span class="islemag-w-activated button"><?php esc_html_e( 'Already activated', 'islemag' ); ?></span></p>
 
 			<?php
-		}
-		else { ?>
+} else {
+		?>
 
 			<p><a href="<?php echo esc_url( wp_nonce_url( self_admin_url( 'update.php?action=install-plugin&plugin=login-customizer' ), 'install-plugin_login-customizer' ) ); ?>" class="button button-primary"><?php esc_html_e( 'Install Custom Login Customizer', 'islemag' ); ?></a></p>
 
 			<?php
-		}
+}
 		?>
 
 		<hr />
@@ -165,13 +169,13 @@ $customizer_url = admin_url() . 'customize.php' ;
 			<p><span class="islemag-w-activated button"><?php esc_html_e( 'Already activated', 'islemag' ); ?></span></p>
 
 			<?php
-		}
-		else { ?>
+} else {
+		?>
 
 			<p><a href="<?php echo esc_url( wp_nonce_url( self_admin_url( 'update.php?action=install-plugin&plugin=adblock-notify-by-bweb' ), 'install-plugin_adblock-notify-by-bweb' ) ); ?>" class="button button-primary"><?php esc_html_e( 'Install', 'islemag' ); ?> Adblock Notify</a></p>
 
 			<?php
-		}
+}
 		?>
 
 	</div>
@@ -187,13 +191,13 @@ $customizer_url = admin_url() . 'customize.php' ;
 			<p><span class="islemag-w-activated button"><?php esc_html_e( 'Already activated', 'islemag' ); ?></span></p>
 
 			<?php
-		}
-		else { ?>
+} else {
+		?>
 
 			<p><a href="<?php echo esc_url( wp_nonce_url( self_admin_url( 'update.php?action=install-plugin&plugin=visualizer' ), 'install-plugin_visualizer' ) ); ?>" class="button button-primary"><?php esc_html_e( 'Install Visualizer', 'islemag' ); ?></a></p>
 
 			<?php
-		}
+}
 		?>
 
 		<hr />
@@ -207,13 +211,13 @@ $customizer_url = admin_url() . 'customize.php' ;
 				<p><span class="islemag-w-activated button"><?php esc_html_e( 'Already activated', 'islemag' ); ?></span></p>
 
 			<?php
-		}
-		else { ?>
+} else {
+		?>
 
 				<p><a href="<?php echo esc_url( 'http://themeisle.com/plugins/easy-content-types/' ); ?>" class="button button-primary" target="_blank"><?php esc_html_e( 'Download Easy Content Types', 'islemag' ); ?></a></p>
 
 			<?php
-		}
+}
 		?>
 
 		<hr />
@@ -227,13 +231,13 @@ $customizer_url = admin_url() . 'customize.php' ;
 			<p><span class="islemag-w-activated button"><?php esc_html_e( 'Already activated', 'islemag' ); ?></span></p>
 
 			<?php
-		}
-		else { ?>
+} else {
+		?>
 
 			<p><a href="<?php echo esc_url( wp_nonce_url( self_admin_url( 'update.php?action=install-plugin&plugin=tweet-old-post' ), 'install-plugin_tweet-old-post' ) ); ?>" class="button button-primary"><?php esc_html_e( 'Install Revive Old Post', 'islemag' ); ?></a></p>
 
 			<?php
-		}
+}
 		?>
 
 		<hr />
@@ -246,13 +250,13 @@ $customizer_url = admin_url() . 'customize.php' ;
 			<p><span class="islemag-w-activated button"><?php esc_html_e( 'Already activated', 'islemag' ); ?></span></p>
 
 			<?php
-		}
-		else { ?>
+} else {
+		?>
 
 			<p><a href="<?php echo esc_url( wp_nonce_url( self_admin_url( 'update.php?action=install-plugin&plugin=feedzy-rss-feeds' ), 'install-plugin_feedzy-rss-feeds' ) ); ?>" class="button button-primary"><?php esc_html_e( 'Install', 'islemag' ); ?> FEEDZY RSS Feeds</a></p>
 
 			<?php
-		}
+}
 		?>
 
 	</div>
