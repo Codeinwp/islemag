@@ -2,9 +2,9 @@
 # This file is distributed under the GNU General Public License v2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: IsleMag 1.1.6\n"
+"Project-Id-Version: IsleMag 1.1.7\n"
 "Report-Msgid-Bugs-To: https://github.com/Codeinwp/islemag/issues\n"
-"POT-Creation-Date: 2017-09-14 13:24:45+00:00\n"
+"POT-Creation-Date: 2017-12-06 15:01:57+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -178,43 +178,43 @@ msgstr ""
 msgid "collapse child menu"
 msgstr ""
 
-#: functions.php:736 inc/customizer.php:121 inc/customizer.php:266
+#: functions.php:699 inc/customizer.php:121 inc/customizer.php:266
 msgid "Section 1"
 msgstr ""
 
-#: functions.php:737
+#: functions.php:700
 msgid "Ads Area 1"
 msgstr ""
 
-#: functions.php:741 inc/customizer.php:129 inc/customizer.php:269
+#: functions.php:704 inc/customizer.php:129 inc/customizer.php:269
 msgid "Section 2"
 msgstr ""
 
-#: functions.php:742
+#: functions.php:705
 msgid "Ads Area 2"
 msgstr ""
 
-#: functions.php:746 inc/customizer.php:137 inc/customizer.php:272
+#: functions.php:709 inc/customizer.php:137 inc/customizer.php:272
 msgid "Section 3"
 msgstr ""
 
-#: functions.php:747
+#: functions.php:710
 msgid "Ads Area 3"
 msgstr ""
 
-#: functions.php:752 inc/customizer.php:145 inc/customizer.php:275
+#: functions.php:715 inc/customizer.php:145 inc/customizer.php:275
 msgid "Section 4"
 msgstr ""
 
-#: functions.php:753
+#: functions.php:716
 msgid "Ads Area 4"
 msgstr ""
 
-#: functions.php:757 inc/customizer.php:153 inc/customizer.php:285
+#: functions.php:720 inc/customizer.php:153 inc/customizer.php:285
 msgid "Section 5"
 msgstr ""
 
-#: functions.php:758
+#: functions.php:721
 msgid "Ads Area 5"
 msgstr ""
 
@@ -511,85 +511,85 @@ msgid "Changelog"
 msgstr ""
 
 #: inc/class/islemag-banner-control.php:43
-#: inc/class/islemag-banner-control.php:100
+#: inc/class/islemag-banner-control.php:101
 msgid "Banner type"
 msgstr ""
 
 #: inc/class/islemag-banner-control.php:44
-#: inc/class/islemag-banner-control.php:74
-#: inc/class/islemag-banner-control.php:101
-#: inc/class/islemag-banner-control.php:116
-#: inc/class/islemag-widget-big-ad.php:200
-#: inc/class/islemag-widget-content-ad.php:169
-#: inc/class/islemag-widget-multiple-ads.php:200
+#: inc/class/islemag-banner-control.php:75
+#: inc/class/islemag-banner-control.php:102
+#: inc/class/islemag-banner-control.php:117
+#: inc/class/islemag-widget-big-ad.php:199
+#: inc/class/islemag-widget-content-ad.php:168
+#: inc/class/islemag-widget-multiple-ads.php:199
 msgid "Image"
 msgstr ""
 
 #: inc/class/islemag-banner-control.php:45
-#: inc/class/islemag-banner-control.php:102
-#: inc/class/islemag-widget-big-ad.php:207
-#: inc/class/islemag-widget-content-ad.php:176
-#: inc/class/islemag-widget-multiple-ads.php:207
+#: inc/class/islemag-banner-control.php:103
+#: inc/class/islemag-widget-big-ad.php:205
+#: inc/class/islemag-widget-content-ad.php:174
+#: inc/class/islemag-widget-multiple-ads.php:205
 msgid "Code"
 msgstr ""
 
 #: inc/class/islemag-banner-control.php:47
-#: inc/class/islemag-banner-control.php:104
+#: inc/class/islemag-banner-control.php:105
 msgid "Banner position"
 msgstr ""
 
 #: inc/class/islemag-banner-control.php:48
-#: inc/class/islemag-banner-control.php:105
+#: inc/class/islemag-banner-control.php:106
 msgid "Left"
 msgstr ""
 
 #: inc/class/islemag-banner-control.php:49
-#: inc/class/islemag-banner-control.php:106
+#: inc/class/islemag-banner-control.php:107
 msgid "Center"
 msgstr ""
 
 #: inc/class/islemag-banner-control.php:50
-#: inc/class/islemag-banner-control.php:107
+#: inc/class/islemag-banner-control.php:108
 msgid "Right"
 msgstr ""
 
-#: inc/class/islemag-banner-control.php:58
-#: inc/class/islemag-banner-control.php:110
+#: inc/class/islemag-banner-control.php:59
+#: inc/class/islemag-banner-control.php:111
 msgid "Banner Code"
 msgstr ""
 
-#: inc/class/islemag-banner-control.php:59
-#: inc/class/islemag-banner-control.php:75
+#: inc/class/islemag-banner-control.php:60
+#: inc/class/islemag-banner-control.php:76
 msgid "Recommended size: 728px x 90px"
 msgstr ""
 
-#: inc/class/islemag-banner-control.php:60
-#: inc/class/islemag-banner-control.php:112
-#: inc/class/islemag-widget-big-ad.php:253
+#: inc/class/islemag-banner-control.php:61
+#: inc/class/islemag-banner-control.php:113
+#: inc/class/islemag-widget-big-ad.php:250
 #: inc/class/islemag-widget-content-ad.php:222
 #: inc/class/islemag-widget-multiple-ads.php:243
 msgid "Text"
 msgstr ""
 
-#: inc/class/islemag-banner-control.php:82
-#: inc/class/islemag-banner-control.php:119
+#: inc/class/islemag-banner-control.php:83
+#: inc/class/islemag-banner-control.php:120
 msgid "Upload Image"
 msgstr ""
 
-#: inc/class/islemag-banner-control.php:84
+#: inc/class/islemag-banner-control.php:85
 #: inc/class/islemag-banner-control.php:90
-#: inc/class/islemag-banner-control.php:121
 #: inc/class/islemag-banner-control.php:122
-#: inc/class/islemag-widget-big-ad.php:226
-#: inc/class/islemag-widget-content-ad.php:195
+#: inc/class/islemag-banner-control.php:123
+#: inc/class/islemag-widget-big-ad.php:225
+#: inc/class/islemag-widget-content-ad.php:194
 #: inc/class/islemag-widget-multiple-ads.php:216
 #: inc/customizer-repeater/islemag-general-control.php:180
-#: inc/customizer-repeater/islemag-general-control.php:226
+#: inc/customizer-repeater/islemag-general-control.php:220
 msgid "Link"
 msgstr ""
 
-#: inc/class/islemag-banner-control.php:111
-#: inc/class/islemag-banner-control.php:117
+#: inc/class/islemag-banner-control.php:112
+#: inc/class/islemag-banner-control.php:118
 msgid "Recomanded size: 728px x 90px"
 msgstr ""
 
@@ -651,20 +651,20 @@ msgstr ""
 msgid "Alt Title"
 msgstr ""
 
-#: inc/class/islemag-widget-big-ad.php:224
-#: inc/class/islemag-widget-content-ad.php:193
+#: inc/class/islemag-widget-big-ad.php:223
+#: inc/class/islemag-widget-content-ad.php:192
 msgid "Open in new tab"
 msgstr ""
 
-#: inc/class/islemag-widget-big-ad.php:235
-#: inc/class/islemag-widget-content-ad.php:204
-#: inc/class/islemag-widget-multiple-ads.php:225
+#: inc/class/islemag-widget-big-ad.php:232
+#: inc/class/islemag-widget-content-ad.php:203
+#: inc/class/islemag-widget-multiple-ads.php:224
 msgid "Image:"
 msgstr ""
 
-#: inc/class/islemag-widget-big-ad.php:252
-#: inc/class/islemag-widget-content-ad.php:221
-#: inc/class/islemag-widget-multiple-ads.php:242
+#: inc/class/islemag-widget-big-ad.php:248
+#: inc/class/islemag-widget-content-ad.php:220
+#: inc/class/islemag-widget-multiple-ads.php:240
 msgid "Code:"
 msgstr ""
 
@@ -692,12 +692,12 @@ msgstr ""
 msgid "Add new field"
 msgstr ""
 
-#: inc/customizer-repeater/islemag-general-control.php:202
-#: inc/customizer-repeater/islemag-general-control.php:234
+#: inc/customizer-repeater/islemag-general-control.php:196
+#: inc/customizer-repeater/islemag-general-control.php:228
 msgid "Delete field"
 msgstr ""
 
-#: inc/customizer-repeater/islemag-general-control.php:270
+#: inc/customizer-repeater/islemag-general-control.php:262
 msgid "Icon"
 msgstr ""
 
