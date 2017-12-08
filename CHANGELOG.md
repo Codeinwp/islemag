@@ -1,4 +1,8 @@
 
+### 1.1.9 - 08/12/2017
+**Changes:** 
+- Development
+
 ### 1.1.8 - 08/12/2017
 **Changes:** 
 - New option to change the copyright text
