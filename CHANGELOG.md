@@ -1,4 +1,8 @@
 
+### 1.1.10 - 06/02/2018
+**Changes:** 
+- Made the number of comments visible only for posts that allow comments
+
 
 ### 1.1.9 - 08/12/2017
 
