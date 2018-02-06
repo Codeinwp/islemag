@@ -39,8 +39,10 @@ $choosed_color = array_rand( $colors, 1 );
 	<div class="entry-overlay-meta">
 		<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>', apply_filters( 'islemag_filter_article_title_on_slider_posts', true ) ); ?>
 		<span class="entry-overlay-date"><i class="fa fa-calendar"></i><?php echo get_the_date( 'j M' ); ?></span>
+		<?php if ( comments_open() ) { ?>
 		<span class="entry-separator">/</span>
 		<a href="<?php the_permalink(); ?>" class="entry-comments"><i class="fa fa-comments"></i><?php comments_number( '0', '1', '%' ); ?></a>
+		<?php } ?>
 		<span class="entry-separator">/</span>
 		<a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>" class="entry-author"><i class="fa fa-user"></i><?php the_author(); ?></a>
 	</div><!-- End .entry-overlay-meta -->
