@@ -116,9 +116,11 @@ $post_id = get_the_ID();
 					}
 					?>
 					</span><!-- End .entry-tags -->
+				<?php if ( comments_open() ) { ?>
 				<span class="entry-separator">/</span>
 				<a href="#"
 					class="entry-comments"><?php comments_number( esc_html__( 'No Responses', 'islemag' ), esc_html__( 'One Response', 'islemag' ), esc_html__( '% Responses', 'islemag' ) ); ?></a>
+				<?php } ?>
 				<span class="entry-separator">/</span>
 				<?php esc_html_e( 'by', 'islemag' ); ?> <a
 						href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>"
