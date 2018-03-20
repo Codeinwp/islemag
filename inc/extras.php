@@ -50,18 +50,23 @@ if ( ! function_exists( 'islemag_footer' ) ) {
 		</div><!-- End .col-md-6 -->
 		<div class="col-md-4 col-md-pull-8 powerdby">
 			<?php
-			printf(
-				/* translators: 1 - Theme name , 2 - WordPress link */
-				__( '%1$s powered by %2$s', 'islemag' ),
-				sprintf( '<a href="https://themeisle.com/themes/islemag/" rel="nofollow">%s</a>', esc_html__( 'Islemag', 'islemag' ) ),
-				sprintf( '<a href="http://wordpress.org/" rel="nofollow">%s</a>', esc_html__( 'WordPress', 'islemag' ) )
-			);
+				$islemag_copyright = get_theme_mod(
+					'islemag_footer_copyright', sprintf(
+						/* translators: 1 - Theme name , 2 - WordPress link */
+						__( '%1$s powered by %2$s', 'islemag' ),
+						sprintf( '<a href="https://themeisle.com/themes/islemag/" rel="nofollow">%s</a>', esc_html__( 'Islemag', 'islemag' ) ),
+						sprintf( '<a href="http://wordpress.org/" rel="nofollow">%s</a>', esc_html__( 'WordPress', 'islemag' ) )
+					)
+				);
+			if ( ! empty( $islemag_copyright ) ) {
+				echo wp_kses_post( $islemag_copyright );
+			}
 			?>
 		</div><!-- End .col-md-6 -->
 		<?php
 	}
 }
-add_action( 'islemag_footer_content','islemag_footer' );
+add_action( 'islemag_footer_content', 'islemag_footer' );
 
 
 if ( ! function_exists( 'islemag_comments_heading' ) ) {
@@ -89,7 +94,7 @@ if ( ! function_exists( 'islemag_comments_heading' ) ) {
 		}
 	}
 }
-add_action( 'islemag_comments_title','islemag_comments_heading' );
+add_action( 'islemag_comments_title', 'islemag_comments_heading' );
 
 
 if ( ! function_exists( 'islemag_comment_action' ) ) {
@@ -116,18 +121,18 @@ if ( ! function_exists( 'islemag_comment_action' ) ) {
 			?>
 			<?php edit_comment_link( __( '(Edit)', 'islemag' ), '  ', '' ); ?>
 			<div class="reply pull-right reply-link"> 
-			<?php
-			comment_reply_link(
-				array_merge(
-					$args, array(
-						'add_below' => $add_below,
-						'depth'     => $depth,
-						'max_depth' => $args['max_depth'],
+				<?php
+				comment_reply_link(
+					array_merge(
+						$args, array(
+							'add_below' => $add_below,
+							'depth'     => $depth,
+							'max_depth' => $args['max_depth'],
+						)
 					)
-				)
-			);
-			?>
-			 </div>
+				);
+				?>
+			</div>
 		</div>
 
 
@@ -144,7 +149,7 @@ if ( ! function_exists( 'islemag_comment_action' ) ) {
 		<?php
 	}
 }// End if().
-add_action( 'islemag_comment_content','islemag_comment_action', 10, 5 );
+add_action( 'islemag_comment_content', 'islemag_comment_action', 10, 5 );
 
 /**
  * Post entry date.

@@ -96,7 +96,7 @@ if ( ! function_exists( 'islemag_entry_footer' ) ) :
 			echo '</footer>';
 	}
 endif;
-add_action( 'islemag_entry_footer','islemag_entry_footer' );
+add_action( 'islemag_entry_footer', 'islemag_entry_footer' );
 
 /**
  * Returns true if a blog has more than 1 category.
@@ -143,4 +143,4 @@ function islemag_category_transient_flusher() {
 	delete_transient( 'islemag_categories' );
 }
 add_action( 'edit_category', 'islemag_category_transient_flusher' );
-add_action( 'save_post',     'islemag_category_transient_flusher' );
+add_action( 'save_post', 'islemag_category_transient_flusher' );
