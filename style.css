@@ -5779,15 +5779,6 @@ ul > li:hover > a,
 	padding: 15px 0 35px;
 }
 
-.error-page.error-pagebg {
-	padding: 35px 0;
-	background-image: url("../images/404bg.jpg");
-	background-repeat: no-repeat;
-	background-attachment: fixed;
-	background-position: center center;
-	background-size: cover;
-}
-
 .error-title,
 .error-subtitle {
 	margin-bottom: 40px;
