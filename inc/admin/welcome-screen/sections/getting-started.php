@@ -99,6 +99,25 @@ $customizer_url = admin_url() . 'customize.php';
 
 	<div class="islemag-tab-pane-half islemag-tab-pane-first-half">
 
+        <!-- Orbit Fox -->
+        <h4><?php esc_html_e( 'Orbit Fox', 'islemag' ); ?></h4>
+        <p><?php esc_html_e( 'Extend your theme functionality with Orbit Fox with various modules like Social Media Share Buttons & Icons, Uptime Monitoring, Google Analytics, custom menu-icons, one click import page templates, page builder addons and free stock featured images.', 'islemag' ); ?></p>
+
+		<?php if ( is_plugin_active( 'themeisle-companion/themeisle-companion.php' ) ) { ?>
+
+            <p><span class="islemag-w-activated button"><?php esc_html_e( 'Already activated', 'islemag' ); ?></span></p>
+
+			<?php
+		} else {
+			?>
+
+            <p><a href="<?php echo esc_url( wp_nonce_url( self_admin_url( 'update.php?action=install-plugin&plugin=themeisle-companion' ), 'install-plugin_themeisle-companion' ) ); ?>" class="button button-primary"><?php esc_html_e( 'Install', 'islemag' ); ?> Orbit Fox</a></p>
+
+			<?php
+		}
+		?>
+        <hr>
+
 		<!-- Page Builder by SiteOrigin -->
 		<h4><?php esc_html_e( 'Page Builder by SiteOrigin', 'islemag' ); ?></h4>
 		<p><?php esc_html_e( 'Build responsive page layouts using the widgets you know and love using this simple drag and drop page builder.', 'islemag' ); ?></p>
@@ -159,24 +178,6 @@ $customizer_url = admin_url() . 'customize.php';
 }
 		?>
 
-		<hr />
-
-		<!-- Adblock Notify -->
-		<h4>Adblock Notify</h4>
-
-		<?php if ( is_plugin_active( 'adblock-notify-by-bweb/adblock-notify.php' ) ) { ?>
-
-			<p><span class="islemag-w-activated button"><?php esc_html_e( 'Already activated', 'islemag' ); ?></span></p>
-
-			<?php
-} else {
-		?>
-
-			<p><a href="<?php echo esc_url( wp_nonce_url( self_admin_url( 'update.php?action=install-plugin&plugin=adblock-notify-by-bweb' ), 'install-plugin_adblock-notify-by-bweb' ) ); ?>" class="button button-primary"><?php esc_html_e( 'Install', 'islemag' ); ?> Adblock Notify</a></p>
-
-			<?php
-}
-		?>
 
 	</div>
 
