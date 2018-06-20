@@ -1,7 +1,7 @@
 {
   "name": "islemag",
   "nicename": "Islemag",
-  "version": "1.0.2",
+  "version": "1.1.13",
   "description": "Islemag theme",
   "category": "themes",
   "repository": {
@@ -27,8 +27,5 @@
   "devDependencies": {
     "grunt-theme-fleet": "codeinwp/grunt-theme-fleet",
     "load-project-config": "~0.2.0"
-  },
-  "wraithSlug": [
-    "islemag"
-  ]
+  }
 }
