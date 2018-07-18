@@ -157,21 +157,14 @@ $post_id = get_the_ID();
 			</div><!-- End .about-author -->
 		</article>
 
-		<?php $islemag_single_post_hide_related_posts = get_theme_mod( 'islemag_single_post_hide_related_posts' ); ?>
-		<h3 class="mb30 title-underblock custom blog-related-carousel-title
-				<?php
-				if ( $islemag_single_post_hide_related_posts == true ) {
-					echo 'islemag_hide';
-				}
-		?>
-		"><?php esc_html_e( 'Related Posts', 'islemag' ); ?></h3>
+		<?php $islemag_single_post_hide_related_posts = get_theme_mod( 'islemag_single_post_hide_related_posts' );
+
+		if ( (bool) $islemag_single_post_hide_related_posts !== true || is_customize_preview() ) { ?>
+
+        <h3 class="mb30 title-underblock custom blog-related-carousel-title"><?php esc_html_e('Related Posts', 'islemag' ); ?>'</h3>
 		<div class="blog-related-carousel owl-carousel small-nav
-				<?php
-				if ( $islemag_single_post_hide_related_posts == true ) {
-					echo 'islemag_hide';
-				}
-		?>
-		">
+<?php if ( (bool) $islemag_single_post_hide_related_posts == true && is_customize_preview() ) { echo esc_attr( ' islemag_hide' ); }
+?>">
 			<?php
 			$related = get_posts(
 				array(
@@ -180,7 +173,6 @@ $post_id = get_the_ID();
 					'post__not_in' => array( $post_id ),
 				)
 			);
-			if ( $related ) {
 				foreach ( $related as $post ) {
 					setup_postdata( $post );
 					?>
