@@ -166,6 +166,10 @@ img {
 	border: 0;
 }
 
+.entry-content p{
+	word-break: break-word;
+}
+
 svg:not(:root) {
 	overflow: hidden;
 }
