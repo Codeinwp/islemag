@@ -17,7 +17,7 @@ get_header(); ?>
 			<?php
 			if ( ! empty( $archive_content_classes ) ) {
 				echo 'class="' . implode( ' ', $archive_content_classes ) . '"'; }
-?>
+			?>
 >
 				<main id="main" class="site-main" role="main">
 

@@ -141,7 +141,7 @@ class Islemag_Multiple_Ads extends WP_Widget {
 	 * @param array $instance The widget options.
 	 */
 	public function form( $instance ) {
-	?>
+		?>
 	<p>
 		<label for="<?php echo esc_attr( $this->get_field_id( 'widget_title' ) ); ?>"><?php _e( 'Title', 'islemag' ); ?></label><br/>
 			<?php
@@ -155,18 +155,18 @@ class Islemag_Multiple_Ads extends WP_Widget {
 	<p class="description"><?php esc_html_e( 'Recommended size: 125 x 125 px', 'islemag' ); ?></p>
 
 
-	<?php
-	for ( $i = 1; $i < 7; $i++ ) {
-		$title_alt = 'title_ad' . $i;
-		$link      = 'link_ad' . $i;
-		$url       = 'image_uri_ad' . $i;
-		$type      = 'banner_type' . $i;
-		$code      = 'banner_code' . $i;
+		<?php
+		for ( $i = 1; $i < 7; $i++ ) {
+			$title_alt = 'title_ad' . $i;
+			$link      = 'link_ad' . $i;
+			$url       = 'image_uri_ad' . $i;
+			$type      = 'banner_type' . $i;
+			$code      = 'banner_code' . $i;
 
-		if ( empty( $instance[ $type ] ) ) {
-			$instance[ $type ] = 'image';
-		}
-	?>
+			if ( empty( $instance[ $type ] ) ) {
+				$instance[ $type ] = 'image';
+			}
+			?>
 	<div class="islemag-ad-widget">
 		<div class="islemag-ad-widget-top">
 			<div class="islemag-ad-widget-title">
@@ -181,76 +181,76 @@ class Islemag_Multiple_Ads extends WP_Widget {
 	<div class="islemag-ad-widget-inside">
 		<p>
 			<label for="<?php echo esc_attr( $this->get_field_id( $title_alt ) ); ?>"><?php _e( 'Alt Title', 'islemag' ); ?></label><br />
-			<?php
-			echo '<input type="text" name="' . esc_attr( $this->get_field_name( $title_alt ) ) . '" id="' . esc_attr( $this->get_field_id( $title_alt ) ) . '" value="';
-			if ( ! empty( $instance[ $title_alt ] ) ) {
-				echo esc_attr( $instance[ $title_alt ] );
-			}
-			echo '" class="widefat" />';
-			?>
+				<?php
+				echo '<input type="text" name="' . esc_attr( $this->get_field_name( $title_alt ) ) . '" id="' . esc_attr( $this->get_field_id( $title_alt ) ) . '" value="';
+				if ( ! empty( $instance[ $title_alt ] ) ) {
+					echo esc_attr( $instance[ $title_alt ] );
+				}
+				echo '" class="widefat" />';
+				?>
 		</p>
 
 		<p>
-			<?php
-			echo '<input type="radio" name="' . esc_attr( $this->get_field_name( $type ) ) . '" value="image" class="islemag-small-ad-type"';
-			if ( ! empty( $instance[ $type ] ) ) {
-				checked( $instance[ $type ], 'image' );
-			}
-			echo '/>' . esc_html_e( 'Image', 'islemag' );
+				<?php
+				echo '<input type="radio" name="' . esc_attr( $this->get_field_name( $type ) ) . '" value="image" class="islemag-small-ad-type"';
+				if ( ! empty( $instance[ $type ] ) ) {
+					checked( $instance[ $type ], 'image' );
+				}
+				echo '/>' . esc_html_e( 'Image', 'islemag' );
 
-			echo '<input type="radio" name="' . esc_attr( $this->get_field_name( $type ) ) . '" value="code" class="islemag-small-ad-type"';
-			if ( ! empty( $instance[ $type ] ) ) {
-				checked( $instance[ $type ], 'code' );
-			}
-			echo '/>' . esc_html__( 'Code', 'islemag' );
-			?>
+				echo '<input type="radio" name="' . esc_attr( $this->get_field_name( $type ) ) . '" value="code" class="islemag-small-ad-type"';
+				if ( ! empty( $instance[ $type ] ) ) {
+					checked( $instance[ $type ], 'code' );
+				}
+				echo '/>' . esc_html__( 'Code', 'islemag' );
+				?>
 		</p>
 
-		<?php
-		echo '<p class="islemag-small-ad-image" style="';
-		if ( $instance[ $type ] == 'code' ) {
-			echo 'display:none';
-		}
-		echo '">';
+			<?php
+			echo '<p class="islemag-small-ad-image" style="';
+			if ( $instance[ $type ] == 'code' ) {
+				echo 'display:none';
+			}
+			echo '">';
 
-		echo '<label for="' . esc_attr( $this->get_field_id( $link ) ) . '">' . __( 'Link', 'islemag' ) . '</label><br />';
+			echo '<label for="' . esc_attr( $this->get_field_id( $link ) ) . '">' . __( 'Link', 'islemag' ) . '</label><br />';
 
-		echo '<input type="text" name="' . esc_attr( $this->get_field_name( $link ) ) . '" id="' . esc_attr( $this->get_field_id( $link ) ) . '" value="';
-		if ( ! empty( $instance[ $link ] ) ) {
-			echo esc_attr( $instance[ $link ] );
-		}
-		echo '" class="widefat" />';
+			echo '<input type="text" name="' . esc_attr( $this->get_field_name( $link ) ) . '" id="' . esc_attr( $this->get_field_id( $link ) ) . '" value="';
+			if ( ! empty( $instance[ $link ] ) ) {
+				echo esc_attr( $instance[ $link ] );
+			}
+			echo '" class="widefat" />';
 
-		echo '<label for="' . esc_attr( $this->get_field_name( $url ) ) . '">' . __( 'Image:', 'islemag' ) . '</label>';
-		echo '<input name="' . esc_attr( $this->get_field_name( $url ) ) . '" id="' . esc_attr( $this->get_field_id( $url ) ) . '" class="widefat custom_media_url" type="text" size="36"  value="';
-		if ( ! empty( $instance[ $url ] ) ) {
-			echo esc_url( $instance[ $url ] );
-		}
-		echo '" />';
-		echo '<input class="upload_image_button" type="button" value="Upload Image" id="" />';
+			echo '<label for="' . esc_attr( $this->get_field_name( $url ) ) . '">' . __( 'Image:', 'islemag' ) . '</label>';
+			echo '<input name="' . esc_attr( $this->get_field_name( $url ) ) . '" id="' . esc_attr( $this->get_field_id( $url ) ) . '" class="widefat custom_media_url" type="text" size="36"  value="';
+			if ( ! empty( $instance[ $url ] ) ) {
+				echo esc_url( $instance[ $url ] );
+			}
+			echo '" />';
+			echo '<input class="upload_image_button" type="button" value="Upload Image" id="" />';
 
-		echo '</p>';
+			echo '</p>';
 
-		echo '<p class="islemag-small-ad-code" style="';
-		if ( $instance[ $type ] == 'image' ) {
-			echo 'display:none';
-		}
-		echo '">';
-		?>
+			echo '<p class="islemag-small-ad-code" style="';
+			if ( $instance[ $type ] == 'image' ) {
+				echo 'display:none';
+			}
+			echo '">';
+			?>
 		<label for="<?php echo esc_attr( $this->get_field_name( $code ) ); ?>"><?php _e( 'Code:', 'islemag' ); ?></label><br/>
 
-		<?php
-		echo '<textarea name="' . esc_attr( $this->get_field_name( $code ) ) . '" placeholder="' . esc_html__( 'Text', 'islemag' ) . '">';
-		if ( ! empty( $instance[ $code ] ) ) {
-			echo $instance[ $code ];
-		}
-		echo '</textarea>';
-		?>
+			<?php
+			echo '<textarea name="' . esc_attr( $this->get_field_name( $code ) ) . '" placeholder="' . esc_html__( 'Text', 'islemag' ) . '">';
+			if ( ! empty( $instance[ $code ] ) ) {
+				echo $instance[ $code ];
+			}
+			echo '</textarea>';
+			?>
 		</p>
 	</div>
 	</div>
-<?php
-	}// End for().
+			<?php
+		}// End for().
 
 	}
 

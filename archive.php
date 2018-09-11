@@ -17,7 +17,7 @@ get_header(); ?>
 		<?php
 		if ( ! empty( $archive_content_classes ) ) {
 			echo 'class="' . implode( ' ', $archive_content_classes ) . '"'; }
-?>
+		?>
 >
 			<?php if ( have_posts() ) : ?>
 						<header class="page-header">
@@ -43,7 +43,7 @@ get_header(); ?>
 						get_template_part( 'template-parts/content', 'none' );
 
 					endif;
-			?>
+					?>
 		</div><!-- End .islemag-content-left -->
 		<?php get_sidebar(); ?>
 	</div><!-- End .row -->

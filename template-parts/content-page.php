@@ -23,7 +23,7 @@
 					'after'  => '</div>',
 				)
 			);
-		?>
+			?>
 	</div><!-- .entry-content -->
 
 	<?php
@@ -36,7 +36,7 @@
 			'<footer class="entry-footer"><span class="edit-link">',
 			'</span></footer>'
 		);
-	?>
+		?>
 
 </article><!-- #post-## -->
 
