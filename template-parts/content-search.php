@@ -68,7 +68,7 @@
 			break;
 	}
 	if ( ! empty( $icon_class ) ) {
-	?>
+		?>
 			<span class="entry-format"><i class="fa <?php echo $icon_class; ?>"></i></span>
 			<?php
 	}
@@ -87,7 +87,7 @@
 					'after'  => '</div>',
 				)
 			);
-		?>
+			?>
 	</div><!-- .entry-content -->
 
 	<?php

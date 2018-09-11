@@ -54,7 +54,7 @@ if ( $wp_query->have_posts() ) :
 								} else {
 									echo '<img src="' . get_template_directory_uri() . '/img/placeholder-image.png" />';
 								}
-									?>
+								?>
 									</a>
 								</figure> <!-- End figure -->
 							</div> <!-- End .entry-media -->
@@ -78,7 +78,7 @@ if ( $wp_query->have_posts() ) :
 												class="fa fa-star"></i></span><span><i class="fa fa-star"></i></span>
 								</div>
 								</div>
-								<?php
+									<?php
 								}
 							}
 							?>
@@ -110,7 +110,7 @@ if ( $wp_query->have_posts() ) :
 
 					case 1:
 						$choosed_color = array_rand( $colors, 1 );
-					?>
+						?>
 					<article class="entry entry-overlay entry-block eb-small <?php echo $colors[ $choosed_color ]; ?>">
 				<div class="entry-media">
 					<a href="<?php echo esc_url( get_category_link( $category[0]->cat_ID ) ); ?>" class="category-block"
@@ -129,7 +129,7 @@ if ( $wp_query->have_posts() ) :
 							} else {
 								echo '<img src="' . get_template_directory_uri() . '/img/placeholder-image.png" />';
 							}
-								?>
+							?>
 								</a>
 							</figure> <!-- End figure -->
 						</div> <!-- End .entry-media -->
@@ -152,14 +152,14 @@ if ( $wp_query->have_posts() ) :
 											class="fa fa-star"></i></span><span><i
 											class="fa fa-star"></i></span><span><i class="fa fa-star"></i></span></div>
 							</div>
-							<?php
+								<?php
 							}
 						}
 						?>
 						<div class="entry-meta">
 						<span class="entry-overlay-date"><i
 								class="fa fa-calendar"></i><?php echo get_the_date( 'j M' ); ?></span>
-					<?php if ( comments_open() ) { ?>
+						<?php if ( comments_open() ) { ?>
 					<span class="entry-separator">/</span>
 					<a href="#"
 						class="entry-comments"><?php comments_number( esc_html__( '0 Comments', 'islemag' ), esc_html__( '1 Comment', 'islemag' ), esc_html__( '% Comments', 'islemag' ) ); ?></a>
@@ -173,14 +173,14 @@ if ( $wp_query->have_posts() ) :
 
 					</article>
 				</div> <!-- End .entry-wrapper -->
-				<?php
-				if ( $wp_query->current_post + 1 != $wp_query->post_count ) {
-					$counter++;
-				}
+						<?php
+						if ( $wp_query->current_post + 1 != $wp_query->post_count ) {
+							$counter++;
+						}
 				}// End switch().
 		endwhile;
 
-		?>
+			?>
 
 	</div> <!-- End .islemag-template4-posts -->
 	</div> <!-- End .post-section -->

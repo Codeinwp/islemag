@@ -31,7 +31,7 @@ class IseleMagCategorySelector extends WP_Customize_Control {
 	 */
 	public function render_content() {
 		$categories = get_categories();
-?>
+		?>
 	<span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
 	<select <?php $this->link(); ?>>
 		<option value="all"><?php esc_html_e( 'All', 'islemag' ); ?></option>
@@ -41,8 +41,8 @@ class IseleMagCategorySelector extends WP_Customize_Control {
 				echo '<option value="' . esc_attr( $cat->slug ) . '" ' . selected( $this->value(), $cat->slug ) . '>' . esc_attr( $cat->cat_name ) . '</option>';
 			}
 		}
-			?>
+		?>
 			</select>
-	<?php
+		<?php
 	}
 }

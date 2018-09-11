@@ -28,7 +28,7 @@
 	<?php
 	if ( ! empty( $wrapper_class ) ) {
 		echo 'class="' . implode( ' ', $wrapper_class ) . '"';}
-?>
+	?>
 >
 
 		<header id="header" class="site-header" role="banner">
@@ -39,7 +39,7 @@
 			<?php
 			if ( ! empty( $navbar_top_classes ) ) {
 				echo 'class="' . implode( ' ', $navbar_top_classes ) . '"';}
-?>
+			?>
 >
 				<?php
 				islemag_navbar_top_head();
@@ -77,7 +77,7 @@
 									'depth'          => 1,
 								)
 							);
-								?>
+							?>
 						</nav><!-- #site-navigation -->
 					</div><!-- #navbar -->
 				</div>
@@ -132,7 +132,7 @@
 							echo '</div>';
 
 						endif;
-					?>
+						?>
 				</div>
 
 				<div class="col-md-9 col-sm-9 col-xs-12 islemag-banner">
@@ -168,7 +168,7 @@
 			<?php
 			if ( isset( $islemag_sticky_menu ) && $islemag_sticky_menu == false ) {
 				echo 'islemag-sticky';}
-?>
+			?>
 ">
 				<nav id="site-navigation" class="navigation main-navigation" role="navigation">
 					<button class="menu-toggle"><?php _e( 'Menu', 'islemag' ); ?></button>
@@ -182,7 +182,7 @@
 							'depth'          => 6,
 						)
 					);
-						?>
+					?>
 				</nav><!-- #site-navigation -->
 			</div><!-- #navbar -->
 			<?php
@@ -199,9 +199,9 @@
 		<?php
 		if ( ! empty( $islemag_content_ids ) ) {
 			echo 'id="' . implode( ' ', $islemag_content_ids ) . '"'; }
-?>
+		?>
 	<?php
 	if ( ! empty( $islemag_content_classes ) ) {
 			echo 'class="' . implode( ' ', $islemag_content_classes ) . '"'; }
-?>
+	?>
 >

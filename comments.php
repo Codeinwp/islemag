@@ -37,10 +37,10 @@ if ( post_password_required() ) {
 
 				</div><!-- .nav-links -->
 			</nav><!-- #comment-nav-above -->
-			<?php
+				<?php
 			endif;
 			// Check for comment navigation.
-			?>
+?>
 
 			<ul class="comments-list media-list">
 				<?php

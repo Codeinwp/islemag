@@ -60,7 +60,7 @@ class Islemag_Info extends WP_Customize_Control {
 		<div class="islemag-theme-info">
 			<?php
 			foreach ( $links as $item ) {
-			?>
+				?>
 				<a href="<?php echo esc_url( $item['link'] ); ?>" target="_blank"><?php echo esc_html( $item['name'] ); ?></a>
 				<hr/>
 				<?php

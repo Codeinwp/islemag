@@ -29,7 +29,7 @@ if ( $wp_query->have_posts() ) : ?>
 			$choosed_color = array_rand( $colors, 1 );
 			$category      = get_the_category();
 			$postid        = get_the_ID();
-		?>
+			?>
 
 		<article class="entry entry-overlay entry-block <?php echo $colors[ $choosed_color ]; ?>">
 		<a href="<?php echo esc_url( get_category_link( $category[0]->cat_ID ) ); ?>" class="category-block" title="Category <?php echo esc_attr( $category[0]->cat_name ); ?>"><?php echo esc_attr( $category[0]->cat_name ); ?></a>
@@ -66,27 +66,27 @@ if ( $wp_query->have_posts() ) : ?>
 		</div> <!-- End .entry-media -->
 
 		<h3 class="entry-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-		<?php
-		if ( function_exists( 'cwppos_calc_overall_rating' ) ) {
-			$rating = cwppos_calc_overall_rating( $postid );
-			if ( ! empty( $rating['option1'] ) ) {
-			?>
+			<?php
+			if ( function_exists( 'cwppos_calc_overall_rating' ) ) {
+				$rating = cwppos_calc_overall_rating( $postid );
+				if ( ! empty( $rating['option1'] ) ) {
+					?>
 				<label><?php esc_html_e( 'Rating:', 'islemag' ); ?></label>
 				<div class="star-ratings-css">
 					<div class="star-ratings-css-top" style="width: <?php echo $rating['overall']; ?>%"><span><i class="fa fa-star"></i></span><span><i class="fa fa-star"></i></span><span><i class="fa fa-star"></i></span><span><i class="fa fa-star"></i></span><span><i class="fa fa-star"></i></span></div>
 					<div class="star-ratings-css-bottom"><span><i class="fa fa-star"></i></span><span><i class="fa fa-star"></i></span><span><i class="fa fa-star"></i></span><span><i class="fa fa-star"></i></span><span><i class="fa fa-star"></i></span></div>
 				</div>
-			<?php
+					<?php
+				}
 			}
-		}
-		?>
+			?>
 		</article> <!-- End .entry-overlay -->
-		<?php
+			<?php
 			endwhile;
 		?>
 	</div> <!-- End .islemag-template1-posts -->
 	</div> <!-- End .islemag-template1 -->
-<?php
+	<?php
 	endif;
 	wp_reset_postdata();
 ?>

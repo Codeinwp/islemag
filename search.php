@@ -17,14 +17,14 @@ get_header(); ?>
 		<?php
 		if ( ! empty( $archive_content_classes ) ) {
 			echo 'class="' . implode( ' ', $archive_content_classes ) . '"'; }
-?>
+		?>
 >
 
 
 		<?php
 
 		if ( have_posts() ) :
-		?>
+			?>
 
 				<header class="page-header">
 					<h1 class="page-title"><?php /* translators: Search query */ printf( esc_html__( 'Search Results for: %s', 'islemag' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
