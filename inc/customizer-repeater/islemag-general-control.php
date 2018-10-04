@@ -140,7 +140,7 @@ class Islemag_General_Repeater extends WP_Customize_Control {
 		$it = 0;
 		if ( ! empty( $array ) ) {
 			foreach ( $array as $icon ) {
-			?>
+				?>
 				<div class="islemag_general_control_repeater_container islemag_draggable">
 					<div class="islemag-customize-control-title">
 						<?php echo esc_html( $this->boxtitle ); ?>
@@ -179,7 +179,8 @@ class Islemag_General_Repeater extends WP_Customize_Control {
 									'label'             => __( 'Link', 'islemag' ),
 									'class'             => 'islemag_link_control',
 									'sanitize_callback' => 'esc_url',
-								), $link
+								),
+								$link
 							);
 						}
 
@@ -202,7 +203,7 @@ class Islemag_General_Repeater extends WP_Customize_Control {
 				$it++;
 			}// End foreach().
 		} else {
-		?>
+			?>
 			<div class="islemag_general_control_repeater_container">
 				<div class="islemag-customize-control-title">
 					<?php echo esc_html( $this->boxtitle ); ?>
@@ -239,7 +240,7 @@ class Islemag_General_Repeater extends WP_Customize_Control {
 	 * @param string $value Input value.
 	 */
 	private function input_control( $options, $value = '' ) {
-	?>
+		?>
 		<span class="customize-control-title"><?php echo $options['label']; ?></span>
 		<input type="text" value="<?php echo ( ! empty( $options['sanitize_callback'] ) ? call_user_func_array( $options['sanitize_callback'], array( $value ) ) : esc_attr( $value ) ); ?>" class="<?php echo esc_attr( $options['class'] ); ?>" placeholder="<?php echo $options['label']; ?>"/>
 		<?php

@@ -135,7 +135,7 @@ $post_id = get_the_ID();
 					if ( $islemag_single_post_hide_author == true ) {
 						echo 'islemag_hide';
 					}
-			?>
+					?>
 ">
 				<h3 class="title-underblock custom"><?php echo esc_attr__( 'Post Author:', 'islemag' ); ?> <a
 							href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>"
@@ -157,21 +157,15 @@ $post_id = get_the_ID();
 			</div><!-- End .about-author -->
 		</article>
 
-		<?php $islemag_single_post_hide_related_posts = get_theme_mod( 'islemag_single_post_hide_related_posts' ); ?>
-		<h3 class="mb30 title-underblock custom blog-related-carousel-title
-				<?php
-				if ( $islemag_single_post_hide_related_posts == true ) {
-					echo 'islemag_hide';
-				}
-		?>
-		"><?php esc_html_e( 'Related Posts', 'islemag' ); ?></h3>
+		<?php $islemag_single_post_hide_related_posts = get_theme_mod( 'islemag_single_post_hide_related_posts' );
+
+		if ( (bool) $islemag_single_post_hide_related_posts !== true || is_customize_preview() ) { ?>
+
+		<h3 class="mb30 title-underblock custom blog-related-carousel-title"><?php esc_html_e( 'Related Posts', 'islemag' ); ?>'</h3>
 		<div class="blog-related-carousel owl-carousel small-nav
-				<?php
-				if ( $islemag_single_post_hide_related_posts == true ) {
-					echo 'islemag_hide';
-				}
-		?>
-		">
+			<?php if ( (bool) $islemag_single_post_hide_related_posts == true && is_customize_preview() ) { echo esc_attr( ' islemag_hide' ); }
+			?>
+			">
 			<?php
 			$related = get_posts(
 				array(
@@ -180,24 +174,23 @@ $post_id = get_the_ID();
 					'post__not_in' => array( $post_id ),
 				)
 			);
-			if ( $related ) {
-				foreach ( $related as $post ) {
-					setup_postdata( $post );
-					?>
+			foreach ( $related as $post ) {
+				setup_postdata( $post );
+				?>
 					<article class="entry entry-box">
 						<div class="entry-media">
 							<div class="entry-media">
 								<figure>
 									<a href="<?php the_permalink(); ?>">
-										<?php
-										if ( has_post_thumbnail() ) {
-											$thumb = wp_get_attachment_image_src( get_post_thumbnail_id( $wp_query->ID ), 'islemag_related_post' );
-											$url   = $thumb['0'];
-											echo '<img class="owl-lazy" data-src="' . esc_url( $url ) . '" />';
-										} else {
-											echo '<img class="owl-lazy" data-src="' . get_template_directory_uri() . '/img/related-placeholder.jpg"/>';
-										}
-										?>
+									<?php
+									if ( has_post_thumbnail() ) {
+										$thumb = wp_get_attachment_image_src( get_post_thumbnail_id( $wp_query->ID ), 'islemag_related_post' );
+										$url   = $thumb['0'];
+										echo '<img class="owl-lazy" data-src="' . esc_url( $url ) . '" />';
+									} else {
+										echo '<img class="owl-lazy" data-src="' . get_template_directory_uri() . '/img/related-placeholder.jpg"/>';
+									}
+									?>
 									</a>
 								</figure>
 							</div><!-- End .entry-media -->
@@ -247,7 +240,7 @@ $post_id = get_the_ID();
 							<?php
 							$title = get_the_title();
 							if ( ! empty( $title ) ) {
-							?>
+								?>
 								<h2 class="entry-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
 								</h2>
 							<?php } ?>
@@ -260,26 +253,26 @@ $post_id = get_the_ID();
 							<?php $category = get_the_category(); ?>
 							<span class="entry-cats">
 								<span class="entry-label"><i class="fa fa-tag"></i></span>
-								<?php
-								if ( ! empty( $category ) ) {
-									$i   = 0;
-									$len = count( $category );
-									foreach ( $category as $cat ) {
-										echo '<a href="' . esc_url( get_category_link( $cat->cat_ID ) ) . '">' . esc_attr( $cat->cat_name ) . '</a>';
-										if ( $i == 2 ) {
-											echo ' <span class="related-show-on-click" title="' . __( 'Show more categories', 'islemag' ) . '">...</span> <span class="islemag-cat-show-on-click">, ';
-										}
-										if ( $i != $len - 1 && $i != 2 ) {
-											echo ', ';
-										} else {
-											if ( $i > 2 ) {
-												echo '</span>';
-											}
-										}
-										$i++;
+							<?php
+							if ( ! empty( $category ) ) {
+								$i   = 0;
+								$len = count( $category );
+								foreach ( $category as $cat ) {
+									echo '<a href="' . esc_url( get_category_link( $cat->cat_ID ) ) . '">' . esc_attr( $cat->cat_name ) . '</a>';
+									if ( $i == 2 ) {
+										echo ' <span class="related-show-on-click" title="' . __( 'Show more categories', 'islemag' ) . '">...</span> <span class="islemag-cat-show-on-click">, ';
 									}
+									if ( $i != $len - 1 && $i != 2 ) {
+										echo ', ';
+									} else {
+										if ( $i > 2 ) {
+											echo '</span>';
+										}
+									}
+									$i++;
 								}
-								?>
+							}
+							?>
 								</span><!-- End .entry-tags -->
 
 							<a href="<?php the_permalink(); ?>"
@@ -288,10 +281,10 @@ $post_id = get_the_ID();
 						</footer>
 					</article>
 					<?php
-				}// End foreach().
-			}// End if().
+			}// End foreach().
+		}// End if().
 			wp_reset_postdata();
-			?>
+		?>
 		</div><!-- End .blog-related-carousel -->
 	</div><!-- End .col-md-12 -->
 </div><!-- End .row -->

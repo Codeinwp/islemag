@@ -93,9 +93,9 @@ class Islemag_Banner_Control extends WP_Customize_Control {
 
 				<input type="hidden" id="islemag-banner-colector" <?php $this->link(); ?> class="islemag-banner-colector" value="<?php echo esc_textarea( $this->value() ); ?>" />
 			</div>
-		<?php
+			<?php
 		} else {
-		?>
+			?>
 			<div class="islemag-banner-settings-container">
 
 			<span class="customize-control-title"> <?php esc_html_e( 'Banner type', 'islemag' ); ?> </span>

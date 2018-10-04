@@ -15,7 +15,7 @@ get_header(); ?>
 				<?php
 				while ( have_posts() ) :
 					the_post();
-?>
+					?>
 
 					<?php get_template_part( 'template-parts/content', 'page' ); ?>
 
@@ -25,7 +25,7 @@ get_header(); ?>
 						endif;
 					?>
 
-				<?php
+					<?php
 				endwhile; // End of the loop.
 				?>
 

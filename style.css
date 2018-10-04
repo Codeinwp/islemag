@@ -30,7 +30,7 @@ Tags: two-columns, three-columns, right-sidebar, custom-background, custom-color
 # Clearings
 # Widgets
 # Content
-    ## Posts and pages
+	## Posts and pages
 	## Asides
 	## Comments
 # Infinite scroll
@@ -164,6 +164,10 @@ sub {
 
 img {
 	border: 0;
+}
+
+.entry-content p{
+	word-break: break-word;
 }
 
 svg:not(:root) {
@@ -2297,58 +2301,58 @@ blockquote {
 }
 
 .navbar-form {
-    padding: 0;
-    margin: 0;
-    border: none;
-    box-shadow: none;
-    -webkit-box-shadow: none;
+	padding: 0;
+	margin: 0;
+	border: none;
+	box-shadow: none;
+	-webkit-box-shadow: none;
 }
 
 #header-search-form .form-control {
-    width: auto;
-    display: block;
-    background-color: transparent;
-    border: none;
-    height: auto;
-    padding: 12px 0 12px 40px;
-    font: 500 16px/1.5 'Raleway', Verdana;
-    box-shadow: none;
-    -webkit-box-shadow: none;
-    text-align: right;
-    border-radius: 0;
-    margin-bottom: 0;
+	width: auto;
+	display: block;
+	background-color: transparent;
+	border: none;
+	height: auto;
+	padding: 12px 0 12px 40px;
+	font: 500 16px/1.5 'Raleway', Verdana;
+	box-shadow: none;
+	-webkit-box-shadow: none;
+	text-align: right;
+	border-radius: 0;
+	margin-bottom: 0;
 		box-sizing: border-box;
 }
 
 #header-search-form button[type="submit"], #header-search-form input[type="submit"] {
-    position: absolute;
-    top: 50%;
-    left: 0;
-    font-size: 14px;
-    padding: 0;
-    margin: 0;
-    display: block;
-    border: none;
-    width: 32px;
-    height: 32px;
-    line-height: 32px;
-    right: 15px;
-    margin-top: -16px;
-    background-color: transparent;
-    transition: all 0.4s ease-in;
-    -webkit-transition: all 0.4s ease-in;
+	position: absolute;
+	top: 50%;
+	left: 0;
+	font-size: 14px;
+	padding: 0;
+	margin: 0;
+	display: block;
+	border: none;
+	width: 32px;
+	height: 32px;
+	line-height: 32px;
+	right: 15px;
+	margin-top: -16px;
+	background-color: transparent;
+	transition: all 0.4s ease-in;
+	-webkit-transition: all 0.4s ease-in;
 }
 
 #header-search-form {
-    padding: 0 15px;
-    position: relative;
-    border-bottom: 1px solid transparent;
-    overflow: hidden;
+	padding: 0 15px;
+	position: relative;
+	border-bottom: 1px solid transparent;
+	overflow: hidden;
 }
 
 #header-search-form.navbar-white {
-    background-color: #fff;
-    border-bottom-color: #eaeaea;
+	background-color: #fff;
+	border-bottom-color: #eaeaea;
 }
 
 @media (min-width: 992px){
@@ -2359,12 +2363,12 @@ blockquote {
 
 @media (min-width: 768px){
 	#header-search-form {
-	    position: absolute;
-	    left: 0;
-	    right: 0;
-	    top: 100%;
-	    z-index: 300;
-	    padding: 0 15px;
+		position: absolute;
+		left: 0;
+		right: 0;
+		top: 100%;
+		z-index: 300;
+		padding: 0 15px;
 	}
 
 	#header-search-form .form-control {
@@ -2375,41 +2379,41 @@ blockquote {
 
 @media (min-width: 768px){
 	#header-search-form button[type="submit"], #header-search-form input[type="submit"] {
-	    right: 30px;
-	    font-size: 14px;
-	    line-height: 36px;
-	    width: 36px;
-	    height: 36px;
-	    left: 0;
-	    margin-top: -18px;
+		right: 30px;
+		font-size: 14px;
+		line-height: 36px;
+		width: 36px;
+		height: 36px;
+		left: 0;
+		margin-top: -18px;
 	}
 }
 
 @-webkit-keyframes fadeInDown {
   0% {
-    opacity: 0;
-    -webkit-transform: translate3d(0, -100%, 0);
-    transform: translate3d(0, -100%, 0);
+	opacity: 0;
+	-webkit-transform: translate3d(0, -100%, 0);
+	transform: translate3d(0, -100%, 0);
   }
 
   100% {
-    opacity: 1;
-    -webkit-transform: none;
-    transform: none;
+	opacity: 1;
+	-webkit-transform: none;
+	transform: none;
   }
 }
 
 @keyframes fadeInDown {
   0% {
-    opacity: 0;
-    -webkit-transform: translate3d(0, -100%, 0);
-    transform: translate3d(0, -100%, 0);
+	opacity: 0;
+	-webkit-transform: translate3d(0, -100%, 0);
+	transform: translate3d(0, -100%, 0);
   }
 
   100% {
-    opacity: 1;
-    -webkit-transform: none;
-    transform: none;
+	opacity: 1;
+	-webkit-transform: none;
+	transform: none;
   }
 }
 
@@ -2419,10 +2423,10 @@ blockquote {
 }
 
 .animated {
-    -webkit-animation-duration: 1s;
-    animation-duration: 1s;
-    -webkit-animation-fill-mode: both;
-    animation-fill-mode: both;
+	-webkit-animation-duration: 1s;
+	animation-duration: 1s;
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;
 }
 
 #header-search-form .form-control::-moz-placeholder {
