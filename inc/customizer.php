@@ -371,7 +371,6 @@ function islemag_customize_register( $wp_customize ) {
 	$wp_customize->add_setting(
 		'islemag_single_post_hide_related_posts',
 		array(
-			'transport'         => 'postMessage',
 			'sanitize_callback' => 'sanitize_text_field',
 		)
 	);
