@@ -159,16 +159,11 @@ $post_id = get_the_ID();
 
 		<?php $islemag_single_post_hide_related_posts = get_theme_mod( 'islemag_single_post_hide_related_posts' );
 
-		if ( (bool) $islemag_single_post_hide_related_posts !== true || is_customize_preview() ) { ?>
+		if ( (bool) $islemag_single_post_hide_related_posts !== true ) { ?>
 
 			<h3 class="mb30 title-underblock custom blog-related-carousel-title"><?php esc_html_e( 'Related Posts', 'islemag' ); ?>
 				'</h3>
-			<div class="blog-related-carousel owl-carousel small-nav
-			<?php if ( (bool) $islemag_single_post_hide_related_posts == true && is_customize_preview() ) {
-				echo esc_attr( ' islemag_hide' );
-}
-			?>
-			">
+			<div class="blog-related-carousel owl-carousel small-nav">
 				<?php
 				$related = get_posts(
 					array(
