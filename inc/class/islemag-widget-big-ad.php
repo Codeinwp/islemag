@@ -254,6 +254,6 @@ class Islemag_Big_Ad extends WP_Widget {
 			echo '</textarea>';
 			?>
 		</p>
-<?php
+		<?php
 	}
 }

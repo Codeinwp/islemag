@@ -25,12 +25,14 @@
 					printf(
 						wp_kses(
 							/* translators: Add new post link */
-							__( 'Ready to publish your first post? <a href="%1$s">Get started here</a>.', 'islemag' ), array(
+							__( 'Ready to publish your first post? <a href="%1$s">Get started here</a>.', 'islemag' ),
+							array(
 								'a' => array(
 									'href' => array(),
 								),
 							)
-						), esc_url( admin_url( 'post-new.php' ) )
+						),
+						esc_url( admin_url( 'post-new.php' ) )
 					);
 					?>
 				</p>

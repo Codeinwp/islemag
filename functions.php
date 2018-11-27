@@ -1,4 +1,21 @@
 <?php
+$vendor_file = trailingslashit( get_template_directory() ) . 'vendor/autoload.php';
+if ( is_readable( $vendor_file ) ) {
+	require_once $vendor_file;
+}
+add_filter( 'themeisle_sdk_products', 'islemag_load_sdk' );
+/**
+ * Loads products array.
+ *
+ * @param array $products All products.
+ *
+ * @return array Products array.
+ */
+function islemag_load_sdk( $products ) {
+	$products[] = get_template_directory() . '/style.css';
+
+	return $products;
+}
 /**
  * Islemag functions and definitions.
  *
@@ -75,7 +92,8 @@ if ( ! function_exists( 'islemag_setup' ) ) :
 		 * to output valid HTML5.
 		 */
 		add_theme_support(
-			'html5', array(
+			'html5',
+			array(
 				'search-form',
 				'comment-form',
 				'comment-list',
@@ -89,7 +107,8 @@ if ( ! function_exists( 'islemag_setup' ) ) :
 		 * See https://developer.wordpress.org/themes/functionality/post-formats/
 		 */
 		add_theme_support(
-			'post-formats', array(
+			'post-formats',
+			array(
 				'aside',
 				'image',
 				'video',
@@ -100,7 +119,8 @@ if ( ! function_exists( 'islemag_setup' ) ) :
 
 		// Set up the WordPress core custom background feature.
 		add_theme_support(
-			'custom-background', array(
+			'custom-background',
+			array(
 				'default-image'      => get_template_directory_uri() . '/img/islemag-background.jpg',
 				'default-preset'     => 'fill',
 				'default-repeat'     => 'no-repeat',
@@ -121,7 +141,8 @@ if ( ! function_exists( 'islemag_setup' ) ) :
 		);
 
 		add_theme_support(
-			'custom-logo', array(
+			'custom-logo',
+			array(
 				'height'      => 100,
 				'width'       => 300,
 				'flex-height' => true,
@@ -184,7 +205,8 @@ add_filter( 'image_size_names_choose', 'islemg_media_uploader_custom_sizes' );
  */
 function islemg_media_uploader_custom_sizes( $sizes ) {
 	return array_merge(
-		$sizes, array(
+		$sizes,
+		array(
 			'islemag_ad_125'             => esc_html__( 'Small Advertisement', 'islemag' ),
 			'islemag_leaderboard'        => esc_html__( 'Leaderboard', 'islemag' ),
 			'islemag_3_1_rectangle'      => esc_html__( '3:1 Rectangle', 'islemag' ),
@@ -256,7 +278,8 @@ function islemag_widgets_init() {
 	);
 
 	register_sidebars(
-		5, array(
+		5,
+		array(
 			/* translators: Number of registered advertisment area */
 			'name'          => __( 'Advertisments area %d', 'islemag' ),
 			'id'            => 'islemag-ads',
@@ -331,14 +354,18 @@ function islemag_scripts() {
 
 	wp_enqueue_script( 'islemag-script-all', get_template_directory_uri() . '/js/script.all.js', array( 'jquery' ), '1.0.1', true );
 	wp_localize_script(
-		'islemag-script-all', 'screenReaderText', array(
+		'islemag-script-all',
+		'screenReaderText',
+		array(
 			'expand'   => '<span class="screen-reader-text">' . esc_html__( 'expand child menu', 'islemag' ) . '</span>',
 			'collapse' => '<span class="screen-reader-text">' . esc_html__( 'collapse child menu', 'islemag' ) . '</span>',
 		)
 	);
 	$sticky_menu = get_theme_mod( 'islemag_sticky_menu', false );
 	wp_localize_script(
-		'islemag-script-all', 'stickyMenu', array(
+		'islemag-script-all',
+		'stickyMenu',
+		array(
 			'disable_sticky' => $sticky_menu,
 		)
 	);
@@ -507,7 +534,7 @@ function islemag_requestpost() {
 		);
 
 		if ( $wp_query->have_posts() ) :
-		?>
+			?>
 			<div class="islemag-top-container">
 				<div class="owl-carousel islemag-top-carousel rect-dots">
 					<?php
@@ -736,7 +763,7 @@ function islemag_display_section( $section_nb, $is_hidden = false ) {
 	">
 		<?php
 		if ( $islemag_has_sidebar ) {
-		?>
+			?>
 			<div itemscope itemtype="http://schema.org/WPAdBlock" id="sidebar-ads-area-<?php echo $section_nb; ?>" aria-label="<?php echo $islemag_aria_label; ?>">
 				<?php ( $section_nb === 1 ? dynamic_sidebar( 'islemag-ads' ) : dynamic_sidebar( 'islemag-ads-' . $section_nb ) ); ?>
 			</div>
@@ -744,14 +771,14 @@ function islemag_display_section( $section_nb, $is_hidden = false ) {
 		}
 		$choose_color = array_rand( $colors, 1 );
 		if ( ! empty( $islemag_section_title ) ) {
-		?>
+			?>
 			<h2 class="title-border title-bg-line <?php echo apply_filters( 'islemag_line_color', $colors[ $choose_color ] ); ?> mb30">
 				<span><?php echo esc_attr( $islemag_section_title ); ?></span>
 			</h2>
 			<?php
 		} else {
 			if ( is_customize_preview() ) {
-			?>
+				?>
 				<h2 class="title-border title-bg-line islemag_only_customizer <?php echo $colors[ $choose_color ]; ?> mb30"><span></span></h2>
 				<?php
 			}
@@ -786,3 +813,45 @@ function islemag_safe_style( $styles ) {
 	return $styles;
 }
 add_filter( 'safe_style_css', 'islemag_safe_style' );
+
+/**
+ * Add a dismissible notice about Neve in the dashboard
+ */
+function islemag_neve_notice() {
+	global $current_user;
+	$user_id        = $current_user->ID;
+	$ignored_notice = get_user_meta( $user_id, 'islemag_ignore_neve_notice' );
+	if ( ! empty( $ignored_notice ) ) {
+		return;
+	}
+	$dismiss_button =
+		sprintf(
+			/* translators: Install Neve link */
+			'<a href="%s" class="notice-dismiss" style="text-decoration:none;"></a>',
+			'?islemag_nag_ignore_neve=0'
+		);
+	$message = sprintf(
+		/* translators: Install Neve link */
+		esc_html__( 'Check out %1$s. Fully AMP optimized and responsive, Neve will load in mere seconds and adapt perfectly on any viewing device. Neve works perfectly with Gutenberg and the most popular page builders. You will love it!', 'islemag' ),
+		sprintf(
+			/* translators: Install Neve link */
+			'<a target="_blank" href="%1$s"><strong>%2$s</strong></a>',
+			esc_url( admin_url( 'theme-install.php?theme=neve' ) ),
+			esc_html__( 'our newest theme', 'islemag' )
+		)
+	);
+	printf( '<div class="notice updated" style="position:relative; padding-right: 30px;">%1$s<p>%2$s</p></div>', $dismiss_button, $message );
+}
+add_action( 'admin_notices', 'islemag_neve_notice' );
+/**
+ * Update the islemag_ignore_neve_notice option to true, to dismiss the notice from the dashboard
+ */
+function islemag_nag_ignore_neve() {
+	global $current_user;
+	$user_id = $current_user->ID;
+	/* If user clicks to ignore the notice, add that to their user meta */
+	if ( isset( $_GET['islemag_nag_ignore_neve'] ) && '0' == $_GET['islemag_nag_ignore_neve'] ) {
+		add_user_meta( $user_id, 'islemag_ignore_neve_notice', 'true', true );
+	}
+}
+add_action( 'admin_init', 'islemag_nag_ignore_neve' );

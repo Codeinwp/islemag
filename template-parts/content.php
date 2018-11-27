@@ -78,9 +78,9 @@
 			break;
 	}
 	if ( ! empty( $icon_class ) ) {
-	?>
+		?>
 			<span class="entry-format"><i class="fa <?php echo $icon_class; ?>"></i></span>
-	<?php
+		<?php
 	}
 	?>
 	<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
@@ -94,7 +94,7 @@
 			else :
 				the_excerpt();
 			endif;
-		?>
+			?>
 
 		<?php
 			wp_link_pages(
@@ -103,7 +103,7 @@
 					'after'  => '</div>',
 				)
 			);
-		?>
+			?>
 	</div><!-- .entry-content -->
 
 	<?php

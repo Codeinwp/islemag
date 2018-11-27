@@ -111,22 +111,22 @@ $post_id = get_the_ID();
 							if ( $i != $len - 1 ) {
 								echo ', ';
 							}
-							$i++;
+							$i ++;
 						}
 					}
 					?>
 					</span><!-- End .entry-tags -->
 				<?php if ( comments_open() ) { ?>
-				<span class="entry-separator">/</span>
-				<a href="#"
-					class="entry-comments"><?php comments_number( esc_html__( 'No Responses', 'islemag' ), esc_html__( 'One Response', 'islemag' ), esc_html__( '% Responses', 'islemag' ) ); ?></a>
+					<span class="entry-separator">/</span>
+					<a href="#"
+					   class="entry-comments"><?php comments_number( esc_html__( 'No Responses', 'islemag' ), esc_html__( 'One Response', 'islemag' ), esc_html__( '% Responses', 'islemag' ) ); ?></a>
 				<?php } ?>
 				<span class="entry-separator">/</span>
 				<?php esc_html_e( 'by', 'islemag' ); ?> <a
 						href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>"
 						class="entry-author"><?php the_author(); ?></a>
 				<time class="date updated published"
-					datetime="<?php echo esc_html( get_the_date( DATE_W3C ) ); ?>"><?php echo esc_html( get_the_time( get_option( 'date_format' ) ) ); ?></time>
+					  datetime="<?php echo esc_html( get_the_date( DATE_W3C ) ); ?>"><?php echo esc_html( get_the_time( get_option( 'date_format' ) ) ); ?></time>
 			</footer>
 
 			<?php $islemag_single_post_hide_author = get_theme_mod( 'islemag_single_post_hide_author' ); ?>
@@ -157,30 +157,21 @@ $post_id = get_the_ID();
 			</div><!-- End .about-author -->
 		</article>
 
-		<?php $islemag_single_post_hide_related_posts = get_theme_mod( 'islemag_single_post_hide_related_posts' ); ?>
-		<h3 class="mb30 title-underblock custom blog-related-carousel-title
+		<?php $islemag_single_post_hide_related_posts = get_theme_mod( 'islemag_single_post_hide_related_posts' );
+
+		if ( (bool) $islemag_single_post_hide_related_posts !== true ) { ?>
+
+			<h3 class="mb30 title-underblock custom blog-related-carousel-title"><?php esc_html_e( 'Related Posts', 'islemag' ); ?>
+				'</h3>
+			<div class="blog-related-carousel owl-carousel small-nav">
 				<?php
-				if ( $islemag_single_post_hide_related_posts == true ) {
-					echo 'islemag_hide';
-				}
-		?>
-		"><?php esc_html_e( 'Related Posts', 'islemag' ); ?></h3>
-		<div class="blog-related-carousel owl-carousel small-nav
-				<?php
-				if ( $islemag_single_post_hide_related_posts == true ) {
-					echo 'islemag_hide';
-				}
-		?>
-		">
-			<?php
-			$related = get_posts(
-				array(
-					'category__in' => wp_get_post_categories( $post_id ),
-					'numberposts'  => 5,
-					'post__not_in' => array( $post_id ),
-				)
-			);
-			if ( $related ) {
+				$related = get_posts(
+					array(
+						'category__in' => wp_get_post_categories( $post_id ),
+						'numberposts'  => 5,
+						'post__not_in' => array( $post_id ),
+					)
+				);
 				foreach ( $related as $post ) {
 					setup_postdata( $post );
 					?>
@@ -247,7 +238,7 @@ $post_id = get_the_ID();
 							<?php
 							$title = get_the_title();
 							if ( ! empty( $title ) ) {
-							?>
+								?>
 								<h2 class="entry-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
 								</h2>
 							<?php } ?>
@@ -276,23 +267,23 @@ $post_id = get_the_ID();
 												echo '</span>';
 											}
 										}
-										$i++;
+										$i ++;
 									}
 								}
 								?>
 								</span><!-- End .entry-tags -->
 
 							<a href="<?php the_permalink(); ?>"
-								class="entry-readmore text-right"><?php esc_html_e( 'Read More', 'islemag' ); ?><i
-									class="fa fa-angle-right"></i></a>
+							   class="entry-readmore text-right"><?php esc_html_e( 'Read More', 'islemag' ); ?><i
+										class="fa fa-angle-right"></i></a>
 						</footer>
 					</article>
 					<?php
 				}// End foreach().
-			}// End if().
-			wp_reset_postdata();
-			?>
-		</div><!-- End .blog-related-carousel -->
+				wp_reset_postdata();
+				?>
+			</div><!-- End .blog-related-carousel -->
+		<?php }// End if(). ?>
 	</div><!-- End .col-md-12 -->
 </div><!-- End .row -->
 <div class="mb20"></div><!-- space -->

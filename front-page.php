@@ -65,7 +65,7 @@ if ( (bool) $islemag_header_slider_disable !== true ) {
 			<?php
 			if ( ! empty( $archive_content_classes ) ) {
 				echo 'class="' . implode( ' ', $archive_content_classes ) . '"'; }
-?>
+			?>
 >
 				<?php
 
@@ -145,7 +145,7 @@ if ( (bool) $islemag_header_slider_disable !== true ) {
 					echo '<div class="col-md-12 islemag-fullwidth"></div>';
 				}
 			}// End if().
-	?>
+			?>
 		</div><!-- End .row -->
 	</div><!-- End .container -->
 <?php
