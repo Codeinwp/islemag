@@ -1,4 +1,11 @@
 
+ ### v1.1.13 - 2018-11-27 
+ **Changes:** 
+ * - Fixed hiding related posts not SEO friendly
+* - Fixed long content breaking layout in blog posts
+* - Notice about Neve added in Dashboard
+* - Updated readme.txt file
+ 
 ### 1.1.10 - 06/02/2018
 **Changes:** 
 - Made the number of comments visible only for posts that allow comments
