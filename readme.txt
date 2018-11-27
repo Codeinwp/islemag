@@ -12,6 +12,10 @@ A modern and clean free WordPress theme for magazines, news and media websites, 
 == Description ==
 A modern and clean free WordPress theme for magazines, news and media websites, personal blogs, or photography. IsleMag is responsive, flat, minimalist, SEO friendly, Retina ready, built with Bootstrap, and has social links. The theme has Google AdSense banners, a featured slider, custom backgrounds, filtered categories, tags, boxed layout, and drop-down menu. IsleMag also offers well-structured content and posts, multiple sidebars and widgets. The theme is highly customizable and translation ready.
 
+== Copyright ==
+IsleMag WordPress theme, Copyright © 2015-2016 Themeisle.com
+IsleMag is distributed under the terms of the GNU GPL3
+
 == Changelog ==
 
 = 1.1.10 =
