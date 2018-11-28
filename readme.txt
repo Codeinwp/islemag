@@ -18,6 +18,17 @@ IsleMag is distributed under the terms of the GNU GPL3
 
 == Changelog ==
 
+= 1.1.14 =
+* Screenshot updated
+* Default background image changed
+* readme updated
+
+= 1.1.13 =
+* Fixed hiding related posts not SEO friendly
+* Fixed long content breaking layout in blog posts
+* Notice about Neve added in Dashboard
+* Updated readme.txt file
+
 = 1.1.10 =
 * Made the number of comments visible only for posts that allow comments
 
@@ -87,6 +98,17 @@ Unless otherwise specified, all the theme files, scripts and images are licensed
 * http://mystock.photos/skater/
 * http://mystock.photos/yellow-tent/
 * http://mystock.photos/green-window/
+
+Images used within the screenshot
+* indian-gods, CC0, https://mystock.themeisle.com/photo/indian-gods/
+* hill-houses, CC0, https://mystock.themeisle.com/photo/hill-houses/
+* pool, CC0, https://mystock.themeisle.com/photo/pool/
+* old-casino-2, CC0, https://mystock.themeisle.com/photo/old-casino-2/
+* statues, CC0, https://mystock.themeisle.com/photo/statues/
+* red-umbrellas, CC0, https://mystock.themeisle.com/photo/red-umbrellas/
+* building, CC0, https://mystock.themeisle.com/photo/building/
+* wine-bar, CC0, https://mystock.themeisle.com/photo/wine-bar/
+* goodies, CC0, https://mystock.themeisle.com/photo/goodies/
 
 Images used for demo preview:
 * https://unsplash.com/photos/ZvvYXz72yZI
