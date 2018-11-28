@@ -26,6 +26,17 @@ IsleMag is distributed under the terms of the GNU GPL3
 
 
 
+= 1.1.14 =
+* Screenshot updated
+* Default background image changed
+* readme updated
+
+= 1.1.13 =
+* Fixed hiding related posts not SEO friendly
+* Fixed long content breaking layout in blog posts
+* Notice about Neve added in Dashboard
+* Updated readme.txt file
+
 = 1.1.10 =
 * Made the number of comments visible only for posts that allow comments
 
@@ -88,25 +99,18 @@ Unless otherwise specified, all the theme files, scripts and images are licensed
 * [Bootstrap v3.3.5](http://getbootstrap.com) - [License](https://github.com/twbs/bootstrap#copyright-and-license)
 * [Owl Carousel](https://github.com/OwlCarousel2/OwlCarousel2) - [License](https://github.com/OwlCarousel2/OwlCarousel2/blob/develop/LICENSE)
 * [Font Awesome](https://github.com/FortAwesome/Font-Awesome) - [License](https://github.com/FortAwesome/Font-Awesome#license)
-* [My Stock Photos](http://mystock.photos/) - [License](http://mystock.photos/license/)
-* http://mystock.photos/bikes/
-* http://mystock.photos/red-leafs/
-* http://mystock.photos/tourists/
-* http://mystock.photos/skater/
-* http://mystock.photos/yellow-tent/
-* http://mystock.photos/green-window/
 
-Images used for demo preview:
-* https://unsplash.com/photos/ZvvYXz72yZI
-* https://unsplash.com/photos/SYx3UCHZJlo
-* https://unsplash.com/photos/kGSapVfg8Kw
-* https://unsplash.com/photos/LNOJuUSJZqM
-* https://unsplash.com/photos/L-2p8fapOA8
-* https://unsplash.com/photos/w7oxd0tzWWs
-* https://unsplash.com/photos/85aZoyT_U1I
-* https://unsplash.com/photos/dBWvUqBoOU8
-* https://unsplash.com/photos/VBBL6X4Lf3w
-* https://unsplash.com/?photo=9MiP0C3QqZ4
+Images used within the screenshot
+* indian-gods, CC0, https://mystock.themeisle.com/photo/indian-gods/
+* hill-houses, CC0, https://mystock.themeisle.com/photo/hill-houses/
+* pool, CC0, https://mystock.themeisle.com/photo/pool/
+* old-casino-2, CC0, https://mystock.themeisle.com/photo/old-casino-2/
+* statues, CC0, https://mystock.themeisle.com/photo/statues/
+* red-umbrellas, CC0, https://mystock.themeisle.com/photo/red-umbrellas/
+* building, CC0, https://mystock.themeisle.com/photo/building/
+* wine-bar, CC0, https://mystock.themeisle.com/photo/wine-bar/
+* goodies, CC0, https://mystock.themeisle.com/photo/goodies/
+* islemag-background.jpg, CC0, https://mystock.themeisle.com/photo/rose/
 
 == Available hooks ==
 * islemag_navbar_top_head
