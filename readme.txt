@@ -102,7 +102,7 @@ Images used within the screenshot
 * building, CC0, https://mystock.themeisle.com/photo/building/
 * wine-bar, CC0, https://mystock.themeisle.com/photo/wine-bar/
 * goodies, CC0, https://mystock.themeisle.com/photo/goodies/
-* rose, CC0, https://mystock.themeisle.com/photo/rose/
+* islemag-background.jpg, CC0, https://mystock.themeisle.com/photo/rose/
 
 == Available hooks ==
 * islemag_navbar_top_head
