@@ -1,4 +1,10 @@
 
+ ### v1.1.14 - 2018-11-28 
+ **Changes:** 
+ * new screenshot
+* default background image changed
+* readme updated
+ 
  ### v1.1.13 - 2018-11-27 
  **Changes:** 
  * - Fixed hiding related posts not SEO friendly
